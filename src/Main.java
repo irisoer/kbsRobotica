@@ -14,7 +14,7 @@ public class Main {
         port.writeInt(random);
         System.out.println(random);
         port.closePort();
-
+        System.out.println("test");
     }
 
 }
