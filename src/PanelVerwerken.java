@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 
+//Sylvia
+
 public class PanelVerwerken extends JPanel {
 
     public PanelVerwerken() {
-        setPreferredSize(new Dimension(300,100));
+        setPreferredSize(new Dimension(800,200));
     }
     int offset = 10;
 
@@ -14,13 +16,11 @@ public class PanelVerwerken extends JPanel {
 
         //product
         g.setColor(Color.GREEN);
-        g.fillOval(70, 40, 30, 30);
+        g.fillOval(160, 40, 80,80);
         g.setColor(Color.BLUE);
-        g.fillOval(130, 40,30, 30);
+        g.fillOval(360, 40,80,80);
         g.setColor(Color.RED);
-        g.fillOval(190,40,30,30);
-
-
+        g.fillOval(560,40,80,80);
     }
 
 }
