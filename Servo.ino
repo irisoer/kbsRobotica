@@ -7,8 +7,8 @@ int input;
 void setup() {
   Myservo.attach(3);
   Serial.begin(9600);
-  String test = "ready";
-  Serial.println(test);
+  String readyChar = "!s";
+  Serial.println(readyChar);
 }
 
 void loop() {
