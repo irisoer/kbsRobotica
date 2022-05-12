@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="053cd4b8-4778-4967-9ac5-0fd353c76229" name="Changes" comment="Arduino kleursensor werkend">
-      <change beforePath="$PROJECT_DIR$/Arduino kleursensor/Arduino kleursensor.ino" beforeDir="false" />
+    <list default="true" id="053cd4b8-4778-4967-9ac5-0fd353c76229" name="Changes" comment="Arduino kleursensor werkend 2.0">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652178106862</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Arduino kleursensor werkend 2.0">
+      <created>1652178254807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652178254807</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -69,6 +76,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Arduino kleursensor werkend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arduino kleursensor werkend" />
+    <MESSAGE value="Arduino kleursensor werkend 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arduino kleursensor werkend 2.0" />
   </component>
 </project>
