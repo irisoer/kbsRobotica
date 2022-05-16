@@ -1,3 +1,5 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 
@@ -19,18 +21,19 @@ public class Bpp {
 	 * Wordt gebruikt na het scannen van een nieuw item
 	 * zodat het in het juiste bakje gevult kan worden.
 	 *
-	 * @param 	item 	Het item om te zoeken
+	 * @param 	artikel	Het item om te zoeken
 	 * @return 			De index van het eerst voorkomen object in de bins. <br>
 	 * 		  			-1 Als er geen bin gevonden is.
 	 * @author 			Krijn Grimme
 	 */
-	public int findBinNum(int item) {
+	public int findBinNum(Artikel artikel) {
+		int item = artikel.getGewicht();
 		int binNum = 0;                               	// Variabele om bij te houden welke bin gecheckt wordt begint bij 0
 
 		for (ArrayList<Integer> bin : this.bins) {   	// Foreach bin in bins
 			if (bin.contains(item)) {
 				// todo: Delete doen in de find functie of apart (zie remBinItem())
-//				bin.remove(Integer.valueOf(item));		// Verwijder het integer object uit de bin
+				bin.remove(Integer.valueOf(item));		// Verwijder het integer object uit de bin
 														// Integer.valueOf() omdat als er een int wordt meegegeven
 														// dan wordt die index verwijderd ipv dat object.
 				return binNum;                        	// Return het nummer van huidige bin.
@@ -38,14 +41,6 @@ public class Bpp {
 			binNum++;                                	// Check volgende bin
 		}
 		return -1;                                    	// Retrun -1 als item niet in bins zit
-	}
-
-	public int remBinItem(int item) {
-		int binNum = findBinNum(item);
-		ArrayList<Integer> bin = this.bins.get(binNum);
-		bin.remove(Integer.valueOf(item));
-
-		return binNum;
 	}
 
 	/**
@@ -116,13 +111,18 @@ public class Bpp {
 	 *
 	 * @author Krijn Grimme
 	 */
-	public Bpp(Integer[] items, int maxBinGrootte) {
+	public Bpp(ArrayList<Artikel> items, int maxBinGrootte) {
+		Integer[] itemGewicht = new Integer[items.size()];
+
+		for (int i = 0; i < items.size(); i++) {
+			itemGewicht[i] = items.get(i).getGewicht();
+		}
 
 		// Sorteer op decreasing
-		Arrays.sort(items, Collections.reverseOrder());
+		Arrays.sort(itemGewicht, Collections.reverseOrder());
 
 		// BestFit met de gesorteerde items
-		this.bestFit(items, maxBinGrootte);
+		this.bestFit(itemGewicht, maxBinGrootte);
 	}
 
 	@Override

@@ -1,10 +1,5 @@
-import jssc.*;
-
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
-
-import static jssc.SerialPort.*;
 
 
 public class Main {
@@ -37,6 +32,21 @@ public class Main {
 //        System.out.println();
 //        System.out.println(bpp);
 //    }
+
+    public static void main(String[] args) throws SQLException {
+        Database db;
+        db = new Database();
+        ArrayList<Artikel> result = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            result.add(db.getProduct(60));
+            result.add(db.getProduct(70));
+            result.add(db.getProduct(73));
+        }
+        result.add(db.getProduct(73));
+        Bpp bpp = new Bpp(result, 20);
+//            ArduinoInpak inpak = new ArduinoInpak();
+        System.out.println(bpp);
+    }
 
 
 }

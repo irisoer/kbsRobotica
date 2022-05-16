@@ -2,31 +2,60 @@ import java.sql.*;
 
 
 public class Database {
-    public static void main(String[] args) throws ClassNotFoundException {
+    private Connection connection;
 
-        String url = "jdbc:mysql://localhost:3306/nerdygadgets";
-        String username = "root";
+
+
+//                Statement stmt = connection.createStatement();
+//                ResultSet resultSet = stmt.executeQuery("SELECT * FROM colors");
+//                while (resultSet.next()) {
+//                    int id = resultSet.getInt("ColorID");
+//                    String colorName = resultSet.getString("ColorName");
+//
+//                    System.out.println(id + " -- " + colorName);
+//
+//                }
+//                stmt.close();
+
+    private void startConnection() throws SQLException {
         String password = "";
-        Class.forName("com.mysql.jdbc.Driver");
+        String username = "root";
+        String url = "jdbc:mysql://localhost:3306/nerdygadgets";
+        this.connection = DriverManager.getConnection(url, username, password);
+    }
 
-            try {
-                Connection conn = DriverManager.getConnection(url, username, password);
-                Statement stmt = conn.createStatement();
-                ResultSet resultSet = stmt.executeQuery("SELECT CountryID, CountryName FROM countries");
-                while (resultSet.next()) {
-                    int id = resultSet.getInt("CountryID");
-                    String countryName = resultSet.getString("CountryName");
+    public void runQuery(String query) throws SQLException {
+        startConnection();
+        Statement stmt = connection.createStatement();
+        ResultSet resultSet = stmt.executeQuery(query);
+        while (resultSet.next()) {
+            int id = resultSet.getInt("ColorID");
+            String colorName = resultSet.getString("ColorName");
 
-                    System.out.println(id + " -- " + countryName);
-
-                }
-                stmt.close();
-                conn.close();
-
-            } catch (SQLException e) {
-                System.out.println("fout " + e.getMessage());
+            System.out.println(id + " -- " + colorName);
 
         }
+        stmt.close();
+        endConnection();
+    }
 
+    public Artikel getProduct(int stockItemID) throws SQLException {
+        startConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
+                                                                              "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
+                                                                              "WHERE StockItemID = ?");
+        preparedStatement.setInt(1, stockItemID);
+        ResultSet result = preparedStatement.executeQuery();
+        Artikel artikel = null;
+        while (result.next()) {
+            artikel = new Artikel(result);
+        }
+        result.close();
+        endConnection();
+        return artikel;
+    }
+
+    private void endConnection() throws SQLException {
+        connection.close();
     }
 }
