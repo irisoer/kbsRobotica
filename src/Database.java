@@ -2,7 +2,7 @@ import java.sql.*;
 
 
 public class Database {
-    private Connection connection;
+    private static Connection connection;
 
 
 
@@ -17,14 +17,14 @@ public class Database {
 //                }
 //                stmt.close();
 
-    private void startConnection() throws SQLException {
+    private static void startConnection() throws SQLException {
         String password = "";
         String username = "root";
         String url = "jdbc:mysql://localhost:3306/nerdygadgets";
-        this.connection = DriverManager.getConnection(url, username, password);
+        connection = DriverManager.getConnection(url, username, password);
     }
 
-    public void runQuery(String query) throws SQLException {
+    public static void runQuery(String query) throws SQLException {
         startConnection();
         Statement stmt = connection.createStatement();
         ResultSet resultSet = stmt.executeQuery(query);
@@ -39,7 +39,7 @@ public class Database {
         endConnection();
     }
 
-    public Artikel getProduct(int stockItemID) throws SQLException {
+    public static Artikel getArtikelFromID(int stockItemID) throws SQLException {
         startConnection();
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
                                                                               "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
@@ -55,7 +55,24 @@ public class Database {
         return artikel;
     }
 
-    private void endConnection() throws SQLException {
+    public static Artikel getArtikelVanKleur(String kleur) throws SQLException {
+        startConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
+                "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
+                "WHERE ColorName = ?");
+
+        preparedStatement.setString(1, kleur);
+        ResultSet result = preparedStatement.executeQuery();
+        Artikel artikel = null;
+        while (result.next()) {
+            artikel = new Artikel(result);
+        }
+        result.close();
+        endConnection();
+        return artikel;
+    }
+
+    private static void endConnection() throws SQLException {
         connection.close();
     }
 }

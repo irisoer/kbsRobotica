@@ -1,3 +1,5 @@
+import jssc.SerialPortException;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -33,20 +35,35 @@ public class Main {
 //        System.out.println(bpp);
 //    }
 
-    public static void main(String[] args) throws SQLException {
-        Database db;
-        db = new Database();
+//    public static void main(String[] args) throws SQLException {
+//        Database db;
+//        db = new Database();
+//        ArrayList<Artikel> result = new ArrayList<>();
+//        for (int i = 0; i < 3; i++) {
+//            result.add(db.getProduct(60));
+//            result.add(db.getProduct(70));
+//            result.add(db.getProduct(73));
+//        }
+//        result.add(db.getProduct(73));
+//        Bpp bpp = new Bpp(result, 20);
+////            ArduinoInpak inpak = new ArduinoInpak();
+//        System.out.println(bpp);
+//    }
+
+	public static void main(String[] args) throws SerialPortException, SQLException {
+		ArduinoSorteer sorteer = new ArduinoSorteer();
         ArrayList<Artikel> result = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            result.add(db.getProduct(60));
-            result.add(db.getProduct(70));
-            result.add(db.getProduct(73));
+            result.add(Database.getArtikelFromID(60));
+            result.add(Database.getArtikelFromID(70));
+            result.add(Database.getArtikelFromID(73));
         }
-        result.add(db.getProduct(73));
+        result.add(Database.getArtikelFromID(73));
         Bpp bpp = new Bpp(result, 20);
-//            ArduinoInpak inpak = new ArduinoInpak();
         System.out.println(bpp);
-    }
+		System.out.println(sorteer.getKleur(bpp));
+		System.out.println(bpp);
+	}
 
 
 }

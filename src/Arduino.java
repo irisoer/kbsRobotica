@@ -2,6 +2,9 @@ import jssc.*;
 import jssc.SerialPort;
 import jssc.SerialPortList;
 
+import java.sql.SQLException;
+import java.util.Arrays;
+
 import static jssc.SerialPort.*;
 import static jssc.SerialPort.PARITY_NONE;
 
@@ -23,11 +26,13 @@ public abstract class Arduino {
             };
         }
     }
-    
-    // Beide arduino's moeten kleuren kunnen scannen 
+
+    public SerialPort getSerialPort() {
+        return serialPort;
+    }
+
+    // Beide arduino's moeten kleuren kunnen scannen
     // Beide arduino's moeten connectie kunnen maken
     
-    public void wachtOpKleur() {
-        
-    }
+
 }
