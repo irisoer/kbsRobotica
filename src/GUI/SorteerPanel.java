@@ -1,11 +1,13 @@
+package GUI;
+
 import javax.swing.*;
 import java.awt.*;
 
 //Sylvia
 
-public class PanelSorteren extends JPanel {
+public class SorteerPanel extends JPanel {
 
-    public PanelSorteren() {
+    public SorteerPanel() {
         setPreferredSize(new Dimension(800,200));
     }
 

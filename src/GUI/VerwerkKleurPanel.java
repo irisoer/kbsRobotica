@@ -1,14 +1,15 @@
+package GUI;
+
 import javax.swing.*;
 import java.awt.*;
 
 //Sylvia
 
-public class PanelVerwerken extends JPanel {
+public class VerwerkKleurPanel extends JPanel {
 
-    public PanelVerwerken() {
+    public VerwerkKleurPanel() {
         setPreferredSize(new Dimension(800,200));
     }
-    int offset = 10;
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

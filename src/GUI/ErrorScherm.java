@@ -1,23 +1,22 @@
+package GUI;
+
 import javax.swing.*;
 import java.awt.*;
 
 //Sylvia
-public class SchermError extends JFrame {
-
+public class ErrorScherm extends Scherm{
     private JLabel jlError;
     private JLabel jlErrorMessage;
 
-
-    public SchermError() {
-        setTitle("Error");
-        setSize(300, 200);
+    public ErrorScherm() {
+        super("Error");
         setLayout (new GridLayout(2,1));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
 
         //componenten aanmaken
         jlError = new JLabel("Er is een fout opgetreden!");
+        jlError.setFont(fontHeading);
         jlErrorMessage = new JLabel( "ERROR MESSAGE");
+        jlErrorMessage.setFont(fontTekst);
 
         //toevoegen
         add(jlError);
