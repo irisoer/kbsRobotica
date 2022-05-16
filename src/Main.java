@@ -25,16 +25,18 @@ public class Main {
 //            System.out.println(e);
 //        }
 //    }
+//
+//    public static void main(String[] args) {
+//        Integer weight[] = { 2, 5, 1, 1, 7, 2, 3, 8 };
+//        int c = 10;
+//        int n = weight.length;
+//        Bpp bpp = new Bpp(weight, c);
+//        System.out.print(Arrays.toString(weight));
+//        System.out.println(" Verdeeld over bins: " + bpp);
+//        System.out.println("Draaien naar bakje "+ bpp.remBinItem(5));
+//        System.out.println();
+//        System.out.println(bpp);
+//    }
 
-    public static void main(String[] args) {
-        Integer weight[] = { 2, 5, 1, 1, 7, 2, 3, 8 };
-        int c = 10;
-        int n = weight.length;
-        Bpp bpp = new Bpp(weight, c);
-        System.out.print(Arrays.toString(weight));
-        System.out.println(" Verdeeld over bins: " + bpp);
-        System.out.println("Draaien naar bakje "+ bpp.remBinItem(5));
-        System.out.println();
-        System.out.println(bpp);
-    }
+
 }
