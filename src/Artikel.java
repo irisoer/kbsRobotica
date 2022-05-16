@@ -30,4 +30,14 @@ public class Artikel {
 	public String getNaam() {
 		return naam;
 	}
+
+	@Override
+	public String toString() {
+		return "Artikel{" +
+				"gewicht=" + gewicht +
+				", id=" + id +
+				", kleur='" + kleur + '\'' +
+				", naam='" + naam + '\'' +
+				'}';
+	}
 }

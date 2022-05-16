@@ -11,19 +11,24 @@ import static jssc.SerialPort.PARITY_NONE;
 public abstract class Arduino {
     private SerialPort serialPort;
 
-    public Arduino(char readyChar) throws SerialPortException {
+    public Arduino(char readyChar) {
         SerialPort test;
         for (String port: SerialPortList.getPortNames()) {
-            test = new SerialPort(port);
-            test.openPort();
-            test.setParams(BAUDRATE_9600,  DATABITS_8, STOPBITS_1, PARITY_NONE);      //Opstarten
-            while(test.readBytes(1)[0] != 33) {
+            try {
+                test = new SerialPort("COM7");
+                test.openPort();
+                test.setParams(BAUDRATE_9600,  DATABITS_8, STOPBITS_1, PARITY_NONE);      //Opstarten
+                while(test.readBytes(1)[0] != 33) {
 
-            };
-            if(test.readBytes(1)[0] == readyChar) {
-                System.out.println(port);
-                this.serialPort = test;
-            };
+                };
+                if(test.readBytes(1)[0] == readyChar) {
+                    System.out.println(port);
+                    this.serialPort = test;
+                };
+            } catch (SerialPortException e) {
+                continue;
+            }
+
         }
     }
 

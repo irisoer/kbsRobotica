@@ -58,11 +58,14 @@ public class Main {
             result.add(Database.getArtikelFromID(70));
             result.add(Database.getArtikelFromID(73));
         }
-        result.add(Database.getArtikelFromID(73));
+        result.add(Database.getArtikelFromID(70));
         Bpp bpp = new Bpp(result, 20);
         System.out.println(bpp);
-		System.out.println(sorteer.getKleur(bpp));
-		System.out.println(bpp);
+        while(!bpp.isLeeg()) {
+            System.out.println(sorteer.getKleur(bpp));
+            System.out.println(bpp);
+
+        }
 	}
 
 

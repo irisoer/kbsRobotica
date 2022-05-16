@@ -13,6 +13,13 @@ import java.util.*;
 public class Bpp {
 	private ArrayList<ArrayList<Integer>> bins;
 
+	public boolean isLeeg() {
+		for (int i = 0; i < bins.size(); i++) {
+			ArrayList<Integer> bin = bins.get(i);
+			if(!bin.isEmpty()) return false;
+		};
+		return true;
+	}
 
 	/**
 	 * Returnt en verwijdert de eerste instantie van
@@ -113,8 +120,9 @@ public class Bpp {
 	 */
 	public Bpp(ArrayList<Artikel> items, int maxBinGrootte) {
 		Integer[] itemGewicht = new Integer[items.size()];
-
+		System.out.println(items);
 		for (int i = 0; i < items.size(); i++) {
+			System.out.println(items.get(i));
 			itemGewicht[i] = items.get(i).getGewicht();
 		}
 
