@@ -10,9 +10,11 @@ public class StartScherm extends Panel implements ActionListener {
 	JButton jbSorteer = new JButton("Start sorteermodule");
 	JButton jbInpak = new JButton("Start inpakken");
 	DBLoader dbLoader = new DBLoader();
-	JPanel rgbSelectie = rgbSelectie(new int[]{10, 5, 7});
+	RGBSelectie rgbSelectie;
 
-	public StartScherm() {
+
+	public StartScherm(int[] rgbAantal) {
+		this.rgbSelectie =  new RGBSelectie(rgbAantal);
 		setLayout(null);
 		jlHeading.setText("Wat moet er in de order komen?");
 		jlHeading.setBounds(0,0, 800, 50);
@@ -31,34 +33,46 @@ public class StartScherm extends Panel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		this.volgende = true;
 	}
 
-	private JPanel rgbSelectie(int[] aantalRGB) {
-		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(3,2, 0, 10));
-		PlusMin[] plusMins = new PlusMin[3];
-		JLabel[] jLabels = new JLabel[3];
-		String[] labelTekst = getLabels(aantalRGB);
-		panel.setBorder(new EmptyBorder(10, 100, 10, 50));
-		for (int i = 0; i < 3; i++) {
-			jLabels[i] = new JLabel(labelTekst[i]);
-			jLabels[i].setFont(fontTekst);
-			plusMins[i] = new PlusMin(0, aantalRGB[i]);
-			panel.add(jLabels[i]);
-			panel.add(plusMins[i]);
+	private class RGBSelectie extends Panel {
+		private JLabel[] jLabels = new JLabel[3];
+		private PlusMin[] plusMins = new PlusMin[3];
+		private String[] labelTekst;
+
+		public RGBSelectie(int[] aantalRGB) {
+			setLayout(new GridLayout(3,2, 0, 10));
+			labelTekst = getLabels(aantalRGB);
+			setBorder(new EmptyBorder(10, 100, 10, 50));
+			for (int i = 0; i < 3; i++) {
+				jLabels[i] = new JLabel(labelTekst[i]);
+				jLabels[i].setFont(fontTekst);
+				plusMins[i] = new PlusMin(0, aantalRGB[i]);
+				add(jLabels[i]);
+				add(plusMins[i]);
+			}
+			setBounds(0, 150,  800, 300);
 		}
-		panel.setBounds(0, 150,  800, 300);
-		return panel;
+
+		private String[] getLabels(int[] rgb) {
+			String[] labels = new String[3];
+			labels[0] = "Rood Product (" + String.valueOf(rgb[0]) + ")";
+			labels[1] = "Groen Product (" + String.valueOf(rgb[1]) + ")";
+			labels[2] = "Blauw Product (" + String.valueOf(rgb[2]) + ")";
+			return labels;
+		}
+
+		public int[] getValues() {
+			int[] values = new int[3];
+			for (int i = 0; i < 3; i++) {
+				values[i] = plusMins[i].value();
+			}
+			return values;
+		}
 	}
 
-	private String[] getLabels(int[] rgb) {
-		String[] labels = new String[3];
-		labels[0] = "Rood Product (" + String.valueOf(rgb[0]) + ")";
-		labels[1] = "Groen Product (" + String.valueOf(rgb[1]) + ")";
-		labels[2] = "Blauw Product (" + String.valueOf(rgb[2]) + ")";
-		return labels;
-	}
+
 
 	class DBLoader extends Panel implements ActionListener {
 		JComboBox<Integer> box = new JComboBox<>(getOrderNums());
@@ -118,7 +132,7 @@ public class StartScherm extends Panel implements ActionListener {
 			add(jbPlus);
 		}
 
-		public int getAantal() {
+		public int value() {
 			return Integer.parseInt(this.aantal.getText());
 		}
 

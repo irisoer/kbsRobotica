@@ -7,6 +7,10 @@ import java.awt.*;
 
 public class GUI extends JFrame {
 	JPanel schermen = new JPanel(new CardLayout());
+	StartScherm startScherm = new StartScherm(new int[]{5, 7, 4});
+	CardLayout cards = (CardLayout)(schermen.getLayout());
+	JPanel huidigScherm;
+
 
 	public GUI() {
 		super("Gui");
@@ -16,10 +20,9 @@ public class GUI extends JFrame {
 		setLayout(new CardLayout());
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		schermen.add(new StartScherm(), "Start");
-		schermen.add(new CarousselScherm(), "Carrousel");
-		schermen.add(new Panel(), "Panel");
-
+		schermen.add(startScherm, 0);
+		schermen.add(new CarousselScherm(), 1);
+		schermen.add(new Panel(), 2);
 
 		add(schermen);
 		setResizable(false);
@@ -27,7 +30,6 @@ public class GUI extends JFrame {
 	}
 
 	public void volgendeScherm() {
-		CardLayout cards = (CardLayout)(schermen.getLayout());
 		cards.next(schermen);
 	}
 }

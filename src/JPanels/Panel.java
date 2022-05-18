@@ -10,6 +10,7 @@ public class Panel extends JPanel {
 	JLabel jlHeading = new JLabel();
 	JLabel jlTekst = new JLabel();
 	JLabel jlSubTekst = new JLabel();
+	public boolean volgende = false;
 
 	public Panel() {
 		jlHeading.setFont(fontHeading);
