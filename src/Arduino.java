@@ -2,9 +2,6 @@ import jssc.*;
 import jssc.SerialPort;
 import jssc.SerialPortList;
 
-import java.sql.SQLException;
-import java.util.Arrays;
-
 import static jssc.SerialPort.*;
 import static jssc.SerialPort.PARITY_NONE;
 
