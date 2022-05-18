@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class StartScherm extends Panel implements ActionListener {
 	JButton jbSorteer = new JButton("Start sorteermodule");
@@ -34,6 +35,7 @@ public class StartScherm extends Panel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.volgende = true;
+		System.out.println(Arrays.toString(rgbSelectie.getValues()));
 	}
 
 	private class RGBSelectie extends Panel {

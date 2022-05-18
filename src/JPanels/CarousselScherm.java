@@ -18,12 +18,12 @@ public class CarousselScherm extends Panel implements ActionListener {
 		carousselPanel.add(new Een(), "Een");
 		carousselPanel.add(new Twee(), "Twee");
 		carousselPanel.add(new Drie(), "Drie");
-		Dimension dimension = new Dimension(50, 600);
+		jButtonL.setBounds(0,0, 50, 600);
 		jButtonL.addActionListener(this);
-		jButtonL.setPreferredSize(dimension);
 		add(jButtonL);
+		carousselPanel.setBounds(50, 0, 700, 600);
 		add(carousselPanel);
-		jButtonR.setPreferredSize(dimension);
+		jButtonR.setBounds(750,0, 50, 600);
 		jButtonR.addActionListener(this);
 		add(jButtonR);
 	}
