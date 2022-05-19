@@ -55,7 +55,6 @@ public class Main {
         ArrayList<Artikel> result = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             result.add(Database.getArtikelFromID(60));
-            result.add(Database.getArtikelFromID(70));
             result.add(Database.getArtikelFromID(73));
         }
         result.add(Database.getArtikelFromID(70));
