@@ -9,9 +9,13 @@ public class GUI extends JFrame {
 	JPanel schermen = new JPanel(new CardLayout());
 	StartScherm startScherm = new StartScherm(new int[]{5, 7, 4});
 	CardLayout cards = (CardLayout)(schermen.getLayout());
-	JPanel huidigScherm;
+	Schermen huidigScherm;
 
-
+	public enum Schermen {
+		START,
+		CAROUSSEL,
+		EIND
+	}
 	public GUI() {
 		super("Gui");
 		setPreferredSize(new Dimension(800, 600));
@@ -20,16 +24,17 @@ public class GUI extends JFrame {
 		setLayout(new CardLayout());
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		schermen.add(startScherm, 0);
-		schermen.add(new CarousselScherm(), 1);
-		schermen.add(new Panel(), 2);
-
+		schermen.add(startScherm, String.valueOf(Schermen.START));
+		schermen.add(new CarousselScherm(), String.valueOf(Schermen.CAROUSSEL));
+		schermen.add(new Panel(), String.valueOf(Schermen.EIND));
+		setScherm(Schermen.START);
 		add(schermen);
 		setResizable(false);
 		setVisible(true);
 	}
 
-	public void volgendeScherm() {
-		cards.next(schermen);
+	public void setScherm(Schermen scherm) {
+		cards.show(schermen, String.valueOf(scherm));
+		huidigScherm = scherm;
 	}
 }

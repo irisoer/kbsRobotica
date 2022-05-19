@@ -1,13 +1,14 @@
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		GUI gui = new GUI();
 
-//		while(!gui.startScherm.volgende) {
-//			System.out.println("");
-//		}
-//		gui.volgendeScherm();
-//		while(true) {
-//			System.out.println();
-//		}
+		while(true) {
+			while(!gui.startScherm.volgende) {
+				Thread.sleep(50);
+			}
+			gui.setScherm(GUI.Schermen.CAROUSSEL);
+		}
+
+
 	}
 }
