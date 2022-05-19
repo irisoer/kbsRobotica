@@ -1,18 +1,17 @@
 package GUI;
 
 import javax.swing.*;
-import java.awt.*;
 
-//Sylvia
-public class Scherm extends JFrame {                                    //Standaard instellingen alle schermen
-    protected Font fontHeading = new Font("Calibri",Font.BOLD, 42);
-    protected Font fontTekst = new Font ("Calibri", Font.PLAIN, 28);
-    protected Font fontSubTekst = new Font ("Calibri", Font.PLAIN, 18);
-    JLabel jlHeading = new JLabel();
-    JLabel jlTekst = new JLabel();
-    JLabel jlSubTekst = new JLabel();
+//Sylvia >
+public class Scherm extends JFrame implements Lettertype {                                    //naar interface lettertype
+//    protected Font fontHeading = new Font("Calibri",Font.BOLD, 42);
+//    protected Font fontTekst = new Font ("Calibri", Font.PLAIN, 28);
+//    protected Font fontSubTekst = new Font ("Calibri", Font.PLAIN, 18);
+//    JLabel jlHeading = new JLabel();        //Heading tekst
+//    JLabel jlTekst = new JLabel();          //Normale tekst
+//    JLabel jlSubTekst = new JLabel();       //Kleine tekst (kleur labels bij sorteren)
 
-    public Scherm(String titel){                                        //Standaard opmaak
+    public Scherm(String titel){                                        //Standaard opmaak, titel = titel in balk
         setTitle(titel);
         setSize(800, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -24,10 +23,10 @@ public class Scherm extends JFrame {                                    //Standa
         jlSubTekst.setFont(fontSubTekst);
         jlSubTekst.setHorizontalAlignment(JLabel.CENTER);
 
-        setVisible(true);
+//        setVisible(true);
     }
 
     //todo: icon veranderen
 
-
 }
+//Sylvia <
