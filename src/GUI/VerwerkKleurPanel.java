@@ -9,7 +9,7 @@ import java.awt.*;
 public class VerwerkKleurPanel extends JPanel implements Lettertype {
 
     public VerwerkKleurPanel() {
-        setPreferredSize(new Dimension(800,200));
+        setPreferredSize(new Dimension(800,350));
     }
 
     public void paintComponent(Graphics g) {

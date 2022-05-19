@@ -9,7 +9,7 @@ import java.awt.*;
 public class SorteerPanel extends JPanel implements Lettertype{
 
     public SorteerPanel() {
-        setPreferredSize(new Dimension(800,200));
+        setPreferredSize(new Dimension(800,350));
     }
 
     public void paintComponent(Graphics g) {

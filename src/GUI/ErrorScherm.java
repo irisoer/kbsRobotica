@@ -7,6 +7,7 @@ import java.awt.*;
 public class ErrorScherm extends Scherm{
     private JLabel jlError;
     private JLabel jlErrorMessage;
+    private String bericht;
 
     public ErrorScherm() {
         super("Error");
@@ -15,7 +16,7 @@ public class ErrorScherm extends Scherm{
         //componenten aanmaken
         jlError = new JLabel("Er is een fout opgetreden!");
         jlError.setFont(fontHeading);
-        jlErrorMessage = new JLabel( "ERROR MESSAGE");
+        jlErrorMessage = new JLabel( bericht);
         jlErrorMessage.setFont(fontTekst);
 
         //toevoegen
