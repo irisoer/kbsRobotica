@@ -4,19 +4,6 @@ import java.sql.*;
 public class Database {
     private static Connection connection;
 
-
-
-//                Statement stmt = connection.createStatement();
-//                ResultSet resultSet = stmt.executeQuery("SELECT * FROM colors");
-//                while (resultSet.next()) {
-//                    int id = resultSet.getInt("ColorID");
-//                    String colorName = resultSet.getString("ColorName");
-//
-//                    System.out.println(id + " -- " + colorName);
-//
-//                }
-//                stmt.close();
-
     private static void startConnection() throws SQLException {
         String password = "";
         String username = "root";
@@ -39,7 +26,7 @@ public class Database {
         endConnection();
     }
 
-    public static Artikel getArtikelFromID(int stockItemID) throws SQLException {
+    public static Artikel selecteerArtikel(int stockItemID) throws SQLException {
         startConnection();
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
                                                                               "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
@@ -55,7 +42,7 @@ public class Database {
         return artikel;
     }
 
-    public static Artikel getArtikelVanKleur(String kleur) throws SQLException {
+    public static Artikel selecteerArtikel(String kleur) throws SQLException {
         startConnection();
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
                 "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
@@ -70,6 +57,14 @@ public class Database {
         result.close();
         endConnection();
         return artikel;
+    }
+
+    public Artikel[] selecteerOrder(int orderNum) {
+        return null;
+    }
+
+    public void setVoorraad() {
+
     }
 
     private static void endConnection() throws SQLException {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="MySQL - nerdygadgets@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.32">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1221,10 +1221,10 @@ suppliercategories|||bezoeker||SELECT|G</Grants>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
     <column id="308" parent="252" name="AccountID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="309" parent="252" name="emailadres">
       <DataType>varchar(100)|0s</DataType>
@@ -1489,10 +1489,10 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="363" parent="257" name="ColdRoomTemperatureID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="364" parent="257" name="ColdRoomSensorNumber">
       <DataType>int(11)|0s</DataType>
@@ -1887,10 +1887,10 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="446" parent="265" name="CustomerID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="447" parent="265" name="CustomerName">
       <DataType>varchar(100)|0s</DataType>
@@ -2816,10 +2816,10 @@ ConfirmedReceivedBy</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="642" parent="272" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="643" parent="272" name="sensor_id">
       <DataType>int(11)|0s</DataType>
@@ -2852,10 +2852,10 @@ ConfirmedReceivedBy</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="649" parent="273" name="orderID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="650" parent="273" name="date">
       <DataType>datetime|0s</DataType>
@@ -2873,10 +2873,10 @@ ConfirmedReceivedBy</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="653" parent="274" name="OrderID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="654" parent="274" name="voornaam">
       <DataType>varchar(100)|0s</DataType>
@@ -2962,10 +2962,10 @@ ConfirmedReceivedBy</ColNames>
       <Turn>before-row</Turn>
     </trigger>
     <column id="671" parent="275" name="orderlineID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="672" parent="275" name="orderID">
       <DataType>int(11)|0s</DataType>
@@ -2998,10 +2998,10 @@ orderID</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="678" parent="276" name="OrderLineID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="679" parent="276" name="OrderID">
       <DataType>int(11)|0s</DataType>
@@ -3123,10 +3123,10 @@ StockItemID</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="702" parent="277" name="OrderID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="703" parent="277" name="CustomerID">
       <DataType>int(11)|0s</DataType>
@@ -3412,10 +3412,10 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="763" parent="282" name="PersonID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="764" parent="282" name="FullName">
       <DataType>varchar(50)|0s</DataType>
@@ -3853,10 +3853,10 @@ ReceivedOuters</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="857" parent="286" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="858" parent="286" name="naam">
       <DataType>varchar(45)|0s</DataType>
@@ -5366,10 +5366,10 @@ TransactionDate</ColNames>
       <Position>2</Position>
     </column>
     <column id="1178" parent="303" name="diagram_id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="1179" parent="303" name="version">
       <DataType>int(11)|0s</DataType>
@@ -5569,10 +5569,10 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="1220" parent="307" name="VehicleTemperatureID">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="1221" parent="307" name="VehicleRegistration">
       <DataType>varchar(20)|0s</DataType>

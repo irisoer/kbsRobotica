@@ -19,7 +19,7 @@ public class ArduinoSorteer extends Arduino {
         else if (color == 'b') kleur = "Blue";
         System.out.println(kleur);
         try {
-            Artikel a = Database.getArtikelVanKleur(kleur);
+            Artikel a = Database.selecteerArtikel(kleur);
             System.out.println(a);
             index = bpp.findBinNum(a);
         } catch (SQLException e) {
