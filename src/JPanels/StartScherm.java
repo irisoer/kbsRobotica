@@ -7,14 +7,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 
-public class StartScherm extends Panel implements ActionListener {
+public class StartScherm extends Panel {
 	JButton jbSorteer = new JButton("Start sorteermodule");
 	JButton jbInpak = new JButton("Start inpakken");
 	DBLoader dbLoader = new DBLoader();
 	RGBSelectie rgbSelectie;
 
 
-	public StartScherm(int[] rgbAantal) {
+	public StartScherm(int[] rgbAantal, GUI gui) {
 		this.rgbSelectie =  new RGBSelectie(rgbAantal);
 		setLayout(null);
 		jlHeading.setText("Wat moet er in de order komen?");
@@ -23,19 +23,13 @@ public class StartScherm extends Panel implements ActionListener {
 		add(dbLoader);
 		add(rgbSelectie);
 		jbSorteer.setBounds(100, 475, 250, 75);
-		jbSorteer.addActionListener(this);
+		jbSorteer.addActionListener(gui);
 		jbSorteer.setFont(fontSubTekst);
 		add(jbSorteer);
 		jbInpak.setBounds(450, 475, 250, 75);
-		jbInpak.addActionListener(this);
+		jbInpak.addActionListener(gui);
 		jbInpak.setFont(fontSubTekst);
 		add(jbInpak);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		this.volgende = true;
-		System.out.println(Arrays.toString(rgbSelectie.getValues()));
 	}
 
 	private class RGBSelectie extends Panel {

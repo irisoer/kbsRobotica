@@ -1,15 +1,24 @@
+package JPanels;
+
 import JPanels.CarousselScherm;
 import JPanels.Panel;
 import JPanels.StartScherm;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class GUI extends JFrame {
+public class GUI extends JFrame implements ActionListener {
 	JPanel schermen = new JPanel(new CardLayout());
-	StartScherm startScherm = new StartScherm(new int[]{5, 7, 4});
+	public StartScherm startScherm = new StartScherm(new int[]{5, 7, 4}, this);
 	CardLayout cards = (CardLayout)(schermen.getLayout());
 	Schermen huidigScherm;
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		this.cards.next(schermen);
+	}
 
 	public enum Schermen {
 		START,
@@ -27,6 +36,8 @@ public class GUI extends JFrame {
 		schermen.add(startScherm, String.valueOf(Schermen.START));
 		schermen.add(new CarousselScherm(), String.valueOf(Schermen.CAROUSSEL));
 		schermen.add(new Panel(), String.valueOf(Schermen.EIND));
+
+
 		setScherm(Schermen.START);
 		add(schermen);
 		setResizable(false);
