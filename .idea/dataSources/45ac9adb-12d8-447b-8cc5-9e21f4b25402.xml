@@ -5366,7 +5366,6 @@ TransactionDate</ColNames>
       <Position>2</Position>
     </column>
     <column id="1178" parent="303" name="diagram_id">
-      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>

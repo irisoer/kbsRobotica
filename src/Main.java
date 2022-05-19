@@ -52,17 +52,19 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException, SerialPortException {
 		ArduinoSorteer sorteer = new ArduinoSorteer();
+        ArduinoInpak inpak = new ArduinoInpak();
         ArrayList<Artikel> result = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             result.add(Database.selecteerArtikel(60));
-            result.add(Database.selecteerArtikel(70));
             result.add(Database.selecteerArtikel(73));
         }
         result.add(Database.selecteerArtikel(70));
-        Bpp bpp = new Bpp(result, 20);
+        Bpp bpp = new Bpp(result, 8);
         System.out.println(bpp);
         while(!bpp.isLeeg()) {
-            System.out.println(sorteer.getKleur(bpp));
+            int box = sorteer.getKleur(bpp);
+            System.out.println(box);
+            inpak.draaiNaar(box);
             System.out.println(bpp);
 
         }

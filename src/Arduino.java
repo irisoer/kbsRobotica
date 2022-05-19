@@ -12,16 +12,17 @@ public abstract class Arduino {
         SerialPort test;
         for (String port: SerialPortList.getPortNames()) {
             try {
-                test = new SerialPort("COM7");
+                test = new SerialPort(port);
                 test.openPort();
                 test.setParams(BAUDRATE_9600,  DATABITS_8, STOPBITS_1, PARITY_NONE);      //Opstarten
-                while(test.readBytes(1)[0] != 33) {
+                while(test.readBytes(1)[0] != "!".getBytes()[0]) {
 
                 };
                 if(test.readBytes(1)[0] == readyChar) {
-                    System.out.println(port);
+                    System.out.println(port + this.getClass());
                     this.serialPort = test;
                 };
+                test.closePort();
             } catch (SerialPortException e) {
                 continue;
             }
