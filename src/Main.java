@@ -52,6 +52,8 @@ public class Main {
 
 	public static void main(String[] args) throws SerialPortException, SQLException, InterruptedException {
 //        ArduinoInpak inpak = new ArduinoInpak();
+//        inpak.draaiNaarPlatform(0);
+
 		ArduinoSorteer sorteer = new ArduinoSorteer();
         ArrayList<Artikel> result = new ArrayList<>();
         for (int i = 0; i < 3; i++) {

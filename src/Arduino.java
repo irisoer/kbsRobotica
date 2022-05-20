@@ -46,7 +46,6 @@ public abstract class Arduino {
     public void openPort() throws SerialPortException {
         this.serialPort.openPort();
         this.serialPort.setParams(BAUDRATE_9600,  DATABITS_8, STOPBITS_1, PARITY_NONE);
-        System.out.println("test");
         char ch = (char) this.serialPort.readBytes(1)[0];
 //        while(ch != '!') {
 //            System.out.print(ch);

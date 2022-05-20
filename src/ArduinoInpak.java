@@ -12,7 +12,6 @@ public class ArduinoInpak extends Arduino {
         System.out.println("verstuurd naar " + String.valueOf(index));
         char test = (char) this.serialPort.readBytes(1)[0];
         while(test != ':') {
-            System.out.print(test);
             test = (char) this.serialPort.readBytes(1)[0];
         }
         System.out.println("Gedraaid");
