@@ -8,6 +8,7 @@ public class ArduinoSorteer extends Arduino {
     }
 
     public int getKleur(Bpp bpp) throws SerialPortException {
+        this.openPort();
         int index = -1;
         String test = ":";
         while(this.serialPort.readBytes(1)[0] != test.getBytes()[0]) {}
@@ -30,6 +31,7 @@ public class ArduinoSorteer extends Arduino {
         } else {
             this.serialPort.writeString("0:");
         }
+        this.closePort();
         return index;
     }
 }
