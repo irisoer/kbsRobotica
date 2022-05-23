@@ -7,27 +7,51 @@ import java.awt.*;
 
 public class VerwerkVoorraad extends VerwerkScherm{
 
+    private int roodAantal = 0;
+    private int geelAantal = 0;
+    private int blauwAantal = 0;
+    private Color gescandeKleur;
+
     public VerwerkVoorraad(){
-        setLayout(new FlowLayout());
-        jlHeading.setText("Huidige voorraad:");             //labels in card zetten?
-        JLabel jlGroen = new JLabel("Groene producten:");
-        JLabel jlBlauw = new JLabel("BLauwe producten:");
-        JLabel jlRood = new JLabel("Rode producten:");
+        setLayout(new GridLayout(2,1));
+//        setPreferredSize(new Dimension(800,100));
+        jlHeading.setText("Huidige voorraad:");
 
-        int groenAantal = 5;
-        int blauwAantal = 8;
-        int roodAantal = 3;
+        JLabel jlRood = new JLabel("Rode producten: " + roodAantal);
+        JLabel jlGroen = new JLabel("Gele producten: " + geelAantal);
+        JLabel jlBlauw = new JLabel("BLauwe producten: " + blauwAantal);
 
-        JLabel jlGAantal = new JLabel(String.valueOf(groenAantal));
-        JLabel jlBAantal = new JLabel(String.valueOf(blauwAantal));
-        JLabel jlRAantal = new JLabel((String.valueOf(roodAantal)));
+        JPanel jpVoorraad = new JPanel();
+        jpVoorraad.setMinimumSize(new Dimension(800,400));
+        jpVoorraad.setLayout(new GridLayout(3,1));
 
-       add(jlGroen);
-       add(jlGAantal);
-       add(jlBlauw);
-       add(jlBAantal);
-       add(jlRood);
-       add(jlRAantal);
+
+        while (true/*sorteermmodule aan*/ && gescandeKleur != null) { //todo: true statement
+
+            if (gescandeKleur.equals(Color.RED)){
+                roodAantal++;
+            }
+            if(gescandeKleur.equals((Color.ORANGE))) {
+                geelAantal++;
+            }
+            if(gescandeKleur.equals(Color.BLUE)) {
+                blauwAantal++;
+            }
+        }
+
+        jlRood.setFont(fontTekst);
+        jlGroen.setFont(fontTekst);
+        jlBlauw.setFont(fontTekst);
+
+       jpVoorraad.add(jlRood);
+       jpVoorraad.add(jlGroen);
+       jpVoorraad.add(jlBlauw);
+
+       jlRood.setHorizontalAlignment(JLabel.CENTER);
+       jlGroen.setHorizontalAlignment(JLabel.CENTER);
+       jlBlauw.setHorizontalAlignment(JLabel.CENTER);
+
+       add(jpVoorraad);
 
        setVisible(true);
     }
