@@ -3,16 +3,17 @@ import jssc.SerialPortException;
 import java.sql.SQLException;
 
 public class ArduinoSorteer extends Arduino {
-    public ArduinoSorteer() throws jssc.SerialPortException {
+    public ArduinoSorteer() {
         super('s');
     }
 
-    public int getKleur(Bpp bpp) throws SerialPortException {
-        this.openPort();
+    public int getKleur(Bpp bpp) throws SerialPortException, InterruptedException {
+        this.bandAan();
         int index = -1;
-        String test = ":";
+        String test = "#";
         while(this.serialPort.readBytes(1)[0] != test.getBytes()[0]) {}
         char color = (char)this.serialPort.readBytes(1)[0];
+        this.closePort();
         String kleur = "";
         System.out.println(color);
         if(color == 'r') kleur = "Red";
@@ -26,12 +27,21 @@ public class ArduinoSorteer extends Arduino {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        this.openPort();
         if(index == -1) {
             this.serialPort.writeString("1:"); // pusher aan zetten
+            Thread.sleep(1000);
         } else {
             this.serialPort.writeString("0:");
+            this.closePort();
         }
-        this.closePort();
         return index;
+    }
+
+    private void bandAan() throws SerialPortException {
+        try {   this.openPort();
+            this.serialPort.writeString("0:");}
+        catch (SerialPortException e) { }
+
     }
 }
