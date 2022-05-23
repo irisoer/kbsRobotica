@@ -50,21 +50,23 @@ public class Main {
 //        System.out.println(bpp);
 //    }
 
-	public static void main(String[] args) throws SQLException, SerialPortException {
+	public static void main(String[] args) throws SerialPortException, SQLException, InterruptedException {
+//        ArduinoInpak inpak = new ArduinoInpak();
+//        inpak.draaiNaarPlatform(0);
+
 		ArduinoSorteer sorteer = new ArduinoSorteer();
-        ArduinoInpak inpak = new ArduinoInpak();
         ArrayList<Artikel> result = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             result.add(Database.selecteerArtikel(60));
             result.add(Database.selecteerArtikel(73));
         }
         result.add(Database.selecteerArtikel(70));
-        Bpp bpp = new Bpp(result, 8);
+        Bpp bpp = new Bpp(result, 12);
         System.out.println(bpp);
         while(!bpp.isLeeg()) {
-            int box = sorteer.getKleur(bpp);
-            System.out.println(box);
-            inpak.draaiNaar(box);
+            int index = sorteer.getKleur(bpp);
+            System.out.println(index);
+//            inpak.draaiNaarPlatform(index);
             System.out.println(bpp);
 
         }

@@ -5,14 +5,16 @@ public class ArduinoInpak extends Arduino {
         super('i');
     }
 
-    public void draaiNaar(int index) throws SerialPortException {
-        this.getSerialPort().openPort();
-        this.getSerialPort().writeString(String.valueOf(index) + ":");
-        // todo: goede index opvragen en rest van de serial uit de code van arduino
-        while(this.getSerialPort().readBytes(1)[0] != String.valueOf(index).getBytes()[0]) {
-
-        };
-        System.out.println("Klaar");
-        this.getSerialPort().closePort();
+    public void draaiNaarPlatform(int index) throws SerialPortException, InterruptedException {
+        if(index == -1) return;
+        this.openPort();
+        this.serialPort.writeString(String.valueOf(index) + String.valueOf(index) + ":");
+        System.out.println("verstuurd naar " + String.valueOf(index));
+        char test = (char) this.serialPort.readBytes(1)[0];
+        while(test != ':') {
+            test = (char) this.serialPort.readBytes(1)[0];
+        }
+        System.out.println("Gedraaid");
+        this.closePort();
     }
 }

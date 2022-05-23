@@ -8,10 +8,11 @@ public class ArduinoSorteer extends Arduino {
     }
 
     public int getKleur(Bpp bpp) throws SerialPortException {
-        this.getSerialPort().openPort();
+        this.openPort();
         int index = -1;
-        while(this.getSerialPort().readBytes(1)[0] != 58) {}
-        char color = (char)this.getSerialPort().readBytes(1)[0];
+        String test = ":";
+        while(this.serialPort.readBytes(1)[0] != test.getBytes()[0]) {}
+        char color = (char)this.serialPort.readBytes(1)[0];
         String kleur = "";
         System.out.println(color);
         if(color == 'r') kleur = "Red";
@@ -25,8 +26,12 @@ public class ArduinoSorteer extends Arduino {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        this.getSerialPort().writeString(index == -1 ? "1:" : "0:");
-        this.getSerialPort().closePort();
+        if(index == -1) {
+            this.serialPort.writeString("1:"); // pusher aan zetten
+        } else {
+            this.serialPort.writeString("0:");
+        }
+        this.closePort();
         return index;
     }
 }
