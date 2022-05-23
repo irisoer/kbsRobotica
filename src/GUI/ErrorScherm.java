@@ -1,5 +1,4 @@
 package GUI;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,25 +6,20 @@ import java.awt.*;
 public class ErrorScherm extends Scherm{
     private JLabel jlError;
     private JLabel jlErrorMessage;
-    private String bericht;
+    private String bericht = "ERROR MESSAGE";  //todo: specifiek bericht meegeven
 
     public ErrorScherm() {
-        super("Error");
+//        super("Error");
         setLayout (new GridLayout(2,1));
 
         //componenten aanmaken
-        jlError = new JLabel("Er is een fout opgetreden!");
-        jlError.setFont(fontHeading);
-        jlErrorMessage = new JLabel( bericht);
-        jlErrorMessage.setFont(fontTekst);
+        jlHeading.setText("Er is een fout opgetreden!");
+        jlTekst.setText(bericht);
 
         //toevoegen
-        add(jlError);
-        jlError.setHorizontalAlignment(JLabel.CENTER);
-        add(jlErrorMessage);
-        jlErrorMessage.setHorizontalAlignment(JLabel.CENTER);
+        add(jlHeading);
+        add(jlTekst);
         setVisible(true);
     }
-
 
 }

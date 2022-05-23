@@ -11,16 +11,16 @@ public class VerwerkScherm extends Scherm{
     JButton jbPijlRechts = new BasicArrowButton(BasicArrowButton.EAST);
 
     public VerwerkScherm() {
-        super("Verwerken order");
+//        super("Verwerken order");
         setLayout(new FlowLayout());
         jlHeading.setText("Uw order wordt verwerkt:");
         add(jlHeading);
 //        add(jbPijlLinks);
-//        add(jbPijlRechts);
+//        add(jbPijlRechts); //todo: pijltjes
 //
     }
 
-    //todo: pijltjes
+
 
 }
 //Sylvia <
