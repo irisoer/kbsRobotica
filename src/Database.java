@@ -1,10 +1,9 @@
 import java.sql.*;
 
-
 public class Database {
     private static Connection connection;
 
-    private static void startConnection() throws SQLException {
+    static void startConnection() throws SQLException {
         String password = "";
         String username = "root";
         String url = "jdbc:mysql://localhost:3306/nerdygadgets";
@@ -63,8 +62,43 @@ public class Database {
         return null;
     }
 
-    public void setVoorraad() {
+    /**
+     * <h3>Voorraad in de database</h3>
+     *
+     * Dit stuk code haalt de voorraad op en werkt deze bij in de database
+     *
+     * @author Iris Oerlemans
+     */
+    public static Integer getVoorraad(int stockItemID) throws SQLException {
+        startConnection();
+        PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT QuantityOnHand FROM nerdygadgets.stockitemholdings I \n" +
+                "WHERE StockItemID = ?");
+        preparedStatement.setInt(1, stockItemID);
+        ResultSet result = preparedStatement.executeQuery();
+        int quantity = 0;
+        while(result.next()){
+            quantity = result.getInt("QuantityOnHand");
+        }
+        result.close();
+        return quantity;
+    }
 
+    public static void updateVoorraad(int StockitemID, int hoeveelheidBesteld) throws SQLException {
+        startConnection();
+        PreparedStatement preparedStatement = getConnection().prepareStatement("UPDATE nerdygadgets.stockitemholdings \n" +
+                "SET QuantityOnHand = (QuantityOnHand - ?) \n"+
+                "WHERE StockitemID = ? ");
+        preparedStatement.setInt(2, StockitemID);
+        preparedStatement.setInt(1, hoeveelheidBesteld);
+        int result = preparedStatement.executeUpdate();
+    }
+
+    /**
+     * <h3>Einde voorraad in de database</h3>
+     */
+
+    public static Connection getConnection() {
+        return connection;
     }
 
     private static void endConnection() throws SQLException {

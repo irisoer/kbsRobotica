@@ -31,6 +31,22 @@ public class Artikel {
 		return naam;
 	}
 
+	public void setGewicht(int gewicht) {
+		this.gewicht = gewicht;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setKleur(String kleur) {
+		this.kleur = kleur;
+	}
+
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+
 	@Override
 	public String toString() {
 		return "Artikel{" +
