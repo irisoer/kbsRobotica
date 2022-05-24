@@ -19,12 +19,28 @@ public class Order extends Database {
     private String klantAdres = null;
     private String klantPostcode = null;
     private String stadNaam = null;
+    private int aantalGeel = 1;
+    private int aantalBlauw = 5;
+    private int aantalRood = 2;
 
     public Order() {
     }
 
-    public void getOrder(){
-
+    public void getOrder() throws SQLException {
+        artikelen = new ArrayList<>();
+        for (int i = 0; i < aantalGeel; i++) {
+            artikelen.add(selecteerArtikel(71));
+        }
+        for (int i = 0; i < aantalBlauw; i++) {
+            artikelen.add(selecteerArtikel(60));
+        }
+        for (int i = 0; i < aantalRood; i++) {
+            artikelen.add(selecteerArtikel(73));
+        }
+        for (Artikel artikelprint : artikelen
+             ) {
+            System.out.println(artikelprint.getKleur());
+        }
     }
 
     public void maakPakbon(int customerId) throws IOException, SQLException {

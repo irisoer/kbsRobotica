@@ -104,6 +104,7 @@ public class Main {
 public static void main(String[] args) throws IOException, SQLException {
     Order order = new Order();
     order.maakPakbon(20);
+    order.getOrder();
 
 }
 
