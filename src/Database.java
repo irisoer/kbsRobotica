@@ -4,9 +4,9 @@ public class Database {
     private static Connection connection;
 
     static void startConnection() throws SQLException {
-        String password = "raspberry";
-        String username = "pi";
-        String url = "jdbc:mysql://145.44.96.177:3306/nerdygadgets";
+        String password = "";
+        String username = "root";
+        String url = "jdbc:mysql://localhost:3306/nerdygadgets";
         connection = DriverManager.getConnection(url, username, password);
     }
 
