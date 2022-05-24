@@ -45,7 +45,7 @@ public class Database {
         startConnection();
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
                 "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
-                "WHERE ColorName = ? && StockItemID IN (60, 70, 73)");
+                "WHERE ColorName = ? && StockItemID IN (60, 71, 73)");
 
         preparedStatement.setString(1, kleur);
         ResultSet result = preparedStatement.executeQuery();

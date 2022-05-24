@@ -1,7 +1,7 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Artikel {
+public class Artikel implements Comparable<Artikel> {
 	private int gewicht;
 	private int id;
 	private String kleur;
@@ -55,5 +55,14 @@ public class Artikel {
 				", kleur='" + kleur + '\'' +
 				", naam='" + naam + '\'' +
 				'}';
+	}
+
+
+	@Override
+	public int compareTo(Artikel compareArtikel) {
+		int compareGewicht = compareArtikel.getGewicht();
+
+		// For Descending order do like this
+		 return this.gewicht-compareGewicht;
 	}
 }

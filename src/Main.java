@@ -51,26 +51,30 @@ public class Main {
 //    }
 
 	public static void main(String[] args) throws SerialPortException, SQLException, InterruptedException {
-        ArduinoInpak inpak = new ArduinoInpak();
-//        inpak.draaiNaarPlatform(0);
-
-		ArduinoSorteer sorteer = new ArduinoSorteer();
+//        ArduinoInpak inpak = new ArduinoInpak();
+////        inpak.draaiNaarPlatform(0);
+//
+//		ArduinoSorteer sorteer = new ArduinoSorteer();
         ArrayList<Artikel> result = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             result.add(Database.selecteerArtikel(60));
             result.add(Database.selecteerArtikel(73));
         }
-        result.add(Database.selecteerArtikel(70));
+        result.add(Database.selecteerArtikel(71));
+
+
         Bpp bpp = new Bpp(result, 12);
 
         System.out.println(bpp);
         while(!bpp.isLeeg()) {
-            int index = sorteer.getKleur(bpp);
-            System.out.println(index);
-            inpak.draaiNaarPlatform(index);
-            System.out.println(bpp);
+//            int index = sorteer.getKleur(bpp);
+//            System.out.println(index);
+//            inpak.draaiNaarPlatform(index);
+
 
         }
+
+        System.out.println(bpp);
 	}
 
 
