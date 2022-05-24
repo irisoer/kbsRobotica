@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -12,6 +13,7 @@ import java.util.*;
  */
 public class Bpp {
 	private ArrayList<ArrayList<Artikel>> bins;
+	private ArrayList<ArrayList<Artikel>> originalBins;
 
 	public boolean isLeeg() {
 		for (int i = 0; i < bins.size(); i++) {
@@ -107,6 +109,7 @@ public class Bpp {
 			}
 		}
 		this.bins = resultaat;
+		this.originalBins = (ArrayList<ArrayList<Artikel>>) resultaat.clone();
 	}
 
 
@@ -132,6 +135,12 @@ public class Bpp {
 	public String toString() {
 		StringBuilder retString = new StringBuilder();
 		for (ArrayList<Artikel> bin: bins) {
+			for (Artikel artikel : bin) {
+				retString.append(artikel.getKleur()).append("\n");
+			}
+			retString.append("\n");
+		}
+		for (ArrayList<Artikel> bin: originalBins) {
 			for (Artikel artikel : bin) {
 				retString.append(artikel.getKleur()).append("\n");
 			}

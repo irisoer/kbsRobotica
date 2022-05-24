@@ -64,8 +64,9 @@ public class Main {
 
 
         Bpp bpp = new Bpp(result, 12);
-
+        bpp.findBinNum(Database.selecteerArtikel(71));
         System.out.println(bpp);
+
         while(!bpp.isLeeg()) {
 //            int index = sorteer.getKleur(bpp);
 //            System.out.println(index);
@@ -73,8 +74,6 @@ public class Main {
 
 
         }
-
-        System.out.println(bpp);
 	}
 
 

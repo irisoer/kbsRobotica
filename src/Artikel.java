@@ -1,5 +1,6 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class Artikel implements Comparable<Artikel> {
 	private int gewicht;
@@ -64,5 +65,13 @@ public class Artikel implements Comparable<Artikel> {
 
 		// For Descending order do like this
 		 return this.gewicht-compareGewicht;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Artikel)) return false;
+		Artikel artikel = (Artikel) o;
+		return id == artikel.id;
 	}
 }
