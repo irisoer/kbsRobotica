@@ -133,19 +133,25 @@ public class Bpp {
 
 	@Override
 	public String toString() {
+		int index = 1;
 		StringBuilder retString = new StringBuilder();
-		for (ArrayList<Artikel> bin: bins) {
+//		for (ArrayList<Artikel> bin: bins) {
+//			for (Artikel artikel : bin) {
+//				retString.append(artikel.getKleur()).append("\n");
+//			}
+//			retString.append("\n");
+//		}
+
+		for (ArrayList<Artikel> bin : originalBins) {
+			retString.append("Doos: " + index).append("\n");
 			for (Artikel artikel : bin) {
+
 				retString.append(artikel.getKleur()).append("\n");
+
 			}
-			retString.append("\n");
-		}
-		for (ArrayList<Artikel> bin: originalBins) {
-			for (Artikel artikel : bin) {
-				retString.append(artikel.getKleur()).append("\n");
-			}
-			retString.append("\n");
-		}
+		retString.append("\n");
+			index++;
+	}
 		return retString.toString();
 	}
 }

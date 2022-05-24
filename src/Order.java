@@ -11,16 +11,18 @@ import java.util.ArrayList;
 
 public class Order extends Database {
     private Database database;
-    private Bpp bpp;
+    private static Bpp bpp;
     private ArrayList<Artikel> artikelen;
     private int klantID = 0;
     private String klantNaam = null;
     private String klantAdres = null;
     private String klantPostcode = null;
     private String stadNaam = null;
+    private String orderlijst = "hallo";
+    private static int orderNr =1;
 
-    private int aantalGeel = 1;
-    private int aantalBlauw = 5;
+    private int aantalGeel = 3;
+    private int aantalBlauw = 1;
     private int aantalRood = 2;
 
     public void getOrder() throws SQLException {
@@ -34,10 +36,11 @@ public class Order extends Database {
         for (int i = 0; i < aantalRood; i++) {
             artikelen.add(selecteerArtikel(73));
         }
-        for (Artikel artikelprint : artikelen
-             ) {
-            System.out.println(artikelprint.getKleur());
-        }
+
+        bpp = new Bpp(artikelen, 12);
+        orderlijst = bpp.toString();
+        System.out.println(orderlijst);
+
     }
 
     public void maakPakbon(int customerId) throws IOException, SQLException {
@@ -78,9 +81,17 @@ public class Order extends Database {
         run2.setBold(true);
         run2.setText("Uw bestelling: ");
 
+        XWPFParagraph bestelling = document.createParagraph();
+        XWPFRun run3 = bestelling.createRun();
+        run3.setText(orderlijst);
 
-        document.write(new FileOutputStream("Order.docx"));
+
+
+        document.write(new FileOutputStream("E:/Order" + orderNr + ".docx"));
+        orderNr++;
+        System.out.println(orderNr);
     }
+
 }
 
 

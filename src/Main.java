@@ -10,29 +10,7 @@ import java.awt.*;
 //public class Main extends JFrame{
 //	public static void main(String[] args) {
 //
-//		//testen schermen >
-//		JFrame frame = new JFrame();
-//		frame.setSize(800, 400);
-//		frame.setLayout(new GridLayout());
-//
-//
-//		ErrorScherm e = new ErrorScherm();
-//		frame.add(e);
-//
-//
-////		SorteerScherm s = new SorteerScherm();
-////		frame.add(s);
-//
-////		VerwerkKleur vk = new VerwerkKleur();		//todo: plek voor meer aantallen (net als in dozen)
-////		frame.add(vk);
-//
-////		VerwerkDoos vd = new VerwerkDoos();			//todo: nog niet volledig werkend
-////		frame.add(vd);
-//
-////		VerwerkVoorraad vv = new VerwerkVoorraad();
-////		frame.add(vv);
-//
-//		frame.setVisible(true);
+
 public class Main {
 //    public static void main(String[] args) throws SerialPortException{
 //        SerialPort port = new SerialPort("COM5");                       //maken poort object
@@ -111,14 +89,14 @@ public class Main {
 //        for (Integer voorraad1 : getvoorraadArray) {
 //            System.out.println(voorraad1);
 //        }
-////    result.add(Database.selecteerArtikel(70));
-////    Bpp bpp = new Bpp(result, 12);
-////    System.out.println(bpp);
-////    while(!bpp.isLeeg()) {
-////        int index = sorteer.getKleur(bpp);
-////        System.out.println(index);
-//////            inpak.draaiNaarPlatform(index);
-////        System.out.println(bpp);
+//    result.add(Database.selecteerArtikel(70));
+//    Bpp bpp = new Bpp(result, 12);
+//    System.out.println(bpp);
+//    while(!bpp.isLeeg()) {
+//        int index = sorteer.getKleur(bpp);
+//        System.out.println(index);
+////            inpak.draaiNaarPlatform(index);
+//        System.out.println(bpp);
 //
 //        ArrayList<Integer> updatedVoorraadArray = new ArrayList<>();
 //        updatedVoorraadArray.add(Database.updateVoorraad(60, 4));
@@ -129,12 +107,44 @@ public class Main {
 //        }
 
 
-public static void main(String[] args) throws IOException, SQLException {
+public static void main(String[] args) throws IOException, SQLException {                     // testen order pakbon
     Order order = new Order();
-    order.maakPakbon(20);
     order.getOrder();
+    order.maakPakbon(20);
+    Order order2 = new Order();
+    order2.getOrder();
+    order2.maakPakbon(15);
+
+    Order order3 = new Order();
+    order3.getOrder();
+    order3.maakPakbon(12);
+
 
 	}
+
+//    		//testen schermen >
+//		JFrame frame = new JFrame();
+//		frame.setSize(800, 400);
+//		frame.setLayout(new GridLayout());
+//
+//
+//		ErrorScherm e = new ErrorScherm();
+//		frame.add(e);
+//
+//
+//		SorteerScherm s = new SorteerScherm();
+//		frame.add(s);
+//
+////		VerwerkKleur vk = new VerwerkKleur();		//todo: plek voor meer aantallen (net als in dozen)
+////		frame.add(vk);
+//
+////		VerwerkDoos vd = new VerwerkDoos();			//todo: nog niet volledig werkend
+////		frame.add(vd);
+//
+////		VerwerkVoorraad vv = new VerwerkVoorraad();
+////		frame.add(vv);
+//
+//		frame.setVisible(true);
 }
 
 
