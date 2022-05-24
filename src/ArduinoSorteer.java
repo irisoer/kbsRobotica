@@ -16,7 +16,7 @@ public class ArduinoSorteer extends Arduino {
         String kleur = "";
         System.out.println(color);
         if(color == 'r') kleur = "Red";
-        else if (color == 'g') kleur = "Dark Green";
+        else if (color == 'g') kleur = "Yellow";
         else if (color == 'b') kleur = "Blue";
         System.out.println(kleur);
         try {
