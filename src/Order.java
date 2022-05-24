@@ -1,4 +1,3 @@
-
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -19,12 +18,10 @@ public class Order extends Database {
     private String klantAdres = null;
     private String klantPostcode = null;
     private String stadNaam = null;
+
     private int aantalGeel = 1;
     private int aantalBlauw = 5;
     private int aantalRood = 2;
-
-    public Order() {
-    }
 
     public void getOrder() throws SQLException {
         artikelen = new ArrayList<>();
