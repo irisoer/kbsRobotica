@@ -11,14 +11,14 @@ public class Main extends JFrame{
 		frame.setSize(800, 400);
 		frame.setLayout(new GridLayout());
 
-//		ErrorScherm e = new ErrorScherm();
-//		frame.add(e);
+		ErrorScherm e = new ErrorScherm();
+		frame.add(e);
 
 //		SorteerScherm s = new SorteerScherm();
 //		frame.add(s);
 
-		VerwerkKleur vk = new VerwerkKleur();		//todo: meer aantallen (net als in dozen)
-		frame.add(vk);
+//		VerwerkKleur vk = new VerwerkKleur();		//todo: plek voor meer aantallen (net als in dozen)
+//		frame.add(vk);
 
 //		VerwerkDoos vd = new VerwerkDoos();			//todo: nog niet volledig werkend
 //		frame.add(vd);
