@@ -37,8 +37,8 @@ public class VerwerkDoos extends VerwerkScherm implements Layout, ProductStandaa
 
         //producten
         DoosOrder order = new DoosOrder();
-        order.drawOrder(g,2, Color.BLUE, 2,Color.RED,2,Color.ORANGE,1); // todo: hardcode > communication
-        order.drawOrder(g,1,Color.RED,3);
+        order.drawOrder(g,2, ProductStandaard.blauw, 2,Color.RED,2,Color.ORANGE,1); // todo: hardcode > communication
+        order.drawOrder(g,1,ProductStandaard.rood,3);
 //        if(true) {       //picked product
 //
 //        }

@@ -2,7 +2,7 @@ package GUI;
 
 import javax.swing.*;
 
-//Sylvia >  todo: GREEN > ORANGE
+//Sylvia >
 public class Scherm extends JPanel implements Layout { //wordt panel
 //    private VerwerkScherm verwerk = new VerwerkScherm();
     public Scherm(/*String titel*/){                       //Standaard opmaak, titel = titel in balk

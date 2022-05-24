@@ -23,28 +23,30 @@ public class VerwerkKleur extends VerwerkScherm implements ProductStandaard{
 
         //product
         int formaat = ProductStandaard.productFormaat/2; //todo: gelijk trekken met verwerkDoos
-        int xGroen = 160;
-        int xBlauw = 360;
-        int xRood = 560;
+        int xRood = 160;
+        int xGeel = 360;
+        int xBlauw = 560;
 
 
-        g.setColor(Color.GREEN);                    //todo: vervangen met Product > drawProduct, fillProduct etc
-        g.drawOval(xGroen, 120, formaat,formaat);
-        g.drawOval(xGroen, 170, formaat,formaat);
-        g.drawOval(xGroen, 220, formaat,formaat);
-        g.fillOval(xGroen,220,formaat,formaat);
 
-        g.setColor(Color.BLUE);
+        g.setColor(geel);                    //todo: vervangen met Product > drawProduct, fillProduct etc
+        g.drawOval(xGeel, 120, formaat,formaat);
+        g.drawOval(xGeel, 170, formaat,formaat);
+        g.drawOval(xGeel, 220, formaat,formaat);
+        g.fillOval(xGeel,220,formaat,formaat);
+
+        g.setColor(rood);
+//        g.drawOval(xRood,20,formaat, formaat);
+        g.drawOval(xRood, 170,formaat, formaat);
+        g.drawOval(xRood, 220,formaat, formaat);
+//        g.fillOval(xRood, 120,formaat, formaat);
+
+        g.setColor(blauw);
 //        g.drawOval(xBlauw, 20,formaat, formaat);
         g.drawOval(xBlauw, 170,formaat, formaat);
         g.drawOval(xBlauw, 220,formaat, formaat);
         g.fillOval(xBlauw, 220,formaat, formaat);
 
-        g.setColor(Color.RED);
-//        g.drawOval(xRood,20,formaat, formaat);
-        g.drawOval(xRood, 170,formaat, formaat);
-        g.drawOval(xRood, 220,formaat, formaat);
-//        g.fillOval(xRood, 120,formaat, formaat);
     }
 
 }

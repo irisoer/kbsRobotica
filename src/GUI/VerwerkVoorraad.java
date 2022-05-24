@@ -18,7 +18,7 @@ public class VerwerkVoorraad extends VerwerkScherm{
         jlHeading.setText("Huidige voorraad:");
 
         JLabel jlRood = new JLabel("Rode producten: " + roodAantal);
-        JLabel jlGroen = new JLabel("Gele producten: " + geelAantal);
+        JLabel jlGeel = new JLabel("Gele producten: " + geelAantal);
         JLabel jlBlauw = new JLabel("BLauwe producten: " + blauwAantal);
 
         JPanel jpVoorraad = new JPanel();
@@ -28,27 +28,27 @@ public class VerwerkVoorraad extends VerwerkScherm{
 
         while (true/*sorteermmodule aan*/ && gescandeKleur != null) { //todo: true statement
 
-            if (gescandeKleur.equals(Color.RED)){
+            if (gescandeKleur.equals(ProductStandaard.rood)){
                 roodAantal++;
             }
-            if(gescandeKleur.equals((Color.ORANGE))) {
+            if(gescandeKleur.equals((ProductStandaard.geel))) {
                 geelAantal++;
             }
-            if(gescandeKleur.equals(Color.BLUE)) {
+            if(gescandeKleur.equals(ProductStandaard.blauw)) {
                 blauwAantal++;
             }
         }
 
         jlRood.setFont(fontTekst);
-        jlGroen.setFont(fontTekst);
+        jlGeel.setFont(fontTekst);
         jlBlauw.setFont(fontTekst);
 
        jpVoorraad.add(jlRood);
-       jpVoorraad.add(jlGroen);
+       jpVoorraad.add(jlGeel);
        jpVoorraad.add(jlBlauw);
 
        jlRood.setHorizontalAlignment(JLabel.CENTER);
-       jlGroen.setHorizontalAlignment(JLabel.CENTER);
+       jlGeel.setHorizontalAlignment(JLabel.CENTER);
        jlBlauw.setHorizontalAlignment(JLabel.CENTER);
 
        add(jpVoorraad);

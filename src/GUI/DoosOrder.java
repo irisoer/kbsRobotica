@@ -5,7 +5,7 @@ import java.awt.*;
 public class DoosOrder extends VerwerkDoos {
     public Product huidigProduct;
     public Color huidigeKleur = Color.RED;             //laatst gescande product voor order (geen restbak) todo: communication
-    int huidigeDoos = 2;
+    int huidigeDoos = 2;        //todo: hardcode weghalen
 
 //    public void setKleurHuidigProduct(Color kleur){
 //        this.huidigeKleur = kleur;
