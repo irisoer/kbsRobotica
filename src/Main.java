@@ -62,9 +62,8 @@ public class Main {
         }
         result.add(Database.selecteerArtikel(71));
 
-
         Bpp bpp = new Bpp(result, 12);
-        bpp.findBinNum(Database.selecteerArtikel(71));
+
         System.out.println(bpp);
 
         while(!bpp.isLeeg()) {
