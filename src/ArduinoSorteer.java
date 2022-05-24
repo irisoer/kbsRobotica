@@ -13,7 +13,6 @@ public class ArduinoSorteer extends Arduino {
         String test = "#";
         while(this.serialPort.readBytes(1)[0] != test.getBytes()[0]) {}
         char color = (char)this.serialPort.readBytes(1)[0];
-        this.closePort();
         String kleur = "";
         System.out.println(color);
         if(color == 'r') kleur = "Red";
@@ -27,10 +26,8 @@ public class ArduinoSorteer extends Arduino {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        this.openPort();
         if(index == -1) {
             this.serialPort.writeString("1:"); // pusher aan zetten
-            Thread.sleep(1000);
         } else {
             this.serialPort.writeString("0:");
             this.closePort();
