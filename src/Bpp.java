@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
@@ -11,11 +12,12 @@ import java.util.*;
  * @author Krijn Grimme
  */
 public class Bpp {
-	private ArrayList<ArrayList<Integer>> bins;
+	private ArrayList<ArrayList<Artikel>> bins;
+	private ArrayList<ArrayList<Artikel>> originalBins;
 
 	public boolean isLeeg() {
 		for (int i = 0; i < bins.size(); i++) {
-			ArrayList<Integer> bin = bins.get(i);
+			ArrayList<Artikel> bin = bins.get(i);
 			if(!bin.isEmpty()) return false;
 		};
 		return true;
@@ -34,13 +36,12 @@ public class Bpp {
 	 * @author 			Krijn Grimme
 	 */
 	public int findBinNum(Artikel artikel) {
-		int item = artikel.getGewicht();
 		int binNum = 0;                               	// Variabele om bij te houden welke bin gecheckt wordt begint bij 0
 
-		for (ArrayList<Integer> bin : this.bins) {   	// Foreach bin in bins
-			if (bin.contains(item)) {
+		for (ArrayList<Artikel> bin : this.bins) {   	// Foreach bin in bins
+			if (bin.contains(artikel)) {
 				// todo: Delete doen in de find functie of apart (zie remBinItem())
-				bin.remove(Integer.valueOf(item));		// Verwijder het integer object uit de bin
+				bin.remove(artikel);		// Verwijder het integer object uit de bin
 														// Integer.valueOf() omdat als er een int wordt meegegeven
 														// dan wordt die index verwijderd ipv dat object.
 				return binNum;                        	// Return het nummer van huidige bin.
@@ -58,21 +59,23 @@ public class Bpp {
 	 *
 	 * @author Krijn Grimme
 	 */
-	private void bestFit(Integer[] items, int binGrootte) {
+	private void bestFit(Object[] items, int binGrootte) {
 		int maxAant = items.length;
 
 		// Aantal bins
 		int aantBins = 0;
 
 		// Arraylist vol met arraylists waar de inhoud van de bins in staat
-		ArrayList<ArrayList<Integer>> resultaat = new ArrayList<>();
+		ArrayList<ArrayList<Artikel>> resultaat = new ArrayList<>();
 
 		// Lege array om overgebleven ruimte in op te slaan
 		// Er zijn maximaal "maxAant" dozen
 		int[] binRuimte = new int[maxAant];
 
 		// 1 voor 1 alle items plaatsen
-		for (int item : items) {
+		for (Object obj : items) {
+			Artikel artikel = (Artikel) obj;
+			int item = artikel.getGewicht();
 			// Zoek een bin waar het item het best in past
 			int controleBin;
 
@@ -92,20 +95,21 @@ public class Bpp {
 			// Als er geen bin was waar het item in paste
 			// Maak dan een nieuwe bin in
 			if (min == binGrootte + 1) {
-				ArrayList<Integer> bInhoud = new ArrayList<>();      	// Maak nieuwe bin inhoud lijst aan
-				bInhoud.add(item);                                   	// Voeg het item dat niet paste hieraan toe
+				ArrayList<Artikel> bInhoud = new ArrayList<>();      	// Maak nieuwe bin inhoud lijst aan
+				bInhoud.add(artikel);                                   	// Voeg het item dat niet paste hieraan toe
 				resultaat.add(bInhoud);                              	// Voeg deze nieuwe lijst toe aan het resultaat
 				binRuimte[aantBins] = binGrootte - item;             	// Stel de overgebleven ruimte in voor de nieuwe bin
 				aantBins++;                                           	// Voeg 1 bin toe aan het aantal bins
 
 			} else { // Voeg het item toe aan de bin waar hij hoort
-				resultaat.get(bin).add(item);                         	// Pak de lijst met items van de geselecteerde bin
+				resultaat.get(bin).add(artikel);                         	// Pak de lijst met items van de geselecteerde bin
 																		// voeg daar het nieuwe item aan toe.
 
 				binRuimte[bin] -= item;                               	// Sla de overgebleven ruimte op voor de huidige bin
 			}
 		}
 		this.bins = resultaat;
+		this.originalBins = (ArrayList<ArrayList<Artikel>>) resultaat.clone();
 	}
 
 
@@ -119,22 +123,29 @@ public class Bpp {
 	 * @author Krijn Grimme
 	 */
 	public Bpp(ArrayList<Artikel> items, int maxBinGrootte) {
-		Integer[] itemGewicht = new Integer[items.size()];
-		System.out.println(items);
-		for (int i = 0; i < items.size(); i++) {
-			System.out.println(items.get(i));
-			itemGewicht[i] = items.get(i).getGewicht();
-		}
 
 		// Sorteer op decreasing
-		Arrays.sort(itemGewicht, Collections.reverseOrder());
+		items.sort(Collections.reverseOrder());
 
 		// BestFit met de gesorteerde items
-		this.bestFit(itemGewicht, maxBinGrootte);
+		this.bestFit(items.toArray(), maxBinGrootte);
 	}
 
 	@Override
 	public String toString() {
-		return bins.toString();
+		StringBuilder retString = new StringBuilder();
+		for (ArrayList<Artikel> bin: bins) {
+			for (Artikel artikel : bin) {
+				retString.append(artikel.getKleur()).append("\n");
+			}
+			retString.append("\n");
+		}
+		for (ArrayList<Artikel> bin: originalBins) {
+			for (Artikel artikel : bin) {
+				retString.append(artikel.getKleur()).append("\n");
+			}
+			retString.append("\n");
+		}
+		return retString.toString();
 	}
 }
