@@ -59,6 +59,8 @@ public class Order extends Database {
         }
         result.close();
 
+        // AANMAKEN PAKBON ORDER
+
         XWPFDocument document = new XWPFDocument();
 
         XWPFParagraph p1 = document.createParagraph();
