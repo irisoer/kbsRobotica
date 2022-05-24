@@ -83,23 +83,25 @@ void loop() {
 
       tcs.getRawData(&r, &g, &b, &c);
 
-      if (c >= 6 && !onder && !codenetgestart) {
-        if (r > b && r > g && r > 4 && laatst != "r") {
-          laatst = "r";
-          onder = true;
-
+      if (c >= 8 && !onder && !codenetgestart) {
+        if(r > b and r > g and r > 4 and c < 15) {
+           if (laatst != "r") {
+             laatst = "r";
+             onder = true;
+           }
           // Serial.print("Rood: "); Serial.print(r, DEC); Serial.print(" ");
-        } else if (b > r && b > g && b > 8 && laatst != "b") {
-          laatst = "b";
-          onder = true;
-
-          //Serial.print("Blauw: "); Serial.print(b, DEC); Serial.print(" ");
-        } else if (g > r && g > b && r > 3 && laatst != "g") {
-          laatst = "g";
-          onder = true;
-
-          //Serial.print("Groen: "); Serial.print(g, DEC); Serial.print(" ");
-        }//
+         } else if (b > r and b > g and b > 6) {
+           if (laatst != "b") {
+             laatst = "b";
+             onder = true;
+           }
+           //Serial.print("Blauw: "); Serial.print(b, DEC); Serial.print(" ");
+         } else if (g > r and g > b) {
+           if (laatst != "g") {
+             laatst = "g";
+             onder = true;
+           }
+         }
       } else if (onder && !codenetgestart) {
 
         Serial.println("#" + laatst);
