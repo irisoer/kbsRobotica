@@ -68,11 +68,8 @@ public class Main {
         System.out.println(bpp);
 
         while(!bpp.isLeeg()) {
-            int index = sorteer.getKleur(bpp);
+            int index = sorteer.getKleur(bpp, inpak);
             System.out.println(index);
-            inpak.draaiNaarPlatform(index);
-
-
         }
 	}
 
