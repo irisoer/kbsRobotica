@@ -1489,7 +1489,7 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="363" parent="257" name="ColdRoomTemperatureID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>3654741</AutoIncrement>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1887,7 +1887,7 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="446" parent="265" name="CustomerID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>1062</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2816,7 +2816,7 @@ ConfirmedReceivedBy</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="642" parent="272" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2852,7 +2852,7 @@ ConfirmedReceivedBy</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="649" parent="273" name="orderID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2998,7 +2998,7 @@ orderID</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="678" parent="276" name="OrderLineID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>231413</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -3123,7 +3123,7 @@ StockItemID</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="702" parent="277" name="OrderID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>73596</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -3412,7 +3412,7 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="763" parent="282" name="PersonID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>3262</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -3853,7 +3853,7 @@ ReceivedOuters</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="857" parent="286" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5366,6 +5366,7 @@ TransactionDate</ColNames>
       <Position>2</Position>
     </column>
     <column id="1178" parent="303" name="diagram_id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
@@ -5568,7 +5569,7 @@ ValidTo</ColNames>
       <Type>btree</Type>
     </index>
     <column id="1220" parent="307" name="VehicleTemperatureID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>65999</AutoIncrement>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
