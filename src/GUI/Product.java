@@ -54,23 +54,24 @@ public class Product extends DoosOrder implements ProductStandaard {
         g.setColor(kleur);
         g.drawOval(posX, posY, productFormaatOrder, productFormaatOrder);
 
-        fillProduct(g, kleur, doos); //int doos = 2 verdwijnt
-
-//        if(huidigeKleur.equals(kleur) && huidigeDoos == 2) {   werktish
+//        if(huidigeKleur.equals(kleur) && huidigeDoos == 2) {
 //            fillProduct(g,kleur,2);
 //        }
 //
 //        if(true) {       //todo: communication
 //            fillProduct(g,kleur,doos);
 //        }
-//
+
     }
 
     public void fillProduct(Graphics g, Color kleur, int doos) {        //ook te gebruiken voor sorteren?
-        doos = 2;
+        doos = 2; //todo hardcode weghalen
         int productFormaatOrder = productFormaat/2; //kleinere items in dozen da de standaard
-        if (kleur.equals(huidigeKleur) && doos == huidigeDoos) {
+
+
+        if (kleur.equals(huidigeKleur) && doos == /*huidigeDoos*/ 2) {
             g.fillOval(posX, posY, productFormaatOrder, productFormaatOrder);
             }
+
     }
 }
