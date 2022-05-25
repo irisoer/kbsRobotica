@@ -16,6 +16,8 @@ int returnInt = 0;
 #define stil 1
 #define allesstil 2
 bool codenetgestart = true;
+int tijd;
+int laatstescan;
 
 
 
@@ -66,14 +68,20 @@ void setup(void) {
 
   Serial.println("!s");
   waitForSerialChar(':');
+  
 }
 
 
 
 
 void loop() {
+  tijd = millis();
   switch (returnInt) {
     case draai:
+
+    if(tijd - laatstescan> 30000){
+      Serial.println(":s");
+    }
 
       OneStep(true);
       delay(3);
@@ -88,18 +96,21 @@ void loop() {
            if (laatst != "r") {
              laatst = "r";
              onder = true;
+             laatstescan = tijd;
            }
           // Serial.print("Rood: "); Serial.print(r, DEC); Serial.print(" ");
          } else if (b > r and b > g and b > 6) {
            if (laatst != "b") {
              laatst = "b";
              onder = true;
+             laatstescan = tijd;
            }
            //Serial.print("Blauw: "); Serial.print(b, DEC); Serial.print(" ");
          } else if (g > r and g > b) {
            if (laatst != "g") {
              laatst = "g";
              onder = true;
+             laatstescan = tijd;
            }
          }
       } else if (onder && !codenetgestart) {
