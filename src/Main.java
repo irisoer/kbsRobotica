@@ -13,6 +13,9 @@ public class Main extends JFrame{
 
 //		ErrorScherm e = new ErrorScherm();
 //		frame.add(e);
+//
+		StartScherm e = new StartScherm();
+		frame.add(e);
 
 //		SorteerScherm s = new SorteerScherm();
 //		frame.add(s);
@@ -20,8 +23,8 @@ public class Main extends JFrame{
 //		VerwerkKleurScherm vk = new VerwerkKleurScherm();		//todo: meer aantallen (net als in dozen)
 //		frame.add(vk);
 //
-		VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
-		frame.add(vd);
+//		VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
+//		frame.add(vd);
 ////
 //		VerwerkVoorraadScherm vv = new VerwerkVoorraadScherm();
 //		frame.add(vv);
