@@ -110,16 +110,7 @@ public class Main {
 public static void main(String[] args) throws IOException, SQLException {                     // testen order pakbon
     Order order = new Order();
     order.getOrder();
-    order.maakPakbon(20);
-    Order order2 = new Order();
-    order2.getOrder();
-    order2.maakPakbon(15);
-
-    Order order3 = new Order();
-    order3.getOrder();
-    order3.maakPakbon(12);
-
-
+    order.maakPakbon(30);
 	}
 
 //    		//testen schermen >

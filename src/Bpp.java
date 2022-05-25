@@ -3,6 +3,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
+import org.apache.poi.xwpf.usermodel.Document;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+
 
 /**
  * <h3>Bin Packing Problem class</h3>
@@ -133,6 +138,10 @@ public class Bpp {
 
 	@Override
 	public String toString() {
+		XWPFDocument document = new XWPFDocument();
+
+		XWPFParagraph p1 = document.createParagraph();
+		XWPFRun run1 = p1.createRun();
 		int index = 1;
 		StringBuilder retString = new StringBuilder();
 //		for (ArrayList<Artikel> bin: bins) {
@@ -143,11 +152,9 @@ public class Bpp {
 //		}
 
 		for (ArrayList<Artikel> bin : originalBins) {
-			retString.append("Doos: " + index).append("\n");
+			retString.append("Doos " + index +": ").append("\n");
 			for (Artikel artikel : bin) {
-
-				retString.append(artikel.getKleur()).append("\n");
-
+						retString.append(artikel.getNaam()).append("\n");
 			}
 		retString.append("\n");
 			index++;

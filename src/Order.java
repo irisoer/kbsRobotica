@@ -21,9 +21,9 @@ public class Order extends Database {
     private String orderlijst = "hallo";
     private static int orderNr =1;
 
-    private int aantalGeel = 3;
-    private int aantalBlauw = 1;
-    private int aantalRood = 2;
+    private int aantalGeel = 2;
+    private int aantalBlauw = 3;
+    private int aantalRood = 4;
 
     public void getOrder() throws SQLException {
         artikelen = new ArrayList<>();
@@ -39,11 +39,12 @@ public class Order extends Database {
 
         bpp = new Bpp(artikelen, 12);
         orderlijst = bpp.toString();
-        System.out.println(orderlijst);
 
     }
 
     public void maakPakbon(int customerId) throws IOException, SQLException {
+        String[] parts = orderlijst.split("\n");
+
         startConnection();
         PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
                 "LEFT JOIN nerdygadgets.cities AS ci ON cu.PostalCityID = ci.CityID \n" +
@@ -83,13 +84,14 @@ public class Order extends Database {
 
         XWPFParagraph bestelling = document.createParagraph();
         XWPFRun run3 = bestelling.createRun();
-        run3.setText(orderlijst);
+        for (String part : parts
+             ) {
+            run3.setText(part);
+            run3.addBreak();
+        }
 
-
-
-        document.write(new FileOutputStream("E:/Order" + orderNr + ".docx"));
+        document.write(new FileOutputStream("Order" + orderNr + ".docx"));
         orderNr++;
-        System.out.println(orderNr);
     }
 
 }
