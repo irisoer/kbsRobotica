@@ -5,21 +5,21 @@ import java.awt.*;
 
 //Sylvia >
 
-public class VerwerkVoorraad extends VerwerkScherm{
+public class VerwerkVoorraadScherm extends VerwerkScherm{
 
     private int roodAantal = 0;
     private int geelAantal = 0;
     private int blauwAantal = 0;
     private Color gescandeKleur;
 
-    public VerwerkVoorraad(){
+    public VerwerkVoorraadScherm(){
         setLayout(new GridLayout(2,1));
 //        setPreferredSize(new Dimension(800,100));
         jlHeading.setText("Huidige voorraad:");
 
         JLabel jlRood = new JLabel("Rode producten: " + roodAantal);
         JLabel jlGroen = new JLabel("Gele producten: " + geelAantal);
-        JLabel jlBlauw = new JLabel("BLauwe producten: " + blauwAantal);
+        JLabel jlBlauw = new JLabel("Blauwe producten: " + blauwAantal);
 
         JPanel jpVoorraad = new JPanel();
         jpVoorraad.setMinimumSize(new Dimension(800,400));
@@ -28,13 +28,13 @@ public class VerwerkVoorraad extends VerwerkScherm{
 
         while (true/*sorteermmodule aan*/ && gescandeKleur != null) { //todo: true statement
 
-            if (gescandeKleur.equals(Color.RED)){
+            if (gescandeKleur.equals(ProductStandaard.rood)){
                 roodAantal++;
             }
-            if(gescandeKleur.equals((Color.ORANGE))) {
+            if(gescandeKleur.equals((ProductStandaard.geel))) {
                 geelAantal++;
             }
-            if(gescandeKleur.equals(Color.BLUE)) {
+            if(gescandeKleur.equals(ProductStandaard.blauw)) {
                 blauwAantal++;
             }
         }

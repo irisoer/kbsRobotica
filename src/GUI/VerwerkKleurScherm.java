@@ -5,11 +5,11 @@ import java.awt.*;
 
 //Sylvia >
 
-public class VerwerkKleur extends VerwerkScherm implements ProductStandaard{
+public class VerwerkKleurScherm extends VerwerkScherm implements ProductStandaard{
 
     private JPanel jpVerwerkKleur = new JPanel();
 
-    public VerwerkKleur(){
+    public VerwerkKleurScherm(){
         super();
         setLayout (new FlowLayout());
         add(jpVerwerkKleur);

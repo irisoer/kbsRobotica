@@ -15,7 +15,7 @@ public class Scherm extends JPanel implements Layout { //wordt panel
 
 
 //        add(verwerk);
-//        add(new VerwerkDoos());
+//        add(new VerwerkDoosScherm());
 //        add(new ErrorScherm()); //<nieuwe klasse
 ////        add(new Carrousel());
 
@@ -26,7 +26,7 @@ public class Scherm extends JPanel implements Layout { //wordt panel
 //        jlSubTekst.setFont(fontSubTekst);
 //        jlSubTekst.setHorizontalAlignment(JLabel.CENTER);
 
-//        setVisible(true);
+        setVisible(true);
     }
 
     //todo: icon veranderen
