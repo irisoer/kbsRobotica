@@ -32,7 +32,6 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
         g.setColor(Color.BLACK);
         Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(2));
-        g.setColor();
         g.drawRect(xDoos1,yDoos,breedteDoos,hoogteDoos);     //doos1
         g.drawRect(xDoos2,yDoos,breedteDoos,hoogteDoos);     //doos2
         g.drawRect(xDoos3,yDoos,breedteDoos,hoogteDoos);     //doos3
