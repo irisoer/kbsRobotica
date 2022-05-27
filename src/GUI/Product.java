@@ -2,11 +2,19 @@ package GUI;
 
 import java.awt.*;
 
-public class Product extends DoosOrder implements ProductStandaard {
+public class Product implements ProductStandaard {
     private Color kleur;
     private int posX;
     private int posY;
     int doos;
+
+    public Product(){
+
+    }
+
+    public Product(Color kleur, int x, int y){ //todo: wel nodig?
+
+    }
 
     public Color getKleur() {
         return kleur;
@@ -37,7 +45,7 @@ public class Product extends DoosOrder implements ProductStandaard {
         this.posY = y;
     }
 
-    public void drawProduct(Graphics g, Color kleur, int posX, int posY) { //
+    public void drawProduct(Graphics g, Color kleur, int posX, int posY) {  //gebruik bij sorteren
         this.kleur = kleur;
         this.posX = posX;
         this.posY = posY;
@@ -45,7 +53,7 @@ public class Product extends DoosOrder implements ProductStandaard {
         g.fillOval(posX, posY, productFormaat, productFormaat);
     }
 
-    public void drawOrderProduct(Graphics g, Color kleur, int posX, int posY, int doos) { //
+    public void drawOrderProduct(Graphics g, Color kleur, int posX, int posY, int doos) { //gebruik bij verwerken order
         int productFormaatOrder = productFormaat/2; //kleinere items in dozen da de standaard
         this.kleur = kleur;
         this.posX = posX;
@@ -53,25 +61,15 @@ public class Product extends DoosOrder implements ProductStandaard {
         this.doos = doos;      //waarde van doos verdwijnt ergens, hardcode werkt, aanroepen functie niet
         g.setColor(kleur);
         g.drawOval(posX, posY, productFormaatOrder, productFormaatOrder);
+    }
 
-//        if(huidigeKleur.equals(kleur) && huidigeDoos == 2) {
-//            fillProduct(g,kleur,2);
-//        }
+//    public void fillProduct(Graphics g, Color kleur, int doos) {        //ook te gebruiken voor sorteren?
+//        doos = 2; //todo hardcode weghalen
+//        int productFormaatOrder = productFormaat/2; //kleinere items in dozen da de standaard
 //
-//        if(true) {       //todo: communication
-//            fillProduct(g,kleur,doos);
-//        }
-
-    }
-
-    public void fillProduct(Graphics g, Color kleur, int doos) {        //ook te gebruiken voor sorteren?
-        doos = 2; //todo hardcode weghalen
-        int productFormaatOrder = productFormaat/2; //kleinere items in dozen da de standaard
-
-
-        if (kleur.equals(huidigeKleur) && doos == /*huidigeDoos*/ 2) {
-            g.fillOval(posX, posY, productFormaatOrder, productFormaatOrder);
-            }
-
-    }
+//
+////        if (kleur.equals(huidigeKleur) && doos == /*huidigeDoos*/ 2) {
+////            g.fillOval(posX, posY, productFormaatOrder, productFormaatOrder);
+////            }
+//    }
 }

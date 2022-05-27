@@ -22,6 +22,7 @@ public class Main extends JFrame{
 //
 		VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
 		frame.add(vd);
+
 ////
 //		VerwerkVoorraadScherm vv = new VerwerkVoorraadScherm();
 //		frame.add(vv);
