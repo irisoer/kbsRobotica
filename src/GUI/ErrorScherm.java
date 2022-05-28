@@ -4,6 +4,8 @@ import java.awt.*;
 
 //Sylvia
 public class ErrorScherm extends Scherm{
+    private JLabel jlError;
+    private JLabel jlErrorMessage;
     private String bericht = "ERROR MESSAGE";  //todo: specifiek bericht meegeven
 
     public ErrorScherm() {
