@@ -1,4 +1,4 @@
 package GUI;
 
-public class KleurOrder {
+public class KleurOrder { //niet nodig?
 }

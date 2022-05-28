@@ -2,17 +2,37 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 //Sylvia >
 public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard{
+    private Product huidigProduct; //laatst gepickte product todo:
+    private ArrayList<Product> producten;
+    public Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
+    int huidigeDoos = 2;
 
-    private JPanel jpVerwerkDoos = new JPanel();
+    //aantallen te tekenen/picken per kleur
+    int tekenRood;
+    int tekenGeel;
+    int tekenBlauw;
+    int pickedRood = 0;
+    int pickedGeel = 0 ;
+    int pickedBlauw = 0;
+
+    //Posities product in doos
+    int yRij1 = 270;            //y positie producten rij 1
+    int yRij2 = 220;            //y positie producten rij 2
+    int yRij3 = 170;            //y positie producten rij 3
+    int marge = 5;              //producten uitlijnen binnen doos
+
+    //posities doos
+    int xDoos1 = 150;           //x positie doos 1
+    int xDoos2 = 350;           //x positie doos 2
+    int xDoos3 = 550;           //x positie doos 3
+    int yDoos = 165;            //y positie van dozen
 
     public VerwerkDoosScherm() {
-        super();
-        setLayout(new FlowLayout());
-        add(jpVerwerkDoos);
-        setVisible(true);
+//        add(jlHeading);
     }
 
     public void paintComponent(Graphics g){
@@ -32,24 +52,27 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
         g.setColor(Color.BLACK);
         Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(2));
+        g.setFont(fontTekst);
+
         g.drawRect(xDoos1,yDoos,breedteDoos,hoogteDoos);     //doos1
         g.drawRect(xDoos2,yDoos,breedteDoos,hoogteDoos);     //doos2
         g.drawRect(xDoos3,yDoos,breedteDoos,hoogteDoos);     //doos3
 
-        //producten         //todo functie laat heaeding verdwijnen
-//        DoosOrder order = new DoosOrder();
-        drawOrder(g,2, ProductStandaard.blauw, 2,ProductStandaard.rood,2,ProductStandaard.geel,1); // todo: hardcode > communication
-        drawOrder(g,1,ProductStandaard.rood,3);
+        g.drawString("Rood", xDoos1+breedteDoos/4,yDoos+hoogteDoos+marge*5);
+        g.drawString("Geel",xDoos2+breedteDoos/4,yDoos+hoogteDoos+marge*5);
+        g.drawString("Blauw",xDoos3+breedteDoos/4,yDoos+hoogteDoos+marge*5);
 
+
+        //producten        // todo: hardcode > communication
+//        drawOrder(g,2, ProductStandaard.blauw, 2,ProductStandaard.rood,2,ProductStandaard.geel,1);
+//        drawOrder(g,1,ProductStandaard.rood,3);
+        drawOrder(g,2, 2,2,1);
+        drawOrder(g,1,1,0,0);
     }
 
-    public Product huidigProduct;
-    public Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo: communication
-    int huidigeDoos = 2;
-
-    //    public void setKleurHuidigProduct(Color kleur){
-//        this.huidigeKleur = kleur;
-//    }
+        public void setKleurHuidigProduct(Color kleur){
+        this.huidigeKleur = kleur;
+    }
     public Product getHuidigProduct(){
         return this.huidigProduct;
     }
@@ -57,36 +80,51 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
     public int getHuidigeDoos() {
         return huidigeDoos;
     }
+
     public Color getKleurHuidigProduct() {
         return huidigeKleur;
     }
 
-    public void drawOrder(Graphics g, int doos, Color kleur1, int aantalKleur1) {
+/*    public void drawOrder(Graphics g, int doos, Color kleur1, int aantalKleur1) {
         this.drawOrder(g, doos, kleur1, aantalKleur1, Color.WHITE, 0, Color.WHITE, 0);
     }
 
     public void drawOrder(Graphics g, int doos, Color kleur1, int aantalKleur1, Color kleur2, int aantalKleur2) {
         this.drawOrder(g, doos, kleur1, aantalKleur1, kleur2, aantalKleur2, Color.WHITE, 0);
-    }
+    }*/
 
-    public void drawOrder(Graphics g, int doos, Color kleur1, int aantalKleur1, Color kleur2, int aantalKleur2, Color kleur3, int aantalKleur3) {
-        int x = 0; //x positie product
-        int y = 0; //y positie product
+    public void drawOrder(Graphics g, int doos, int aantalRood, int aantalGeel, int aantalBlauw
+            /*Graphics g, int doos, Color kleur1, int aantalKleur1, Color kleur2, int aantalKleur2, Color kleur3, int aantalKleur3*/) {
         int aantal;
-        int totaalAantal = aantalKleur1 + aantalKleur2 + aantalKleur3;
+        int totaalAantal = aantalRood + aantalGeel + aantalBlauw;
+        tekenRood = aantalRood;                     //note to self: beter arraylist doorlopen??
+        tekenGeel = aantalGeel;
+        tekenBlauw = aantalBlauw;
 
-        switch (doos) {         //x positie doos
-            case 1 -> doos = xDoos1;
-            case 2 -> doos = xDoos2;
-            case 3 -> doos = xDoos3;
+        producten = new ArrayList<>();
+        int xDoos = 0; //xPositie huidige doos
+
+        //x positie doos
+        if (doos == 1) {
+            xDoos = xDoos1;
+        } if (doos == 2) {
+            xDoos = xDoos2;
+        } if (doos == 3) {
+            xDoos = xDoos3;
         }
 
         for (aantal = totaalAantal; aantal > 0; aantal--) {
+            Product p = new Product();
+            p.setDoos(doos);
+            int x = 0; //x positie product
+            int y = 0; //y positie product
+
+            //x positie
             if (aantal == 1 || aantal == 3 || aantal == 5) {
-                x = doos + marge;                   //kolom 1 in doos
+                x = xDoos + marge;                                //kolom 1 in doos
             }
             if (aantal == 2 || aantal == 4 || aantal == 6) {
-                x = doos + breedteDoos / 2 + marge; //kolom 2 in doos
+                x = xDoos + breedteDoos / 2 + marge;              //kolom 2 in doos
             }
 
             //y positie
@@ -99,24 +137,41 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
             if (aantal > 4 && aantal <= 6) {
                 y = yRij3;
             }
+            p.setPositie(x,y);
 
             //kleur
-            if (aantalKleur1 > 0){
-                g.setColor(kleur1);
-                aantalKleur1--;
+            if (aantalRood > 0){
+                g.setColor(rood);  //switched from kleur1, kleur2 etc
+                p.setKleur(rood);
+                aantalRood--;
             }
-            else if (aantalKleur1 == 0 && aantalKleur2 > 0) {
-                g.setColor(kleur2);
-                aantalKleur2--;
+            else if (aantalRood == 0 && aantalGeel > 0) {
+                g.setColor(geel);
+                p.setKleur(geel);
+                aantalGeel--;
             }
-            else if (aantalKleur1 == 0 && aantalKleur2 == 0 && aantalKleur3 > 0) {
-                g.setColor(kleur3);
-                aantalKleur3--;
+            else if (aantalRood == 0 && aantalGeel == 0 && aantalBlauw > 0) {
+                g.setColor(blauw);
+                p.setKleur(blauw);
+                aantalBlauw--;
             }
-            Product product = new Product();
-            product.drawOrderProduct(g, g.getColor(), x, y, doos);
+            producten.add(p);
+        }
+        for (Product p : producten)
+        {
+            p.drawKleinProduct(g,p);
+            if(true/*item picked*/ && huidigeKleur == rood){ //todo: remove hardcode
+                System.out.println(aantalRood);
+
+                fillOrder(g,p);
+            }
         }
     }
 
+    public void fillOrder(Graphics g,Product product){  //todo: kleurt alle producten van één kleur in doos in ipv 1.
+        if(product.getKleur().equals(huidigeKleur) && product.getDoos() == huidigeDoos){
+            product.fillProduct(g,product);
+        }
+    }
 }
 //Sylvia <
