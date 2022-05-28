@@ -21,8 +21,8 @@ public class Order extends Database {
     private String orderlijst = "hallo";
     private static int orderNr =1;
 
-    private int aantalGeel = 3;
-    private int aantalBlauw = 1;
+    private int aantalGeel = 2;
+    private int aantalBlauw = 2;
     private int aantalRood = 2;
 
     public void getOrder() throws SQLException {
@@ -39,7 +39,6 @@ public class Order extends Database {
 
         bpp = new Bpp(artikelen, 12);
         orderlijst = bpp.toString();
-        System.out.println(orderlijst);
 
     }
 
@@ -83,13 +82,16 @@ public class Order extends Database {
 
         XWPFParagraph bestelling = document.createParagraph();
         XWPFRun run3 = bestelling.createRun();
-        run3.setText(orderlijst);
 
+        String[] parts = orderlijst.split("\n");
+        for (String part : parts
+             ) {
+            run3.setText(part);
+            run3.addBreak();
+        }
 
-
-        document.write(new FileOutputStream("E:/Order" + orderNr + ".docx"));
+        document.write(new FileOutputStream("Order" + orderNr + ".docx"));
         orderNr++;
-        System.out.println(orderNr);
     }
 
 }

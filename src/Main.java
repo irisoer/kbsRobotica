@@ -110,41 +110,36 @@ public class Main {
 public static void main(String[] args) throws IOException, SQLException {                     // testen order pakbon
     Order order = new Order();
     order.getOrder();
-    order.maakPakbon(20);
-    Order order2 = new Order();
-    order2.getOrder();
-    order2.maakPakbon(15);
+    order.maakPakbon(2);
+	}}
 
-    Order order3 = new Order();
-    order3.getOrder();
-    order3.maakPakbon(12);
-
-
-	}
-
-//    		//testen schermen >
-//		JFrame frame = new JFrame();
-//		frame.setSize(800, 400);
-//		frame.setLayout(new GridLayout());
+//    public static void main(String[] args) {
 //
 //
-//		ErrorScherm e = new ErrorScherm();
-//		frame.add(e);
+//                //testen schermen >
+//                JFrame frame = new JFrame();
+//                frame.setSize(800, 400);
+//                frame.setLayout(new GridLayout());
 //
+////		ErrorScherm e = new ErrorScherm();
+////		frame.add(e);
 //
-//		SorteerScherm s = new SorteerScherm();
-//		frame.add(s);
-//
-////		VerwerkKleur vk = new VerwerkKleur();		//todo: plek voor meer aantallen (net als in dozen)
+////		SorteerScherm s = new SorteerScherm();
+////		frame.add(s);
+////
+////		VerwerkKleurScherm vk = new VerwerkKleurScherm();		//todo: meer aantallen (net als in dozen)
 ////		frame.add(vk);
+//////
+////                VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
+////                frame.add(vd);
+//////
+//		VerwerkVoorraadScherm vv = new VerwerkVoorraadScherm();
+//		frame.add(vv);
 //
-////		VerwerkDoos vd = new VerwerkDoos();			//todo: nog niet volledig werkend
-////		frame.add(vd);
+//                frame.setVisible(true);
 //
-////		VerwerkVoorraad vv = new VerwerkVoorraad();
-////		frame.add(vv);
-//
-//		frame.setVisible(true);
-}
+//            }
+//        }
+
 
 
