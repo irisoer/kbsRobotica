@@ -8,22 +8,18 @@ import java.util.ArrayList;
 public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard{
     private Product huidigProduct; //laatst gepickte product todo:
     private ArrayList<Product> producten;
-    public Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
-    int huidigeDoos = 2;
+    private Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
+    private int huidigeDoos = 2;
 
-    //aantallen te tekenen/picken per kleur
-    int tekenRood;
-    int tekenGeel;
-    int tekenBlauw;
-    int pickedRood = 0;
-    int pickedGeel = 0 ;
-    int pickedBlauw = 0;
+    private int pickedRood = 0;
+    private int pickedGeel = 0 ;
+    private int pickedBlauw = 0;
 
     //Posities product in doos
-    int yRij1 = 270;            //y positie producten rij 1
-    int yRij2 = 220;            //y positie producten rij 2
-    int yRij3 = 170;            //y positie producten rij 3
-    int marge = 5;              //producten uitlijnen binnen doos
+    private int yRij1 = 270;            //y positie producten rij 1
+    private int yRij2 = 220;            //y positie producten rij 2
+    private int yRij3 = 170;            //y positie producten rij 3
+    private int marge = 5;              //producten uitlijnen binnen doos
 
     //posities doos
     int xDoos1 = 150;           //x positie doos 1
@@ -97,9 +93,10 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
             /*Graphics g, int doos, Color kleur1, int aantalKleur1, Color kleur2, int aantalKleur2, Color kleur3, int aantalKleur3*/) {
         int aantal;
         int totaalAantal = aantalRood + aantalGeel + aantalBlauw;
-        tekenRood = aantalRood;                     //note to self: beter arraylist doorlopen??
-        tekenGeel = aantalGeel;
-        tekenBlauw = aantalBlauw;
+        //aantallen te tekenen/picken per kleur
+        int tekenRood = aantalRood;                     //note to self: beter arraylist doorlopen??
+        int tekenGeel = aantalGeel;
+        int tekenBlauw = aantalBlauw;
 
         producten = new ArrayList<>();
         int xDoos = 0; //xPositie huidige doos
