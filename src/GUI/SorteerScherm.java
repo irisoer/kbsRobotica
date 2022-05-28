@@ -24,9 +24,8 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
     public SorteerScherm() {
         setLayout (new FlowLayout());
 
-        //componenten aanmaken
+        //componenten
         jlHeading.setText("Uw voorraad wordt gesorteerd:");
-        add(jlHeading);
         JPanel sorteerPanel = new JPanel();
         setRood(roodAantal);
         setGeel(geelAantal);
@@ -34,27 +33,22 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
 
         //toevoegen
         add(jlHeading);
-        jlHeading.setHorizontalAlignment(JLabel.CENTER);
         add(sorteerPanel);
-
-        setVisible(true);
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        //producten         //geen object, deze zijn afgestemd op verwerk schermen, niet sorteren
-        Product roodProduct = new Product();
-        Product geelProduct = new Product();
-        Product blauwproduct = new Product();
+        //producten
+        Product roodProduct = new Product(ProductStandaard.rood);
+        Product geelProduct = new Product(ProductStandaard.geel);
+        Product blauwProduct = new Product(ProductStandaard.blauw);
 
-
-        roodProduct.drawProduct(g,ProductStandaard.rood, 160,110);
-        geelProduct.drawProduct(g,ProductStandaard.geel, 360,110);
-        blauwproduct.drawProduct(g,ProductStandaard.blauw, 560, 110);
+        roodProduct.drawProduct(g,roodProduct,160,110);
+        geelProduct.drawProduct(g,geelProduct, 360,110);
+        blauwProduct.drawProduct(g,blauwProduct, 560, 110);
 
         //aantallen
-
         g.setColor(Color.BLACK);
         g.setFont(fontSubTekst);
         g.drawString(String.valueOf(roodAantal), 195,225);         //aantal rood

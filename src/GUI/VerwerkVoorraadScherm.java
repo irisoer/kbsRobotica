@@ -43,7 +43,7 @@ public class VerwerkVoorraadScherm extends VerwerkScherm{
         jlGroen.setFont(fontTekst);
         jlBlauw.setFont(fontTekst);
 
-        add(jlHeading);
+//        add(jlHeading);
 
        jpVoorraad.add(jlRood);
        jpVoorraad.add(jlGroen);
@@ -55,7 +55,6 @@ public class VerwerkVoorraadScherm extends VerwerkScherm{
 
        add(jpVoorraad);
 
-       setVisible(true);
     }
 }
 //Sylvia <

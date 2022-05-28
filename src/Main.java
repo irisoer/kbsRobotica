@@ -17,14 +17,13 @@ public class Main extends JFrame{
 //		SorteerScherm s = new SorteerScherm();
 //		frame.add(s);
 //
-//		VerwerkKleurScherm vk = new VerwerkKleurScherm();		//todo: meer aantallen (net als in dozen)
-//		frame.add(vk);
-//
-		VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
-		frame.add(vd);
+		VerwerkKleurScherm vk = new VerwerkKleurScherm();		//todo: meer aantallen (net als in dozen)
+		frame.add(vk);
 
-////
-//		VerwerkVoorraadScherm vv = new VerwerkVoorraadScherm();
+//		VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
+//		frame.add(vd);
+
+//		VerwerkVoorraadScherm vv = new VerwerkVoorraadScherm(); //todo: producten bij tekenen (extra)
 //		frame.add(vv);
 
 		frame.setVisible(true);

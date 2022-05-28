@@ -14,7 +14,7 @@ public class VerwerkScherm extends Scherm{
 //        super("Verwerken order");
         setLayout(new FlowLayout());
         jlHeading.setText("Uw order wordt verwerkt:");
-//        add(jlHeading);
+        add(jlHeading);
 //        add(jbPijlLinks);
 //        add(jbPijlRechts); //todo: pijltjes
 //
