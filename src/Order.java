@@ -22,8 +22,8 @@ public class Order extends Database {
     private static int orderNr =1;
 
     private int aantalGeel = 2;
-    private int aantalBlauw = 3;
-    private int aantalRood = 4;
+    private int aantalBlauw = 2;
+    private int aantalRood = 2;
 
     public void getOrder() throws SQLException {
         artikelen = new ArrayList<>();
@@ -43,8 +43,6 @@ public class Order extends Database {
     }
 
     public void maakPakbon(int customerId) throws IOException, SQLException {
-        String[] parts = orderlijst.split("\n");
-
         startConnection();
         PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
                 "LEFT JOIN nerdygadgets.cities AS ci ON cu.PostalCityID = ci.CityID \n" +
@@ -84,6 +82,8 @@ public class Order extends Database {
 
         XWPFParagraph bestelling = document.createParagraph();
         XWPFRun run3 = bestelling.createRun();
+
+        String[] parts = orderlijst.split("\n");
         for (String part : parts
              ) {
             run3.setText(part);

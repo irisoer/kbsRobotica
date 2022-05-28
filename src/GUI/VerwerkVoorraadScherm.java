@@ -15,7 +15,6 @@ public class VerwerkVoorraadScherm extends VerwerkScherm{
     public VerwerkVoorraadScherm(){
         setLayout(new GridLayout(2,1));
 //        setPreferredSize(new Dimension(800,100));
-        jlHeading.setText("Huidige voorraad:");
 
         JLabel jlRood = new JLabel("Rode producten: " + roodAantal);
         JLabel jlGroen = new JLabel("Gele producten: " + geelAantal);

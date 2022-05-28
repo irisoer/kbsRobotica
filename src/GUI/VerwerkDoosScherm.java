@@ -18,6 +18,9 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
+        drawOrder(g,2, ProductStandaard.blauw, 2,ProductStandaard.rood,2,ProductStandaard.geel,1); // todo: hardcode > communication
+        drawOrder(g,1,ProductStandaard.rood,3);
+
         //pijl
         int grootte = 20;       //grootte van pijl
         int xHuidigeDoos = xDoos2; //todo: communication
@@ -38,9 +41,8 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
 
         //producten         //todo functie laat heaeding verdwijnen
 //        DoosOrder order = new DoosOrder();
-        drawOrder(g,2, ProductStandaard.blauw, 2,ProductStandaard.rood,2,ProductStandaard.geel,1); // todo: hardcode > communication
-        drawOrder(g,1,ProductStandaard.rood,3);
 
+        add(jlHeading);
     }
 
     public Product huidigProduct;

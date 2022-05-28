@@ -98,28 +98,6 @@ public class Database {
      * <h3>Einde voorraad in de database</h3>
      */
 
-//    public String getKlant(int customerId) throws SQLException {
-//        startConnection();
-//        PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
-//                                                                                    "LEFT JOIN nerdygadgets.cities AS ci ON cu.PostalCityID = ci.CityID \n" +
-//                                                                                        "WHERE CustomerID = ?");
-//        preparedStatement.setInt(1, customerId);
-//        ResultSet result = preparedStatement.executeQuery();
-//        int klantID = 0;
-//        String klantNaam = null;
-//        String klantAdres = null;
-//        String klantPostcode = null;
-//        String stadNaam = null;
-//        while (result.next()){
-//            klantID = result.getInt("CustomerID");
-//            klantNaam = result.getString("CustomerName");
-//            klantAdres = result.getString("DeliveryAddressLine1");
-//            klantPostcode = result.getString("DeliveryPostalCode");
-//            stadNaam = result.getString("CityName");
-//        }
-//        result.close();
-//        return "KlantNr: " + klantID + "\n" + klantNaam +"\n" + klantAdres + "\n" + klantPostcode + " " + stadNaam;
-//    }
 
     public static Connection getConnection() {
         return connection;
