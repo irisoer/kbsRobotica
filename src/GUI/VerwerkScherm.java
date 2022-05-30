@@ -18,6 +18,7 @@ public class VerwerkScherm extends Scherm {
         VerwerkVoorraadScherm(new VerwerkVoorraadScherm()),
         VerwerkKleurScherm(new VerwerkKleurScherm()),
         VerwerkDoosScherm(new VerwerkDoosScherm());
+
         private GUI.Scherm scherm;
 
         Carrousel(GUI.Scherm scherm) {
@@ -36,7 +37,7 @@ public class VerwerkScherm extends Scherm {
         setLayout(null);
         cards = new CardLayout();
         jpSchermen = new JPanel(cards);
-        huidigScherm = Carrousel.values()[0];
+//        huidigScherm = Carrousel.values()[0];
 
 
 
