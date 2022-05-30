@@ -58,6 +58,27 @@ public abstract class Arduino {
      public void closePort() throws SerialPortException {
         this.serialPort.closePort();
      }
+
+     public static void sorteer(ArduinoInpak inpak, ArduinoSorteer sorteer) throws SerialPortException, InterruptedException {
+        while(true) {
+            sorteer.bandAan();
+            int index = -1;
+            String test = "#";
+            while (sorteer.serialPort.readBytes(1)[0] != test.getBytes()[0]) {
+            }
+            char color = (char) sorteer.serialPort.readBytes(1)[0];
+            String kleur = "";
+            System.out.println(color);
+            if (color == 'r') index = 0;
+            else if (color == 'g') index = 1;
+            else if (color == 'b') index = 2;
+            else if (color == 's') break;
+            sorteer.closePort();
+            inpak.draaiNaarPlatform(index);
+            sorteer.openPort();
+            sorteer.serialPort.writeString("1:");
+        }
+    }
     // Beide arduino's moeten kleuren kunnen scannen
     // Beide arduino's moeten connectie kunnen maken
     

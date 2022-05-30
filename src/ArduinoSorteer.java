@@ -66,7 +66,7 @@ public class ArduinoSorteer extends Arduino {
         return index;
     }
 
-    private void bandAan() throws SerialPortException {
+    public void bandAan() throws SerialPortException {
         try {   this.openPort();
             this.serialPort.writeString("0:");}
         catch (SerialPortException e) { }

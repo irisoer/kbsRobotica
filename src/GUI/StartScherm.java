@@ -11,6 +11,9 @@ import java.awt.event.ActionListener;
 public class StartScherm extends Scherm {
     JLabel titel;
 
+    private JButton jbSorteer;
+    private JButton jb;
+
     public StartScherm() {
         setLayout(new GridLayout(4, 1));
         this.titel = new JLabel("Wat moet er in de order komen");

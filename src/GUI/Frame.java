@@ -5,8 +5,7 @@ import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
         private JPanel jpSchermen;
-        private CardLayout cards;
-
+        public static CardLayout cards;
 
 
         public enum Schermen {
@@ -30,7 +29,9 @@ public class Frame extends JFrame implements Layout {
                 cards = new CardLayout();
                 jpSchermen = new JPanel(cards);
                 setSize(800, 480);
-                setResizable(false);
+//                setResizable(false);
+//                setExtendedState(JFrame.MAXIMIZED_BOTH);
+                setUndecorated(true);
 
                 setLayout(null);
                 setDefaultCloseOperation(EXIT_ON_CLOSE);
