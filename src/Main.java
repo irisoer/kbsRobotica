@@ -17,7 +17,7 @@ public class Main extends JFrame{
 //		SorteerScherm s = new SorteerScherm();
 //		frame.add(s);
 //
-		VerwerkKleurScherm vk = new VerwerkKleurScherm();		//todo: meer aantallen (net als in dozen)
+		VerwerkKleurScherm vk = new VerwerkKleurScherm();
 		frame.add(vk);
 
 //		VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
