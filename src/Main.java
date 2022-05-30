@@ -109,7 +109,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Frame frame = new Frame();
-		frame.setScherm(Frame.Schermen.VerwerkScherm);
+		frame.setScherm(Frame.Schermen.StartScherm);
 		//testen schermen >
 //                JFrame frame = new JFrame();
 //                frame.setSize(800, 400);
