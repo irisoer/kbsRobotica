@@ -138,17 +138,17 @@ public class Main {
 //	}
 
 	public static void main(String[] args) throws SerialPortException, InterruptedException {
-		ArduinoInpak inpak = new ArduinoInpak();
-//        inpak.draaiNaarPlatform(0);
+//		ArduinoInpak inpak = new ArduinoInpak();
+////        inpak.draaiNaarPlatform(0);
+//
+//		ArduinoSorteer sorteer = new ArduinoSorteer();
+//		ArrayList<Artikel> result = new ArrayList<>();
+//
+//
+//		Arduino.sorteer(inpak, sorteer);
 
-		ArduinoSorteer sorteer = new ArduinoSorteer();
-		ArrayList<Artikel> result = new ArrayList<>();
-
-
-		Arduino.sorteer(inpak, sorteer);
-
-//		Frame frame = new Frame();
-//		frame.setScherm(Frame.Schermen.StartScherm);
+		Frame frame = new Frame();
+		frame.setScherm(Frame.Schermen.StartScherm);
 
 		// **** Order inpak code
 //		for (int i = 0; i < 3; i++) {

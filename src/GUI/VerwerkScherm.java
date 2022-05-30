@@ -12,7 +12,7 @@ public class VerwerkScherm extends Scherm {
     private CardLayout cards;
     private JPanel jpSchermen;
     private Carrousel huidigScherm;
-    private int index;
+    private int index = 9999;
 
     public enum Carrousel {
         VerwerkVoorraadScherm(new VerwerkVoorraadScherm()),
@@ -73,7 +73,6 @@ public class VerwerkScherm extends Scherm {
         });
         button.setBounds(550, 0, 250, 480);
         add(button);
-
 
         jpSchermen.setBounds(0, 50, 800, 350);
 //        jpSchermen.setBorder(new LineBorder(Color.BLACK, 5));

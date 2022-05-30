@@ -4,9 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
-        private JPanel jpSchermen;
-        public static CardLayout cards;
-
+        private static JPanel jpSchermen;
+        private static CardLayout cards;
 
         public enum Schermen {
                 StartScherm(new StartScherm()),
@@ -23,7 +22,6 @@ public class Frame extends JFrame implements Layout {
                 }
         }
 
-        private Schermen huidigScherm;
         public Frame(){
                 super("GUI");
                 cards = new CardLayout();
@@ -51,9 +49,8 @@ public class Frame extends JFrame implements Layout {
                 setVisible(true);
         }
 
-        public void setScherm(Schermen scherm) {
+        public static void setScherm(Schermen scherm) {
                 cards.show(jpSchermen, scherm.toString());
-                this.huidigScherm = scherm;
         }
 
         private void addSchermToCards(Schermen scherm, JPanel cardPanel) {

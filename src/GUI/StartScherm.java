@@ -3,6 +3,7 @@ package GUI;
 import JPanels.Panel;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,20 +13,33 @@ public class StartScherm extends Scherm {
     JLabel titel;
 
     private JButton jbSorteer;
-    private JButton jb;
+    private JButton jbBevestig;
 
     public StartScherm() {
-        setLayout(new GridLayout(4, 1));
+        setLayout(null);
         this.titel = new JLabel("Wat moet er in de order komen");
         this.titel.setFont(fontHeading);
         this.titel.setHorizontalAlignment(SwingConstants.CENTER);
+        this.titel.setBounds(0, 0, 800, 50);
         add(titel);
         add(new DBLoader());
         add(new productSelector());
+        jbSorteer = new JButton("Sorteermodule");
+        jbSorteer.addActionListener(e -> Frame.setScherm(Frame.Schermen.ErrorScherm));
+        jbSorteer.setBounds(100, 415, 200, 50);
+        jbSorteer.setFont(fontSubTekst);
+        add(jbSorteer);
+        jbBevestig = new JButton("Bevestig");
+        jbBevestig.addActionListener(e -> Frame.setScherm(Frame.Schermen.VerwerkScherm));
+        jbBevestig.setBounds(500, 415, 200, 50);
+        jbBevestig.setFont(fontSubTekst);
+        add(jbBevestig);
+
+        //todo: Exporten van data uit dit scherm naar een BPP algoritme
     }
 
 
-    class DBLoader extends Panel implements ActionListener {
+    class DBLoader extends Panel {
         JComboBox<Integer> box = new JComboBox<>(getOrderNums());
         JButton jbLoad = new JButton("Laden");
 
@@ -36,7 +50,9 @@ public class StartScherm extends Scherm {
             add(box);
             jbLoad.setFont(fontTekst);
             jbLoad.setBounds(150, 0, 100, 100);
-            jbLoad.addActionListener(this);
+            jbLoad.addActionListener(e -> {
+                System.out.println(this.box.getSelectedItem());
+            });
             add(jbLoad);
             setBounds(275, 50, 250, 100);
         }
@@ -44,11 +60,6 @@ public class StartScherm extends Scherm {
         private Integer[] getOrderNums() {
             // todo: OrderNums ophalen uit de database
             return new Integer[]{null, 12, 14, 24};
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
         }
     }
 
@@ -60,6 +71,8 @@ public class StartScherm extends Scherm {
                 add(new productRegel("Rood", 5));
                 add(new productRegel("Geel", 3));
                 add(new productRegel("Blauw", 2));
+                setBorder(new EmptyBorder(0, 30, 0, 30));
+                setBounds(0, 150, 800, 250);
             }
 
             private class productRegel extends Scherm {
@@ -71,6 +84,7 @@ public class StartScherm extends Scherm {
                     this.kleur = kleur;
                     this.voorraad = voorraad;
                     this.Product = new JLabel(kleur + " Product (" + voorraad + ")");
+                    this.Product.setFont(fontTekst);
                     setSize(800, 250);
                     setLayout(new GridLayout(1, 2));
                     add(Product);
@@ -90,6 +104,7 @@ public class StartScherm extends Scherm {
                 public plusMinKnop(int aantal, int maxVoorraad) {
                     this.aantal = aantal;
                     this.JLaantal = new JLabel(String.valueOf(aantal));
+                    this.JLaantal.setFont(fontTekst);
                     this.maxVoorraad = maxVoorraad;
                     setSize(150, 50);
                     setLayout(new GridLayout(1, 3));
