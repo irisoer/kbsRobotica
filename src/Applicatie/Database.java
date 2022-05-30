@@ -60,8 +60,14 @@ public class Database {
         return artikel;
     }
 
-    public Artikel[] selecteerOrder(int orderNum) {
+    // todo: functie die in volgorde rgb de aantallen ophaalt vanaf een orderNum voor het startscherm
+    public int[] selecteerOrder(int orderNum) {
         return null;
+    }
+
+    // todo: een functie die alle ordernums ophaalt voor startscherm moet Integer[] zijn omdat er een null in moet komen voor leeg vakje
+    public Integer[] selecteerOrderNums() {
+        return new Integer[]{null, 12, 15, 25};
     }
 
     /**

@@ -23,9 +23,17 @@ public class Order extends Database {
     private String orderlijst = "hallo";
     private static int orderNr =1;
 
-    private int aantalGeel = 2;
-    private int aantalBlauw = 2;
-    private int aantalRood = 2;
+    public int aantalGeel = 2;
+    public int aantalBlauw = 2;
+    public int aantalRood = 2;
+
+    public Order(int[] rgbAantallen) {
+        aantalRood = rgbAantallen[0];
+        aantalGeel = rgbAantallen[1];
+        aantalBlauw = rgbAantallen[2];
+
+
+    }
 
     public void getOrder() throws SQLException {
         artikelen = new ArrayList<>();
@@ -94,6 +102,18 @@ public class Order extends Database {
 
         document.write(new FileOutputStream("Applicatie.Order" + orderNr + ".docx"));
         orderNr++;
+    }
+
+    public void addArtikelToOrder(int artikelNum) {
+        try {
+            this.artikelen.add(Database.selecteerArtikel(artikelNum));
+        } catch (SQLException e) {
+            System.out.println("Niet gevonden"); // Gebeurd alleen als db uit is wat niet kan
+        }
+    }
+
+    public void berekenBpp() {
+        bpp = new Bpp(artikelen, 12);
     }
 
 }

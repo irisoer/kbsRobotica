@@ -1,5 +1,6 @@
 package Applicatie;
 
+import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -8,6 +9,15 @@ public class Artikel implements Comparable<Artikel> {
 	private int id;
 	private String kleur;
 	private String naam;
+	private boolean ingepakt = false;
+
+	public boolean isIngepakt() {
+		return ingepakt;
+	}
+
+	public void setIngepakt() {
+		this.ingepakt = true;
+	}
 
 	public Artikel(ResultSet set) throws SQLException {
 // ColorName, StockItemID, StockItemName, TypicalWeightPerUnit
@@ -27,6 +37,15 @@ public class Artikel implements Comparable<Artikel> {
 
 	public String getKleur() {
 		return kleur;
+	}
+
+	public Color getJavaKleur() {
+		return switch (kleur) {
+			case "Red" -> Color.RED;
+			case "Yellow" -> Color.YELLOW;
+			case "Blue" -> Color.BLUE;
+			default -> null;
+		};
 	}
 
 	public String getNaam() {

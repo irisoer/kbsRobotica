@@ -148,7 +148,7 @@ public class Main {
 //		Arduino.sorteer(inpak, sorteer);
 
 		Frame frame = new Frame();
-		frame.setScherm(Frame.Schermen.StartScherm);
+		Frame.setScherm(Frame.Schermen.StartScherm);
 
 		// **** Order inpak code
 //		for (int i = 0; i < 3; i++) {

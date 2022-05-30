@@ -86,9 +86,9 @@ public class OpstartScherm extends Scherm{
     }
 
     public void runStatussen(){
-        statusDatabase();
-        statusSorteerArduino();
-        statusInpakArduino();
+//        statusDatabase();
+//        statusSorteerArduino();
+//        statusInpakArduino();
         verbonden = true;
     }
 

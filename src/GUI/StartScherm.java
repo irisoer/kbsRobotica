@@ -1,12 +1,15 @@
 package GUI;
 
+import Applicatie.Database;
 import JPanels.Panel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 
 public class StartScherm extends Scherm {
@@ -16,14 +19,19 @@ public class StartScherm extends Scherm {
     private JButton jbBevestig;
 
     public StartScherm() {
+
         setLayout(null);
         this.titel = new JLabel("Wat moet er in de order komen");
         this.titel.setFont(fontHeading);
         this.titel.setHorizontalAlignment(SwingConstants.CENTER);
         this.titel.setBounds(0, 0, 800, 50);
-        add(titel);
-        add(new DBLoader());
-        add(new productSelector());
+        try {
+            add(titel);
+            add(new DBLoader());
+            add(new productSelector());
+        } catch (SQLException e) {
+            System.out.println(e.getSQLState());
+        }
         jbSorteer = new JButton("Sorteermodule");
         jbSorteer.addActionListener(e -> Frame.setScherm(Frame.Schermen.ErrorScherm));
         jbSorteer.setBounds(100, 415, 200, 50);
@@ -66,11 +74,11 @@ public class StartScherm extends Scherm {
 
         private class productSelector extends Scherm {
 
-            public productSelector() {
+            public productSelector() throws SQLException {
                 setLayout(new GridLayout(3, 1));
-                add(new productRegel("Rood", 5));
-                add(new productRegel("Geel", 3));
-                add(new productRegel("Blauw", 2));
+                add(new productRegel("Rood", Database.getVoorraad(73)));
+                add(new productRegel("Geel", Database.getVoorraad(71)));
+                add(new productRegel("Blauw", Database.getVoorraad(60)));
                 setBorder(new EmptyBorder(0, 30, 0, 30));
                 setBounds(0, 150, 800, 250);
             }
@@ -116,6 +124,10 @@ public class StartScherm extends Scherm {
                     add(plus);
 
 
+                }
+
+                public int value() {
+                    return aantal;
                 }
 
                 @Override
