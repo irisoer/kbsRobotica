@@ -1,3 +1,5 @@
+package Applicatie;
+
 import jssc.SerialPortException;
 
 public class ArduinoInpak extends Arduino {

@@ -1,3 +1,5 @@
+package Applicatie;
+
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -90,7 +92,7 @@ public class Order extends Database {
             run3.addBreak();
         }
 
-        document.write(new FileOutputStream("Order" + orderNr + ".docx"));
+        document.write(new FileOutputStream("Applicatie.Order" + orderNr + ".docx"));
         orderNr++;
     }
 

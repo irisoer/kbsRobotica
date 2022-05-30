@@ -1,10 +1,15 @@
+package Applicatie;
+
 import jssc.SerialPortException;
 
 import java.sql.SQLException;
 
 public class ArduinoSorteer extends Arduino {
+
+
     public ArduinoSorteer() {
         super('s');
+
     }
 
     public int getKleur(Bpp bpp, ArduinoInpak inpak) throws SerialPortException, InterruptedException {

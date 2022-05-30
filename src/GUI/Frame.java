@@ -7,6 +7,9 @@ public class Frame extends JFrame implements Layout {
         private static JPanel jpSchermen;
         private static CardLayout cards;
 
+        static OpstartScherm opstartScherm = new OpstartScherm();
+
+
         public enum Schermen {
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
@@ -22,8 +25,10 @@ public class Frame extends JFrame implements Layout {
                 }
         }
 
+        private Schermen huidigScherm;
         public Frame(){
                 super("GUI");
+                setVisible(true);
                 cards = new CardLayout();
                 jpSchermen = new JPanel(cards);
                 setSize(800, 480);
@@ -44,13 +49,15 @@ public class Frame extends JFrame implements Layout {
                 }
 
                 add(jpSchermen);
-                setScherm(Schermen.StartScherm);
+                setScherm(Schermen.OpstartScherm);
                 setResizable(false);
-                setVisible(true);
+                opstartScherm.runStatussen();
+
         }
 
         public static void setScherm(Schermen scherm) {
                 cards.show(jpSchermen, scherm.toString());
+                this.huidigScherm = scherm;
         }
 
         private void addSchermToCards(Schermen scherm, JPanel cardPanel) {

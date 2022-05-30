@@ -1,6 +1,7 @@
+package Applicatie;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
 
 public class Artikel implements Comparable<Artikel> {
 	private int gewicht;
@@ -50,7 +51,7 @@ public class Artikel implements Comparable<Artikel> {
 
 	@Override
 	public String toString() {
-		return "Artikel{" +
+		return "Applicatie.Artikel{" +
 				"gewicht=" + gewicht +
 				", id=" + id +
 				", kleur='" + kleur + '\'' +
