@@ -6,9 +6,9 @@ import java.awt.*;
 public interface Layout {
     // Standaard schermen
     Dimension panelFormaat = new Dimension(800,350);
-    Font fontHeading = new Font("Calibri",Font.BOLD, 42);
-    Font fontTekst = new Font ("Calibri", Font.PLAIN, 28);
-    Font fontSubTekst = new Font ("Calibri", Font.BOLD, 18);
+    Font fontHeading = new Font("Helvetiva",Font.BOLD, 42);
+    Font fontTekst = new Font ("Helvetiva", Font.PLAIN, 28);
+    Font fontSubTekst = new Font ("Helvetiva", Font.PLAIN, 20);
     JLabel jlHeading = new JLabel();        //Heading tekst
     JLabel jlTekst = new JLabel();          //Normale tekst
     JLabel jlSubTekst = new JLabel();       //Kleine tekst

@@ -12,11 +12,6 @@ public interface ProductStandaard {
     Color geel = Color.ORANGE;
     Color blauw = Color.BLUE;
 
-
-//    //Positites voor tekenen in dozen
-//    int yRij1 = 270;            //y positie producten rij 1
-//    int yRij2 = 220;            //y positie producten rij 2
-//    int yRij3 = 170;            //y positie producten rij 3
 //
 //    int marge = 5;              //producten uitlijnen binnen doos
 //    int xDoos1 = 150;           //x positie doos 1
