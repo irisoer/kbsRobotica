@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 
 //Sylvia
-public class ErrorScherm extends Scherm{
+public class ErrorScherm extends Scherm {
     private JLabel jlError;
     private JLabel jlErrorMessage;
     private String bericht = "ERROR MESSAGE";  //todo: specifiek bericht meegeven

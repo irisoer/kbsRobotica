@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 //Sylvia >
 
-public class VerwerkKleurScherm extends VerwerkScherm implements ProductStandaard{
+public class VerwerkKleurScherm extends Scherm implements ProductStandaard{
     ArrayList<Product> producten;
     int aantalRood = 4;  //todo:
     int aantalGeel = 3;

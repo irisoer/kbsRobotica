@@ -5,7 +5,7 @@ import java.awt.*;
 
 //Sylvia >
 
-public class VerwerkVoorraadScherm extends VerwerkScherm{
+public class VerwerkVoorraadScherm extends Scherm {
 
     private int roodAantal = 0;
     private int geelAantal = 0;
@@ -21,7 +21,7 @@ public class VerwerkVoorraadScherm extends VerwerkScherm{
         JLabel jlBlauw = new JLabel("Blauwe producten: " + blauwAantal);
 
         JPanel jpVoorraad = new JPanel();
-        jpVoorraad.setMinimumSize(new Dimension(800,400));
+//        jpVoorraad.setMinimumSize(new Dimension(700,480));
         jpVoorraad.setLayout(new GridLayout(3,1));
 
 

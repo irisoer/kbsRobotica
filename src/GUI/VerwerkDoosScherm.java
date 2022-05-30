@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 //Sylvia >
-public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard{
+public class VerwerkDoosScherm extends Scherm implements ProductStandaard {
     private Product huidigProduct; //laatst gepickte product todo:
     private ArrayList<Product> producten;
     public Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
@@ -37,6 +37,7 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
+
 
         //pijl
         int grootte = 20;       //grootte van pijl

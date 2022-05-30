@@ -18,7 +18,7 @@ public class Scherm extends JPanel implements Layout {
 //        add(new VerwerkDoosScherm());
 //        add(new ErrorScherm()); //<nieuwe klasse
 ////        add(new Carrousel());
-
+        setName(getClass().getSimpleName());
         jlHeading.setFont(fontHeading);
         jlHeading.setHorizontalAlignment(JLabel.CENTER);
         jlTekst.setFont(fontTekst);

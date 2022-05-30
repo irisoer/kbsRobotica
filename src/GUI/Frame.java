@@ -4,14 +4,15 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
-        JPanel JPschermen;
-        CardLayout cards;
-        Schermen huidigScherm;
+        private JPanel jpSchermen;
+        private CardLayout cards;
+
 
 
         public enum Schermen {
                 StartScherm(new StartScherm()),
-                VerwerkScherm(new VerwerkScherm());
+                VerwerkScherm(new VerwerkScherm()),
+                ErrorScherm(new ErrorScherm());
                 private GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
                         this.scherm = scherm;
@@ -22,10 +23,12 @@ public class Frame extends JFrame implements Layout {
                         return this.scherm.getName();
                 }
         }
+
+        private Schermen huidigScherm;
         public Frame(){
                 super("GUI");
                 cards = new CardLayout();
-                JPschermen = new JPanel(cards);
+                jpSchermen = new JPanel(cards);
                 setSize(800, 480);
                 setResizable(false);
 
@@ -38,19 +41,18 @@ public class Frame extends JFrame implements Layout {
                 setDefaultCloseOperation(EXIT_ON_CLOSE);
 
                 for (Schermen scherm: Schermen.values()) {
-                        addSchermToCards(scherm, JPschermen);
+                        addSchermToCards(scherm, jpSchermen);
                 }
 
-
-                add(JPschermen);
+                add(jpSchermen);
                 setScherm(Schermen.StartScherm);
                 setResizable(false);
                 setVisible(true);
         }
 
         public void setScherm(Schermen scherm) {
-                cards.show(JPschermen, scherm.toString());
-                huidigScherm = scherm;
+                cards.show(jpSchermen, scherm.toString());
+                this.huidigScherm = scherm;
         }
 
         private void addSchermToCards(Schermen scherm, JPanel cardPanel) {

@@ -1,15 +1,8 @@
-import GUI.*;
-import jssc.SerialPortException;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import javax.swing.*;
-import java.awt.*;
-
 //public class Main extends JFrame{
 //	public static void main(String[] args) {
 //
+
+import GUI.Frame;
 
 public class Main {
 //    public static void main(String[] args) throws SerialPortException{
@@ -57,7 +50,7 @@ public class Main {
 //        System.out.println(bpp);
 //    }
 
-    //	public static void main(String[] args) throws SerialPortException, SQLException, InterruptedException {
+	//	public static void main(String[] args) throws SerialPortException, SQLException, InterruptedException {
 //        ArduinoInpak inpak = new ArduinoInpak();
 ////        inpak.draaiNaarPlatform(0);
 //
@@ -107,39 +100,40 @@ public class Main {
 //        }
 
 
-public static void main(String[] args) throws IOException, SQLException {                     // testen order pakbon
-    Order order = new Order();
-    order.getOrder();
-    order.maakPakbon(2);
-	}}
+//public static void main(String[] args) throws IOException, SQLException {                     // testen order pakbon
+//    Order order = new Order();
+//    order.getOrder();
+//    order.maakPakbon(2);
+//	}}
 
-//    public static void main(String[] args) {
-//
-//
-//                //testen schermen >
+	public static void main(String[] args) {
+
+		Frame frame = new Frame();
+		frame.setScherm(Frame.Schermen.VerwerkScherm);
+		//testen schermen >
 //                JFrame frame = new JFrame();
 //                frame.setSize(800, 400);
 //                frame.setLayout(new GridLayout());
+
+//		ErrorScherm e = new ErrorScherm();
+//		frame.add(e);
+
+//		SorteerScherm s = new SorteerScherm();
+//		frame.add(s);
 //
-////		ErrorScherm e = new ErrorScherm();
-////		frame.add(e);
-//
-////		SorteerScherm s = new SorteerScherm();
-////		frame.add(s);
+//		VerwerkKleurScherm vk = new VerwerkKleurScherm();		//todo: meer aantallen (net als in dozen)
+//		frame.add(vk);
 ////
-////		VerwerkKleurScherm vk = new VerwerkKleurScherm();		//todo: meer aantallen (net als in dozen)
-////		frame.add(vk);
-//////
-////                VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
-////                frame.add(vd);
-//////
+//                VerwerkDoosScherm vd = new VerwerkDoosScherm();			//todo: nog niet volledig werkend
+//                frame.add(vd);
+////
 //		VerwerkVoorraadScherm vv = new VerwerkVoorraadScherm();
 //		frame.add(vv);
 //
 //                frame.setVisible(true);
-//
-//            }
-//        }
+
+	}
+}
 
 
 
