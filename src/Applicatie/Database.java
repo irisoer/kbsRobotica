@@ -1,3 +1,5 @@
+package Applicatie;
+
 import java.sql.*;
 
 public class Database {

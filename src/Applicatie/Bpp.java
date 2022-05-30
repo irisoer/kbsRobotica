@@ -1,9 +1,7 @@
-import java.sql.Array;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+package Applicatie;
+
 import java.util.*;
 
-import org.apache.poi.xwpf.usermodel.Document;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -119,7 +117,7 @@ public class Bpp {
 
 
 	/**
-	 * Maakt een nieuw Bpp object en voert gelijk het Bpp algoritme uit op de meegegeven items.
+	 * Maakt een nieuw Applicatie.Bpp object en voert gelijk het Applicatie.Bpp algoritme uit op de meegegeven items.
 	 * Dit wordt opgeslagen in dit object.
 	 *
 	 * @param items         de items die verdeeld moeten worden
@@ -144,8 +142,8 @@ public class Bpp {
 		XWPFRun run1 = p1.createRun();
 		int index = 1;
 		StringBuilder retString = new StringBuilder();
-//		for (ArrayList<Artikel> bin: bins) {
-//			for (Artikel artikel : bin) {
+//		for (ArrayList<Applicatie.Artikel> bin: bins) {
+//			for (Applicatie.Artikel artikel : bin) {
 //				retString.append(artikel.getKleur()).append("\n");
 //			}
 //			retString.append("\n");

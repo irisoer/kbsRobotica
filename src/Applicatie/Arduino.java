@@ -1,6 +1,9 @@
+package Applicatie;
+
 import jssc.*;
 import jssc.SerialPort;
 import jssc.SerialPortList;
+import GUI.*;
 
 import static jssc.SerialPort.*;
 import static jssc.SerialPort.PARITY_NONE;
@@ -8,30 +11,35 @@ import static jssc.SerialPort.PARITY_NONE;
 public abstract class Arduino {
     protected SerialPort serialPort;
     static String used = "";
+    public static String isVerbondenInpak;
+    public static String isVerbondenSorteer;
 
     public Arduino(char readyChar) {
-        SerialPort test;
+        isVerbondenSorteer = "niet verbonden";
+        isVerbondenInpak = "niet verbonden";
+        SerialPort poort;
         for (String port: SerialPortList.getPortNames()) {
             if(port.equals(used)) continue;
             try {
-                test = new SerialPort(port);
-                test.openPort();
+                poort = new SerialPort(port);
+                poort.openPort();
                 System.out.println("Test " + port);
-                test.setParams(BAUDRATE_9600,  DATABITS_8, STOPBITS_1, PARITY_NONE);      //Opstarten
-                char ch = (char) test.readBytes(1)[0];
+                poort.setParams(BAUDRATE_9600,  DATABITS_8, STOPBITS_1, PARITY_NONE);      //Opstarten
+                char ch = (char) poort.readBytes(1)[0];
                 while(ch != '!') {
                     System.out.print(ch);
-                    ch = (char) test.readBytes(1)[0];
+                    ch = (char) poort.readBytes(1)[0];
                 };
-                char lh = (char) test.readBytes(1)[0];
+                char lh = (char) poort.readBytes(1)[0];
                 System.out.println("ja " + ch + lh);
                 if(lh == readyChar) {
                     System.out.println(port + getClass());
-                    this.serialPort = test;
+                    this.serialPort = poort;
+                    isVerbondenSorteer = "verbonden";
                     used = port;
                 };
 
-                test.closePort();
+                poort.closePort();
             } catch (SerialPortException e) {
                 continue;
             }

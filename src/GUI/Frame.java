@@ -10,6 +10,7 @@ public class Frame extends JFrame implements Layout {
 
 
         public enum Schermen {
+                OpstartScherm(new OpstartScherm()),
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
                 ErrorScherm(new ErrorScherm());
