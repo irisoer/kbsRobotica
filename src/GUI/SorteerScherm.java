@@ -3,47 +3,60 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-//Sylvia
+//Sylvia >
 
-public class SorteerScherm extends Scherm{
-    private JLabel jlTitel;
-    private SorteerPanel panel;
-    private JLabel jlGroenAantal;
-    private JLabel jlBlauwAantal;
-    private JLabel jlRoodAantal;
-    private JPanel jpAantallen;
+public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
+    private Color gescandeKleur; //todo: aantallen meegeven met setter, if gescande kleur is rood, roodAantal++ etc etc
+    int roodAantal = 0;
+    int geelAantal = 0;
+    int blauwAantal = 0;
+
+    public void setRood(int rood) {
+        this.roodAantal = rood;
+    }
+    public void setGeel(int geel) {
+        this.geelAantal = geel;
+    }
+    public void setBlauw(int blauw) {
+        this.blauwAantal = blauw;
+    }
 
     public SorteerScherm() {
-        super("Sorteren");
         setLayout (new FlowLayout());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        //componenten aanmaken      todo: variabelen voor aantallen
-        jlTitel = new JLabel("Uw voorraad wordt gesorteerd");
-        jlTitel.setFont(fontHeading);
-        panel = new SorteerPanel();
-        jlGroenAantal = new JLabel("Groen                                   ");
-        jlBlauwAantal = new JLabel("Blauw                                   ");
-        jlRoodAantal = new JLabel("Rood");
-        jpAantallen = new JPanel();
-        jpAantallen.setLayout(new GridLayout(0,3));
-
+        //componenten
+        jlHeading.setText("Uw voorraad wordt gesorteerd:");
+        JPanel sorteerPanel = new JPanel();
+        setRood(roodAantal);
+        setGeel(geelAantal);
+        setBlauw(blauwAantal);
 
         //toevoegen
-        add(jlTitel);
-        jlTitel.setHorizontalAlignment(JLabel.CENTER);
-        jlTitel.setFont(fontHeading);
-        add(panel);
+        add(jlHeading);
+        add(sorteerPanel);
+    }
 
-        //voorraad aantallen todo: goed uitlijnen en pijltje toevoegen
-        jpAantallen.add(jlGroenAantal);
-        jpAantallen.add(jlBlauwAantal);
-        jpAantallen.add(jlRoodAantal);
-        add(jpAantallen);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
 
-        //setComponentOrientation(ComponentOrientation.);
+        //producten
+        Product roodProduct = new Product(ProductStandaard.rood);
+        Product geelProduct = new Product(ProductStandaard.geel);
+        Product blauwProduct = new Product(ProductStandaard.blauw);
 
-        setVisible(true);
+        roodProduct.drawProduct(g,roodProduct,160,110);
+        geelProduct.drawProduct(g,geelProduct, 360,110);
+        blauwProduct.drawProduct(g,blauwProduct, 560, 110);
+
+        //aantallen
+        g.setColor(Color.BLACK);
+        g.setFont(fontSubTekst);
+        g.drawString(String.valueOf(roodAantal), 195,225);         //aantal rood
+        g.drawString(String.valueOf(geelAantal), 395,225);        //aantal geel
+        g.drawString(String.valueOf(blauwAantal), 595,225);        //aantal blauw
+
     }
 
 }
+
+//<Sylvia

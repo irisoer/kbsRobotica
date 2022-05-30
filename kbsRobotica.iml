@@ -7,5 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="io.github.java.native.jssc1" level="application" />
+    <orderEntry type="library" name="io.github.java.native.jssc" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.29" level="project" />
+    <orderEntry type="library" name="nl.bstoi.poiparser.PoiParser" level="project" />
   </component>
 </module>
