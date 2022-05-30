@@ -9,9 +9,11 @@ public class Frame extends JFrame implements Layout {
         private JPanel jpSchermen;
         private CardLayout cards;
 
+        static OpstartScherm opstartScherm = new OpstartScherm();
+
 
         public enum Schermen {
-                OpstartScherm(new OpstartScherm()),
+                OpstartScherm(opstartScherm),
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
                 ErrorScherm(new ErrorScherm());
@@ -48,8 +50,9 @@ public class Frame extends JFrame implements Layout {
                 }
 
                 add(jpSchermen);
-                setScherm(Schermen.StartScherm);
+                setScherm(Schermen.OpstartScherm);
                 setResizable(false);
+                opstartScherm.runStatussen();
 
         }
 
