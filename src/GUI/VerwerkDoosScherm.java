@@ -157,18 +157,18 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
         for (Product p : producten)
         {
             p.drawKleinProduct(g,p);
-            if(true/*item picked*/ && huidigeKleur == rood){ //todo: remove hardcode
+            if(p.gevuld){ //todo: remove hardcode
                 System.out.println(aantalRood);
 
-                fillOrder(g,p);
+                p.fillProduct(g,p);
             }
         }
     }
-
-    public void fillOrder(Graphics g,Product product){  //todo: kleurt alle producten van één kleur in doos in ipv 1.
-        if(product.getKleur().equals(huidigeKleur) && product.getDoos() == huidigeDoos){
-            product.fillProduct(g,product);
-        }
-    }
+//
+//    public void fillOrder(Graphics g,Product product){  //todo: kleurt alle producten van één kleur in doos in ipv 1.
+//        if(product.getKleur().equals(huidigeKleur) && product.getDoos() == huidigeDoos){
+//            product.fillProduct(g,product);
+//        }
+//    }
 }
 //Sylvia <
