@@ -1,12 +1,13 @@
 package GUI;
 
+import jssc.SerialPortException;
+
 import java.awt.*;
 import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
         private JPanel jpSchermen;
         private CardLayout cards;
-
 
 
         public enum Schermen {
@@ -28,6 +29,7 @@ public class Frame extends JFrame implements Layout {
         private Schermen huidigScherm;
         public Frame(){
                 super("GUI");
+                setVisible(true);
                 cards = new CardLayout();
                 jpSchermen = new JPanel(cards);
                 setSize(800, 480);
@@ -48,7 +50,7 @@ public class Frame extends JFrame implements Layout {
                 add(jpSchermen);
                 setScherm(Schermen.StartScherm);
                 setResizable(false);
-                setVisible(true);
+
         }
 
         public void setScherm(Schermen scherm) {

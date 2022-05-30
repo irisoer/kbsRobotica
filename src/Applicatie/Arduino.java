@@ -11,12 +11,9 @@ import static jssc.SerialPort.PARITY_NONE;
 public abstract class Arduino {
     protected SerialPort serialPort;
     static String used = "";
-    public static String isVerbondenInpak;
-    public static String isVerbondenSorteer;
+
 
     public Arduino(char readyChar) {
-        isVerbondenSorteer = "niet verbonden";
-        isVerbondenInpak = "niet verbonden";
         SerialPort poort;
         for (String port: SerialPortList.getPortNames()) {
             if(port.equals(used)) continue;
@@ -35,7 +32,6 @@ public abstract class Arduino {
                 if(lh == readyChar) {
                     System.out.println(port + getClass());
                     this.serialPort = poort;
-                    isVerbondenSorteer = "verbonden";
                     used = port;
                 };
 

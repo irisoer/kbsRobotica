@@ -2,6 +2,7 @@
 //	public static void main(String[] args) {
 //
 
+import Applicatie.Database;
 import GUI.Frame;
 import GUI.OpstartScherm;
 
@@ -108,7 +109,6 @@ public class Main {
 //	}}
 
 	public static void main(String[] args) {
-
 		Frame frame = new Frame();
 		frame.setScherm(Frame.Schermen.OpstartScherm);
 		//testen schermen >

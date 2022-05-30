@@ -5,7 +5,7 @@ import java.sql.*;
 public class Database {
     private static Connection connection;
 
-    static void startConnection() throws SQLException {
+    public static void startConnection() throws SQLException {
         String password = "";
         String username = "root";
         String url = "jdbc:mysql://localhost:3306/nerdygadgets";
