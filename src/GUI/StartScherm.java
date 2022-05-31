@@ -55,7 +55,7 @@ public class StartScherm extends Scherm {
 
 
 	static class DBLoader extends Panel {
-		JComboBox<Integer> box = new JComboBox<>(getOrderNums());
+		JComboBox<Integer> box = new JComboBox<>(Database.selecteerOrderNums());
 		JButton jbLoad = new JButton("Laden");
 
 		public DBLoader(ProductSelector productSelector) {
@@ -75,10 +75,6 @@ public class StartScherm extends Scherm {
 			setBounds(275, 50, 250, 100);
 		}
 
-		private Integer[] getOrderNums() {
-			// todo: OrderNums ophalen uit de database
-			return new Integer[]{null, 12, 14, 24};
-		}
 	}
 
 

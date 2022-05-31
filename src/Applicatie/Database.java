@@ -1,6 +1,7 @@
 package Applicatie;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Database {
     private static Connection connection;
@@ -60,15 +61,53 @@ public class Database {
         return artikel;
     }
 
-    // todo: functie die in volgorde rgb de aantallen ophaalt vanaf een orderNum voor het startscherm
-    public static int[] selecteerOrder(int orderNum) {
-        return new int[]{3, 2, 4};
-    }
-
     // todo: een functie die alle ordernums ophaalt voor startscherm moet Integer[] zijn omdat er een null in moet komen voor leeg vakje
     public static Integer[] selecteerOrderNums() {
-        return new Integer[]{null, 12, 15, 25};
+        try{
+            startConnection();
+            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT OrderID FROM orders ORDER BY OrderID");
+            ResultSet result = preparedStatement.executeQuery();
+            ArrayList<Integer> ordernrsAL = new ArrayList<>();
+
+            while(result.next()){
+                ordernrsAL.add(result.getInt("OrderID"));
+            }
+            Integer[] orderNrs = new Integer[ordernrsAL.size()];
+            orderNrs = ordernrsAL.toArray(orderNrs);
+            return orderNrs;
+        }
+        catch (SQLException e){
+
+        }
+        return null;
     }
+
+    // todo: functie die in volgorde rgb de aantallen ophaalt vanaf een orderNum voor het startscherm
+    public static int[] selecteerOrder(int orderNum) {
+        try {
+            startConnection();
+            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT StockItemID, Quantity FROM orderlines WHERE OrderID = ?");
+            preparedStatement.setInt(1, orderNum);
+            ResultSet result = preparedStatement.executeQuery();
+            int[] artikelenOrder = new int[3];
+            while (result.next()) {
+                switch (result.getInt("StockItemID")) {
+                    case 60:
+                        artikelenOrder[2] = result.getInt("Quantity");
+                    case 71:
+                        artikelenOrder[1] = result.getInt("Quantity");
+                    case 73:
+                        artikelenOrder[0] = result.getInt("Quantity");
+                }
+            }
+            return artikelenOrder;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 
     /**
      * <h3>Voorraad in de database</h3>
