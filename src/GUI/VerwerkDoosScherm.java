@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 //Sylvia >
 public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ArtikelStandaard {
-    private Artikel huidigProduct; //laatst gepickte product todo:
-    private ArrayList<Artikel> producten;
+    private Product huidigProduct; //laatst gepickte product todo:
+    private ArrayList<Product> producten;
     private Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
     private int huidigeDoos = 2;
 
@@ -63,7 +63,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
     public void setKleurHuidigProduct(Color kleur){
         this.huidigeKleur = kleur;
     }
-    public Artikel getHuidigProduct(){
+    public Product getHuidigProduct(){
         return this.huidigProduct;
     }
 
@@ -101,7 +101,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
         }
 
         for (aantal = totaalAantal; aantal > 0; aantal--) {
-            Artikel p = new Artikel();
+            Product p = new Product();
             p.setDoos(doos);
             int x = 0; //x positie product
             int y = 0; //y positie product
@@ -142,7 +142,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
             g.setColor(p.getKleur());
             producten.add(p);
         }
-        for (Artikel p : producten)
+        for (Product p : producten)
         {
             p.drawKleinArtikel(g,p);
             if(p.gevuld){ //todo: remove hardcode

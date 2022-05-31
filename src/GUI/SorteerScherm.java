@@ -42,9 +42,9 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //producten
-        Artikel roodProduct = new Artikel(ArtikelStandaard.rood);
-        Artikel geelProduct = new Artikel(ArtikelStandaard.geel);
-        Artikel blauwProduct = new Artikel(ArtikelStandaard.blauw);
+        Product roodProduct = new Product(ArtikelStandaard.rood);
+        Product geelProduct = new Product(ArtikelStandaard.geel);
+        Product blauwProduct = new Product(ArtikelStandaard.blauw);
 
         roodProduct.drawArtikel(g,roodProduct,160,110);
         geelProduct.drawArtikel(g,geelProduct, 360,110);

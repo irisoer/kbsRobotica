@@ -142,8 +142,8 @@ public class Bpp {
 		XWPFRun run1 = p1.createRun();
 		int index = 1;
 		StringBuilder retString = new StringBuilder();
-//		for (ArrayList<Applicatie.Artikel> bin: bins) {
-//			for (Applicatie.Artikel artikel : bin) {
+//		for (ArrayList<Applicatie.Product> bin: bins) {
+//			for (Applicatie.Product artikel : bin) {
 //				retString.append(artikel.getKleur()).append("\n");
 //			}
 //			retString.append("\n");

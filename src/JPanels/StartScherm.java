@@ -59,9 +59,9 @@ public class StartScherm extends Panel implements ActionListener {
 
 		private String[] getLabels(int[] rgb) {
 			String[] labels = new String[3];
-			labels[0] = "Rood Artikel (" + String.valueOf(rgb[0]) + ")";
-			labels[1] = "Groen Artikel (" + String.valueOf(rgb[1]) + ")";
-			labels[2] = "Blauw Artikel (" + String.valueOf(rgb[2]) + ")";
+			labels[0] = "Rood Product (" + String.valueOf(rgb[0]) + ")";
+			labels[1] = "Groen Product (" + String.valueOf(rgb[1]) + ")";
+			labels[2] = "Blauw Product (" + String.valueOf(rgb[2]) + ")";
 			return labels;
 		}
 

@@ -15,7 +15,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
     private int pickedBlauw = 1;
 
     private JPanel jpVerwerkKleur = new JPanel();
-    private ArrayList<Artikel> producten = new ArrayList<>();
+    private ArrayList<Product> producten = new ArrayList<>();
 
     public VerwerkKleurScherm() {
         setLayout(new FlowLayout());
@@ -67,7 +67,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         }
 
         for (int aantal = aantalKleur; aantal > 0; aantal--) {
-            Artikel p = new Artikel();
+            Product p = new Product();
             p.setKleur(kleur);
             g.setColor(p.getKleur());
             int x;
@@ -107,7 +107,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
             p.setPosY(y);
             producten.add(p);
         }
-        for (Artikel p : producten) {
+        for (Product p : producten) {
             p.drawKleinArtikel(g, p);
         }
     }
@@ -126,7 +126,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
             aantalKleur = aantalBlauw;
         }
         for(tePicken = aantalKleur; aantalPicked <= tePicken; tePicken--){
-            for (Artikel p : producten) {
+            for (Product p : producten) {
                 if(p.getKleur().equals(kleur) && aantalPicked > 0) {
                     p.fillArtikel(g, p);
                     aantalPicked--;

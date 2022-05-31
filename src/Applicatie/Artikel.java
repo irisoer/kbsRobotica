@@ -70,7 +70,7 @@ public class Artikel implements Comparable<Artikel> {
 
 	@Override
 	public String toString() {
-		return "Applicatie.Artikel{" +
+		return "Applicatie.Product{" +
 				"gewicht=" + gewicht +
 				", id=" + id +
 				", kleur='" + kleur + '\'' +
