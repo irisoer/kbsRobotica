@@ -21,6 +21,7 @@ public class Frame extends JFrame implements Layout {
                 OpstartScherm(opstartScherm),
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
+                SorteerSchemr(new SorteerScherm()),
                 ErrorScherm(new ErrorScherm());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
@@ -69,6 +70,7 @@ public class Frame extends JFrame implements Layout {
 
         public static void setScherm(Schermen scherm) {
                 cards.show(jpSchermen, scherm.toString());
+                scherm.scherm.repaint();
         }
 
         private void addSchermToCards(Schermen scherm, JPanel cardPanel) {

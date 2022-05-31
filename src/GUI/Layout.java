@@ -9,7 +9,7 @@ public interface Layout {
     Font fontHeading = new Font("Helvetiva",Font.BOLD, 42);
     Font fontTekst = new Font ("Helvetiva", Font.PLAIN, 28);
     Font fontSubTekst = new Font ("Helvetiva", Font.PLAIN, 20);
-    JLabel jlHeading = new JLabel();        //Heading tekst
+//    JLabel jlHeading = new JLabel();        //Heading tekst
     JLabel jlTekst = new JLabel();          //Normale tekst
     JLabel jlSubTekst = new JLabel();       //Kleine tekst
 

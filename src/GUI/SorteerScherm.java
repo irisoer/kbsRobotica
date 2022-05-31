@@ -25,6 +25,7 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
         setLayout (new FlowLayout());
 
         //componenten
+//        jlHeading = new JLabel();
         jlHeading.setText("Uw voorraad wordt gesorteerd:");
         JPanel sorteerPanel = new JPanel();
         setRood(roodAantal);
@@ -34,6 +35,8 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
         //toevoegen
         add(jlHeading);
         add(sorteerPanel);
+
+        repaint();
     }
 
     public void paintComponent(Graphics g) {
