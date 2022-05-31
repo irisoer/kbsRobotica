@@ -1,14 +1,15 @@
 package GUI;
 
+import Applicatie.Artikel;
+import Applicatie.Order;
+
 import java.awt.*;
 import java.util.ArrayList;
 
 //Sylvia >
 public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ArtikelStandaard {
     private Product huidigProduct; //laatst gepickte product todo:
-    private ArrayList<Product> producten;
-    private Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
-    private int huidigeDoos = 2;
+    private ArrayList<Artikel> artikelen;
 
     //Posities product in doos
     private int yRij1 = 220;            //y positie producten rij 1
@@ -56,23 +57,14 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
         //producten        // todo: hardcode > communication
 //        drawOrder(g,2, ArtikelStandaard.blauw, 2,ArtikelStandaard.rood,2,ArtikelStandaard.geel,1);
 //        drawOrder(g,1,ArtikelStandaard.rood,3);
-        drawOrder(g,2, 2,2,1);
-        drawOrder(g,1,1,0,0);
+        ArrayList<ArrayList<Artikel>> bppbins = Order.getBpp().getBins();
+        for (int i = 0; i < bppbins.size(); i++) {
+            drawOrder(g,i + 1, bppbins.get(i));
+        }
     }
 
-    public void setKleurHuidigProduct(Color kleur){
-        this.huidigeKleur = kleur;
-    }
     public Product getHuidigProduct(){
         return this.huidigProduct;
-    }
-
-    public int getHuidigeDoos() {
-        return huidigeDoos;
-    }
-
-    public Color getKleurHuidigProduct() {
-        return huidigeKleur;
     }
 
 /*    public void drawOrder(Graphics g, int doos, Color kleur1, int aantalKleur1) {
@@ -83,12 +75,10 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
         this.drawOrder(g, doos, kleur1, aantalKleur1, kleur2, aantalKleur2, Color.WHITE, 0);
     }*/
 
-    public void drawOrder(Graphics g, int doos, int aantalRood, int aantalGeel, int aantalBlauw
+    public void drawOrder(Graphics g, int doos, ArrayList<Artikel> doosInhoud
+//                          int aantalRood, int aantalGeel, int aantalBlauw
             /*Graphics g, int doos, Color kleur1, int aantalKleur1, Color kleur2, int aantalKleur2, Color kleur3, int aantalKleur3*/) {
-        int aantal;
-        int totaalAantal = aantalRood + aantalGeel + aantalBlauw;
 
-        producten = new ArrayList<>();
         int xDoos = 0; //xPositie huidige doos
 
         //x positie doos
@@ -99,55 +89,33 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
         } if (doos == 3) {
             xDoos = xDoos3;
         }
-
-        for (aantal = totaalAantal; aantal > 0; aantal--) {
-            Product p = new Product();
-            p.setDoos(doos);
-            int x = 0; //x positie product
+        int num = 1;
+        for (Artikel a : doosInhoud)
+        {
+            int x; //x positie product
             int y = 0; //y positie product
-
-            //x positie
-            if (aantal %2 != 0) {
+            if (num %2 != 0) {
                 x = xDoos + marge;                          //kolom 1 in doos (oneven aantallen)
             }
             else {
                 x = xDoos + breedteDoos / 2 + marge;       //kolom 2 in doos (even aantallen)
             }
-
-            //y positie
-            if (aantal <= 2) {
+            if (num <= 2) {
                 y = yRij1;
             }
-            if (aantal > 2 && aantal <= 4) {
+            else if (num <= 4) {
                 y = yRij2;
             }
-            if (aantal > 4 && aantal <= 6) {
+            else if (num <= 6) {
                 y = yRij3;
             }
-            p.setPositie(x,y);
-
-            //kleur
-            if (aantalRood > 0){
-                p.setKleur(rood);
-                aantalRood--;
+            a.setPositie(x, y);
+            g.setColor(a.getJavaKleur());
+            a.drawKleinArtikel(g);
+            if(a.isIngepakt()){ //todo: remove hardcode
+                a.fillArtikel(g);
             }
-            else if (aantalRood == 0 && aantalGeel > 0) {
-                p.setKleur(geel);
-                aantalGeel--;
-            }
-            else if (aantalRood == 0 && aantalGeel == 0 && aantalBlauw > 0) {
-                p.setKleur(blauw);
-                aantalBlauw--;
-            }
-            g.setColor(p.getKleur());
-            producten.add(p);
-        }
-        for (Product p : producten)
-        {
-            p.drawKleinArtikel(g,p);
-            if(p.gevuld){ //todo: remove hardcode
-                p.fillArtikel(g,p);
-            }
+            num++;
         }
     }
 }

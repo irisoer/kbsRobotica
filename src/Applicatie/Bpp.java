@@ -16,7 +16,6 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
  */
 public class Bpp {
 	private ArrayList<ArrayList<Artikel>> bins;
-	private ArrayList<ArrayList<Artikel>> originalBins;
 
 	public boolean isLeeg() {
 		for (int i = 0; i < bins.size(); i++) {
@@ -118,7 +117,6 @@ public class Bpp {
 			}
 		}
 		this.bins = resultaat;
-		this.originalBins = (ArrayList<ArrayList<Artikel>>) resultaat.clone();
 	}
 
 
@@ -155,7 +153,7 @@ public class Bpp {
 //			retString.append("\n");
 //		}
 
-		for (ArrayList<Artikel> bin : originalBins) {
+		for (ArrayList<Artikel> bin : bins) {
 			retString.append("Doos " + index +": ").append("\n");
 			for (Artikel artikel : bin) {
 						retString.append(artikel.getNaam()).append("\n");
@@ -164,5 +162,9 @@ public class Bpp {
 			index++;
 	}
 		return retString.toString();
+	}
+
+	public ArrayList<ArrayList<Artikel>> getBins() {
+		return bins;
 	}
 }

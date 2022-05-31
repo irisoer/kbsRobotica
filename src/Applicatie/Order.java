@@ -25,13 +25,17 @@ public class Order extends Database {
 
     private int artikelNrRood = 73;
     private int artikelNrGeel = 71;
-    private int artikelNrBlauw = 73;
+    private int artikelNrBlauw = 60;
 
     public int aantalGeel;
     public int aantalBlauw;
     public int aantalRood;
 
     public Order(){}
+
+    public ArrayList<Artikel> getArtikelen() {
+        return artikelen;
+    }
 
     public Order(int[] rgbAantallen) {
         aantalRood = rgbAantallen[0];
@@ -131,6 +135,9 @@ public class Order extends Database {
         bpp = new Bpp(artikelen, 12);
     }
 
+    public static Bpp getBpp() {
+        return bpp;
+    }
 }
 
 
