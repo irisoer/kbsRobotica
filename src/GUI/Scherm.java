@@ -1,6 +1,7 @@
 package GUI;
 
 import javax.swing.*;
+import java.awt.*;
 
 //Sylvia >
 public class Scherm extends JPanel implements Layout {
