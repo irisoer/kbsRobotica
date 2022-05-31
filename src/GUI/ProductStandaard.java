@@ -6,8 +6,8 @@ public interface ProductStandaard {
     //Standaard product
     int hoogteDoos = 155;       //hoogte doos
     int breedteDoos = 110;      //breedte doos
-    int grootProduct = 80;    //Groot formaat, voor sorteren
-    int kleinProduct = grootProduct /2;      //Klein formaat voor verwerk/order schermen
+    int grootArtikel = 80;    //Groot formaat, voor sorteren
+    int kleinArtikel = grootArtikel /2;      //Klein formaat voor verwerk/order schermen
     Color rood = Color.RED;     //todo: kleuren verwerken in statements in subklasses
     Color geel = Color.ORANGE;
     Color blauw = Color.BLUE;

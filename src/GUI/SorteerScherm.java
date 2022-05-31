@@ -46,9 +46,9 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
         Product geelProduct = new Product(ProductStandaard.geel);
         Product blauwProduct = new Product(ProductStandaard.blauw);
 
-        roodProduct.drawProduct(g,roodProduct,160,110);
-        geelProduct.drawProduct(g,geelProduct, 360,110);
-        blauwProduct.drawProduct(g,blauwProduct, 560, 110);
+        roodProduct.drawArtikel(g,roodProduct,160,110);
+        geelProduct.drawArtikel(g,geelProduct, 360,110);
+        blauwProduct.drawArtikel(g,blauwProduct, 560, 110);
 
         //aantallen
         g.setColor(Color.BLACK);

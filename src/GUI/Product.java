@@ -17,7 +17,7 @@ public class Product implements ProductStandaard {
         this.kleur = kleur;
     }
 
-    public Product(Color kleur, int x, int y){ //todo: wel nodig?
+    public Product(Color kleur, int x, int y){
         this.kleur = kleur;
         this.posX = x;
         this.posY = y;
@@ -25,10 +25,6 @@ public class Product implements ProductStandaard {
 
     public Color getKleur() {
         return kleur;
-    }
-
-    public int getDoos() {
-        return doos;
     }
 
     public int getPosX() {
@@ -60,22 +56,22 @@ public class Product implements ProductStandaard {
         this.posY = posY;
     }
 
-    public void drawProduct(Graphics g, Product product) {  //gebruik bij sorteren
+    public void drawArtikel(Graphics g, Product artikel) {  //gebruik bij sorteren
         g.setColor(this.kleur);
-        g.fillOval(this.posX, this.posY, grootProduct, grootProduct);
+        g.fillOval(this.posX, this.posY, grootArtikel, grootArtikel);
     }
-    public void drawProduct(Graphics g, Product product, int x , int y) {  //gebruik bij sorteren
-        product.setPositie(x,y);
-        product.drawProduct(g,product);
-    }
-
-        public void drawKleinProduct(Graphics g, Product product) { //gebruik bij verwerken order
-        g.setColor(this.kleur);
-        g.drawOval(this.posX, this.posY, kleinProduct, kleinProduct);
+    public void drawArtikel(Graphics g, Product artikel, int x , int y) {  //gebruik bij sorteren
+        artikel.setPositie(x,y);
+        artikel.drawArtikel(g,artikel);
     }
 
-    public void fillProduct(Graphics g, Product product) {        //invullen van gepickte items (zijn altijd klein)
+        public void drawKleinArtikel(Graphics g, Product artikel) { //gebruik bij verwerken order
         g.setColor(this.kleur);
-        g.fillOval(this.posX, this.posY, kleinProduct, kleinProduct);
+        g.drawOval(this.posX, this.posY, kleinArtikel, kleinArtikel);
+    }
+
+    public void fillArtikel(Graphics g, Product artikel) {        //invullen van gepickte items (zijn altijd klein)
+        g.setColor(this.kleur);
+        g.fillOval(this.posX, this.posY, kleinArtikel, kleinArtikel);
     }
 }

@@ -108,7 +108,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
             producten.add(p);
         }
         for (Product p : producten) {
-            p.drawKleinProduct(g, p);
+            p.drawKleinArtikel(g, p);
         }
     }
 
@@ -128,7 +128,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
         for(tePicken = aantalKleur; aantalPicked <= tePicken; tePicken--){
             for (Product p : producten) {
                 if(p.getKleur().equals(kleur) && aantalPicked > 0) {
-                    p.fillProduct(g, p);
+                    p.fillArtikel(g, p);
                     aantalPicked--;
                 }
             }

@@ -1,6 +1,5 @@
 package GUI;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -145,9 +144,9 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
         }
         for (Product p : producten)
         {
-            p.drawKleinProduct(g,p);
+            p.drawKleinArtikel(g,p);
             if(p.gevuld){ //todo: remove hardcode
-                p.fillProduct(g,p);
+                p.fillArtikel(g,p);
             }
         }
     }
