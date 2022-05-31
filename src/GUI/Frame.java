@@ -8,7 +8,7 @@ import javax.swing.*;
 public class Frame extends JFrame implements Layout {
         private static JPanel jpSchermen;
         private static CardLayout cards;
-        private static Order order;
+        public static Order order = new Order();
         static OpstartScherm opstartScherm = new OpstartScherm();
 
 
@@ -17,7 +17,7 @@ public class Frame extends JFrame implements Layout {
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
                 ErrorScherm(new ErrorScherm());
-                private GUI.Scherm scherm;
+                public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
                         this.scherm = scherm;
                 }
@@ -56,6 +56,10 @@ public class Frame extends JFrame implements Layout {
                 setResizable(false);
                 opstartScherm.runStatussen();
 
+        }
+
+        public static void setOrder(int[] rgbAantallen) {
+                Frame.order = new Order(rgbAantallen);
         }
 
         public static void setScherm(Schermen scherm) {

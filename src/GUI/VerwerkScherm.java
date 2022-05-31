@@ -6,22 +6,19 @@ import java.awt.*;
 
 //Sylvia >
 public class VerwerkScherm extends Scherm {
-
-    JButton jbPijlLinks = new BasicArrowButton(BasicArrowButton.WEST);
-    JButton jbPijlRechts = new BasicArrowButton(BasicArrowButton.EAST);
     private CardLayout cards;
     private JPanel jpSchermen;
     private Carrousel huidigScherm;
-    private int index = 9999;
+    private int index = 9999; // zodat als je naar links gaat niet negatief wordt en het % 3 nog 0 is
 
     public enum Carrousel {
         VerwerkVoorraadScherm(new VerwerkVoorraadScherm()),
         VerwerkKleurScherm(new VerwerkKleurScherm()),
         VerwerkDoosScherm(new VerwerkDoosScherm());
 
-        private GUI.Scherm scherm;
+        public GUI.VerwerkCarrouselScherm scherm;
 
-        Carrousel(GUI.Scherm scherm) {
+        Carrousel(GUI.VerwerkCarrouselScherm scherm) {
             this.scherm = scherm;
         }
 
@@ -38,8 +35,6 @@ public class VerwerkScherm extends Scherm {
         cards = new CardLayout();
         jpSchermen = new JPanel(cards);
 //        huidigScherm = Carrousel.values()[0];
-
-
 
         for (Carrousel scherm: Carrousel.values()) {
             System.out.println(scherm);
@@ -106,6 +101,12 @@ public class VerwerkScherm extends Scherm {
     public void setScherm(Carrousel scherm) {
         cards.show(jpSchermen, scherm.toString());
         this.huidigScherm = scherm;
+    }
+
+    public void reload() {
+        for (Carrousel carrousel: Carrousel.values()) {
+            carrousel.scherm.reload();
+        }
     }
 
     private void addSchermToCards(Carrousel scherm, JPanel cardPanel) {

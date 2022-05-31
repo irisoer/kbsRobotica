@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 //Sylvia >
-public class VerwerkDoosScherm extends Scherm implements ProductStandaard {
+public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ProductStandaard {
     private Product huidigProduct; //laatst gepickte product todo:
     private ArrayList<Product> producten;
     private Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
@@ -170,6 +170,11 @@ public class VerwerkDoosScherm extends Scherm implements ProductStandaard {
         if(product.getKleur().equals(huidigeKleur) && product.getDoos() == huidigeDoos){
             product.fillProduct(g,product);
         }
+    }
+
+    @Override
+    public void reload() {
+
     }
 }
 //Sylvia <

@@ -27,12 +27,22 @@ public class Order extends Database {
     public int aantalBlauw = 2;
     public int aantalRood = 2;
 
+    public Order() {
+        aantalRood = 0;
+        aantalGeel = 0;
+        aantalBlauw = 0;
+    }
     public Order(int[] rgbAantallen) {
         aantalRood = rgbAantallen[0];
         aantalGeel = rgbAantallen[1];
         aantalBlauw = rgbAantallen[2];
+        this.artikelen = new ArrayList<>();
+        voegArtikelToe(73, aantalRood); // Rode artikelen
+        voegArtikelToe(71, aantalGeel); // Gele artikelen
+        voegArtikelToe(60, aantalBlauw); // Blauwe artikelen
 
-
+        berekenBpp();
+        System.out.println(bpp);
     }
 
     public void getOrder() throws SQLException {
@@ -104,11 +114,17 @@ public class Order extends Database {
         orderNr++;
     }
 
-    public void addArtikelToOrder(int artikelNum) {
+    public void voegArtikelToe(int artikelNum) {
         try {
             this.artikelen.add(Database.selecteerArtikel(artikelNum));
         } catch (SQLException e) {
             System.out.println("Niet gevonden"); // Gebeurd alleen als db uit is wat niet kan
+        }
+    }
+
+    public void voegArtikelToe(int artikelNum, int aantal) {
+        for (int i = 0; i < aantal; i++) {
+            voegArtikelToe(artikelNum);
         }
     }
 

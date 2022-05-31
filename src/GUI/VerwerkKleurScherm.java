@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 //Sylvia >
 
-public class VerwerkKleurScherm extends Scherm implements ProductStandaard {
+public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements ProductStandaard {
     private int aantalRood = 6;  //todo: hardcode
     private int aantalGeel = 4;
     private int aantalBlauw = 3;
@@ -132,6 +132,11 @@ public class VerwerkKleurScherm extends Scherm implements ProductStandaard {
                 }
             }
         }
+
+    }
+
+    @Override
+    public void reload() {
 
     }
 }
