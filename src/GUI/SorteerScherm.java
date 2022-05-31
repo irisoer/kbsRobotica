@@ -1,5 +1,8 @@
 package GUI;
 
+import Applicatie.ArduinoInpak;
+import Applicatie.ArduinoSorteer;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -59,6 +62,12 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 
     }
 
+    public static void startSorteren() {
+        try {
+            ArduinoSorteer.sorteer(Frame.arduinoInpak, Frame.arduinoSorteer);
+
+        } catch (Exception e) {}
+    }
 }
 
 //<Sylvia

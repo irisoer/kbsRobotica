@@ -1,10 +1,11 @@
 package GUI;
 
+import Applicatie.ArduinoInpak;
+import Applicatie.ArduinoSorteer;
 import Applicatie.Database;
 import Applicatie.Order;
 
 import java.awt.*;
-import java.sql.SQLException;
 import java.util.Arrays;
 import javax.swing.*;
 
@@ -16,6 +17,8 @@ public class Frame extends JFrame implements Layout {
         static int[] voorraad;
         static String huidigeKleur;
         static int huidigeDoos;
+        static ArduinoInpak arduinoInpak;
+        static ArduinoSorteer arduinoSorteer;
 
         static {
                 voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
@@ -25,7 +28,7 @@ public class Frame extends JFrame implements Layout {
                 OpstartScherm(opstartScherm),
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
-                SorteerSchemr(new SorteerScherm()),
+                SorteerScherm(new SorteerScherm()),
                 ErrorScherm(new ErrorScherm());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
@@ -41,7 +44,7 @@ public class Frame extends JFrame implements Layout {
         private Schermen huidigScherm;
         public Frame(){
                 super("GUI");
-//                setResizable(false);
+                setResizable(false);
 //                setExtendedState(JFrame.MAXIMIZED_BOTH);
                 setUndecorated(true);
                 setVisible(true);
@@ -62,10 +65,8 @@ public class Frame extends JFrame implements Layout {
                 }
 
                 add(jpSchermen);
-                setScherm(Schermen.StartScherm);
-                setResizable(false);
+                setScherm(Schermen.OpstartScherm);
                 opstartScherm.runStatussen();
-
         }
 
         public static void setOrder(int[] rgbAantallen) {

@@ -57,6 +57,7 @@ public class OpstartScherm extends Scherm{
             while(inpak.getSerialPort() == null) {
                 inpak = new ArduinoInpak();
             }
+            Frame.arduinoInpak = inpak;
             System.out.println(inpak.getSerialPort());
             jlIsVerbondenInpak.setForeground(Color.BLACK);
             jlIsVerbondenInpak.setText("verbonden");
@@ -70,6 +71,7 @@ public class OpstartScherm extends Scherm{
             while(sorteer.getSerialPort() == null) {
                 sorteer = new ArduinoSorteer();
             }
+            Frame.arduinoSorteer = sorteer;
             jlIsVerbondenSorteer.setForeground(Color.BLACK);
             jlIsVerbondenSorteer.setText("verbonden");
         } catch (Exception e){
@@ -77,13 +79,15 @@ public class OpstartScherm extends Scherm{
     }
 
     public void statusDatabase(){
-
+        boolean verbonden = false;
+        while(!verbonden){
         try{
             Database.startConnection();
             jlIsVerbondenDatabase.setForeground(Color.BLACK);
             jlIsVerbondenDatabase.setText("verbonden");
+            verbonden = true;
         }catch (Exception e){
-        }
+        }}
     }
 
     public void runStatussen() {
@@ -96,6 +100,7 @@ public class OpstartScherm extends Scherm{
 
         }
         verbonden = true;
+        Frame.setScherm(Frame.Schermen.StartScherm);
     }
 
 }
