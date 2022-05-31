@@ -1,15 +1,28 @@
 package Applicatie;
 
+import GUI.Product;
+
 import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Artikel implements Comparable<Artikel> {
+	int hoogteDoos = 155;       //hoogte doos
+	int breedteDoos = 110;      //breedte doos
+	int grootArtikel = 80;    //Groot formaat, voor sorteren
+	int kleinArtikel = grootArtikel /2;      //Klein formaat voor verwerk/order schermen
+	Color rood = Color.RED;     //todo: kleuren verwerken in statements in subklasses
+	Color geel = Color.ORANGE;
+	Color blauw = Color.BLUE;
 	private int gewicht;
 	private int id;
 	private String kleur;
 	private String naam;
 	private boolean ingepakt = false;
+	private int doos;
+
+	private int posX;
+	private int posY;
 
 	public boolean isIngepakt() {
 		return ingepakt;
@@ -75,9 +88,18 @@ public class Artikel implements Comparable<Artikel> {
 				", id=" + id +
 				", kleur='" + kleur + '\'' +
 				", naam='" + naam + '\'' +
+				", doos='" + doos + '\'' +
 				'}';
 	}
 
+
+	public int getDoos() {
+		return doos;
+	}
+
+	public void setDoos(int doos) {
+		this.doos = doos + 1;
+	}
 
 	@Override
 	public int compareTo(Artikel compareArtikel) {
@@ -92,6 +114,57 @@ public class Artikel implements Comparable<Artikel> {
 		if (this == o) return true;
 		if (!(o instanceof Artikel)) return false;
 		Artikel artikel = (Artikel) o;
-		return id == artikel.id;
+		return id == artikel.id
+				&& (ingepakt == artikel.ingepakt);
+	}
+
+//	public Product(Color kleur){
+//		this.kleur = kleur;
+//	}
+//
+//	public Product(Color kleur, int x, int y){
+//		this.kleur = kleur;
+//		this.posX = x;
+//		this.posY = y;
+//	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPositie(int x, int y) {
+		this.posX = x;
+		this.posY = y;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
+
+	public void drawArtikel(Graphics g, Product artikel) {  //gebruik bij sorteren
+		g.setColor(this.getJavaKleur());
+		g.fillOval(this.posX, this.posY, grootArtikel, grootArtikel);
+	}
+	public void drawArtikel(Graphics g, Product artikel, int x , int y) {  //gebruik bij sorteren
+		artikel.setPositie(x,y);
+		artikel.drawArtikel(g,artikel);
+	}
+
+	public void drawKleinArtikel(Graphics g, Product artikel) { //gebruik bij verwerken order
+		g.setColor(this.getJavaKleur());
+		g.drawOval(this.posX, this.posY, kleinArtikel, kleinArtikel);
+	}
+
+	public void fillArtikel(Graphics g, Product artikel) {        //invullen van gepickte items (zijn altijd klein)
+		g.setColor(this.getJavaKleur());
+		g.fillOval(this.posX, this.posY, kleinArtikel, kleinArtikel);
 	}
 }

@@ -14,7 +14,7 @@ public class Frame extends JFrame implements Layout {
         static OpstartScherm opstartScherm = new OpstartScherm();
         static int[] voorraad;
         static {
-                        voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
+                voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
         }
 
         public enum Schermen {
@@ -58,7 +58,7 @@ public class Frame extends JFrame implements Layout {
                 }
 
                 add(jpSchermen);
-                setScherm(Schermen.OpstartScherm);
+                setScherm(Schermen.StartScherm);
                 setResizable(false);
                 opstartScherm.runStatussen();
 

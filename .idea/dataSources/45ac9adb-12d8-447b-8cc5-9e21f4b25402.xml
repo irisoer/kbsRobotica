@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="MySQL - nerdygadgets@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.39">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -8,150 +8,175 @@
       <Grants>|root||PowerBi||ALTER|G
 |root||local||ALTER|G
 |root||mamp|localhost|ALTER|G
+|root||pi||ALTER|G
 |root||root|127.0.0.1|ALTER|G
 |root||root|::1|ALTER|G
 |root||root|localhost|ALTER|G
 |root||PowerBi||ALTER ROUTINE|G
 |root||local||ALTER ROUTINE|G
 |root||mamp|localhost|ALTER ROUTINE|G
+|root||pi||ALTER ROUTINE|G
 |root||root|127.0.0.1|ALTER ROUTINE|G
 |root||root|::1|ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
 |root||PowerBi||CREATE|G
 |root||local||CREATE|G
 |root||mamp|localhost|CREATE|G
+|root||pi||CREATE|G
 |root||root|127.0.0.1|CREATE|G
 |root||root|::1|CREATE|G
 |root||root|localhost|CREATE|G
 |root||PowerBi||CREATE ROUTINE|G
 |root||local||CREATE ROUTINE|G
 |root||mamp|localhost|CREATE ROUTINE|G
+|root||pi||CREATE ROUTINE|G
 |root||root|127.0.0.1|CREATE ROUTINE|G
 |root||root|::1|CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
 |root||PowerBi||CREATE TABLESPACE|G
 |root||local||CREATE TABLESPACE|G
 |root||mamp|localhost|CREATE TABLESPACE|G
+|root||pi||CREATE TABLESPACE|G
 |root||root|127.0.0.1|CREATE TABLESPACE|G
 |root||root|::1|CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
 |root||PowerBi||CREATE TEMPORARY TABLES|G
 |root||local||CREATE TEMPORARY TABLES|G
 |root||mamp|localhost|CREATE TEMPORARY TABLES|G
+|root||pi||CREATE TEMPORARY TABLES|G
 |root||root|127.0.0.1|CREATE TEMPORARY TABLES|G
 |root||root|::1|CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
 |root||PowerBi||CREATE USER|G
 |root||local||CREATE USER|G
 |root||mamp|localhost|CREATE USER|G
+|root||pi||CREATE USER|G
 |root||root|127.0.0.1|CREATE USER|G
 |root||root|::1|CREATE USER|G
 |root||root|localhost|CREATE USER|G
 |root||PowerBi||CREATE VIEW|G
 |root||local||CREATE VIEW|G
 |root||mamp|localhost|CREATE VIEW|G
+|root||pi||CREATE VIEW|G
 |root||root|127.0.0.1|CREATE VIEW|G
 |root||root|::1|CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
 |root||PowerBi||DELETE|G
 |root||local||DELETE|G
 |root||mamp|localhost|DELETE|G
+|root||pi||DELETE|G
 |root||root|127.0.0.1|DELETE|G
 |root||root|::1|DELETE|G
 |root||root|localhost|DELETE|G
 |root||PowerBi||DROP|G
 |root||local||DROP|G
 |root||mamp|localhost|DROP|G
+|root||pi||DROP|G
 |root||root|127.0.0.1|DROP|G
 |root||root|::1|DROP|G
 |root||root|localhost|DROP|G
 |root||PowerBi||EVENT|G
 |root||local||EVENT|G
 |root||mamp|localhost|EVENT|G
+|root||pi||EVENT|G
 |root||root|127.0.0.1|EVENT|G
 |root||root|::1|EVENT|G
 |root||root|localhost|EVENT|G
 |root||PowerBi||EXECUTE|G
 |root||local||EXECUTE|G
 |root||mamp|localhost|EXECUTE|G
+|root||pi||EXECUTE|G
 |root||root|127.0.0.1|EXECUTE|G
 |root||root|::1|EXECUTE|G
 |root||root|localhost|EXECUTE|G
 |root||PowerBi||FILE|G
 |root||local||FILE|G
 |root||mamp|localhost|FILE|G
+|root||pi||FILE|G
 |root||root|127.0.0.1|FILE|G
 |root||root|::1|FILE|G
 |root||root|localhost|FILE|G
 |root||PowerBi||INDEX|G
 |root||local||INDEX|G
 |root||mamp|localhost|INDEX|G
+|root||pi||INDEX|G
 |root||root|127.0.0.1|INDEX|G
 |root||root|::1|INDEX|G
 |root||root|localhost|INDEX|G
 |root||PowerBi||INSERT|G
 |root||local||INSERT|G
 |root||mamp|localhost|INSERT|G
+|root||pi||INSERT|G
 |root||root|127.0.0.1|INSERT|G
 |root||root|::1|INSERT|G
 |root||root|localhost|INSERT|G
 |root||PowerBi||LOCK TABLES|G
 |root||local||LOCK TABLES|G
 |root||mamp|localhost|LOCK TABLES|G
+|root||pi||LOCK TABLES|G
 |root||root|127.0.0.1|LOCK TABLES|G
 |root||root|::1|LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
 |root||PowerBi||PROCESS|G
 |root||local||PROCESS|G
 |root||mamp|localhost|PROCESS|G
+|root||pi||PROCESS|G
 |root||root|127.0.0.1|PROCESS|G
 |root||root|::1|PROCESS|G
 |root||root|localhost|PROCESS|G
 |root||PowerBi||REFERENCES|G
 |root||local||REFERENCES|G
 |root||mamp|localhost|REFERENCES|G
+|root||pi||REFERENCES|G
 |root||root|127.0.0.1|REFERENCES|G
 |root||root|::1|REFERENCES|G
 |root||root|localhost|REFERENCES|G
 |root||PowerBi||RELOAD|G
 |root||local||RELOAD|G
 |root||mamp|localhost|RELOAD|G
+|root||pi||RELOAD|G
 |root||root|127.0.0.1|RELOAD|G
 |root||root|::1|RELOAD|G
 |root||root|localhost|RELOAD|G
 |root||PowerBi||REPLICATION CLIENT|G
 |root||local||REPLICATION CLIENT|G
 |root||mamp|localhost|REPLICATION CLIENT|G
+|root||pi||REPLICATION CLIENT|G
 |root||root|127.0.0.1|REPLICATION CLIENT|G
 |root||root|::1|REPLICATION CLIENT|G
 |root||root|localhost|REPLICATION CLIENT|G
 |root||PowerBi||REPLICATION SLAVE|G
 |root||local||REPLICATION SLAVE|G
 |root||mamp|localhost|REPLICATION SLAVE|G
+|root||pi||REPLICATION SLAVE|G
 |root||root|127.0.0.1|REPLICATION SLAVE|G
 |root||root|::1|REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
 |root||PowerBi||SELECT|G
 |root||local||SELECT|G
 |root||mamp|localhost|SELECT|G
+|root||pi||SELECT|G
 |root||root|127.0.0.1|SELECT|G
 |root||root|::1|SELECT|G
 |root||root|localhost|SELECT|G
 |root||PowerBi||SHOW DATABASES|G
 |root||local||SHOW DATABASES|G
 |root||mamp|localhost|SHOW DATABASES|G
+|root||pi||SHOW DATABASES|G
 |root||root|127.0.0.1|SHOW DATABASES|G
 |root||root|::1|SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
 |root||PowerBi||SHOW VIEW|G
 |root||local||SHOW VIEW|G
 |root||mamp|localhost|SHOW VIEW|G
+|root||pi||SHOW VIEW|G
 |root||root|127.0.0.1|SHOW VIEW|G
 |root||root|::1|SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
 |root||PowerBi||SHUTDOWN|G
 |root||local||SHUTDOWN|G
 |root||mamp|localhost|SHUTDOWN|G
+|root||pi||SHUTDOWN|G
 |root||root|127.0.0.1|SHUTDOWN|G
 |root||root|::1|SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
@@ -159,24 +184,28 @@
 |root||local||SUPER|G
 |root||mamp|localhost|SUPER|G
 |root||mysql.session|localhost|SUPER|G
+|root||pi||SUPER|G
 |root||root|127.0.0.1|SUPER|G
 |root||root|::1|SUPER|G
 |root||root|localhost|SUPER|G
 |root||PowerBi||TRIGGER|G
 |root||local||TRIGGER|G
 |root||mamp|localhost|TRIGGER|G
+|root||pi||TRIGGER|G
 |root||root|127.0.0.1|TRIGGER|G
 |root||root|::1|TRIGGER|G
 |root||root|localhost|TRIGGER|G
 |root||PowerBi||UPDATE|G
 |root||local||UPDATE|G
 |root||mamp|localhost|UPDATE|G
+|root||pi||UPDATE|G
 |root||root|127.0.0.1|UPDATE|G
 |root||root|::1|UPDATE|G
 |root||root|localhost|UPDATE|G
 |root||PowerBi||grant option|G
 |root||local||grant option|G
 |root||mamp|localhost|grant option|G
+|root||pi||grant option|G
 |root||root|127.0.0.1|grant option|G
 |root||root|::1|grant option|G
 |root||root|localhost|grant option|G
@@ -986,15 +1015,4574 @@ suppliercategories|||bezoeker||SELECT|G</Grants>
     <user id="247" parent="1" name="mysql.sys">
       <Host>localhost</Host>
     </user>
-    <user id="248" parent="1" name="root">
+    <user id="248" parent="1" name="pi"/>
+    <user id="249" parent="1" name="root">
       <Host>127.0.0.1</Host>
     </user>
-    <user id="249" parent="1" name="root">
+    <user id="250" parent="1" name="root">
       <Host>::1</Host>
     </user>
-    <user id="250" parent="1" name="root">
+    <user id="251" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <user id="251" parent="1" name="temp"/>
+    <user id="252" parent="1" name="temp"/>
+    <table id="253" parent="232" name="account">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="254" parent="232" name="buyinggroups">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="255" parent="232" name="buyinggroups_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="256" parent="232" name="cities">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="257" parent="232" name="cities_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="258" parent="232" name="coldroomtemperatures">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="259" parent="232" name="coldroomtemperatures_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="260" parent="232" name="colors">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="261" parent="232" name="colors_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="262" parent="232" name="countries">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="263" parent="232" name="countries_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="264" parent="232" name="customercategories">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="265" parent="232" name="customercategories_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="266" parent="232" name="customers">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="267" parent="232" name="customers_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="268" parent="232" name="customertransactions">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="269" parent="232" name="deliverymethods">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="270" parent="232" name="deliverymethods_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="271" parent="232" name="invoicelines">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="272" parent="232" name="invoices">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="273" parent="232" name="meting">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="274" parent="232" name="order">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="275" parent="232" name="orderCustomer">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="276" parent="232" name="orderLine">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="277" parent="232" name="orderlines">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="278" parent="232" name="orders">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="279" parent="232" name="packagetypes">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="280" parent="232" name="packagetypes_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="281" parent="232" name="paymentmethods">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="282" parent="232" name="paymentmethods_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="283" parent="232" name="people">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="284" parent="232" name="people_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="285" parent="232" name="purchaseorderlines">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="286" parent="232" name="purchaseorders">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="287" parent="232" name="sensor">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="288" parent="232" name="specialdeals">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="289" parent="232" name="stateprovinces">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="290" parent="232" name="stateprovinces_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="291" parent="232" name="stockgroups">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="292" parent="232" name="stockgroups_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="293" parent="232" name="stockitemholdings">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="294" parent="232" name="stockitemimages">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="295" parent="232" name="stockitems">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="296" parent="232" name="stockitems_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="297" parent="232" name="stockitemstockgroups">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="298" parent="232" name="stockitemtransactions">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="299" parent="232" name="suppliercategories">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="300" parent="232" name="suppliercategories_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="301" parent="232" name="suppliers">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="302" parent="232" name="suppliers_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="303" parent="232" name="suppliertransactions">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="304" parent="232" name="sysdiagrams">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="305" parent="232" name="systemparameters">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="306" parent="232" name="transactiontypes">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="307" parent="232" name="transactiontypes_archive">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="308" parent="232" name="vehicletemperatures">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <column id="309" parent="253" name="AccountID">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="310" parent="253" name="emailadres">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="311" parent="253" name="voornaam">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="312" parent="253" name="tussenvoegsel">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="313" parent="253" name="achternaam">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="314" parent="253" name="straat">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="315" parent="253" name="huisnummer">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="316" parent="253" name="woonplaats">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="317" parent="253" name="postcode">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="318" parent="253" name="telefoonnummer">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>10</Position>
+    </column>
+    <column id="319" parent="253" name="land">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="320" parent="253" name="wachtwoord">
+      <DataType>blob|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <index id="321" parent="253" name="emailadres_UNIQUE">
+      <ColNames>emailadres</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="322" parent="253" name="PRIMARY">
+      <ColNames>AccountID
+emailadres</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="323" parent="253" name="emailadres_UNIQUE">
+      <ColNames>emailadres</ColNames>
+      <UnderlyingIndexName>emailadres_UNIQUE</UnderlyingIndexName>
+    </key>
+    <trigger id="324" parent="253" name="email-account">
+      <Definer>root@localhost</Definer>
+      <Events>I</Events>
+      <SourceTextLength>138</SourceTextLength>
+      <Turn>before-row</Turn>
+    </trigger>
+    <trigger id="325" parent="253" name="postcode-account">
+      <Definer>root@localhost</Definer>
+      <Events>I</Events>
+      <SourceTextLength>216</SourceTextLength>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="326" parent="254" name="BuyingGroupID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="327" parent="254" name="BuyingGroupName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="328" parent="254" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="329" parent="254" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="330" parent="254" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="331" parent="254" name="FK_Sales_BuyingGroups_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="332" parent="254" name="UQ_Sales_BuyingGroups_BuyingGroupName">
+      <ColNames>BuyingGroupName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="333" parent="254" name="FK_Sales_BuyingGroups_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="334" parent="254" name="PRIMARY">
+      <ColNames>BuyingGroupID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="335" parent="254" name="UQ_Sales_BuyingGroups_BuyingGroupName">
+      <ColNames>BuyingGroupName</ColNames>
+      <UnderlyingIndexName>UQ_Sales_BuyingGroups_BuyingGroupName</UnderlyingIndexName>
+    </key>
+    <column id="336" parent="255" name="BuyingGroupID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="337" parent="255" name="BuyingGroupName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="338" parent="255" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="339" parent="255" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="340" parent="255" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="341" parent="255" name="ix_BuyingGroups_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="342" parent="256" name="CityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="343" parent="256" name="CityName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="344" parent="256" name="StateProvinceID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="345" parent="256" name="Location">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="346" parent="256" name="LatestRecordedPopulation">
+      <DataType>bigint(20)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="347" parent="256" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="348" parent="256" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="349" parent="256" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="350" parent="256" name="FK_Application_Cities_StateProvinceID_Application_StateProvinces">
+      <ColNames>StateProvinceID</ColNames>
+      <RefColNames>StateProvinceID</RefColNames>
+      <RefTableName>stateprovinces</RefTableName>
+    </foreign-key>
+    <foreign-key id="351" parent="256" name="FK_Application_Cities_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="352" parent="256" name="FK_Application_Cities_StateProvinceID">
+      <ColNames>StateProvinceID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="353" parent="256" name="FK_Application_Cities_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="354" parent="256" name="PRIMARY">
+      <ColNames>CityID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="355" parent="257" name="CityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="356" parent="257" name="CityName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="357" parent="257" name="StateProvinceID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="358" parent="257" name="Location">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="359" parent="257" name="LatestRecordedPopulation">
+      <DataType>bigint(20)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="360" parent="257" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="361" parent="257" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="362" parent="257" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <index id="363" parent="257" name="ix_Cities_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="364" parent="258" name="ColdRoomTemperatureID">
+      <AutoIncrement>3654741</AutoIncrement>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="365" parent="258" name="ColdRoomSensorNumber">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="366" parent="258" name="RecordedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="367" parent="258" name="Temperature">
+      <DataType>decimal(10,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="368" parent="258" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="369" parent="258" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="370" parent="258" name="IX_Warehouse_ColdRoomTemperatures_ColdRoomSensorNumber">
+      <ColNames>ColdRoomSensorNumber</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="371" parent="258" name="PRIMARY">
+      <ColNames>ColdRoomTemperatureID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="372" parent="259" name="ColdRoomTemperatureID">
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="373" parent="259" name="ColdRoomSensorNumber">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="374" parent="259" name="RecordedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="375" parent="259" name="Temperature">
+      <DataType>decimal(10,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="376" parent="259" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="377" parent="259" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="378" parent="259" name="ix_ColdRoomTemperatures_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="379" parent="260" name="ColorID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="380" parent="260" name="ColorName">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="381" parent="260" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="382" parent="260" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="383" parent="260" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="384" parent="260" name="FK_Warehouse_Colors_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="385" parent="260" name="UQ_Warehouse_Colors_ColorName">
+      <ColNames>ColorName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="386" parent="260" name="FK_Warehouse_Colors_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="387" parent="260" name="PRIMARY">
+      <ColNames>ColorID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="388" parent="260" name="UQ_Warehouse_Colors_ColorName">
+      <ColNames>ColorName</ColNames>
+      <UnderlyingIndexName>UQ_Warehouse_Colors_ColorName</UnderlyingIndexName>
+    </key>
+    <column id="389" parent="261" name="ColorID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="390" parent="261" name="ColorName">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="391" parent="261" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="392" parent="261" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="393" parent="261" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="394" parent="261" name="ix_Colors_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="395" parent="262" name="CountryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="396" parent="262" name="CountryName">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="397" parent="262" name="FormalName">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="398" parent="262" name="IsoAlpha3Code">
+      <DataType>varchar(3)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="399" parent="262" name="IsoNumericCode">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="400" parent="262" name="CountryType">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="401" parent="262" name="LatestRecordedPopulation">
+      <DataType>bigint(20)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="402" parent="262" name="Continent">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="403" parent="262" name="Region">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="404" parent="262" name="Subregion">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="405" parent="262" name="Border">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="406" parent="262" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="407" parent="262" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="408" parent="262" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <foreign-key id="409" parent="262" name="FK_Application_Countries_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="410" parent="262" name="UQ_Application_Countries_CountryName">
+      <ColNames>CountryName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="411" parent="262" name="UQ_Application_Countries_FormalName">
+      <ColNames>FormalName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="412" parent="262" name="FK_Application_Countries_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="413" parent="262" name="PRIMARY">
+      <ColNames>CountryID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="414" parent="262" name="UQ_Application_Countries_CountryName">
+      <ColNames>CountryName</ColNames>
+      <UnderlyingIndexName>UQ_Application_Countries_CountryName</UnderlyingIndexName>
+    </key>
+    <key id="415" parent="262" name="UQ_Application_Countries_FormalName">
+      <ColNames>FormalName</ColNames>
+      <UnderlyingIndexName>UQ_Application_Countries_FormalName</UnderlyingIndexName>
+    </key>
+    <column id="416" parent="263" name="CountryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="417" parent="263" name="CountryName">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="418" parent="263" name="FormalName">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="419" parent="263" name="IsoAlpha3Code">
+      <DataType>varchar(3)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="420" parent="263" name="IsoNumericCode">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="421" parent="263" name="CountryType">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="422" parent="263" name="LatestRecordedPopulation">
+      <DataType>bigint(20)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="423" parent="263" name="Continent">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="424" parent="263" name="Region">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="425" parent="263" name="Subregion">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="426" parent="263" name="Border">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="427" parent="263" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="428" parent="263" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="429" parent="263" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <index id="430" parent="263" name="ix_Countries_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="431" parent="264" name="CustomerCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="432" parent="264" name="CustomerCategoryName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="433" parent="264" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="434" parent="264" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="435" parent="264" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="436" parent="264" name="FK_Sales_CustomerCategories_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="437" parent="264" name="UQ_Sales_CustomerCategories_CustomerCategoryName">
+      <ColNames>CustomerCategoryName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="438" parent="264" name="FK_Sales_CustomerCategories_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="439" parent="264" name="PRIMARY">
+      <ColNames>CustomerCategoryID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="440" parent="264" name="UQ_Sales_CustomerCategories_CustomerCategoryName">
+      <ColNames>CustomerCategoryName</ColNames>
+      <UnderlyingIndexName>UQ_Sales_CustomerCategories_CustomerCategoryName</UnderlyingIndexName>
+    </key>
+    <column id="441" parent="265" name="CustomerCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="442" parent="265" name="CustomerCategoryName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="443" parent="265" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="444" parent="265" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="445" parent="265" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="446" parent="265" name="ix_CustomerCategories_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="447" parent="266" name="CustomerID">
+      <AutoIncrement>64806497</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="448" parent="266" name="CustomerName">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="449" parent="266" name="BillToCustomerID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="450" parent="266" name="CustomerCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="451" parent="266" name="BuyingGroupID">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="452" parent="266" name="PrimaryContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="453" parent="266" name="AlternateContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="454" parent="266" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="455" parent="266" name="DeliveryCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="456" parent="266" name="PostalCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="457" parent="266" name="CreditLimit">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="458" parent="266" name="AccountOpenedDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="459" parent="266" name="StandardDiscountPercentage">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="460" parent="266" name="IsStatementSent">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <column id="461" parent="266" name="IsOnCreditHold">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>15</Position>
+    </column>
+    <column id="462" parent="266" name="PaymentDays">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>16</Position>
+    </column>
+    <column id="463" parent="266" name="PhoneNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>17</Position>
+    </column>
+    <column id="464" parent="266" name="FaxNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>18</Position>
+    </column>
+    <column id="465" parent="266" name="DeliveryRun">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>19</Position>
+    </column>
+    <column id="466" parent="266" name="RunPosition">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>20</Position>
+    </column>
+    <column id="467" parent="266" name="WebsiteURL">
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>21</Position>
+    </column>
+    <column id="468" parent="266" name="DeliveryAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>22</Position>
+    </column>
+    <column id="469" parent="266" name="DeliveryAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>23</Position>
+    </column>
+    <column id="470" parent="266" name="DeliveryPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>24</Position>
+    </column>
+    <column id="471" parent="266" name="DeliveryLocation">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>25</Position>
+    </column>
+    <column id="472" parent="266" name="PostalAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>26</Position>
+    </column>
+    <column id="473" parent="266" name="PostalAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>27</Position>
+    </column>
+    <column id="474" parent="266" name="PostalPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>28</Position>
+    </column>
+    <column id="475" parent="266" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>29</Position>
+    </column>
+    <column id="476" parent="266" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>30</Position>
+    </column>
+    <column id="477" parent="266" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>31</Position>
+    </column>
+    <foreign-key id="478" parent="266" name="FK_Sales_Customers_BillToCustomerID_Sales_Customers">
+      <ColNames>BillToCustomerID</ColNames>
+      <RefColNames>CustomerID</RefColNames>
+      <RefTableName>customers</RefTableName>
+    </foreign-key>
+    <foreign-key id="479" parent="266" name="FK_Sales_Customers_CustomerCategoryID_Sales_CustomerCategories">
+      <ColNames>CustomerCategoryID</ColNames>
+      <RefColNames>CustomerCategoryID</RefColNames>
+      <RefTableName>customercategories</RefTableName>
+    </foreign-key>
+    <foreign-key id="480" parent="266" name="FK_Sales_Customers_BuyingGroupID_Sales_BuyingGroups">
+      <ColNames>BuyingGroupID</ColNames>
+      <RefColNames>BuyingGroupID</RefColNames>
+      <RefTableName>buyinggroups</RefTableName>
+    </foreign-key>
+    <foreign-key id="481" parent="266" name="FK_Sales_Customers_PrimaryContactPersonID_Application_People">
+      <ColNames>PrimaryContactPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="482" parent="266" name="FK_Sales_Customers_AlternateContactPersonID_Application_People">
+      <ColNames>AlternateContactPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="483" parent="266" name="FK_Sales_Customers_DeliveryMethodID_Application_DeliveryMethods">
+      <ColNames>DeliveryMethodID</ColNames>
+      <RefColNames>DeliveryMethodID</RefColNames>
+      <RefTableName>deliverymethods</RefTableName>
+    </foreign-key>
+    <foreign-key id="484" parent="266" name="FK_Sales_Customers_DeliveryCityID_Application_Cities">
+      <ColNames>DeliveryCityID</ColNames>
+      <RefColNames>CityID</RefColNames>
+      <RefTableName>cities</RefTableName>
+    </foreign-key>
+    <foreign-key id="485" parent="266" name="FK_Sales_Customers_PostalCityID_Application_Cities">
+      <ColNames>PostalCityID</ColNames>
+      <RefColNames>CityID</RefColNames>
+      <RefTableName>cities</RefTableName>
+    </foreign-key>
+    <foreign-key id="486" parent="266" name="FK_Sales_Customers_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="487" parent="266" name="UQ_Sales_Customers_CustomerName">
+      <ColNames>CustomerName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="488" parent="266" name="FK_Sales_Customers_BillToCustomerID_Sales_Customers">
+      <ColNames>BillToCustomerID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="489" parent="266" name="FK_Sales_Customers_CustomerCategoryID">
+      <ColNames>CustomerCategoryID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="490" parent="266" name="FK_Sales_Customers_BuyingGroupID">
+      <ColNames>BuyingGroupID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="491" parent="266" name="FK_Sales_Customers_PrimaryContactPersonID">
+      <ColNames>PrimaryContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="492" parent="266" name="FK_Sales_Customers_AlternateContactPersonID">
+      <ColNames>AlternateContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="493" parent="266" name="FK_Sales_Customers_DeliveryMethodID">
+      <ColNames>DeliveryMethodID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="494" parent="266" name="FK_Sales_Customers_DeliveryCityID">
+      <ColNames>DeliveryCityID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="495" parent="266" name="FK_Sales_Customers_PostalCityID">
+      <ColNames>PostalCityID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="496" parent="266" name="IX_Sales_Customers_Perf_20160301_06">
+      <ColNames>IsOnCreditHold
+CustomerID
+BillToCustomerID
+PrimaryContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="497" parent="266" name="FK_Sales_Customers_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="498" parent="266" name="PRIMARY">
+      <ColNames>CustomerID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="499" parent="266" name="UQ_Sales_Customers_CustomerName">
+      <ColNames>CustomerName</ColNames>
+      <UnderlyingIndexName>UQ_Sales_Customers_CustomerName</UnderlyingIndexName>
+    </key>
+    <column id="500" parent="267" name="CustomerID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="501" parent="267" name="CustomerName">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="502" parent="267" name="BillToCustomerID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="503" parent="267" name="CustomerCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="504" parent="267" name="BuyingGroupID">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="505" parent="267" name="PrimaryContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="506" parent="267" name="AlternateContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="507" parent="267" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="508" parent="267" name="DeliveryCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="509" parent="267" name="PostalCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="510" parent="267" name="CreditLimit">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="511" parent="267" name="AccountOpenedDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="512" parent="267" name="StandardDiscountPercentage">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="513" parent="267" name="IsStatementSent">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <column id="514" parent="267" name="IsOnCreditHold">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>15</Position>
+    </column>
+    <column id="515" parent="267" name="PaymentDays">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>16</Position>
+    </column>
+    <column id="516" parent="267" name="PhoneNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>17</Position>
+    </column>
+    <column id="517" parent="267" name="FaxNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>18</Position>
+    </column>
+    <column id="518" parent="267" name="DeliveryRun">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>19</Position>
+    </column>
+    <column id="519" parent="267" name="RunPosition">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>20</Position>
+    </column>
+    <column id="520" parent="267" name="WebsiteURL">
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>21</Position>
+    </column>
+    <column id="521" parent="267" name="DeliveryAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>22</Position>
+    </column>
+    <column id="522" parent="267" name="DeliveryAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>23</Position>
+    </column>
+    <column id="523" parent="267" name="DeliveryPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>24</Position>
+    </column>
+    <column id="524" parent="267" name="DeliveryLocation">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>25</Position>
+    </column>
+    <column id="525" parent="267" name="PostalAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>26</Position>
+    </column>
+    <column id="526" parent="267" name="PostalAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>27</Position>
+    </column>
+    <column id="527" parent="267" name="PostalPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>28</Position>
+    </column>
+    <column id="528" parent="267" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>29</Position>
+    </column>
+    <column id="529" parent="267" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>30</Position>
+    </column>
+    <column id="530" parent="267" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>31</Position>
+    </column>
+    <index id="531" parent="267" name="ix_Customers_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="532" parent="268" name="CustomerTransactionID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="533" parent="268" name="CustomerID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="534" parent="268" name="TransactionTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="535" parent="268" name="InvoiceID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="536" parent="268" name="PaymentMethodID">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="537" parent="268" name="TransactionDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="538" parent="268" name="AmountExcludingTax">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="539" parent="268" name="TaxAmount">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="540" parent="268" name="TransactionAmount">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="541" parent="268" name="OutstandingBalance">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="542" parent="268" name="FinalizationDate">
+      <DataType>date|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="543" parent="268" name="IsFinalized">
+      <DataType>tinyint(1)|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="544" parent="268" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="545" parent="268" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <foreign-key id="546" parent="268" name="FK_Sales_CustomerTransactions_CustomerID_Sales_Customers">
+      <ColNames>CustomerID</ColNames>
+      <RefColNames>CustomerID</RefColNames>
+      <RefTableName>customers</RefTableName>
+    </foreign-key>
+    <foreign-key id="547" parent="268" name="FK_Sales_CustomerTransactions_TransactionTypeID_Application_Tr14">
+      <ColNames>TransactionTypeID</ColNames>
+      <RefColNames>TransactionTypeID</RefColNames>
+      <RefTableName>transactiontypes</RefTableName>
+    </foreign-key>
+    <foreign-key id="548" parent="268" name="FK_Sales_CustomerTransactions_InvoiceID_Sales_Invoices">
+      <ColNames>InvoiceID</ColNames>
+      <RefColNames>InvoiceID</RefColNames>
+      <RefTableName>invoices</RefTableName>
+    </foreign-key>
+    <foreign-key id="549" parent="268" name="FK_Sales_CustomerTransactions_PaymentMethodID_Application_Paym15">
+      <ColNames>PaymentMethodID</ColNames>
+      <RefColNames>PaymentMethodID</RefColNames>
+      <RefTableName>paymentmethods</RefTableName>
+    </foreign-key>
+    <foreign-key id="550" parent="268" name="FK_Sales_CustomerTransactions_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="551" parent="268" name="FK_Sales_CustomerTransactions_CustomerID">
+      <ColNames>CustomerID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="552" parent="268" name="FK_Sales_CustomerTransactions_TransactionTypeID">
+      <ColNames>TransactionTypeID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="553" parent="268" name="FK_Sales_CustomerTransactions_InvoiceID">
+      <ColNames>InvoiceID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="554" parent="268" name="FK_Sales_CustomerTransactions_PaymentMethodID">
+      <ColNames>PaymentMethodID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="555" parent="268" name="CX_Sales_CustomerTransactions">
+      <ColNames>TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="556" parent="268" name="IX_Sales_CustomerTransactions_IsFinalized">
+      <ColNames>IsFinalized
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="557" parent="268" name="FK_Sales_CustomerTransactions_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="558" parent="268" name="PRIMARY">
+      <ColNames>CustomerTransactionID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="559" parent="269" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="560" parent="269" name="DeliveryMethodName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="561" parent="269" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="562" parent="269" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="563" parent="269" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="564" parent="269" name="FK_Application_DeliveryMethods_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="565" parent="269" name="UQ_Application_DeliveryMethods_DeliveryMethodName">
+      <ColNames>DeliveryMethodName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="566" parent="269" name="FK_Application_DeliveryMethods_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="567" parent="269" name="PRIMARY">
+      <ColNames>DeliveryMethodID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="568" parent="269" name="UQ_Application_DeliveryMethods_DeliveryMethodName">
+      <ColNames>DeliveryMethodName</ColNames>
+      <UnderlyingIndexName>UQ_Application_DeliveryMethods_DeliveryMethodName</UnderlyingIndexName>
+    </key>
+    <column id="569" parent="270" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="570" parent="270" name="DeliveryMethodName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="571" parent="270" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="572" parent="270" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="573" parent="270" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="574" parent="270" name="ix_DeliveryMethods_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="575" parent="271" name="InvoiceLineID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="576" parent="271" name="InvoiceID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="577" parent="271" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="578" parent="271" name="Description">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="579" parent="271" name="PackageTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="580" parent="271" name="Quantity">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="581" parent="271" name="UnitPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="582" parent="271" name="TaxRate">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="583" parent="271" name="TaxAmount">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="584" parent="271" name="LineProfit">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="585" parent="271" name="ExtendedPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="586" parent="271" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="587" parent="271" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <foreign-key id="588" parent="271" name="FK_Sales_InvoiceLines_InvoiceID_Sales_Invoices">
+      <ColNames>InvoiceID</ColNames>
+      <RefColNames>InvoiceID</RefColNames>
+      <RefTableName>invoices</RefTableName>
+    </foreign-key>
+    <foreign-key id="589" parent="271" name="FK_Sales_InvoiceLines_StockItemID_Warehouse_StockItems">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <foreign-key id="590" parent="271" name="FK_Sales_InvoiceLines_PackageTypeID_Warehouse_PackageTypes">
+      <ColNames>PackageTypeID</ColNames>
+      <RefColNames>PackageTypeID</RefColNames>
+      <RefTableName>packagetypes</RefTableName>
+    </foreign-key>
+    <foreign-key id="591" parent="271" name="FK_Sales_InvoiceLines_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="592" parent="271" name="NCCX_Sales_InvoiceLines">
+      <ColNames>InvoiceID
+StockItemID
+Quantity
+UnitPrice
+LineProfit
+LastEditedWhen</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="593" parent="271" name="FK_Sales_InvoiceLines_InvoiceID">
+      <ColNames>InvoiceID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="594" parent="271" name="FK_Sales_InvoiceLines_StockItemID">
+      <ColNames>StockItemID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="595" parent="271" name="FK_Sales_InvoiceLines_PackageTypeID">
+      <ColNames>PackageTypeID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="596" parent="271" name="FK_Sales_InvoiceLines_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="597" parent="271" name="PRIMARY">
+      <ColNames>InvoiceLineID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="598" parent="272" name="InvoiceID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="599" parent="272" name="CustomerID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="600" parent="272" name="BillToCustomerID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="601" parent="272" name="OrderID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="602" parent="272" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="603" parent="272" name="ContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="604" parent="272" name="AccountsPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="605" parent="272" name="SalespersonPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="606" parent="272" name="PackedByPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="607" parent="272" name="InvoiceDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="608" parent="272" name="CustomerPurchaseOrderNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="609" parent="272" name="IsCreditNote">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="610" parent="272" name="CreditNoteReason">
+      <DataType>longtext|0s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="611" parent="272" name="Comments">
+      <DataType>longtext|0s</DataType>
+      <Position>14</Position>
+    </column>
+    <column id="612" parent="272" name="DeliveryInstructions">
+      <DataType>longtext|0s</DataType>
+      <Position>15</Position>
+    </column>
+    <column id="613" parent="272" name="InternalComments">
+      <DataType>longtext|0s</DataType>
+      <Position>16</Position>
+    </column>
+    <column id="614" parent="272" name="TotalDryItems">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>17</Position>
+    </column>
+    <column id="615" parent="272" name="TotalChillerItems">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>18</Position>
+    </column>
+    <column id="616" parent="272" name="DeliveryRun">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>19</Position>
+    </column>
+    <column id="617" parent="272" name="RunPosition">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>20</Position>
+    </column>
+    <column id="618" parent="272" name="ReturnedDeliveryData">
+      <DataType>longtext|0s</DataType>
+      <Position>21</Position>
+    </column>
+    <column id="619" parent="272" name="ConfirmedDeliveryTime">
+      <DataType>datetime|0s</DataType>
+      <Position>22</Position>
+    </column>
+    <column id="620" parent="272" name="ConfirmedReceivedBy">
+      <DataType>varchar(4000)|0s</DataType>
+      <Position>23</Position>
+    </column>
+    <column id="621" parent="272" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>24</Position>
+    </column>
+    <column id="622" parent="272" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>25</Position>
+    </column>
+    <foreign-key id="623" parent="272" name="FK_Sales_Invoices_CustomerID_Sales_Customers">
+      <ColNames>CustomerID</ColNames>
+      <RefColNames>CustomerID</RefColNames>
+      <RefTableName>customers</RefTableName>
+    </foreign-key>
+    <foreign-key id="624" parent="272" name="FK_Sales_Invoices_BillToCustomerID_Sales_Customers">
+      <ColNames>BillToCustomerID</ColNames>
+      <RefColNames>CustomerID</RefColNames>
+      <RefTableName>customers</RefTableName>
+    </foreign-key>
+    <foreign-key id="625" parent="272" name="FK_Sales_Invoices_OrderID_Sales_Orders">
+      <ColNames>OrderID</ColNames>
+      <RefColNames>OrderID</RefColNames>
+      <RefTableName>orders</RefTableName>
+    </foreign-key>
+    <foreign-key id="626" parent="272" name="FK_Sales_Invoices_DeliveryMethodID_Application_DeliveryMethods">
+      <ColNames>DeliveryMethodID</ColNames>
+      <RefColNames>DeliveryMethodID</RefColNames>
+      <RefTableName>deliverymethods</RefTableName>
+    </foreign-key>
+    <foreign-key id="627" parent="272" name="FK_Sales_Invoices_ContactPersonID_Application_People">
+      <ColNames>ContactPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="628" parent="272" name="FK_Sales_Invoices_AccountsPersonID_Application_People">
+      <ColNames>AccountsPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="629" parent="272" name="FK_Sales_Invoices_SalespersonPersonID_Application_People">
+      <ColNames>SalespersonPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="630" parent="272" name="FK_Sales_Invoices_PackedByPersonID_Application_People">
+      <ColNames>PackedByPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="631" parent="272" name="FK_Sales_Invoices_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="632" parent="272" name="FK_Sales_Invoices_CustomerID">
+      <ColNames>CustomerID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="633" parent="272" name="FK_Sales_Invoices_BillToCustomerID">
+      <ColNames>BillToCustomerID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="634" parent="272" name="FK_Sales_Invoices_OrderID">
+      <ColNames>OrderID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="635" parent="272" name="FK_Sales_Invoices_DeliveryMethodID">
+      <ColNames>DeliveryMethodID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="636" parent="272" name="FK_Sales_Invoices_ContactPersonID">
+      <ColNames>ContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="637" parent="272" name="FK_Sales_Invoices_AccountsPersonID">
+      <ColNames>AccountsPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="638" parent="272" name="FK_Sales_Invoices_SalespersonPersonID">
+      <ColNames>SalespersonPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="639" parent="272" name="FK_Sales_Invoices_PackedByPersonID">
+      <ColNames>PackedByPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="640" parent="272" name="IX_Sales_Invoices_ConfirmedDeliveryTime">
+      <ColNames>ConfirmedDeliveryTime
+ConfirmedReceivedBy</ColNames>
+      <PrefixLengths>-1,255</PrefixLengths>
+      <Type>btree</Type>
+    </index>
+    <index id="641" parent="272" name="FK_Sales_Invoices_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="642" parent="272" name="PRIMARY">
+      <ColNames>InvoiceID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="643" parent="273" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="644" parent="273" name="sensor_id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="645" parent="273" name="tijd">
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
+      <Position>3</Position>
+    </column>
+    <column id="646" parent="273" name="waarde">
+      <DataType>float|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="647" parent="273" name="fk_meting_sensor">
+      <ColNames>sensor_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>sensor</RefTableName>
+    </foreign-key>
+    <index id="648" parent="273" name="fk_meting_sensor">
+      <ColNames>sensor_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="649" parent="273" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="650" parent="274" name="orderID">
+      <AutoIncrement>2</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="651" parent="274" name="date">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="652" parent="274" name="totalPrice">
+      <DataType>decimal(6,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <key id="653" parent="274" name="PRIMARY">
+      <ColNames>orderID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="654" parent="275" name="OrderID">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="655" parent="275" name="voornaam">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="656" parent="275" name="woonplaats">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="657" parent="275" name="straat">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="658" parent="275" name="huisnummer">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="659" parent="275" name="postcode">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="660" parent="275" name="achternaam">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="661" parent="275" name="telefoonnummer">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="662" parent="275" name="land">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="663" parent="275" name="tussenvoegsel">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>10</Position>
+    </column>
+    <column id="664" parent="275" name="emailadres">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="665" parent="275" name="AccountID">
+      <DataType>int(11)|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <foreign-key id="666" parent="275" name="fk_orderCustomer_order1">
+      <ColNames>OrderID</ColNames>
+      <RefColNames>orderID</RefColNames>
+      <RefTableName>order</RefTableName>
+    </foreign-key>
+    <foreign-key id="667" parent="275" name="fk_orderCustomer_account">
+      <ColNames>AccountID</ColNames>
+      <RefColNames>AccountID</RefColNames>
+      <RefTableName>account</RefTableName>
+    </foreign-key>
+    <index id="668" parent="275" name="fk_orderCustomer_account_idx">
+      <ColNames>AccountID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="669" parent="275" name="PRIMARY">
+      <ColNames>OrderID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <trigger id="670" parent="275" name="email-orderCustomer">
+      <Definer>root@localhost</Definer>
+      <Events>I</Events>
+      <SourceTextLength>138</SourceTextLength>
+      <Turn>before-row</Turn>
+    </trigger>
+    <trigger id="671" parent="275" name="postcode-orderCustomer">
+      <Definer>root@localhost</Definer>
+      <Events>I</Events>
+      <SourceTextLength>218</SourceTextLength>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="672" parent="276" name="orderlineID">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="673" parent="276" name="orderID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="674" parent="276" name="stockitemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="675" parent="276" name="amount">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="676" parent="276" name="fk_orderline_order1">
+      <ColNames>orderID</ColNames>
+      <RefColNames>orderID</RefColNames>
+      <RefTableName>order</RefTableName>
+    </foreign-key>
+    <index id="677" parent="276" name="fk_orderline_order1_idx">
+      <ColNames>orderID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="678" parent="276" name="PRIMARY">
+      <ColNames>orderlineID
+orderID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="679" parent="277" name="OrderLineID">
+      <AutoIncrement>231474</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="680" parent="277" name="OrderID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="681" parent="277" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="682" parent="277" name="Quantity">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="683" parent="277" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="684" parent="277" name="FK_Sales_OrderLines_OrderID_Sales_Orders">
+      <ColNames>OrderID</ColNames>
+      <RefColNames>OrderID</RefColNames>
+      <RefTableName>orders</RefTableName>
+    </foreign-key>
+    <foreign-key id="685" parent="277" name="FK_Sales_OrderLines_StockItemID_Warehouse_StockItems">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <index id="686" parent="277" name="IX_Sales_OrderLines_Perf_20160301_01">
+      <ColNames>OrderID
+OrderLineID
+Quantity
+StockItemID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="687" parent="277" name="NCCX_Sales_OrderLines">
+      <ColNames>OrderID
+StockItemID
+Quantity</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="688" parent="277" name="FK_Sales_OrderLines_OrderID">
+      <ColNames>OrderID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="689" parent="277" name="IX_Sales_OrderLines_Perf_20160301_02">
+      <ColNames>StockItemID
+OrderID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="690" parent="277" name="IX_Sales_OrderLines_AllocatedStockItems">
+      <ColNames>StockItemID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="691" parent="277" name="PRIMARY">
+      <ColNames>OrderLineID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="692" parent="278" name="OrderID">
+      <AutoIncrement>73650</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="693" parent="278" name="CustomerID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="694" parent="278" name="SalespersonPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="695" parent="278" name="PickedByPersonID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="696" parent="278" name="ContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="697" parent="278" name="BackorderOrderID">
+      <DataType>int(11)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="698" parent="278" name="OrderDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="699" parent="278" name="ExpectedDeliveryDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="700" parent="278" name="CustomerPurchaseOrderNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>9</Position>
+    </column>
+    <column id="701" parent="278" name="IsUndersupplyBackordered">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="702" parent="278" name="Comments">
+      <DataType>longtext|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="703" parent="278" name="DeliveryInstructions">
+      <DataType>longtext|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="704" parent="278" name="InternalComments">
+      <DataType>longtext|0s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="705" parent="278" name="PickingCompletedWhen">
+      <DataType>datetime|0s</DataType>
+      <Position>14</Position>
+    </column>
+    <column id="706" parent="278" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>15</Position>
+    </column>
+    <column id="707" parent="278" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>16</Position>
+    </column>
+    <foreign-key id="708" parent="278" name="FK_Sales_Orders_CustomerID_Sales_Customers">
+      <ColNames>CustomerID</ColNames>
+      <RefColNames>CustomerID</RefColNames>
+      <RefTableName>customers</RefTableName>
+    </foreign-key>
+    <foreign-key id="709" parent="278" name="FK_Sales_Orders_SalespersonPersonID_Application_People">
+      <ColNames>SalespersonPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="710" parent="278" name="FK_Sales_Orders_PickedByPersonID_Application_People">
+      <ColNames>PickedByPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="711" parent="278" name="FK_Sales_Orders_ContactPersonID_Application_People">
+      <ColNames>ContactPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="712" parent="278" name="FK_Sales_Orders_BackorderOrderID_Sales_Orders">
+      <ColNames>BackorderOrderID</ColNames>
+      <RefColNames>OrderID</RefColNames>
+      <RefTableName>orders</RefTableName>
+    </foreign-key>
+    <foreign-key id="713" parent="278" name="FK_Sales_Orders_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="714" parent="278" name="FK_Sales_Orders_CustomerID">
+      <ColNames>CustomerID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="715" parent="278" name="FK_Sales_Orders_SalespersonPersonID">
+      <ColNames>SalespersonPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="716" parent="278" name="FK_Sales_Orders_PickedByPersonID">
+      <ColNames>PickedByPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="717" parent="278" name="FK_Sales_Orders_ContactPersonID">
+      <ColNames>ContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="718" parent="278" name="FK_Sales_Orders_BackorderOrderID_Sales_Orders">
+      <ColNames>BackorderOrderID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="719" parent="278" name="FK_Sales_Orders_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="720" parent="278" name="PRIMARY">
+      <ColNames>OrderID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="721" parent="279" name="PackageTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="722" parent="279" name="PackageTypeName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="723" parent="279" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="724" parent="279" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="725" parent="279" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="726" parent="279" name="FK_Warehouse_PackageTypes_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="727" parent="279" name="UQ_Warehouse_PackageTypes_PackageTypeName">
+      <ColNames>PackageTypeName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="728" parent="279" name="FK_Warehouse_PackageTypes_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="729" parent="279" name="PRIMARY">
+      <ColNames>PackageTypeID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="730" parent="279" name="UQ_Warehouse_PackageTypes_PackageTypeName">
+      <ColNames>PackageTypeName</ColNames>
+      <UnderlyingIndexName>UQ_Warehouse_PackageTypes_PackageTypeName</UnderlyingIndexName>
+    </key>
+    <column id="731" parent="280" name="PackageTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="732" parent="280" name="PackageTypeName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="733" parent="280" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="734" parent="280" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="735" parent="280" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="736" parent="280" name="ix_PackageTypes_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="737" parent="281" name="PaymentMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="738" parent="281" name="PaymentMethodName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="739" parent="281" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="740" parent="281" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="741" parent="281" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="742" parent="281" name="FK_Application_PaymentMethods_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="743" parent="281" name="UQ_Application_PaymentMethods_PaymentMethodName">
+      <ColNames>PaymentMethodName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="744" parent="281" name="FK_Application_PaymentMethods_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="745" parent="281" name="PRIMARY">
+      <ColNames>PaymentMethodID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="746" parent="281" name="UQ_Application_PaymentMethods_PaymentMethodName">
+      <ColNames>PaymentMethodName</ColNames>
+      <UnderlyingIndexName>UQ_Application_PaymentMethods_PaymentMethodName</UnderlyingIndexName>
+    </key>
+    <column id="747" parent="282" name="PaymentMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="748" parent="282" name="PaymentMethodName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="749" parent="282" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="750" parent="282" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="751" parent="282" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="752" parent="282" name="ix_PaymentMethods_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="753" parent="283" name="PersonID">
+      <AutoIncrement>3262</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="754" parent="283" name="FullName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="755" parent="283" name="PreferredName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="756" parent="283" name="SearchName">
+      <DataType>varchar(101)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="757" parent="283" name="IsPermittedToLogon">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="758" parent="283" name="LogonName">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="759" parent="283" name="IsExternalLogonProvider">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="760" parent="283" name="HashedPassword">
+      <DataType>longblob|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="761" parent="283" name="IsSystemUser">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="762" parent="283" name="IsEmployee">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="763" parent="283" name="IsSalesperson">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="764" parent="283" name="UserPreferences">
+      <DataType>longtext|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="765" parent="283" name="PhoneNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="766" parent="283" name="FaxNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>14</Position>
+    </column>
+    <column id="767" parent="283" name="EmailAddress">
+      <DataType>varchar(256)|0s</DataType>
+      <Position>15</Position>
+    </column>
+    <column id="768" parent="283" name="Photo">
+      <DataType>longblob|0s</DataType>
+      <Position>16</Position>
+    </column>
+    <column id="769" parent="283" name="CustomFields">
+      <DataType>longtext|0s</DataType>
+      <Position>17</Position>
+    </column>
+    <column id="770" parent="283" name="OtherLanguages">
+      <DataType>longtext|0s</DataType>
+      <Position>18</Position>
+    </column>
+    <column id="771" parent="283" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>19</Position>
+    </column>
+    <column id="772" parent="283" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>20</Position>
+    </column>
+    <column id="773" parent="283" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>21</Position>
+    </column>
+    <foreign-key id="774" parent="283" name="FK_Application_People_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="775" parent="283" name="IX_Application_People_FullName">
+      <ColNames>FullName</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="776" parent="283" name="IX_Application_People_Perf_20160301_05">
+      <ColNames>IsPermittedToLogon
+PersonID
+FullName
+EmailAddress</ColNames>
+      <PrefixLengths>-1,-1,-1,255</PrefixLengths>
+      <Type>btree</Type>
+    </index>
+    <index id="777" parent="283" name="IX_Application_People_IsEmployee">
+      <ColNames>IsEmployee</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="778" parent="283" name="IX_Application_People_IsSalesperson">
+      <ColNames>IsSalesperson</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="779" parent="283" name="FK_Application_People_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="780" parent="283" name="PRIMARY">
+      <ColNames>PersonID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <trigger id="781" parent="283" name="correcte_email">
+      <Definer>root@localhost</Definer>
+      <Events>I</Events>
+      <SourceTextLength>134</SourceTextLength>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="782" parent="284" name="PersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="783" parent="284" name="FullName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="784" parent="284" name="PreferredName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="785" parent="284" name="SearchName">
+      <DataType>varchar(101)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="786" parent="284" name="IsPermittedToLogon">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="787" parent="284" name="LogonName">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="788" parent="284" name="IsExternalLogonProvider">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="789" parent="284" name="HashedPassword">
+      <DataType>longblob|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="790" parent="284" name="IsSystemUser">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="791" parent="284" name="IsEmployee">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="792" parent="284" name="IsSalesperson">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="793" parent="284" name="UserPreferences">
+      <DataType>longtext|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="794" parent="284" name="PhoneNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="795" parent="284" name="FaxNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>14</Position>
+    </column>
+    <column id="796" parent="284" name="EmailAddress">
+      <DataType>varchar(256)|0s</DataType>
+      <Position>15</Position>
+    </column>
+    <column id="797" parent="284" name="Photo">
+      <DataType>longblob|0s</DataType>
+      <Position>16</Position>
+    </column>
+    <column id="798" parent="284" name="CustomFields">
+      <DataType>longtext|0s</DataType>
+      <Position>17</Position>
+    </column>
+    <column id="799" parent="284" name="OtherLanguages">
+      <DataType>longtext|0s</DataType>
+      <Position>18</Position>
+    </column>
+    <column id="800" parent="284" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>19</Position>
+    </column>
+    <column id="801" parent="284" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>20</Position>
+    </column>
+    <column id="802" parent="284" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>21</Position>
+    </column>
+    <index id="803" parent="284" name="ix_People_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="804" parent="285" name="PurchaseOrderLineID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="805" parent="285" name="PurchaseOrderID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="806" parent="285" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="807" parent="285" name="OrderedOuters">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="808" parent="285" name="Description">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="809" parent="285" name="ReceivedOuters">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="810" parent="285" name="PackageTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="811" parent="285" name="ExpectedUnitPricePerOuter">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="812" parent="285" name="LastReceiptDate">
+      <DataType>date|0s</DataType>
+      <Position>9</Position>
+    </column>
+    <column id="813" parent="285" name="IsOrderLineFinalized">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="814" parent="285" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="815" parent="285" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <foreign-key id="816" parent="285" name="FK_Purchasing_PurchaseOrderLines_PurchaseOrderID_Purchasing_Pu7">
+      <ColNames>PurchaseOrderID</ColNames>
+      <RefColNames>PurchaseOrderID</RefColNames>
+      <RefTableName>purchaseorders</RefTableName>
+    </foreign-key>
+    <foreign-key id="817" parent="285" name="FK_Purchasing_PurchaseOrderLines_StockItemID_Warehouse_StockIt8">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <foreign-key id="818" parent="285" name="FK_Purchasing_PurchaseOrderLines_PackageTypeID_Warehouse_Packa9">
+      <ColNames>PackageTypeID</ColNames>
+      <RefColNames>PackageTypeID</RefColNames>
+      <RefTableName>packagetypes</RefTableName>
+    </foreign-key>
+    <foreign-key id="819" parent="285" name="FK_Purchasing_PurchaseOrderLines_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="820" parent="285" name="FK_Purchasing_PurchaseOrderLines_PurchaseOrderID">
+      <ColNames>PurchaseOrderID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="821" parent="285" name="FK_Purchasing_PurchaseOrderLines_StockItemID">
+      <ColNames>StockItemID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="822" parent="285" name="FK_Purchasing_PurchaseOrderLines_PackageTypeID">
+      <ColNames>PackageTypeID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="823" parent="285" name="IX_Purchasing_PurchaseOrderLines_Perf_20160301_4">
+      <ColNames>IsOrderLineFinalized
+StockItemID
+OrderedOuters
+ReceivedOuters</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="824" parent="285" name="FK_Purchasing_PurchaseOrderLines_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="825" parent="285" name="PRIMARY">
+      <ColNames>PurchaseOrderLineID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="826" parent="286" name="PurchaseOrderID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="827" parent="286" name="SupplierID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="828" parent="286" name="OrderDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="829" parent="286" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="830" parent="286" name="ContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="831" parent="286" name="ExpectedDeliveryDate">
+      <DataType>date|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="832" parent="286" name="SupplierReference">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="833" parent="286" name="IsOrderFinalized">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="834" parent="286" name="Comments">
+      <DataType>longtext|0s</DataType>
+      <Position>9</Position>
+    </column>
+    <column id="835" parent="286" name="InternalComments">
+      <DataType>longtext|0s</DataType>
+      <Position>10</Position>
+    </column>
+    <column id="836" parent="286" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="837" parent="286" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <foreign-key id="838" parent="286" name="FK_Purchasing_PurchaseOrders_SupplierID_Purchasing_Suppliers">
+      <ColNames>SupplierID</ColNames>
+      <RefColNames>SupplierID</RefColNames>
+      <RefTableName>suppliers</RefTableName>
+    </foreign-key>
+    <foreign-key id="839" parent="286" name="FK_Purchasing_PurchaseOrders_DeliveryMethodID_Application_Deli6">
+      <ColNames>DeliveryMethodID</ColNames>
+      <RefColNames>DeliveryMethodID</RefColNames>
+      <RefTableName>deliverymethods</RefTableName>
+    </foreign-key>
+    <foreign-key id="840" parent="286" name="FK_Purchasing_PurchaseOrders_ContactPersonID_Application_People">
+      <ColNames>ContactPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="841" parent="286" name="FK_Purchasing_PurchaseOrders_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="842" parent="286" name="FK_Purchasing_PurchaseOrders_SupplierID">
+      <ColNames>SupplierID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="843" parent="286" name="FK_Purchasing_PurchaseOrders_DeliveryMethodID">
+      <ColNames>DeliveryMethodID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="844" parent="286" name="FK_Purchasing_PurchaseOrders_ContactPersonID">
+      <ColNames>ContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="845" parent="286" name="FK_Purchasing_PurchaseOrders_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="846" parent="286" name="PRIMARY">
+      <ColNames>PurchaseOrderID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="847" parent="287" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="848" parent="287" name="naam">
+      <DataType>varchar(45)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="849" parent="287" name="eenheid">
+      <DataType>varchar(45)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <key id="850" parent="287" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="851" parent="288" name="SpecialDealID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="852" parent="288" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="853" parent="288" name="CustomerID">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="854" parent="288" name="BuyingGroupID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="855" parent="288" name="CustomerCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="856" parent="288" name="StockGroupID">
+      <DataType>int(11)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="857" parent="288" name="DealDescription">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="858" parent="288" name="StartDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="859" parent="288" name="EndDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="860" parent="288" name="DiscountAmount">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>10</Position>
+    </column>
+    <column id="861" parent="288" name="DiscountPercentage">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="862" parent="288" name="UnitPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="863" parent="288" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="864" parent="288" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <foreign-key id="865" parent="288" name="FK_Sales_SpecialDeals_StockItemID_Warehouse_StockItems">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <foreign-key id="866" parent="288" name="FK_Sales_SpecialDeals_CustomerID_Sales_Customers">
+      <ColNames>CustomerID</ColNames>
+      <RefColNames>CustomerID</RefColNames>
+      <RefTableName>customers</RefTableName>
+    </foreign-key>
+    <foreign-key id="867" parent="288" name="FK_Sales_SpecialDeals_BuyingGroupID_Sales_BuyingGroups">
+      <ColNames>BuyingGroupID</ColNames>
+      <RefColNames>BuyingGroupID</RefColNames>
+      <RefTableName>buyinggroups</RefTableName>
+    </foreign-key>
+    <foreign-key id="868" parent="288" name="FK_Sales_SpecialDeals_CustomerCategoryID_Sales_CustomerCategor16">
+      <ColNames>CustomerCategoryID</ColNames>
+      <RefColNames>CustomerCategoryID</RefColNames>
+      <RefTableName>customercategories</RefTableName>
+    </foreign-key>
+    <foreign-key id="869" parent="288" name="FK_Sales_SpecialDeals_StockGroupID_Warehouse_StockGroups">
+      <ColNames>StockGroupID</ColNames>
+      <RefColNames>StockGroupID</RefColNames>
+      <RefTableName>stockgroups</RefTableName>
+    </foreign-key>
+    <foreign-key id="870" parent="288" name="FK_Sales_SpecialDeals_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="871" parent="288" name="FK_Sales_SpecialDeals_StockItemID">
+      <ColNames>StockItemID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="872" parent="288" name="FK_Sales_SpecialDeals_CustomerID">
+      <ColNames>CustomerID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="873" parent="288" name="FK_Sales_SpecialDeals_BuyingGroupID">
+      <ColNames>BuyingGroupID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="874" parent="288" name="FK_Sales_SpecialDeals_CustomerCategoryID">
+      <ColNames>CustomerCategoryID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="875" parent="288" name="FK_Sales_SpecialDeals_StockGroupID">
+      <ColNames>StockGroupID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="876" parent="288" name="FK_Sales_SpecialDeals_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="877" parent="288" name="PRIMARY">
+      <ColNames>SpecialDealID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="878" parent="289" name="StateProvinceID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="879" parent="289" name="StateProvinceCode">
+      <DataType>varchar(5)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="880" parent="289" name="StateProvinceName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="881" parent="289" name="CountryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="882" parent="289" name="SalesTerritory">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="883" parent="289" name="Border">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="884" parent="289" name="LatestRecordedPopulation">
+      <DataType>bigint(20)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="885" parent="289" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="886" parent="289" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="887" parent="289" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <foreign-key id="888" parent="289" name="FK_Application_StateProvinces_CountryID_Application_Countries">
+      <ColNames>CountryID</ColNames>
+      <RefColNames>CountryID</RefColNames>
+      <RefTableName>countries</RefTableName>
+    </foreign-key>
+    <foreign-key id="889" parent="289" name="FK_Application_StateProvinces_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="890" parent="289" name="UQ_Application_StateProvinces_StateProvinceName">
+      <ColNames>StateProvinceName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="891" parent="289" name="FK_Application_StateProvinces_CountryID">
+      <ColNames>CountryID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="892" parent="289" name="IX_Application_StateProvinces_SalesTerritory">
+      <ColNames>SalesTerritory</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="893" parent="289" name="FK_Application_StateProvinces_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="894" parent="289" name="PRIMARY">
+      <ColNames>StateProvinceID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="895" parent="289" name="UQ_Application_StateProvinces_StateProvinceName">
+      <ColNames>StateProvinceName</ColNames>
+      <UnderlyingIndexName>UQ_Application_StateProvinces_StateProvinceName</UnderlyingIndexName>
+    </key>
+    <column id="896" parent="290" name="StateProvinceID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="897" parent="290" name="StateProvinceCode">
+      <DataType>varchar(5)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="898" parent="290" name="StateProvinceName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="899" parent="290" name="CountryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="900" parent="290" name="SalesTerritory">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="901" parent="290" name="Border">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="902" parent="290" name="LatestRecordedPopulation">
+      <DataType>bigint(20)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="903" parent="290" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="904" parent="290" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="905" parent="290" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <index id="906" parent="290" name="ix_StateProvinces_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="907" parent="291" name="StockGroupID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="908" parent="291" name="StockGroupName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="909" parent="291" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="910" parent="291" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="911" parent="291" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="912" parent="291" name="ImagePath">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="913" parent="291" name="FK_Warehouse_StockGroups_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="914" parent="291" name="UQ_Warehouse_StockGroups_StockGroupName">
+      <ColNames>StockGroupName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="915" parent="291" name="FK_Warehouse_StockGroups_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="916" parent="291" name="PRIMARY">
+      <ColNames>StockGroupID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="917" parent="291" name="UQ_Warehouse_StockGroups_StockGroupName">
+      <ColNames>StockGroupName</ColNames>
+      <UnderlyingIndexName>UQ_Warehouse_StockGroups_StockGroupName</UnderlyingIndexName>
+    </key>
+    <column id="918" parent="292" name="StockGroupID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="919" parent="292" name="StockGroupName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="920" parent="292" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="921" parent="292" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="922" parent="292" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="923" parent="292" name="ix_StockGroups_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="924" parent="293" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="925" parent="293" name="QuantityOnHand">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="926" parent="293" name="BinLocation">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="927" parent="293" name="LastStocktakeQuantity">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="928" parent="293" name="LastCostPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="929" parent="293" name="ReorderLevel">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="930" parent="293" name="TargetStockLevel">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="931" parent="293" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="932" parent="293" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <foreign-key id="933" parent="293" name="PKFK_Warehouse_StockItemHoldings_StockItemID_Warehouse_StockIt23">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <foreign-key id="934" parent="293" name="FK_Warehouse_StockItemHoldings_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="935" parent="293" name="FK_Warehouse_StockItemHoldings_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="936" parent="293" name="PRIMARY">
+      <ColNames>StockItemID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="937" parent="294" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="938" parent="294" name="ImagePath">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="939" parent="294" name="FK_stockitemimages_stockitems">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <key id="940" parent="294" name="PRIMARY">
+      <ColNames>StockItemID
+ImagePath</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="941" parent="295" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="942" parent="295" name="StockItemName">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="943" parent="295" name="SupplierID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="944" parent="295" name="ColorID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="945" parent="295" name="UnitPackageID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="946" parent="295" name="OuterPackageID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="947" parent="295" name="Brand">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="948" parent="295" name="Size">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="949" parent="295" name="LeadTimeDays">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="950" parent="295" name="QuantityPerOuter">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="951" parent="295" name="IsChillerStock">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="952" parent="295" name="Barcode">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="953" parent="295" name="TaxRate">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="954" parent="295" name="UnitPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <column id="955" parent="295" name="RecommendedRetailPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>15</Position>
+    </column>
+    <column id="956" parent="295" name="TypicalWeightPerUnit">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>16</Position>
+    </column>
+    <column id="957" parent="295" name="MarketingComments">
+      <DataType>longtext|0s</DataType>
+      <Position>17</Position>
+    </column>
+    <column id="958" parent="295" name="InternalComments">
+      <DataType>longtext|0s</DataType>
+      <Position>18</Position>
+    </column>
+    <column id="959" parent="295" name="CustomFields">
+      <DataType>longtext|0s</DataType>
+      <Position>19</Position>
+    </column>
+    <column id="960" parent="295" name="Tags">
+      <DataType>longtext|0s</DataType>
+      <Position>20</Position>
+    </column>
+    <column id="961" parent="295" name="SearchDetails">
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>21</Position>
+    </column>
+    <column id="962" parent="295" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>22</Position>
+    </column>
+    <column id="963" parent="295" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>23</Position>
+    </column>
+    <column id="964" parent="295" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>24</Position>
+    </column>
+    <column id="965" parent="295" name="Video">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>25</Position>
+    </column>
+    <foreign-key id="966" parent="295" name="FK_Warehouse_StockItems_SupplierID_Purchasing_Suppliers">
+      <ColNames>SupplierID</ColNames>
+      <RefColNames>SupplierID</RefColNames>
+      <RefTableName>suppliers</RefTableName>
+    </foreign-key>
+    <foreign-key id="967" parent="295" name="FK_Warehouse_StockItems_ColorID_Warehouse_Colors">
+      <ColNames>ColorID</ColNames>
+      <RefColNames>ColorID</RefColNames>
+      <RefTableName>colors</RefTableName>
+    </foreign-key>
+    <foreign-key id="968" parent="295" name="FK_Warehouse_StockItems_UnitPackageID_Warehouse_PackageTypes">
+      <ColNames>UnitPackageID</ColNames>
+      <RefColNames>PackageTypeID</RefColNames>
+      <RefTableName>packagetypes</RefTableName>
+    </foreign-key>
+    <foreign-key id="969" parent="295" name="FK_Warehouse_StockItems_OuterPackageID_Warehouse_PackageTypes">
+      <ColNames>OuterPackageID</ColNames>
+      <RefColNames>PackageTypeID</RefColNames>
+      <RefTableName>packagetypes</RefTableName>
+    </foreign-key>
+    <foreign-key id="970" parent="295" name="FK_Warehouse_StockItems_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="971" parent="295" name="UQ_Warehouse_StockItems_StockItemName">
+      <ColNames>StockItemName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="972" parent="295" name="FK_Warehouse_StockItems_SupplierID">
+      <ColNames>SupplierID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="973" parent="295" name="FK_Warehouse_StockItems_ColorID">
+      <ColNames>ColorID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="974" parent="295" name="FK_Warehouse_StockItems_UnitPackageID">
+      <ColNames>UnitPackageID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="975" parent="295" name="FK_Warehouse_StockItems_OuterPackageID">
+      <ColNames>OuterPackageID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="976" parent="295" name="FK_Warehouse_StockItems_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="977" parent="295" name="PRIMARY">
+      <ColNames>StockItemID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="978" parent="295" name="UQ_Warehouse_StockItems_StockItemName">
+      <ColNames>StockItemName</ColNames>
+      <UnderlyingIndexName>UQ_Warehouse_StockItems_StockItemName</UnderlyingIndexName>
+    </key>
+    <column id="979" parent="296" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="980" parent="296" name="StockItemName">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="981" parent="296" name="SupplierID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="982" parent="296" name="ColorID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="983" parent="296" name="UnitPackageID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="984" parent="296" name="OuterPackageID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="985" parent="296" name="Brand">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="986" parent="296" name="Size">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="987" parent="296" name="LeadTimeDays">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="988" parent="296" name="QuantityPerOuter">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="989" parent="296" name="IsChillerStock">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="990" parent="296" name="Barcode">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="991" parent="296" name="TaxRate">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <column id="992" parent="296" name="UnitPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <column id="993" parent="296" name="RecommendedRetailPrice">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <Position>15</Position>
+    </column>
+    <column id="994" parent="296" name="TypicalWeightPerUnit">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>16</Position>
+    </column>
+    <column id="995" parent="296" name="MarketingComments">
+      <DataType>longtext|0s</DataType>
+      <Position>17</Position>
+    </column>
+    <column id="996" parent="296" name="InternalComments">
+      <DataType>longtext|0s</DataType>
+      <Position>18</Position>
+    </column>
+    <column id="997" parent="296" name="Photo">
+      <DataType>longblob|0s</DataType>
+      <Position>19</Position>
+    </column>
+    <column id="998" parent="296" name="CustomFields">
+      <DataType>longtext|0s</DataType>
+      <Position>20</Position>
+    </column>
+    <column id="999" parent="296" name="Tags">
+      <DataType>longtext|0s</DataType>
+      <Position>21</Position>
+    </column>
+    <column id="1000" parent="296" name="SearchDetails">
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>22</Position>
+    </column>
+    <column id="1001" parent="296" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>23</Position>
+    </column>
+    <column id="1002" parent="296" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>24</Position>
+    </column>
+    <column id="1003" parent="296" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>25</Position>
+    </column>
+    <index id="1004" parent="296" name="ix_StockItems_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="1005" parent="297" name="StockItemStockGroupID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1006" parent="297" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1007" parent="297" name="StockGroupID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1008" parent="297" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1009" parent="297" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="1010" parent="297" name="FK_Warehouse_StockItemStockGroups_StockItemID_Warehouse_StockI17">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <foreign-key id="1011" parent="297" name="FK_Warehouse_StockItemStockGroups_StockGroupID_Warehouse_Stock18">
+      <ColNames>StockGroupID</ColNames>
+      <RefColNames>StockGroupID</RefColNames>
+      <RefTableName>stockgroups</RefTableName>
+    </foreign-key>
+    <foreign-key id="1012" parent="297" name="FK_Warehouse_StockItemStockGroups_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="1013" parent="297" name="UQ_StockItemStockGroups_StockItemID_Lookup">
+      <ColNames>StockItemID
+StockGroupID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="1014" parent="297" name="UQ_StockItemStockGroups_StockGroupID_Lookup">
+      <ColNames>StockGroupID
+StockItemID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="1015" parent="297" name="FK_Warehouse_StockItemStockGroups_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1016" parent="297" name="PRIMARY">
+      <ColNames>StockItemStockGroupID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="1017" parent="297" name="UQ_StockItemStockGroups_StockItemID_Lookup">
+      <ColNames>StockItemID
+StockGroupID</ColNames>
+      <UnderlyingIndexName>UQ_StockItemStockGroups_StockItemID_Lookup</UnderlyingIndexName>
+    </key>
+    <key id="1018" parent="297" name="UQ_StockItemStockGroups_StockGroupID_Lookup">
+      <ColNames>StockGroupID
+StockItemID</ColNames>
+      <UnderlyingIndexName>UQ_StockItemStockGroups_StockGroupID_Lookup</UnderlyingIndexName>
+    </key>
+    <column id="1019" parent="298" name="StockItemTransactionID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1020" parent="298" name="StockItemID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1021" parent="298" name="TransactionTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1022" parent="298" name="CustomerID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="1023" parent="298" name="InvoiceID">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="1024" parent="298" name="SupplierID">
+      <DataType>int(11)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="1025" parent="298" name="PurchaseOrderID">
+      <DataType>int(11)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="1026" parent="298" name="TransactionOccurredWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="1027" parent="298" name="Quantity">
+      <DataType>decimal(18,3 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="1028" parent="298" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="1029" parent="298" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <foreign-key id="1030" parent="298" name="FK_Warehouse_StockItemTransactions_StockItemID_Warehouse_Stock19">
+      <ColNames>StockItemID</ColNames>
+      <RefColNames>StockItemID</RefColNames>
+      <RefTableName>stockitems</RefTableName>
+    </foreign-key>
+    <foreign-key id="1031" parent="298" name="FK_Warehouse_StockItemTransactions_TransactionTypeID_Applicati20">
+      <ColNames>TransactionTypeID</ColNames>
+      <RefColNames>TransactionTypeID</RefColNames>
+      <RefTableName>transactiontypes</RefTableName>
+    </foreign-key>
+    <foreign-key id="1032" parent="298" name="FK_Warehouse_StockItemTransactions_CustomerID_Sales_Customers">
+      <ColNames>CustomerID</ColNames>
+      <RefColNames>CustomerID</RefColNames>
+      <RefTableName>customers</RefTableName>
+    </foreign-key>
+    <foreign-key id="1033" parent="298" name="FK_Warehouse_StockItemTransactions_InvoiceID_Sales_Invoices">
+      <ColNames>InvoiceID</ColNames>
+      <RefColNames>InvoiceID</RefColNames>
+      <RefTableName>invoices</RefTableName>
+    </foreign-key>
+    <foreign-key id="1034" parent="298" name="FK_Warehouse_StockItemTransactions_SupplierID_Purchasing_Suppl21">
+      <ColNames>SupplierID</ColNames>
+      <RefColNames>SupplierID</RefColNames>
+      <RefTableName>suppliers</RefTableName>
+    </foreign-key>
+    <foreign-key id="1035" parent="298" name="FK_Warehouse_StockItemTransactions_PurchaseOrderID_Purchasing_22">
+      <ColNames>PurchaseOrderID</ColNames>
+      <RefColNames>PurchaseOrderID</RefColNames>
+      <RefTableName>purchaseorders</RefTableName>
+    </foreign-key>
+    <foreign-key id="1036" parent="298" name="FK_Warehouse_StockItemTransactions_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="1037" parent="298" name="CCX_Warehouse_StockItemTransactions">
+      <ColNames>StockItemTransactionID
+StockItemID
+TransactionTypeID
+CustomerID
+InvoiceID
+SupplierID
+PurchaseOrderID
+TransactionOccurredWhen
+Quantity
+LastEditedBy
+LastEditedWhen</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1038" parent="298" name="FK_Warehouse_StockItemTransactions_StockItemID">
+      <ColNames>StockItemID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1039" parent="298" name="FK_Warehouse_StockItemTransactions_TransactionTypeID">
+      <ColNames>TransactionTypeID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1040" parent="298" name="FK_Warehouse_StockItemTransactions_CustomerID">
+      <ColNames>CustomerID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1041" parent="298" name="FK_Warehouse_StockItemTransactions_InvoiceID">
+      <ColNames>InvoiceID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1042" parent="298" name="FK_Warehouse_StockItemTransactions_SupplierID">
+      <ColNames>SupplierID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1043" parent="298" name="FK_Warehouse_StockItemTransactions_PurchaseOrderID">
+      <ColNames>PurchaseOrderID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1044" parent="298" name="FK_Warehouse_StockItemTransactions_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1045" parent="298" name="PRIMARY">
+      <ColNames>StockItemTransactionID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="1046" parent="299" name="SupplierCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1047" parent="299" name="SupplierCategoryName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1048" parent="299" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1049" parent="299" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1050" parent="299" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="1051" parent="299" name="FK_Purchasing_SupplierCategories_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="1052" parent="299" name="UQ_Purchasing_SupplierCategories_SupplierCategoryName">
+      <ColNames>SupplierCategoryName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="1053" parent="299" name="FK_Purchasing_SupplierCategories_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1054" parent="299" name="PRIMARY">
+      <ColNames>SupplierCategoryID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="1055" parent="299" name="UQ_Purchasing_SupplierCategories_SupplierCategoryName">
+      <ColNames>SupplierCategoryName</ColNames>
+      <UnderlyingIndexName>UQ_Purchasing_SupplierCategories_SupplierCategoryName</UnderlyingIndexName>
+    </key>
+    <column id="1056" parent="300" name="SupplierCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1057" parent="300" name="SupplierCategoryName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1058" parent="300" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1059" parent="300" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1060" parent="300" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="1061" parent="300" name="ix_SupplierCategories_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="1062" parent="301" name="SupplierID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1063" parent="301" name="SupplierName">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1064" parent="301" name="SupplierCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1065" parent="301" name="PrimaryContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1066" parent="301" name="AlternateContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="1067" parent="301" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="1068" parent="301" name="DeliveryCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="1069" parent="301" name="PostalCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="1070" parent="301" name="SupplierReference">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>9</Position>
+    </column>
+    <column id="1071" parent="301" name="BankAccountName">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>10</Position>
+    </column>
+    <column id="1072" parent="301" name="BankAccountBranch">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="1073" parent="301" name="BankAccountCode">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="1074" parent="301" name="BankAccountNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="1075" parent="301" name="BankInternationalCode">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>14</Position>
+    </column>
+    <column id="1076" parent="301" name="PaymentDays">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>15</Position>
+    </column>
+    <column id="1077" parent="301" name="InternalComments">
+      <DataType>longtext|0s</DataType>
+      <Position>16</Position>
+    </column>
+    <column id="1078" parent="301" name="PhoneNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>17</Position>
+    </column>
+    <column id="1079" parent="301" name="FaxNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>18</Position>
+    </column>
+    <column id="1080" parent="301" name="WebsiteURL">
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>19</Position>
+    </column>
+    <column id="1081" parent="301" name="DeliveryAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>20</Position>
+    </column>
+    <column id="1082" parent="301" name="DeliveryAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>21</Position>
+    </column>
+    <column id="1083" parent="301" name="DeliveryPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>22</Position>
+    </column>
+    <column id="1084" parent="301" name="DeliveryLocation">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>23</Position>
+    </column>
+    <column id="1085" parent="301" name="PostalAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>24</Position>
+    </column>
+    <column id="1086" parent="301" name="PostalAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>25</Position>
+    </column>
+    <column id="1087" parent="301" name="PostalPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>26</Position>
+    </column>
+    <column id="1088" parent="301" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>27</Position>
+    </column>
+    <column id="1089" parent="301" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>28</Position>
+    </column>
+    <column id="1090" parent="301" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>29</Position>
+    </column>
+    <foreign-key id="1091" parent="301" name="FK_Purchasing_Suppliers_SupplierCategoryID_Purchasing_Supplier2">
+      <ColNames>SupplierCategoryID</ColNames>
+      <RefColNames>SupplierCategoryID</RefColNames>
+      <RefTableName>suppliercategories</RefTableName>
+    </foreign-key>
+    <foreign-key id="1092" parent="301" name="FK_Purchasing_Suppliers_PrimaryContactPersonID_Application_Peo3">
+      <ColNames>PrimaryContactPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="1093" parent="301" name="FK_Purchasing_Suppliers_AlternateContactPersonID_Application_P4">
+      <ColNames>AlternateContactPersonID</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <foreign-key id="1094" parent="301" name="FK_Purchasing_Suppliers_DeliveryMethodID_Application_DeliveryM5">
+      <ColNames>DeliveryMethodID</ColNames>
+      <RefColNames>DeliveryMethodID</RefColNames>
+      <RefTableName>deliverymethods</RefTableName>
+    </foreign-key>
+    <foreign-key id="1095" parent="301" name="FK_Purchasing_Suppliers_DeliveryCityID_Application_Cities">
+      <ColNames>DeliveryCityID</ColNames>
+      <RefColNames>CityID</RefColNames>
+      <RefTableName>cities</RefTableName>
+    </foreign-key>
+    <foreign-key id="1096" parent="301" name="FK_Purchasing_Suppliers_PostalCityID_Application_Cities">
+      <ColNames>PostalCityID</ColNames>
+      <RefColNames>CityID</RefColNames>
+      <RefTableName>cities</RefTableName>
+    </foreign-key>
+    <foreign-key id="1097" parent="301" name="FK_Purchasing_Suppliers_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="1098" parent="301" name="UQ_Purchasing_Suppliers_SupplierName">
+      <ColNames>SupplierName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="1099" parent="301" name="FK_Purchasing_Suppliers_SupplierCategoryID">
+      <ColNames>SupplierCategoryID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1100" parent="301" name="FK_Purchasing_Suppliers_PrimaryContactPersonID">
+      <ColNames>PrimaryContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1101" parent="301" name="FK_Purchasing_Suppliers_AlternateContactPersonID">
+      <ColNames>AlternateContactPersonID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1102" parent="301" name="FK_Purchasing_Suppliers_DeliveryMethodID">
+      <ColNames>DeliveryMethodID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1103" parent="301" name="FK_Purchasing_Suppliers_DeliveryCityID">
+      <ColNames>DeliveryCityID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1104" parent="301" name="FK_Purchasing_Suppliers_PostalCityID">
+      <ColNames>PostalCityID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1105" parent="301" name="FK_Purchasing_Suppliers_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1106" parent="301" name="PRIMARY">
+      <ColNames>SupplierID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="1107" parent="301" name="UQ_Purchasing_Suppliers_SupplierName">
+      <ColNames>SupplierName</ColNames>
+      <UnderlyingIndexName>UQ_Purchasing_Suppliers_SupplierName</UnderlyingIndexName>
+    </key>
+    <column id="1108" parent="302" name="SupplierID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1109" parent="302" name="SupplierName">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1110" parent="302" name="SupplierCategoryID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1111" parent="302" name="PrimaryContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1112" parent="302" name="AlternateContactPersonID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="1113" parent="302" name="DeliveryMethodID">
+      <DataType>int(11)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="1114" parent="302" name="DeliveryCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="1115" parent="302" name="PostalCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="1116" parent="302" name="SupplierReference">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>9</Position>
+    </column>
+    <column id="1117" parent="302" name="BankAccountName">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>10</Position>
+    </column>
+    <column id="1118" parent="302" name="BankAccountBranch">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="1119" parent="302" name="BankAccountCode">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="1120" parent="302" name="BankAccountNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="1121" parent="302" name="BankInternationalCode">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>14</Position>
+    </column>
+    <column id="1122" parent="302" name="PaymentDays">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>15</Position>
+    </column>
+    <column id="1123" parent="302" name="InternalComments">
+      <DataType>longtext|0s</DataType>
+      <Position>16</Position>
+    </column>
+    <column id="1124" parent="302" name="PhoneNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>17</Position>
+    </column>
+    <column id="1125" parent="302" name="FaxNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>18</Position>
+    </column>
+    <column id="1126" parent="302" name="WebsiteURL">
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>19</Position>
+    </column>
+    <column id="1127" parent="302" name="DeliveryAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>20</Position>
+    </column>
+    <column id="1128" parent="302" name="DeliveryAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>21</Position>
+    </column>
+    <column id="1129" parent="302" name="DeliveryPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>22</Position>
+    </column>
+    <column id="1130" parent="302" name="DeliveryLocation">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>23</Position>
+    </column>
+    <column id="1131" parent="302" name="PostalAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>24</Position>
+    </column>
+    <column id="1132" parent="302" name="PostalAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>25</Position>
+    </column>
+    <column id="1133" parent="302" name="PostalPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>26</Position>
+    </column>
+    <column id="1134" parent="302" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>27</Position>
+    </column>
+    <column id="1135" parent="302" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>28</Position>
+    </column>
+    <column id="1136" parent="302" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>29</Position>
+    </column>
+    <index id="1137" parent="302" name="ix_Suppliers_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="1138" parent="303" name="SupplierTransactionID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1139" parent="303" name="SupplierID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1140" parent="303" name="TransactionTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1141" parent="303" name="PurchaseOrderID">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="1142" parent="303" name="PaymentMethodID">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="1143" parent="303" name="SupplierInvoiceNumber">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="1144" parent="303" name="TransactionDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="1145" parent="303" name="AmountExcludingTax">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="1146" parent="303" name="TaxAmount">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="1147" parent="303" name="TransactionAmount">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="1148" parent="303" name="OutstandingBalance">
+      <DataType>decimal(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="1149" parent="303" name="FinalizationDate">
+      <DataType>date|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="1150" parent="303" name="IsFinalized">
+      <DataType>tinyint(1)|0s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="1151" parent="303" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>14</Position>
+    </column>
+    <column id="1152" parent="303" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>15</Position>
+    </column>
+    <foreign-key id="1153" parent="303" name="FK_Purchasing_SupplierTransactions_SupplierID_Purchasing_Suppl10">
+      <ColNames>SupplierID</ColNames>
+      <RefColNames>SupplierID</RefColNames>
+      <RefTableName>suppliers</RefTableName>
+    </foreign-key>
+    <foreign-key id="1154" parent="303" name="FK_Purchasing_SupplierTransactions_TransactionTypeID_Applicati11">
+      <ColNames>TransactionTypeID</ColNames>
+      <RefColNames>TransactionTypeID</RefColNames>
+      <RefTableName>transactiontypes</RefTableName>
+    </foreign-key>
+    <foreign-key id="1155" parent="303" name="FK_Purchasing_SupplierTransactions_PurchaseOrderID_Purchasing_12">
+      <ColNames>PurchaseOrderID</ColNames>
+      <RefColNames>PurchaseOrderID</RefColNames>
+      <RefTableName>purchaseorders</RefTableName>
+    </foreign-key>
+    <foreign-key id="1156" parent="303" name="FK_Purchasing_SupplierTransactions_PaymentMethodID_Application13">
+      <ColNames>PaymentMethodID</ColNames>
+      <RefColNames>PaymentMethodID</RefColNames>
+      <RefTableName>paymentmethods</RefTableName>
+    </foreign-key>
+    <foreign-key id="1157" parent="303" name="FK_Purchasing_SupplierTransactions_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="1158" parent="303" name="FK_Purchasing_SupplierTransactions_SupplierID">
+      <ColNames>SupplierID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1159" parent="303" name="FK_Purchasing_SupplierTransactions_TransactionTypeID">
+      <ColNames>TransactionTypeID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1160" parent="303" name="FK_Purchasing_SupplierTransactions_PurchaseOrderID">
+      <ColNames>PurchaseOrderID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1161" parent="303" name="FK_Purchasing_SupplierTransactions_PaymentMethodID">
+      <ColNames>PaymentMethodID
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1162" parent="303" name="CX_Purchasing_SupplierTransactions">
+      <ColNames>TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1163" parent="303" name="IX_Purchasing_SupplierTransactions_IsFinalized">
+      <ColNames>IsFinalized
+TransactionDate</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1164" parent="303" name="FK_Purchasing_SupplierTransactions_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1165" parent="303" name="PRIMARY">
+      <ColNames>SupplierTransactionID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="1166" parent="304" name="name">
+      <DataType>varchar(160)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1167" parent="304" name="principal_id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1168" parent="304" name="diagram_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1169" parent="304" name="version">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="1170" parent="304" name="definition">
+      <DataType>longblob|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <index id="1171" parent="304" name="UK_principal_name">
+      <ColNames>principal_id
+name</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="1172" parent="304" name="PRIMARY">
+      <ColNames>diagram_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="1173" parent="304" name="UK_principal_name">
+      <ColNames>principal_id
+name</ColNames>
+      <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
+    </key>
+    <column id="1174" parent="305" name="SystemParameterID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1175" parent="305" name="DeliveryAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1176" parent="305" name="DeliveryAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="1177" parent="305" name="DeliveryCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1178" parent="305" name="DeliveryPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="1179" parent="305" name="DeliveryLocation">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="1180" parent="305" name="PostalAddressLine1">
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="1181" parent="305" name="PostalAddressLine2">
+      <DataType>varchar(60)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="1182" parent="305" name="PostalCityID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="1183" parent="305" name="PostalPostalCode">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="1184" parent="305" name="ApplicationSettings">
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <column id="1185" parent="305" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+    </column>
+    <column id="1186" parent="305" name="LastEditedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+    </column>
+    <foreign-key id="1187" parent="305" name="FK_Application_SystemParameters_DeliveryCityID_Application_Cit1">
+      <ColNames>DeliveryCityID</ColNames>
+      <RefColNames>CityID</RefColNames>
+      <RefTableName>cities</RefTableName>
+    </foreign-key>
+    <foreign-key id="1188" parent="305" name="FK_Application_SystemParameters_PostalCityID_Application_Cities">
+      <ColNames>PostalCityID</ColNames>
+      <RefColNames>CityID</RefColNames>
+      <RefTableName>cities</RefTableName>
+    </foreign-key>
+    <foreign-key id="1189" parent="305" name="FK_Application_SystemParameters_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="1190" parent="305" name="FK_Application_SystemParameters_DeliveryCityID">
+      <ColNames>DeliveryCityID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1191" parent="305" name="FK_Application_SystemParameters_PostalCityID">
+      <ColNames>PostalCityID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="1192" parent="305" name="FK_Application_SystemParameters_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1193" parent="305" name="PRIMARY">
+      <ColNames>SystemParameterID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="1194" parent="306" name="TransactionTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1195" parent="306" name="TransactionTypeName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1196" parent="306" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1197" parent="306" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1198" parent="306" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="1199" parent="306" name="FK_Application_TransactionTypes_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <RefColNames>PersonID</RefColNames>
+      <RefTableName>people</RefTableName>
+    </foreign-key>
+    <index id="1200" parent="306" name="UQ_Application_TransactionTypes_TransactionTypeName">
+      <ColNames>TransactionTypeName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="1201" parent="306" name="FK_Application_TransactionTypes_Application_People">
+      <ColNames>LastEditedBy</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1202" parent="306" name="PRIMARY">
+      <ColNames>TransactionTypeID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="1203" parent="306" name="UQ_Application_TransactionTypes_TransactionTypeName">
+      <ColNames>TransactionTypeName</ColNames>
+      <UnderlyingIndexName>UQ_Application_TransactionTypes_TransactionTypeName</UnderlyingIndexName>
+    </key>
+    <column id="1204" parent="307" name="TransactionTypeID">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1205" parent="307" name="TransactionTypeName">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1206" parent="307" name="LastEditedBy">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1207" parent="307" name="ValidFrom">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1208" parent="307" name="ValidTo">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="1209" parent="307" name="ix_TransactionTypes_Archive">
+      <ColNames>ValidFrom
+ValidTo</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="1210" parent="308" name="VehicleTemperatureID">
+      <AutoIncrement>65999</AutoIncrement>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="1211" parent="308" name="VehicleRegistration">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="1212" parent="308" name="ChillerSensorNumber">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="1213" parent="308" name="RecordedWhen">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="1214" parent="308" name="Temperature">
+      <DataType>decimal(10,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="1215" parent="308" name="FullSensorData">
+      <DataType>varchar(1000)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="1216" parent="308" name="IsCompressed">
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="1217" parent="308" name="CompressedSensorData">
+      <DataType>longblob|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <key id="1218" parent="308" name="PRIMARY">
+      <ColNames>VehicleTemperatureID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
