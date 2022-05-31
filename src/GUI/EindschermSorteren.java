@@ -10,20 +10,32 @@ import java.sql.SQLException;
 public class EindschermSorteren extends Scherm implements Layout {
     private JLabel Titel;
     private JLabel Eindbericht;
+    private JButton jbTerugNaarBeginScherm;
 
-    private String test3;
 
     public EindschermSorteren() {
-        setLayout(new GridLayout(3, 1));
+        setLayout(null);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 1));
         Titel = new JLabel("Uw voorraad is gesorteerd");
         this.Titel.setFont(fontHeading);
         this.Titel.setHorizontalAlignment(SwingConstants.CENTER);
-        add(Titel);
-        add(new ProductSchower(), BorderLayout.CENTER);
+        panel.add(Titel);
+        panel.add(new ProductSchower(), BorderLayout.CENTER);
         Eindbericht = new JLabel("Druk op het scherm om een nieuw order in te vullen");
         this.Eindbericht.setFont(fontTekst);
         this.Eindbericht.setHorizontalAlignment(SwingConstants.CENTER);
-        add(Eindbericht);
+        panel.setBounds(0,0,800,480);
+        panel.add(Eindbericht);
+        add(panel);
+        jbTerugNaarBeginScherm = new JButton();
+        jbTerugNaarBeginScherm.addActionListener(e -> Frame.setScherm(Frame.Schermen.StartScherm));
+        jbTerugNaarBeginScherm.setBounds(0,0,800,480);
+        jbTerugNaarBeginScherm.setOpaque(false);
+        jbTerugNaarBeginScherm.setBorderPainted(false);
+        jbTerugNaarBeginScherm.setFocusPainted(false);
+        jbTerugNaarBeginScherm.setContentAreaFilled(false);
+        add(jbTerugNaarBeginScherm);
 
     }
 

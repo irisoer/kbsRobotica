@@ -10,32 +10,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Order extends Database {
     private Database database;
     private static Bpp bpp;
     private ArrayList<Artikel> artikelen;
-    private int klantID = 0;
-    private String klantNaam = null;
-    private String klantAdres = null;
-    private String klantPostcode = null;
-    private String stadNaam = null;
-    private String orderlijst = "hallo";
-    private static int orderNr =1;
+    private static int klantID = 0;
+    private static String klantNaam = null;
+    private static String klantAdres = null;
+    private static String klantPostcode = null;
+    private static String stadNaam = null;
+    private static String orderlijst = "hallo";
+    public static int orderNr = 1;
+    public static int nieuweOrderNr = 4;
+    public static int orderlines = 10;
+    public static int customerId = 1;
 
-    private int artikelNrRood = 73;
-    private int artikelNrGeel = 71;
-    private int artikelNrBlauw = 60;
+    private static int artikelNrRood = 73;
+    private static int artikelNrGeel = 71;
+    private static int artikelNrBlauw = 60;
 
-    public int aantalGeel;
-    public int aantalBlauw;
-    public int aantalRood;
+    public static int aantalGeel;
+    public static int aantalBlauw;
+    public static int aantalRood;
 
     public Order(){}
 
-    public ArrayList<Artikel> getArtikelen() {
-        return artikelen;
-    }
 
     public Order(int[] rgbAantallen) {
         aantalRood = rgbAantallen[0];
@@ -66,7 +67,8 @@ public class Order extends Database {
             orderlijst = bpp.toString();
     }
 
-    public void maakPakbon(int customerId){
+    public static void maakPakbon(){
+        customerId = getCustomerID();
         try {
             startConnection();
             PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
@@ -119,6 +121,38 @@ public class Order extends Database {
             orderNr++;
         }catch (IOException ie){}
         catch (SQLException se){}
+    }
+
+    public static void uploadVoorraadNaarDatabase(){
+        Database.updateVoorraad(artikelNrRood, aantalRood);
+        Database.updateVoorraad(artikelNrGeel, aantalGeel);
+        Database.updateVoorraad(artikelNrBlauw, aantalBlauw);
+    }
+
+    public static void uploadOrderNaarDatabase(){
+        try{
+            startConnection();
+            PreparedStatement preparedStatement = getConnection().prepareStatement("INSERT INTO orderlines (OrderLineID, OrderID, StockItemID) VALUES (?, ?, ?),(?,?,?),(?,?,?);");
+            preparedStatement.setInt(1, orderlines);
+            preparedStatement.setInt(2, nieuweOrderNr);
+            preparedStatement.setInt(3, artikelNrRood);
+            orderlines++;
+            preparedStatement.setInt(4, orderlines);
+            preparedStatement.setInt(5, nieuweOrderNr);
+            preparedStatement.setInt(6,artikelNrGeel);
+            orderlines++;
+            preparedStatement.setInt(7, orderlines);
+            preparedStatement.setInt(8, nieuweOrderNr);
+            preparedStatement.setInt(9,artikelNrBlauw);
+            orderlines++;
+            nieuweOrderNr++;
+            ResultSet result = preparedStatement.executeQuery();
+            result.close();
+            }
+
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void voegArtikelToe(int artikelNum) {
