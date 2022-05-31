@@ -26,7 +26,8 @@ public class Frame extends JFrame implements Layout {
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
                 SorteerSchemr(new SorteerScherm()),
-                ErrorScherm(new ErrorScherm());
+                ErrorScherm(new ErrorScherm()),
+                EindSchermOrderKlaarmaken(new EindschermOrderKlaarmaken());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
                         this.scherm = scherm;
@@ -62,7 +63,7 @@ public class Frame extends JFrame implements Layout {
                 }
 
                 add(jpSchermen);
-                setScherm(Schermen.StartScherm);
+                setScherm(Schermen.ErrorScherm);
                 setResizable(false);
                 opstartScherm.runStatussen();
 
