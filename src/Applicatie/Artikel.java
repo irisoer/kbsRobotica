@@ -149,21 +149,21 @@ public class Artikel implements Comparable<Artikel> {
 		this.posY = posY;
 	}
 
-	public void drawArtikel(Graphics g, Product artikel) {  //gebruik bij sorteren
+	public void drawArtikel(Graphics g) {  //gebruik bij sorteren
 		g.setColor(this.getJavaKleur());
 		g.fillOval(this.posX, this.posY, grootArtikel, grootArtikel);
 	}
-	public void drawArtikel(Graphics g, Product artikel, int x , int y) {  //gebruik bij sorteren
+	public void drawArtikel(Graphics g, Artikel artikel, int x , int y) {  //gebruik bij sorteren
 		artikel.setPositie(x,y);
-		artikel.drawArtikel(g,artikel);
+		artikel.drawArtikel(g);
 	}
 
-	public void drawKleinArtikel(Graphics g, Product artikel) { //gebruik bij verwerken order
+	public void drawKleinArtikel(Graphics g) { //gebruik bij verwerken order
 		g.setColor(this.getJavaKleur());
 		g.drawOval(this.posX, this.posY, kleinArtikel, kleinArtikel);
 	}
 
-	public void fillArtikel(Graphics g, Product artikel) {        //invullen van gepickte items (zijn altijd klein)
+	public void fillArtikel(Graphics g) {        //invullen van gepickte items (zijn altijd klein)
 		g.setColor(this.getJavaKleur());
 		g.fillOval(this.posX, this.posY, kleinArtikel, kleinArtikel);
 	}

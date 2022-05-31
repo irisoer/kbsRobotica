@@ -5,6 +5,7 @@ import Applicatie.Order;
 
 import java.awt.*;
 import java.sql.SQLException;
+import java.util.Arrays;
 import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
@@ -13,6 +14,9 @@ public class Frame extends JFrame implements Layout {
         public static Order order = new Order();
         static OpstartScherm opstartScherm = new OpstartScherm();
         static int[] voorraad;
+        static String huidigeKleur;
+        static int huidigeDoos;
+
         static {
                 voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
         }
@@ -65,6 +69,7 @@ public class Frame extends JFrame implements Layout {
         }
 
         public static void setOrder(int[] rgbAantallen) {
+                System.out.println(Arrays.toString(rgbAantallen));
                 Frame.order = new Order(rgbAantallen);
         }
 
@@ -75,5 +80,34 @@ public class Frame extends JFrame implements Layout {
 
         private void addSchermToCards(Schermen scherm, JPanel cardPanel) {
                 cardPanel.add(scherm.scherm, scherm.scherm.getName());
+        }
+
+        public static int[] getVoorraad() {
+                return voorraad;
+        }
+
+        public static void setVoorraad(int[] voorraad) {
+                Frame.voorraad = voorraad;
+        }
+
+        public static Color getHuidigeKleur() {
+                return switch (huidigeKleur) {
+                        case "Red" -> Color.RED;
+                        case "Yellow" -> Color.YELLOW;
+                        case "Blue" -> Color.BLUE;
+                        default -> null;
+                };
+        }
+
+        public static void setHuidigeKleur(String huidigeKleur) {
+                Frame.huidigeKleur = huidigeKleur;
+        }
+
+        public static int getHuidigeDoos() {
+                return huidigeDoos;
+        }
+
+        public static void setHuidigeDoos(int huidigeDoos) {
+                Frame.huidigeDoos = huidigeDoos;
         }
 }
