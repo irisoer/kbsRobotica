@@ -41,7 +41,6 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         //producten
         Product roodProduct = new Product(ProductStandaard.rood);
         Product geelProduct = new Product(ProductStandaard.geel);

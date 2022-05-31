@@ -29,7 +29,6 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-
         //pijl
         int grootte = 20;       //grootte van pijl
         int xHuidigeDoos = xDoos2; //todo: communication

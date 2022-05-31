@@ -49,6 +49,7 @@ public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
         jlBlauw.setHorizontalAlignment(JLabel.CENTER);
 
         add(jpVoorraad);
+        repaint();
     }
 }
 //Sylvia <
