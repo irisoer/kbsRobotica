@@ -31,9 +31,9 @@ public class Frame extends JFrame implements Layout {
                 VerwerkScherm(new VerwerkScherm()),
                 SorteerScherm(new SorteerScherm()),
                 ErrorScherm(new ErrorScherm());
-                SorteerSchemr(new SorteerScherm()),
-                ErrorScherm(new ErrorScherm()),
-                EindSchermOrderKlaarmaken(new EindschermOrderKlaarmaken());
+//                SorteerSchemr(new SorteerScherm()),
+//                ErrorScherm(new ErrorScherm()),
+//                EindSchermOrderKlaarmaken(new EindschermOrderKlaarmaken());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
                         this.scherm = scherm;
@@ -45,7 +45,7 @@ public class Frame extends JFrame implements Layout {
                 }
         }
 
-        private Schermen huidigScherm;
+        private Schermen huidigScherm;          //todo: veel in deze klasse wordt (nog) niet gebruikt
         public Frame(){
                 super("GUI");
                 setResizable(false);
