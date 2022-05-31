@@ -7,6 +7,7 @@ public class Product implements ProductStandaard {
     private int posX;
     private int posY;
     int doos;       //IDnr doos, gebruik voor vergelijken bij inkleuren producten
+    boolean gevuld = true;
 
     public Product(){
 
@@ -60,8 +61,8 @@ public class Product implements ProductStandaard {
     }
 
     public void drawProduct(Graphics g, Product product) {  //gebruik bij sorteren
-        g.setColor(product.getKleur());
-        g.fillOval(product.getPosX(), product.getPosY(), grootProduct, grootProduct);
+        g.setColor(this.kleur);
+        g.fillOval(this.posX, this.posY, grootProduct, grootProduct);
     }
     public void drawProduct(Graphics g, Product product, int x , int y) {  //gebruik bij sorteren
         product.setPositie(x,y);
@@ -69,12 +70,12 @@ public class Product implements ProductStandaard {
     }
 
         public void drawKleinProduct(Graphics g, Product product) { //gebruik bij verwerken order
-        g.setColor(product.getKleur());
-        g.drawOval(product.getPosX(), product.getPosY(), kleinProduct, kleinProduct);
+        g.setColor(this.kleur);
+        g.drawOval(this.posX, this.posY, kleinProduct, kleinProduct);
     }
 
     public void fillProduct(Graphics g, Product product) {        //invullen van gepickte items (zijn altijd klein)
-        g.setColor(product.getKleur());
-        g.fillOval(product.getPosX(), product.getPosY(), kleinProduct, kleinProduct);
+        g.setColor(this.kleur);
+        g.fillOval(this.posX, this.posY, kleinProduct, kleinProduct);
     }
 }

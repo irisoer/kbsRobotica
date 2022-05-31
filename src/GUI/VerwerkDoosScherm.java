@@ -11,10 +11,6 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
     private Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
     private int huidigeDoos = 2;
 
-    private int pickedRood = 0;
-    private int pickedGeel = 0 ;
-    private int pickedBlauw = 0;
-
     //Posities product in doos
     private int yRij1 = 270;            //y positie producten rij 1
     private int yRij2 = 220;            //y positie producten rij 2
@@ -66,7 +62,7 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
         drawOrder(g,1,1,0,0);
     }
 
-        public void setKleurHuidigProduct(Color kleur){
+    public void setKleurHuidigProduct(Color kleur){
         this.huidigeKleur = kleur;
     }
     public Product getHuidigProduct(){
@@ -93,10 +89,6 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
             /*Graphics g, int doos, Color kleur1, int aantalKleur1, Color kleur2, int aantalKleur2, Color kleur3, int aantalKleur3*/) {
         int aantal;
         int totaalAantal = aantalRood + aantalGeel + aantalBlauw;
-        //aantallen te tekenen/picken per kleur
-        int tekenRood = aantalRood;                     //note to self: beter arraylist doorlopen??
-        int tekenGeel = aantalGeel;
-        int tekenBlauw = aantalBlauw;
 
         producten = new ArrayList<>();
         int xDoos = 0; //xPositie huidige doos
@@ -117,11 +109,11 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
             int y = 0; //y positie product
 
             //x positie
-            if (aantal == 1 || aantal == 3 || aantal == 5) {
-                x = xDoos + marge;                                //kolom 1 in doos
+            if (aantal %2 != 0) {
+                x = xDoos + marge;                          //kolom 1 in doos (oneven aantallen)
             }
-            if (aantal == 2 || aantal == 4 || aantal == 6) {
-                x = xDoos + breedteDoos / 2 + marge;              //kolom 2 in doos
+            else {
+                x = xDoos + breedteDoos / 2 + marge;       //kolom 2 in doos (even aantallen)
             }
 
             //y positie
@@ -138,36 +130,26 @@ public class VerwerkDoosScherm extends VerwerkScherm implements ProductStandaard
 
             //kleur
             if (aantalRood > 0){
-                g.setColor(rood);  //switched from kleur1, kleur2 etc
                 p.setKleur(rood);
                 aantalRood--;
             }
             else if (aantalRood == 0 && aantalGeel > 0) {
-                g.setColor(geel);
                 p.setKleur(geel);
                 aantalGeel--;
             }
             else if (aantalRood == 0 && aantalGeel == 0 && aantalBlauw > 0) {
-                g.setColor(blauw);
                 p.setKleur(blauw);
                 aantalBlauw--;
             }
+            g.setColor(p.getKleur());
             producten.add(p);
         }
         for (Product p : producten)
         {
             p.drawKleinProduct(g,p);
-            if(true/*item picked*/ && huidigeKleur == rood){ //todo: remove hardcode
-                System.out.println(aantalRood);
-
-                fillOrder(g,p);
+            if(p.gevuld){ //todo: remove hardcode
+                p.fillProduct(g,p);
             }
-        }
-    }
-
-    public void fillOrder(Graphics g,Product product){  //todo: kleurt alle producten van één kleur in doos in ipv 1.
-        if(product.getKleur().equals(huidigeKleur) && product.getDoos() == huidigeDoos){
-            product.fillProduct(g,product);
         }
     }
 }
