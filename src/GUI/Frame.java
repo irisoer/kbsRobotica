@@ -6,6 +6,7 @@ import Applicatie.Database;
 import Applicatie.Order;
 
 import java.awt.*;
+import java.sql.SQLException;
 import java.util.Arrays;
 import javax.swing.*;
 
@@ -30,6 +31,9 @@ public class Frame extends JFrame implements Layout {
                 VerwerkScherm(new VerwerkScherm()),
                 SorteerScherm(new SorteerScherm()),
                 ErrorScherm(new ErrorScherm());
+                SorteerSchemr(new SorteerScherm()),
+                ErrorScherm(new ErrorScherm()),
+                EindSchermOrderKlaarmaken(new EindschermOrderKlaarmaken());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
                         this.scherm = scherm;
@@ -67,6 +71,7 @@ public class Frame extends JFrame implements Layout {
                 add(jpSchermen);
                 setScherm(Schermen.OpstartScherm);
                 opstartScherm.runStatussen();
+
         }
 
         public static void setOrder(int[] rgbAantallen) {

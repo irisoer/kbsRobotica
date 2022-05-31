@@ -2,12 +2,15 @@ package Applicatie;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Database {
     private static Connection connection;
+    static Random random = new Random();
+    static int laagsteCustomerID = 900;
+    static int hoogsteCustomerID = 1000;
 
     public static void startConnection() throws SQLException {
-
             String password = "";
             String username = "root";
             String url = "jdbc:mysql://localhost:3306/nerdygadgets";
@@ -58,7 +61,7 @@ public class Database {
     public static Integer[] selecteerOrderNums() {
         try {
             startConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT OrderID FROM orders ORDER BY OrderID");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT OrderID FROM orders ORDER BY OrderID");
             ResultSet result = preparedStatement.executeQuery();
             ArrayList<Integer> ordernrsAL = new ArrayList<>();
             ordernrsAL.add(null);
@@ -78,10 +81,11 @@ public class Database {
     public static int[] selecteerOrder(int orderNum) {
         try {
             startConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT StockItemID, Quantity FROM orderlines WHERE OrderID = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT OrderID, StockItemID, Quantity FROM orderlines WHERE OrderID = ?");
             preparedStatement.setInt(1, orderNum);
             ResultSet result = preparedStatement.executeQuery();
             int[] artikelenOrder = new int[3];
+            int customerID = 0;
             while (result.next()) {
                 switch (result.getInt("StockItemID")) {
                     case 60:    //Blauwe artikel
@@ -91,11 +95,28 @@ public class Database {
                     case 73:    //Rode artikel
                         artikelenOrder[0] = result.getInt("Quantity");
                 }
+                Order.orderNr = result.getInt("OrderID");
             }
             return artikelenOrder;
         } catch (SQLException e) {
         }
         return null;
+    }
+
+    public static int getCustomerID(){
+        int customerID = 0;
+        try{
+        PreparedStatement preparedStatement1 = connection.prepareStatement("SELECT CustomerID FROM orders WHERE OrderID = ?");
+        preparedStatement1.setInt(1, Order.orderNr);
+        ResultSet result1 = preparedStatement1.executeQuery();
+        while(result1.next()){
+            customerID = result1.getInt("CustomerID");
+        }
+        }
+        catch (SQLException e){
+            customerID = random.nextInt(laagsteCustomerID,hoogsteCustomerID)+laagsteCustomerID;
+        }
+        return customerID;
     }
 
 
@@ -110,7 +131,7 @@ public class Database {
     public static Integer getVoorraad(int stockItemID) {
         try {
             startConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT QuantityOnHand FROM nerdygadgets.stockitemholdings I \n" +
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT QuantityOnHand FROM nerdygadgets.stockitemholdings I \n" +
                     "WHERE StockItemID = ?");
             preparedStatement.setInt(1, stockItemID);
             ResultSet result = preparedStatement.executeQuery();
@@ -128,7 +149,7 @@ public class Database {
     public static int updateVoorraad(int StockitemID, int hoeveelheidBesteld) {
         try {
             startConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement("UPDATE nerdygadgets.stockitemholdings \n" +
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE nerdygadgets.stockitemholdings \n" +
                     "SET QuantityOnHand = (QuantityOnHand - ?) \n" +
                     "WHERE StockitemID = ? ");
             preparedStatement.setInt(2, StockitemID);
