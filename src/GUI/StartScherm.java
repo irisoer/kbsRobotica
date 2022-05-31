@@ -1,6 +1,7 @@
 package GUI;
 
 import Applicatie.Database;
+import Applicatie.Order;
 import JPanels.Panel;
 
 import javax.swing.*;
@@ -81,15 +82,11 @@ public class StartScherm extends Scherm {
 	private class ProductSelector extends Scherm {
         static ProductRegel[] productRegels;
         {
-            try {
                 productRegels = new ProductRegel[]{
                     new ProductRegel("Rood", Database.getVoorraad(73)),
                     new ProductRegel("Geel", Database.getVoorraad(71)),
                     new ProductRegel("Blauw", Database.getVoorraad(60))
                 };
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
         }
 
         public ProductSelector() throws SQLException {
