@@ -7,7 +7,7 @@ public class ErrorScherm extends Scherm {
     private JLabel jlError;
     private JLabel jlErrorMessage;
     private JButton jbTerugNaarBeginScherm;
-    private String bericht = "ERROR MESSAGE";  //todo: specifiek bericht meegeven
+    private String bericht = "Controleer of alles goed is aangesloten";
 
     public ErrorScherm() {
 //        super("Error");
@@ -17,7 +17,7 @@ public class ErrorScherm extends Scherm {
 
         //componenten aanmaken
         jlHeading.setText("Er is een fout opgetreden!");
-//        jlTekst.setText(bericht);
+        jlTekst.setText(bericht);
 
         //toevoegen
         panel.add(jlHeading);
@@ -25,7 +25,7 @@ public class ErrorScherm extends Scherm {
         panel.setBounds(0,0,800,480);
         add(panel);
         jbTerugNaarBeginScherm = new JButton();
-        jbTerugNaarBeginScherm.addActionListener(e -> Frame.setScherm(Frame.Schermen.StartScherm));
+        jbTerugNaarBeginScherm.addActionListener(e -> Frame.setScherm(Frame.Schermen.OpstartScherm));
         jbTerugNaarBeginScherm.setBounds(0,0,800,480);
         jbTerugNaarBeginScherm.setOpaque(false);
         jbTerugNaarBeginScherm.setBorderPainted(false);
