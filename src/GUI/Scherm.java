@@ -5,6 +5,7 @@ import java.awt.*;
 
 //Sylvia >
 public class Scherm extends JPanel implements Layout {
+    JLabel jlHeading = new JLabel();        //Heading tekst
 //    private VerwerkScherm verwerk = new VerwerkScherm();
     public Scherm(/*String titel*/){                       //Standaard opmaak, titel = titel in balk
         // nieuwe klasse > extends JFrame
