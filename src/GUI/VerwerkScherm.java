@@ -97,7 +97,6 @@ public class VerwerkScherm extends Scherm {
             if(index % Carrousel.values().length == i) g.fillOval(circleX,circleY,circle,circle);
             else g.drawOval(circleX, circleY,circle,circle);
         }
-        System.out.println("aa");
     }
 
     public void setScherm(Carrousel scherm) {

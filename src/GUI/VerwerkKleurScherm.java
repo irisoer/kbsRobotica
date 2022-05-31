@@ -112,7 +112,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
         }
     }
 
-    public void fillKleur(Graphics g, Color kleur, int pickedAantal){
+    public void fillKleur(Graphics g, Color kleur, int aantalPicked){
         int tePicken = 0;
         int aantalKleur = 0;
 
@@ -125,11 +125,11 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
         if (kleur.equals(blauw)) {
             aantalKleur = aantalBlauw;
         }
-        for(tePicken = aantalKleur; pickedAantal <= tePicken; tePicken--){
+        for(tePicken = aantalKleur; aantalPicked <= tePicken; tePicken--){
             for (Product p : producten) {
-                if(p.getKleur().equals(kleur) && pickedAantal > 0) {
+                if(p.getKleur().equals(kleur) && aantalPicked > 0) {
                     p.fillProduct(g, p);
-                    pickedAantal--;
+                    aantalPicked--;
                 }
             }
         }

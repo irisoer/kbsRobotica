@@ -6,19 +6,19 @@ import java.awt.*;
 //Sylvia >
 
 public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
-    private Color gescandeKleur; //todo: aantallen meegeven met setter, if gescande kleur is rood, roodAantal++ etc etc
-    int roodAantal = 0;
-    int geelAantal = 0;
-    int blauwAantal = 0;
+    private Color gescandeKleur; //todo: aantallen meegeven met setter, if gescande kleur is rood, aantalRood++ etc etc
+    int aantalRood = 0;
+    int aantalGeel = 0;
+    int aantalBlauw = 0;
 
     public void setRood(int rood) {
-        this.roodAantal = rood;
+        this.aantalRood = rood;
     }
     public void setGeel(int geel) {
-        this.geelAantal = geel;
+        this.aantalGeel = geel;
     }
     public void setBlauw(int blauw) {
-        this.blauwAantal = blauw;
+        this.aantalBlauw = blauw;
     }
 
     public SorteerScherm() {
@@ -28,9 +28,9 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
 //        jlHeading = new JLabel();
         jlHeading.setText("Uw voorraad wordt gesorteerd:");
         JPanel sorteerPanel = new JPanel();
-        setRood(roodAantal);
-        setGeel(geelAantal);
-        setBlauw(blauwAantal);
+        setRood(aantalRood);
+        setGeel(aantalGeel);
+        setBlauw(aantalBlauw);
 
         //toevoegen
         add(jlHeading);
@@ -53,9 +53,9 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
         //aantallen
         g.setColor(Color.BLACK);
         g.setFont(fontSubTekst);
-        g.drawString(String.valueOf(roodAantal), 195,225);         //aantal rood
-        g.drawString(String.valueOf(geelAantal), 395,225);        //aantal geel
-        g.drawString(String.valueOf(blauwAantal), 595,225);        //aantal blauw
+        g.drawString(String.valueOf(aantalRood), 195,225);         //aantal rood
+        g.drawString(String.valueOf(aantalGeel), 395,225);        //aantal geel
+        g.drawString(String.valueOf(aantalBlauw), 595,225);        //aantal blauw
 
     }
 
