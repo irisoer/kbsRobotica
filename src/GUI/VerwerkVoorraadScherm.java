@@ -7,68 +7,45 @@ import java.awt.*;
 
 public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
 
-    private int aantalRood = Frame.order.aantalRood;
-    private int aantalGeel = Frame.order.aantalGeel;
-    private int aantalBlauw = Frame.order.aantalBlauw;
+    private int aantalRood;
+    private int aantalGeel;
+    private int aantalBlauw;
 
-    private JLabel jlRood = new JLabel("Rode producten: " + aantalRood);
-    private JLabel jlGroen = new JLabel("Gele producten: " + aantalGeel);
-    private JLabel jlBlauw = new JLabel("Blauwe producten: " + aantalBlauw);
+    private JLabel jlRood;
+    private JLabel jlGeel;
+    private JLabel jlBlauw;
 
-    private Color gescandeKleur;
-
+    JPanel jpVoorraad;
     public VerwerkVoorraadScherm(){
         setLayout(new GridLayout(2,1));
-//        setPreferredSize(new Dimension(800,100));
-
-        JPanel jpVoorraad = new JPanel();
-//        jpVoorraad.setMinimumSize(new Dimension(700,480));
-        jpVoorraad.setLayout(new GridLayout(3,1));
-
-        jlRood.setFont(fontTekst);
-        jlGroen.setFont(fontTekst);
-        jlBlauw.setFont(fontTekst);
-
-//        add(jlHeading);
-
-       jpVoorraad.add(jlRood);
-       jpVoorraad.add(jlGroen);
-       jpVoorraad.add(jlBlauw);
-
-       jlRood.setHorizontalAlignment(JLabel.CENTER);
-       jlGroen.setHorizontalAlignment(JLabel.CENTER);
-       jlBlauw.setHorizontalAlignment(JLabel.CENTER);
-
-       add(jpVoorraad);
-
+        jpVoorraad = new JPanel(new GridLayout(3,1));
+        jlRood = new JLabel();
+        jlGeel = new JLabel();
+        jlBlauw = new JLabel();
+        reload();
     }
 
     @Override
     public void reload() {
         removeAll();
+
         aantalRood = Frame.order.aantalRood;
         aantalGeel = Frame.order.aantalGeel;
         aantalBlauw = Frame.order.aantalBlauw;
-        JLabel jlRood = new JLabel("Rode producten: " + aantalRood);
-        JLabel jlGroen = new JLabel("Gele producten: " + aantalGeel);
-        JLabel jlBlauw = new JLabel("Blauwe producten: " + aantalBlauw);
-
-        JPanel jpVoorraad = new JPanel();
-//        jpVoorraad.setMinimumSize(new Dimension(700,480));
-        jpVoorraad.setLayout(new GridLayout(3,1));
+        jlRood.setText("Rode producten: " + aantalRood);
+        jlGeel.setText("Gele producten: " + aantalGeel);
+        jlBlauw.setText("Blauwe producten: " + aantalBlauw);
 
         jlRood.setFont(fontTekst);
-        jlGroen.setFont(fontTekst);
+        jlGeel.setFont(fontTekst);
         jlBlauw.setFont(fontTekst);
 
-//        add(jlHeading);
-
         jpVoorraad.add(jlRood);
-        jpVoorraad.add(jlGroen);
+        jpVoorraad.add(jlGeel);
         jpVoorraad.add(jlBlauw);
 
         jlRood.setHorizontalAlignment(JLabel.CENTER);
-        jlGroen.setHorizontalAlignment(JLabel.CENTER);
+        jlGeel.setHorizontalAlignment(JLabel.CENTER);
         jlBlauw.setHorizontalAlignment(JLabel.CENTER);
 
         add(jpVoorraad);

@@ -1,8 +1,10 @@
 package GUI;
 
+import Applicatie.Database;
 import Applicatie.Order;
 
 import java.awt.*;
+import java.sql.SQLException;
 import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
@@ -10,7 +12,14 @@ public class Frame extends JFrame implements Layout {
         private static CardLayout cards;
         public static Order order = new Order();
         static OpstartScherm opstartScherm = new OpstartScherm();
-
+        static int[] voorraad;
+        static {
+                try {
+                        voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
+                } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                }
+        }
 
         public enum Schermen {
                 OpstartScherm(opstartScherm),
