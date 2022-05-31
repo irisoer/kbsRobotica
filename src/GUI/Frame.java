@@ -14,11 +14,7 @@ public class Frame extends JFrame implements Layout {
         static OpstartScherm opstartScherm = new OpstartScherm();
         static int[] voorraad;
         static {
-                try {
                         voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
-                } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                }
         }
 
         public enum Schermen {

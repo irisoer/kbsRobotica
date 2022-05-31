@@ -7,82 +7,74 @@ public class Database {
     private static Connection connection;
 
     public static void startConnection() throws SQLException {
-        String password = "";
-        String username = "root";
-        String url = "jdbc:mysql://localhost:3306/nerdygadgets";
-        connection = DriverManager.getConnection(url, username, password);
+
+            String password = "";
+            String username = "root";
+            String url = "jdbc:mysql://localhost:3306/nerdygadgets";
+            connection = DriverManager.getConnection(url, username, password);
     }
 
-    public static void runQuery(String query) throws SQLException {
-        startConnection();
-        Statement stmt = connection.createStatement();
-        ResultSet resultSet = stmt.executeQuery(query);
-        while (resultSet.next()) {
-            int id = resultSet.getInt("ColorID");
-            String colorName = resultSet.getString("ColorName");
-
-            System.out.println(id + " -- " + colorName);
-
+    public static Artikel selecteerArtikel(int stockItemID) {
+        try {
+            startConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
+                    "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
+                    "WHERE StockItemID = ?");
+            preparedStatement.setInt(1, stockItemID);
+            ResultSet result = preparedStatement.executeQuery();
+            Artikel artikel = null;
+            while (result.next()) {
+                artikel = new Artikel(result);
+            }
+            result.close();
+            endConnection();
+            return artikel;
+        } catch (SQLException e) {
         }
-        stmt.close();
-        endConnection();
+        return null;
     }
 
-    public static Artikel selecteerArtikel(int stockItemID) throws SQLException {
-        startConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
-                                                                              "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
-                                                                              "WHERE StockItemID = ?");
-        preparedStatement.setInt(1, stockItemID);
-        ResultSet result = preparedStatement.executeQuery();
-        Artikel artikel = null;
-        while (result.next()) {
-            artikel = new Artikel(result);
+    public static Artikel selecteerArtikel(String kleur) {
+        try {
+            startConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
+                    "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
+                    "WHERE ColorName = ? && StockItemID IN (60, 71, 73)");
+
+            preparedStatement.setString(1, kleur);
+            ResultSet result = preparedStatement.executeQuery();
+            Artikel artikel = null;
+            while (result.next()) {
+                artikel = new Artikel(result);
+            }
+            result.close();
+            endConnection();
+            return artikel;
+        } catch (SQLException e) {
         }
-        result.close();
-        endConnection();
-        return artikel;
+        return null;
     }
 
-    public static Artikel selecteerArtikel(String kleur) throws SQLException {
-        startConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
-                "LEFT JOIN stockitems s on colors.ColorID = s.ColorID\n" +
-                "WHERE ColorName = ? && StockItemID IN (60, 71, 73)");
-
-        preparedStatement.setString(1, kleur);
-        ResultSet result = preparedStatement.executeQuery();
-        Artikel artikel = null;
-        while (result.next()) {
-            artikel = new Artikel(result);
-        }
-        result.close();
-        endConnection();
-        return artikel;
-    }
-
-    // todo: een functie die alle ordernums ophaalt voor startscherm moet Integer[] zijn omdat er een null in moet komen voor leeg vakje
     public static Integer[] selecteerOrderNums() {
-        try{
+        try {
             startConnection();
             PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT OrderID FROM orders ORDER BY OrderID");
             ResultSet result = preparedStatement.executeQuery();
             ArrayList<Integer> ordernrsAL = new ArrayList<>();
 
-            while(result.next()){
+            while (result.next()) {
                 ordernrsAL.add(result.getInt("OrderID"));
             }
             Integer[] orderNrs = new Integer[ordernrsAL.size()];
             orderNrs = ordernrsAL.toArray(orderNrs);
             return orderNrs;
-        }
-        catch (SQLException e){
-
+        } catch (SQLException e) {
+            System.out.println("JAAA ERROR");
+            e.printStackTrace();
         }
         return null;
     }
 
-    // todo: functie die in volgorde rgb de aantallen ophaalt vanaf een orderNum voor het startscherm
     public static int[] selecteerOrder(int orderNum) {
         try {
             startConnection();
@@ -92,53 +84,60 @@ public class Database {
             int[] artikelenOrder = new int[3];
             while (result.next()) {
                 switch (result.getInt("StockItemID")) {
-                    case 60:
+                    case 60:    //Blauwe artikel
                         artikelenOrder[2] = result.getInt("Quantity");
-                    case 71:
+                    case 71:    //Gele artikel
                         artikelenOrder[1] = result.getInt("Quantity");
-                    case 73:
+                    case 73:    //Rode artikel
                         artikelenOrder[0] = result.getInt("Quantity");
                 }
             }
             return artikelenOrder;
         } catch (SQLException e) {
-            e.printStackTrace();
         }
         return null;
     }
 
 
-
     /**
      * <h3>Voorraad in de database</h3>
-     *
+     * <p>
      * Dit stuk code haalt de voorraad op en werkt deze bij in de database
      *
      * @author Iris Oerlemans
      */
-    public static Integer getVoorraad(int stockItemID) throws SQLException {
-        startConnection();
-        PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT QuantityOnHand FROM nerdygadgets.stockitemholdings I \n" +
-                "WHERE StockItemID = ?");
-        preparedStatement.setInt(1, stockItemID);
-        ResultSet result = preparedStatement.executeQuery();
-        int quantity = 0;
-        while(result.next()){
-            quantity = result.getInt("QuantityOnHand");
+
+    public static Integer getVoorraad(int stockItemID) {
+        try {
+            startConnection();
+            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT QuantityOnHand FROM nerdygadgets.stockitemholdings I \n" +
+                    "WHERE StockItemID = ?");
+            preparedStatement.setInt(1, stockItemID);
+            ResultSet result = preparedStatement.executeQuery();
+            int quantity = 0;
+            while (result.next()) {
+                quantity = result.getInt("QuantityOnHand");
+            }
+            result.close();
+            return quantity;
+        } catch (SQLException e) {
         }
-        result.close();
-        return quantity;
+        return 0;
     }
 
-    public static int updateVoorraad(int StockitemID, int hoeveelheidBesteld) throws SQLException {
-        startConnection();
-        PreparedStatement preparedStatement = getConnection().prepareStatement("UPDATE nerdygadgets.stockitemholdings \n" +
-                "SET QuantityOnHand = (QuantityOnHand - ?) \n"+
-                "WHERE StockitemID = ? ");
-        preparedStatement.setInt(2, StockitemID);
-        preparedStatement.setInt(1, hoeveelheidBesteld);
-        int result = preparedStatement.executeUpdate();
-        return result;
+    public static int updateVoorraad(int StockitemID, int hoeveelheidBesteld) {
+        try {
+            startConnection();
+            PreparedStatement preparedStatement = getConnection().prepareStatement("UPDATE nerdygadgets.stockitemholdings \n" +
+                    "SET QuantityOnHand = (QuantityOnHand - ?) \n" +
+                    "WHERE StockitemID = ? ");
+            preparedStatement.setInt(2, StockitemID);
+            preparedStatement.setInt(1, hoeveelheidBesteld);
+            int result = preparedStatement.executeUpdate();
+            return result;
+        } catch (SQLException e) {
+        }
+        return 0;
     }
 
     /**
@@ -150,7 +149,10 @@ public class Database {
         return connection;
     }
 
-    private static void endConnection() throws SQLException {
-        connection.close();
+    private static void endConnection(){
+        try {
+            connection.close();
+        } catch (SQLException e) {
+        }
     }
 }

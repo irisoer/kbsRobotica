@@ -23,103 +23,102 @@ public class Order extends Database {
     private String orderlijst = "hallo";
     private static int orderNr =1;
 
-    public int aantalGeel = 2;
-    public int aantalBlauw = 2;
-    public int aantalRood = 2;
+    private int artikelNrRood = 73;
+    private int artikelNrGeel = 71;
+    private int artikelNrBlauw = 73;
 
-    public Order() {
-        aantalRood = 0;
-        aantalGeel = 0;
-        aantalBlauw = 0;
-    }
+    public int aantalGeel;
+    public int aantalBlauw;
+    public int aantalRood;
+
+    public Order(){}
+
     public Order(int[] rgbAantallen) {
         aantalRood = rgbAantallen[0];
         aantalGeel = rgbAantallen[1];
         aantalBlauw = rgbAantallen[2];
         this.artikelen = new ArrayList<>();
-        voegArtikelToe(73, aantalRood); // Rode artikelen
-        voegArtikelToe(71, aantalGeel); // Gele artikelen
-        voegArtikelToe(60, aantalBlauw); // Blauwe artikelen
+        voegArtikelToe(artikelNrRood, aantalRood); // Rode artikelen
+        voegArtikelToe(artikelNrGeel, aantalGeel); // Gele artikelen
+        voegArtikelToe(artikelNrBlauw, aantalBlauw); // Blauwe artikelen
 
         berekenBpp();
         System.out.println(bpp);
     }
 
-    public void getOrder() throws SQLException {
-        artikelen = new ArrayList<>();
-        for (int i = 0; i < aantalGeel; i++) {
-            artikelen.add(selecteerArtikel(71));
-        }
-        for (int i = 0; i < aantalBlauw; i++) {
-            artikelen.add(selecteerArtikel(60));
-        }
-        for (int i = 0; i < aantalRood; i++) {
-            artikelen.add(selecteerArtikel(73));
-        }
+    public void getOrder(){
+            artikelen = new ArrayList<>();
+            for (int i = 0; i < aantalGeel; i++) {
+                artikelen.add(selecteerArtikel(artikelNrGeel));
+            }
+            for (int i = 0; i < aantalBlauw; i++) {
+                artikelen.add(selecteerArtikel(artikelNrBlauw));
+            }
+            for (int i = 0; i < aantalRood; i++) {
+                artikelen.add(selecteerArtikel(artikelNrRood));
+            }
 
-        bpp = new Bpp(artikelen, 12);
-        orderlijst = bpp.toString();
-
+            bpp = new Bpp(artikelen, 12);
+            orderlijst = bpp.toString();
     }
 
-    public void maakPakbon(int customerId) throws IOException, SQLException {
-        startConnection();
-        PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
-                "LEFT JOIN nerdygadgets.cities AS ci ON cu.PostalCityID = ci.CityID \n" +
-                "WHERE CustomerID = ?");
-        preparedStatement.setInt(1, customerId);
-        ResultSet result = preparedStatement.executeQuery();
-        while (result.next()) {
-            klantID = result.getInt("CustomerID");
-            klantNaam = result.getString("CustomerName");
-            klantAdres = result.getString("DeliveryAddressLine1");
-            klantPostcode = result.getString("DeliveryPostalCode");
-            stadNaam = result.getString("CityName");
-        }
-        result.close();
+    public void maakPakbon(int customerId){
+        try {
+            startConnection();
+            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
+                    "LEFT JOIN nerdygadgets.cities AS ci ON cu.PostalCityID = ci.CityID \n" +
+                    "WHERE CustomerID = ?");
+            preparedStatement.setInt(1, customerId);
+            ResultSet result = preparedStatement.executeQuery();
+            while (result.next()) {
+                klantID = result.getInt("CustomerID");
+                klantNaam = result.getString("CustomerName");
+                klantAdres = result.getString("DeliveryAddressLine1");
+                klantPostcode = result.getString("DeliveryPostalCode");
+                stadNaam = result.getString("CityName");
+            }
+            result.close();
 
-        // AANMAKEN PAKBON ORDER
+            // AANMAKEN PAKBON ORDER
 
-        XWPFDocument document = new XWPFDocument();
+            XWPFDocument document = new XWPFDocument();
 
-        XWPFParagraph p1 = document.createParagraph();
-        XWPFRun run1 = p1.createRun();
-        run1.setBold(false);
-        run1.setText("KlantNr: " + klantID);
-        run1.addBreak();
-        run1.setText(klantNaam);
-        run1.addBreak();
-        run1.setText(klantAdres);
-        run1.addBreak();
-        run1.setText(klantPostcode + " " + stadNaam);
-        run1.addBreak();
-        run1.addBreak();
+            XWPFParagraph p1 = document.createParagraph();
+            XWPFRun run1 = p1.createRun();
+            run1.setBold(false);
+            run1.setText("KlantNr: " + klantID);
+            run1.addBreak();
+            run1.setText(klantNaam);
+            run1.addBreak();
+            run1.setText(klantAdres);
+            run1.addBreak();
+            run1.setText(klantPostcode + " " + stadNaam);
+            run1.addBreak();
+            run1.addBreak();
 
-        XWPFParagraph p2 = document.createParagraph();
-        XWPFRun run2 = p2.createRun();
-        run2.setBold(true);
-        run2.setText("Uw bestelling: ");
+            XWPFParagraph p2 = document.createParagraph();
+            XWPFRun run2 = p2.createRun();
+            run2.setBold(true);
+            run2.setText("Uw bestelling: ");
 
-        XWPFParagraph bestelling = document.createParagraph();
-        XWPFRun run3 = bestelling.createRun();
+            XWPFParagraph bestelling = document.createParagraph();
+            XWPFRun run3 = bestelling.createRun();
 
-        String[] parts = orderlijst.split("\n");
-        for (String part : parts
-             ) {
-            run3.setText(part);
-            run3.addBreak();
-        }
+            String[] parts = orderlijst.split("\n");
+            for (String part : parts
+            ) {
+                run3.setText(part);
+                run3.addBreak();
+            }
 
-        document.write(new FileOutputStream("Applicatie.Order" + orderNr + ".docx"));
-        orderNr++;
+            document.write(new FileOutputStream("Applicatie.Order" + orderNr + ".docx"));
+            orderNr++;
+        }catch (IOException ie){}
+        catch (SQLException se){}
     }
 
     public void voegArtikelToe(int artikelNum) {
-        try {
             this.artikelen.add(Database.selecteerArtikel(artikelNum));
-        } catch (SQLException e) {
-            System.out.println("Niet gevonden"); // Gebeurd alleen als db uit is wat niet kan
-        }
     }
 
     public void voegArtikelToe(int artikelNum, int aantal) {
