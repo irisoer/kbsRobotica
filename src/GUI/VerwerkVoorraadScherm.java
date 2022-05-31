@@ -16,11 +16,12 @@ public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
     private JLabel jlGeel;
     private JLabel jlBlauw;
     private JLabel jlHuidigeVoorraad;
+    JLabel jlLeeg = new JLabel();       //nodig voor uitlijning
 
     JPanel jpVoorraad;
 
     public VerwerkVoorraadScherm(){
-        setLayout(new GridLayout(2,1));
+        setLayout(new GridLayout(3,1));
         jpVoorraad = new JPanel(new GridLayout(4,1));
         jlHuidigeVoorraad = new JLabel();
         jlRood = new JLabel();
@@ -32,7 +33,7 @@ public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
     @Override
     public void reload() {
         removeAll();
-        jlHuidigeVoorraad.setText("Huidige voorraad");
+        jlHuidigeVoorraad.setText("Huidige voorraad: ");
         aantalRood = Frame.order.aantalRood;
         aantalGeel = Frame.order.aantalGeel;
         aantalBlauw = Frame.order.aantalBlauw;
@@ -55,6 +56,7 @@ public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
         jlGeel.setHorizontalAlignment(JLabel.CENTER);
         jlBlauw.setHorizontalAlignment(JLabel.CENTER);
 
+        add(jlLeeg);
         add(jpVoorraad);
         repaint();
     }

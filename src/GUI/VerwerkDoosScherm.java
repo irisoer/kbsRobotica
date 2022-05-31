@@ -35,7 +35,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
         Polygon pijl = new Polygon();
         pijl.addPoint(xHuidigeDoos+breedteDoos/2-grootte/2,80);     //linker punt
         pijl.addPoint(xHuidigeDoos+breedteDoos/2+grootte/2,80);     //rechter punt
-        pijl.addPoint( xHuidigeDoos+breedteDoos/2,100);              //onderste punt
+        pijl.addPoint( xHuidigeDoos+breedteDoos/2,100);             //onderste punt
         g.fillPolygon(pijl);
 
         //dozen
