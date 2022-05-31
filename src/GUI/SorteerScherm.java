@@ -5,7 +5,7 @@ import java.awt.*;
 
 //Sylvia >
 
-public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
+public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
     private Color gescandeKleur; //todo: aantallen meegeven met setter, if gescande kleur is rood, aantalRood++ etc etc
     int aantalRood = 0;
     int aantalGeel = 0;
@@ -42,9 +42,9 @@ public class SorteerScherm extends Scherm implements Layout, ProductStandaard{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //producten
-        Product roodProduct = new Product(ProductStandaard.rood);
-        Product geelProduct = new Product(ProductStandaard.geel);
-        Product blauwProduct = new Product(ProductStandaard.blauw);
+        Artikel roodProduct = new Artikel(ArtikelStandaard.rood);
+        Artikel geelProduct = new Artikel(ArtikelStandaard.geel);
+        Artikel blauwProduct = new Artikel(ArtikelStandaard.blauw);
 
         roodProduct.drawArtikel(g,roodProduct,160,110);
         geelProduct.drawArtikel(g,geelProduct, 360,110);

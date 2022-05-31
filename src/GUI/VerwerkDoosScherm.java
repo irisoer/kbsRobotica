@@ -4,9 +4,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 //Sylvia >
-public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ProductStandaard{
-    private Product huidigProduct; //laatst gepickte product todo:
-    private ArrayList<Product> producten;
+public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ArtikelStandaard {
+    private Artikel huidigProduct; //laatst gepickte product todo:
+    private ArrayList<Artikel> producten;
     private Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
     private int huidigeDoos = 2;
 
@@ -54,8 +54,8 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
 
 
         //producten        // todo: hardcode > communication
-//        drawOrder(g,2, ProductStandaard.blauw, 2,ProductStandaard.rood,2,ProductStandaard.geel,1);
-//        drawOrder(g,1,ProductStandaard.rood,3);
+//        drawOrder(g,2, ArtikelStandaard.blauw, 2,ArtikelStandaard.rood,2,ArtikelStandaard.geel,1);
+//        drawOrder(g,1,ArtikelStandaard.rood,3);
         drawOrder(g,2, 2,2,1);
         drawOrder(g,1,1,0,0);
     }
@@ -63,7 +63,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
     public void setKleurHuidigProduct(Color kleur){
         this.huidigeKleur = kleur;
     }
-    public Product getHuidigProduct(){
+    public Artikel getHuidigProduct(){
         return this.huidigProduct;
     }
 
@@ -101,7 +101,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
         }
 
         for (aantal = totaalAantal; aantal > 0; aantal--) {
-            Product p = new Product();
+            Artikel p = new Artikel();
             p.setDoos(doos);
             int x = 0; //x positie product
             int y = 0; //y positie product
@@ -142,7 +142,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
             g.setColor(p.getKleur());
             producten.add(p);
         }
-        for (Product p : producten)
+        for (Artikel p : producten)
         {
             p.drawKleinArtikel(g,p);
             if(p.gevuld){ //todo: remove hardcode

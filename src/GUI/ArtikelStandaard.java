@@ -2,7 +2,7 @@ package GUI;
 
 import java.awt.*;
 
-public interface ProductStandaard {
+public interface ArtikelStandaard {
     //Standaard product
     int hoogteDoos = 155;       //hoogte doos
     int breedteDoos = 110;      //breedte doos

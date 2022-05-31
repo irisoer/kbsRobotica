@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 //Sylvia >
 
-public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements ProductStandaard {
+public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements ArtikelStandaard {
     private int aantalRood = 6;  //todo: hardcode
     private int aantalGeel = 4;
     private int aantalBlauw = 3;
@@ -15,7 +15,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
     private int pickedBlauw = 1;
 
     private JPanel jpVerwerkKleur = new JPanel();
-    private ArrayList<Product> producten = new ArrayList<>();
+    private ArrayList<Artikel> producten = new ArrayList<>();
 
     public VerwerkKleurScherm() {
         setLayout(new FlowLayout());
@@ -67,7 +67,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
         }
 
         for (int aantal = aantalKleur; aantal > 0; aantal--) {
-            Product p = new Product();
+            Artikel p = new Artikel();
             p.setKleur(kleur);
             g.setColor(p.getKleur());
             int x;
@@ -107,7 +107,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
             p.setPosY(y);
             producten.add(p);
         }
-        for (Product p : producten) {
+        for (Artikel p : producten) {
             p.drawKleinArtikel(g, p);
         }
     }
@@ -126,7 +126,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Produc
             aantalKleur = aantalBlauw;
         }
         for(tePicken = aantalKleur; aantalPicked <= tePicken; tePicken--){
-            for (Product p : producten) {
+            for (Artikel p : producten) {
                 if(p.getKleur().equals(kleur) && aantalPicked > 0) {
                     p.fillArtikel(g, p);
                     aantalPicked--;

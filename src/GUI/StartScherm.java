@@ -119,7 +119,7 @@ public class StartScherm extends Scherm {
 
 			public ProductRegel(String kleur, int voorraad) {
 				this.voorraad = voorraad;
-				this.Product = new JLabel(kleur + " Product (" + voorraad + ")");
+				this.Product = new JLabel(kleur + " Artikel (" + voorraad + ")");
 				this.Product.setFont(fontTekst);
 				setSize(800, 250);
 				setLayout(new GridLayout(1, 2));
