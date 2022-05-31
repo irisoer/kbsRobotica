@@ -8,7 +8,7 @@ public interface ArtikelStandaard {
     int breedteDoos = 110;      //breedte doos
     int grootArtikel = 80;    //Groot formaat, voor sorteren
     int kleinArtikel = grootArtikel /2;      //Klein formaat voor verwerk/order schermen
-    Color rood = Color.RED;     //todo: kleuren verwerken in statements in subklasses
+    Color rood = Color.RED;
     Color geel = Color.ORANGE;
     Color blauw = Color.BLUE;
 
