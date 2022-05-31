@@ -1,11 +1,10 @@
 package GUI;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 //Sylvia >
-public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ProductStandaard{
+public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ArtikelStandaard {
     private Product huidigProduct; //laatst gepickte product todo:
     private ArrayList<Product> producten;
     private Color huidigeKleur = rood;             //laatst gescande product voor order (geen restbak) todo:
@@ -29,7 +28,6 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-
         //pijl
         int grootte = 20;       //grootte van pijl
         int xHuidigeDoos = xDoos2; //todo: communication
@@ -56,8 +54,8 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
 
 
         //producten        // todo: hardcode > communication
-//        drawOrder(g,2, ProductStandaard.blauw, 2,ProductStandaard.rood,2,ProductStandaard.geel,1);
-//        drawOrder(g,1,ProductStandaard.rood,3);
+//        drawOrder(g,2, ArtikelStandaard.blauw, 2,ArtikelStandaard.rood,2,ArtikelStandaard.geel,1);
+//        drawOrder(g,1,ArtikelStandaard.rood,3);
         drawOrder(g,2, 2,2,1);
         drawOrder(g,1,1,0,0);
     }
@@ -146,9 +144,9 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Product
         }
         for (Product p : producten)
         {
-            p.drawKleinProduct(g,p);
+            p.drawKleinArtikel(g,p);
             if(p.gevuld){ //todo: remove hardcode
-                p.fillProduct(g,p);
+                p.fillArtikel(g,p);
             }
         }
     }

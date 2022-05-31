@@ -34,7 +34,7 @@ public class VerwerkScherm extends Scherm {
         setLayout(null);
         cards = new CardLayout();
         jpSchermen = new JPanel(cards);
-//        huidigScherm = Carrousel.values()[0];
+        huidigScherm = Carrousel.values()[0];
 
         for (Carrousel scherm: Carrousel.values()) {
             System.out.println(scherm);
@@ -84,6 +84,7 @@ public class VerwerkScherm extends Scherm {
     }
 
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         //status
         int width = getWidth();
         int middle = width / 2;

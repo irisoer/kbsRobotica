@@ -14,19 +14,15 @@ public class Frame extends JFrame implements Layout {
         static OpstartScherm opstartScherm = new OpstartScherm();
         static int[] voorraad;
         static {
-                try {
-                        voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
-                } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                }
+                voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
         }
 
         public enum Schermen {
                 OpstartScherm(opstartScherm),
                 StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
-                ErrorScherm(new ErrorScherm()),
-                EindschermSorteren(new EindschermSorteren());
+                SorteerSchemr(new SorteerScherm()),
+                ErrorScherm(new ErrorScherm());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
                         this.scherm = scherm;
@@ -62,7 +58,7 @@ public class Frame extends JFrame implements Layout {
                 }
 
                 add(jpSchermen);
-                setScherm(Schermen.EindschermSorteren);
+                setScherm(Schermen.StartScherm);
                 setResizable(false);
                 opstartScherm.runStatussen();
 
@@ -74,6 +70,7 @@ public class Frame extends JFrame implements Layout {
 
         public static void setScherm(Schermen scherm) {
                 cards.show(jpSchermen, scherm.toString());
+                scherm.scherm.repaint();
         }
 
         private void addSchermToCards(Schermen scherm, JPanel cardPanel) {

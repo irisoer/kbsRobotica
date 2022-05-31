@@ -1,6 +1,7 @@
 package GUI;
 
 import Applicatie.Database;
+import Applicatie.Order;
 import JPanels.Panel;
 
 import javax.swing.*;
@@ -55,16 +56,22 @@ public class StartScherm extends Scherm {
 
 
 	static class DBLoader extends Panel {
+		private JLabel jlOrderSelecteren;
+
 		JComboBox<Integer> box = new JComboBox<>(Database.selecteerOrderNums());
-		JButton jbLoad = new JButton("Laden");
+		JButton jbLoad = new JButton("Inladen");
 
 		public DBLoader(ProductSelector productSelector) {
 			setLayout(null);
-			box.setBounds(0, 0, 100, 100);
+			jlOrderSelecteren = new JLabel("Selecteer order: ");
+			jlOrderSelecteren.setBounds(0,0,200,100);
+			jlOrderSelecteren.setFont(fontSubTekst);
+			add(jlOrderSelecteren);
+			box.setBounds(150, 0, 100, 100);
 			box.setFont(fontTekst);
 			add(box);
 			jbLoad.setFont(fontTekst);
-			jbLoad.setBounds(150, 0, 100, 100);
+			jbLoad.setBounds(300, 0, 200, 100);
 			jbLoad.addActionListener(e -> {
 				int[] databaseItems;
 				if(this.box.getSelectedItem() == null) databaseItems = new int[]{0, 0, 0};
@@ -72,7 +79,7 @@ public class StartScherm extends Scherm {
 				productSelector.setProductAantallen(databaseItems);
 			});
 			add(jbLoad);
-			setBounds(275, 50, 250, 100);
+			setBounds(175, 50, 800, 100);
 		}
 
 	}
@@ -81,15 +88,11 @@ public class StartScherm extends Scherm {
 	private class ProductSelector extends Scherm {
         static ProductRegel[] productRegels;
         {
-            try {
                 productRegels = new ProductRegel[]{
                     new ProductRegel("Rood", Database.getVoorraad(73)),
                     new ProductRegel("Geel", Database.getVoorraad(71)),
                     new ProductRegel("Blauw", Database.getVoorraad(60))
                 };
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
         }
 
         public ProductSelector() throws SQLException {

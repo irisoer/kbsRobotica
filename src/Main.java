@@ -41,7 +41,7 @@ public class Main {
 //    public static void main(String[] args) throws SQLException {
 //        Database db;
 //        db = new Database();
-//        ArrayList<Artikel> result = new ArrayList<>();
+//        ArrayList<Product> result = new ArrayList<>();
 //        for (int i = 0; i < 3; i++) {
 //            result.add(db.getProduct(60));
 //            result.add(db.getProduct(70));
@@ -58,7 +58,7 @@ public class Main {
 ////        inpak.draaiNaarPlatform(0);
 //
 //		ArduinoSorteer sorteer = new ArduinoSorteer();
-//        ArrayList<Artikel> result = new ArrayList<>();
+//        ArrayList<Product> result = new ArrayList<>();
 //        for (int i = 0; i < 3; i++) {
 //            result.add(Database.selecteerArtikel(60));
 //            result.add(Database.selecteerArtikel(73));
@@ -142,7 +142,7 @@ public class Main {
 ////        inpak.draaiNaarPlatform(0);
 //
 //		ArduinoSorteer sorteer = new ArduinoSorteer();
-//		ArrayList<Artikel> result = new ArrayList<>();
+//		ArrayList<Product> result = new ArrayList<>();
 //
 //
 //		Arduino.sorteer(inpak, sorteer);

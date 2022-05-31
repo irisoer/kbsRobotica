@@ -24,13 +24,10 @@ public class ArduinoSorteer extends Arduino {
         else if (color == 'g') kleur = "Yellow";
         else if (color == 'b') kleur = "Blue";
         System.out.println(kleur);
-        try {
             Artikel a = Database.selecteerArtikel(kleur);
             System.out.println(a);
             index = bpp.findBinNum(a);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
         if(index == -1) {
             this.serialPort.writeString("0:"); // pusher aan zetten
             this.closePort();
@@ -55,13 +52,9 @@ public class ArduinoSorteer extends Arduino {
         else if (color == 'g') kleur = "Yellow";
         else if (color == 'b') kleur = "Blue";
         System.out.println(kleur);
-        try {
             Artikel a = Database.selecteerArtikel(kleur);
             System.out.println(a);
             index = bpp.findBinNum(a);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         if(index == -1) {
             this.serialPort.writeString("0:"); // pusher aan zetten
             this.closePort();
