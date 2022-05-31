@@ -12,16 +12,16 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
     private ArrayList<Artikel> artikelen;
 
     //Posities product in doos
-    private int yRij1 = 270;            //y positie producten rij 1
-    private int yRij2 = 220;            //y positie producten rij 2
-    private int yRij3 = 170;            //y positie producten rij 3
+    private int yRij1 = 220;            //y positie producten rij 1
+    private int yRij2 = 170;            //y positie producten rij 2
+    private int yRij3 = 120;            //y positie producten rij 3
     private int marge = 5;              //producten uitlijnen binnen doos
 
     //posities doos
-    int xDoos1 = 150;           //x positie doos 1
-    int xDoos2 = 350;           //x positie doos 2
-    int xDoos3 = 550;           //x positie doos 3
-    int yDoos = 165;            //y positie van dozen
+    int xDoos1 = 160;           //x positie doos 1
+    int xDoos2 = 360;           //x positie doos 2
+    int xDoos3 = 560;           //x positie doos 3
+    int yDoos = 115;            //y positie van dozen
 
     public VerwerkDoosScherm() {
 //        add(jlHeading);
@@ -34,9 +34,9 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
         int xHuidigeDoos = xDoos2; //todo: communication
         g.setColor(Color.BLACK);
         Polygon pijl = new Polygon();
-        pijl.addPoint(xHuidigeDoos+breedteDoos/2-grootte/2,130);     //linker punt
-        pijl.addPoint(xHuidigeDoos+breedteDoos/2+grootte/2,130);     //rechter punt
-        pijl.addPoint( xHuidigeDoos+breedteDoos/2,150);              //onderste punt
+        pijl.addPoint(xHuidigeDoos+breedteDoos/2-grootte/2,80);     //linker punt
+        pijl.addPoint(xHuidigeDoos+breedteDoos/2+grootte/2,80);     //rechter punt
+        pijl.addPoint( xHuidigeDoos+breedteDoos/2,100);              //onderste punt
         g.fillPolygon(pijl);
 
         //dozen

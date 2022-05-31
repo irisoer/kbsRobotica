@@ -34,11 +34,11 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         fillKleur(g,geel,pickedGeel);
         fillKleur(g,blauw,pickedBlauw);
 
-        g.setFont(fontSubTekst);
+        g.setFont(fontTekst);
         g.setColor(Color.BLACK);
-        g.drawString("Rood", 190, 290);
-        g.drawString("Geel", 390, 290);
-        g.drawString("Blauw", 590, 290);
+        g.drawString("Rood", 180, 290);
+        g.drawString("Geel", 380, 290);
+        g.drawString("Blauw", 580, 290);
     }
 
     public void drawKleur(Graphics g, Color kleur) {

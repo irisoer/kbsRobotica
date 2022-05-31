@@ -61,7 +61,7 @@ public class Database {
             PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT OrderID FROM orders ORDER BY OrderID");
             ResultSet result = preparedStatement.executeQuery();
             ArrayList<Integer> ordernrsAL = new ArrayList<>();
-
+            ordernrsAL.add(null);
             while (result.next()) {
                 ordernrsAL.add(result.getInt("OrderID"));
             }
