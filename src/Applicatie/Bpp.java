@@ -21,7 +21,9 @@ public class Bpp {
 	public boolean isLeeg() {
 		for (int i = 0; i < bins.size(); i++) {
 			ArrayList<Artikel> bin = bins.get(i);
-			if(!bin.isEmpty()) return false;
+			for (int j = 0; j < bin.size(); j++) {
+				if(!bin.get(i).isIngepakt()) return false;
+			}
 		};
 		return true;
 	}
@@ -43,8 +45,11 @@ public class Bpp {
 
 		for (ArrayList<Artikel> bin : this.bins) {   	// Foreach bin in bins
 			if (bin.contains(artikel)) {
-				// todo: Delete doen in de find functie of apart (zie remBinItem())
-				bin.remove(artikel);		// Verwijder het integer object uit de bin
+				for (Artikel art: bin) {
+					if(art.equals(artikel)) art.setIngepakt();
+				}
+
+						// Verwijder het integer object uit de bin
 														// Integer.valueOf() omdat als er een int wordt meegegeven
 														// dan wordt die index verwijderd ipv dat object.
 				return binNum;                        	// Return het nummer van huidige bin.
@@ -99,6 +104,7 @@ public class Bpp {
 			// Maak dan een nieuwe bin in
 			if (min == binGrootte + 1) {
 				ArrayList<Artikel> bInhoud = new ArrayList<>();      	// Maak nieuwe bin inhoud lijst aan
+				artikel.setDoos(aantBins);
 				bInhoud.add(artikel);                                   	// Voeg het item dat niet paste hieraan toe
 				resultaat.add(bInhoud);                              	// Voeg deze nieuwe lijst toe aan het resultaat
 				binRuimte[aantBins] = binGrootte - item;             	// Stel de overgebleven ruimte in voor de nieuwe bin
@@ -106,7 +112,7 @@ public class Bpp {
 
 			} else { // Voeg het item toe aan de bin waar hij hoort
 				resultaat.get(bin).add(artikel);                         	// Pak de lijst met items van de geselecteerde bin
-																		// voeg daar het nieuwe item aan toe.
+				artikel.setDoos(bin);
 
 				binRuimte[bin] -= item;                               	// Sla de overgebleven ruimte op voor de huidige bin
 			}
