@@ -6,6 +6,9 @@ import java.awt.*;
 //Sylvia >
 public class Scherm extends JPanel implements Layout {
     JLabel jlHeading = new JLabel();        //Heading tekst
+    JLabel jlTekst = new JLabel();          //Normale tekst
+    JLabel jlSubTekst = new JLabel();       //Kleine tekst
+
 //    private VerwerkScherm verwerk = new VerwerkScherm();
     public Scherm(/*String titel*/){                       //Standaard opmaak, titel = titel in balk
         // nieuwe klasse > extends JFrame
@@ -25,8 +28,8 @@ public class Scherm extends JPanel implements Layout {
         jlHeading.setHorizontalAlignment(JLabel.CENTER);
         jlTekst.setFont(fontTekst);
         jlTekst.setHorizontalAlignment(JLabel.CENTER);
-//        jlSubTekst.setFont(fontSubTekst);
-//        jlSubTekst.setHorizontalAlignment(JLabel.CENTER);
+        jlSubTekst.setFont(fontSubTekst);
+        jlSubTekst.setHorizontalAlignment(JLabel.CENTER);
 
         setVisible(true);
     }

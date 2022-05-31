@@ -3,6 +3,7 @@ package GUI;
 import Applicatie.*;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
@@ -20,8 +21,9 @@ public class OpstartScherm extends Scherm{
     public OpstartScherm(){
         this.setSize(800,480);
         this.setLayout(new GridLayout(4,2));
+        this.setBorder(new EmptyBorder(75,125,0,0));
 
-        jlDatabase = new JLabel("Database connectie: ");
+        jlDatabase = new JLabel("Database status: ");
         jlDatabase.setFont(fontTekst);
 
         jlIsVerbondenDatabase = new JLabel("niet verbonden");
@@ -30,7 +32,7 @@ public class OpstartScherm extends Scherm{
         add(jlDatabase);
         add(jlIsVerbondenDatabase);
 
-        jlArduinoSorteer = new JLabel("Arduino sorteren connectie: ");
+        jlArduinoSorteer = new JLabel("Sorteer Arduino status:  ");
         jlArduinoSorteer.setFont(fontTekst);
 
         jlIsVerbondenSorteer = new JLabel("niet verbonden");
@@ -39,7 +41,7 @@ public class OpstartScherm extends Scherm{
         add(jlArduinoSorteer);
         add(jlIsVerbondenSorteer);
 
-        jlArduinoInpak = new JLabel("Arduino inpakken connectie: ");
+        jlArduinoInpak = new JLabel("Inpak Arduino status: ");
         jlArduinoInpak.setFont(fontTekst);
         jlIsVerbondenInpak = new JLabel("niet verbonden");
         jlIsVerbondenInpak.setFont(fontTekst);
@@ -84,10 +86,15 @@ public class OpstartScherm extends Scherm{
         }
     }
 
-    public void runStatussen(){
+    public void runStatussen() {
         statusDatabase();
         statusSorteerArduino();
         statusInpakArduino();
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+
+        }
         verbonden = true;
     }
 
