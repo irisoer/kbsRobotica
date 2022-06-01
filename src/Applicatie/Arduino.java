@@ -196,10 +196,7 @@ public abstract class Arduino {
 						case WachtOpScan -> {
 							for (int i = 0; i < bufferBytes.length; i++) {
 								if (bufferBytes[i] == '#' && bufferBytes[i + 1] != ' ') {
-									if (huidigeTaak.equals(Taak.Sorteer)) {
-										verstuurKleur((char) bufferBytes[i + 1]);
-									} else {
-									} // todo: Werkende inpak module
+									verstuurKleur((char) bufferBytes[i + 1]);
 								}
 							}
 						}
