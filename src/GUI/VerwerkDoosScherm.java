@@ -31,7 +31,7 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
         super.paintComponent(g);
         //pijl
         int grootte = 20;       //grootte van pijl
-        int xHuidigeDoos = xDoos2; //todo: communication
+        int xHuidigeDoos = 160 + Frame.huidigeDoos * 200; //todo: communication
         g.setColor(Color.BLACK);
         Polygon pijl = new Polygon();
         pijl.addPoint(xHuidigeDoos+breedteDoos/2-grootte/2,80);     //linker punt

@@ -1,5 +1,6 @@
 package Applicatie;
 
+import GUI.Frame;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -62,9 +63,12 @@ public class Order extends Database {
             for (int i = 0; i < aantalRood; i++) {
                 artikelen.add(selecteerArtikel(artikelNrRood));
             }
-
-            bpp = new Bpp(artikelen, 12);
-            orderlijst = bpp.toString();
+            try {
+                bpp = new Bpp(artikelen, 12);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        orderlijst = bpp.toString();
     }
 
     public static void maakPakbon(){
@@ -166,7 +170,11 @@ public class Order extends Database {
     }
 
     public void berekenBpp() {
-        bpp = new Bpp(artikelen, 12);
+        try {
+            bpp = new Bpp(artikelen, 12);
+        } catch (Exception e) {
+            Frame.showError(e.getMessage());
+        }
     }
 
     public static Bpp getBpp() {

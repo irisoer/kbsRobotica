@@ -11,28 +11,29 @@ import java.util.Arrays;
 import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
+        static GraphicsDevice device = GraphicsEnvironment
+                .getLocalGraphicsEnvironment().getScreenDevices()[0];
         private static JPanel jpSchermen;
         private static CardLayout cards;
         public static Order order = new Order();
         static OpstartScherm opstartScherm = new OpstartScherm();
-        static int[] voorraad;
+        static int[] voorraad = voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
         static String huidigeKleur;
         static int huidigeDoos;
         static ArduinoInpak arduinoInpak;
         static ArduinoSorteer arduinoSorteer;
+        private static String errorMessage;
 
-        static {
-                voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
-        }
+        static SorteerScherm sorteerScherm = new SorteerScherm();
+        static StartScherm startScherm = new StartScherm(sorteerScherm);
 
         public enum Schermen {
                 OpstartScherm(opstartScherm),
-                StartScherm(new StartScherm()),
+                StartScherm(startScherm),
                 VerwerkScherm(new VerwerkScherm()),
                 SorteerScherm(new SorteerScherm()),
-                ErrorScherm(new ErrorScherm());
-                SorteerSchemr(new SorteerScherm()),
                 ErrorScherm(new ErrorScherm()),
+                SorteerSchemr(sorteerScherm),
                 EindSchermOrderKlaarmaken(new EindschermOrderKlaarmaken());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
@@ -51,24 +52,23 @@ public class Frame extends JFrame implements Layout {
                 setResizable(false);
 //                setExtendedState(JFrame.MAXIMIZED_BOTH);
                 setUndecorated(true);
-                setVisible(true);
-
-                cards = new CardLayout();
-                jpSchermen = new JPanel(cards);
+                device.setFullScreenWindow(this);
                 setSize(800, 480);
-                setLayout(null);
+                cards = new CardLayout();
+                setLayout(cards);
                 setDefaultCloseOperation(EXIT_ON_CLOSE);
+                setVisible(true);
                 setPreferredSize(new Dimension(800, 480));
                 setMaximumSize(new Dimension(800, 480));
                 setMinimumSize(new Dimension(800, 480));
-                setLayout(new CardLayout());
-                setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+                jpSchermen = new JPanel(cards);
                 for (Schermen scherm: Schermen.values()) {
                         addSchermToCards(scherm, jpSchermen);
                 }
-
                 add(jpSchermen);
+
+                pack();
                 setScherm(Schermen.OpstartScherm);
                 opstartScherm.runStatussen();
 
@@ -82,6 +82,11 @@ public class Frame extends JFrame implements Layout {
         public static void setScherm(Schermen scherm) {
                 cards.show(jpSchermen, scherm.toString());
                 scherm.scherm.repaint();
+        }
+
+        public static void showError(String errorMessage) {
+                Frame.errorMessage = errorMessage;
+                setScherm(Schermen.ErrorScherm);
         }
 
         private void addSchermToCards(Schermen scherm, JPanel cardPanel) {

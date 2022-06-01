@@ -19,7 +19,7 @@ public class StartScherm extends Scherm {
 	private JButton jbBevestig;
 	public ProductSelector productSelector;
 
-	public StartScherm() {
+	public StartScherm(SorteerScherm sorteerScherm) {
 
 		setLayout(null);
 		this.titel = new JLabel("Wat moet er in de order komen");
@@ -37,7 +37,7 @@ public class StartScherm extends Scherm {
 		jbSorteer = new JButton("Sorteermodule");
 		jbSorteer.addActionListener(e -> {
 			Frame.setScherm(Frame.Schermen.SorteerScherm);
-			SorteerScherm.startSorteren();
+			sorteerScherm.startSorteren();
 		});
 		jbSorteer.setBounds(100, 415, 200, 50);
 		jbSorteer.setFont(fontSubTekst);

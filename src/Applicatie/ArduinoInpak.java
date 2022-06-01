@@ -9,7 +9,7 @@ public class ArduinoInpak extends Arduino {
 
     public void draaiNaarPlatform(int index) throws SerialPortException, InterruptedException {
         if(index == -1) return;
-        this.openPort();
+        this.openPort(null);
         this.serialPort.writeString(String.valueOf(index) + String.valueOf(index) + ":");
         System.out.println("verstuurd naar " + String.valueOf(index));
         char test = (char) this.serialPort.readBytes(1)[0];
