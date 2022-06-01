@@ -129,13 +129,14 @@ public class Bpp {
 	 *
 	 * @author Krijn Grimme
 	 */
-	public Bpp(ArrayList<Artikel> items, int maxBinGrootte) {
+	public Bpp(ArrayList<Artikel> items, int maxBinGrootte) throws Exception {
 
 		// Sorteer op decreasing
 		items.sort(Collections.reverseOrder());
 
 		// BestFit met de gesorteerde items
 		this.bestFit(items.toArray(), maxBinGrootte);
+		if(this.bins.size() > 3) throw new Exception("Bin vol");
 	}
 
 	@Override

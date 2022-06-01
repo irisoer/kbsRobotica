@@ -1,5 +1,7 @@
 package GUI;
 
+import Applicatie.Order;
+
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
@@ -112,5 +114,14 @@ public class VerwerkScherm extends Scherm {
 
     private void addSchermToCards(Carrousel scherm, JPanel cardPanel) {
         cardPanel.add(scherm.scherm, scherm.scherm.getName());
+    }
+
+    public static void startInpakken() {
+        try {
+            Frame.arduinoSorteer.getKleur(Order.getBpp());
+
+        } catch (Exception e ) {
+
+        }
     }
 }

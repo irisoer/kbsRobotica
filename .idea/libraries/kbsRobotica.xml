@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="kbsRobotica">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/kbsRobotica.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

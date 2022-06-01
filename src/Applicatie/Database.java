@@ -5,19 +5,19 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Database {
-    private static Connection connection;
-    static Random random = new Random();
-    static int laagsteCustomerID = 900;
+    private static Connection connection;       //slaat de connectie met de database op
+    static Random random = new Random();        //Wordt gebruikt voor het random kiezen van een CustomerID, voor als er een nieuwe order wordt ingevoerd.
+    static int laagsteCustomerID = 900;         //Laagste en hoogste customerID zijn de customer IDS waartussen de random functie mag kiezen
     static int hoogsteCustomerID = 1000;
 
-    public static void startConnection() throws SQLException {
-            String password = "";
+    public static void startConnection() throws SQLException {      //maak connectie met de database
+            String password = "";                                   //todo: moet dit nog verborgen worden ofzo?
             String username = "root";
             String url = "jdbc:mysql://localhost:3306/nerdygadgets";
             connection = DriverManager.getConnection(url, username, password);
     }
 
-    public static Artikel selecteerArtikel(int stockItemID) {
+    public static Artikel selecteerArtikel(int stockItemID) {       //Selecteer een artikel iut de database aan de hand van een StockItemID
         try {
             startConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
@@ -37,7 +37,7 @@ public class Database {
         return null;
     }
 
-    public static Artikel selecteerArtikel(String kleur) {
+    public static Artikel selecteerArtikel(String kleur) {         //Selecteer een artikel uit de database aan de hand van een kleur
         try {
             startConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT ColorName, TypicalWeightPerUnit, StockItemName, StockItemID FROM nerdygadgets.colors\n" +
@@ -58,7 +58,7 @@ public class Database {
         return null;
     }
 
-    public static Integer[] selecteerOrderNums() {
+    public static Integer[] selecteerOrderNums() {          //Selecteer ALLE orders (de nummers daarvan) uit de database en sorteer deze.
         try {
             startConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT OrderID FROM orders ORDER BY OrderID");
@@ -69,16 +69,14 @@ public class Database {
                 ordernrsAL.add(result.getInt("OrderID"));
             }
             Integer[] orderNrs = new Integer[ordernrsAL.size()];
-            orderNrs = ordernrsAL.toArray(orderNrs);
+            orderNrs = ordernrsAL.toArray(orderNrs);        //Sla ordernummers op in een array. Dit wordt gebruikt in een HMI scherm
             return orderNrs;
         } catch (SQLException e) {
-            System.out.println("JAAA ERROR");
-            e.printStackTrace();
         }
         return null;
     }
 
-    public static int[] selecteerOrder(int orderNum) {
+    public static int[] selecteerOrder(int orderNum) {      //Selecteer orders uit de database aan de hand van een order nummer (connected aan het hierboven genoemde HMI scherm)
         try {
             startConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT OrderID, StockItemID, Quantity FROM orderlines WHERE OrderID = ?");
@@ -86,7 +84,7 @@ public class Database {
             ResultSet result = preparedStatement.executeQuery();
             int[] artikelenOrder = new int[3];
             int customerID = 0;
-            while (result.next()) {
+            while (result.next()) {                         //De resultaten worden opgeslagen in een array zodat deze gebruikt kan worden in eerder genoemd scherm
                 switch (result.getInt("StockItemID")) {
                     case 60:    //Blauwe artikel
                         artikelenOrder[2] = result.getInt("Quantity");
@@ -103,7 +101,7 @@ public class Database {
         return null;
     }
 
-    public static int getCustomerID(){
+    public static int getCustomerID(){                  //Selecteer de customerID van geselecteerd order. Dit kan worden gebruikt voor de opmaak van de pakbon.
         int customerID = 0;
         try{
         PreparedStatement preparedStatement1 = connection.prepareStatement("SELECT CustomerID FROM orders WHERE OrderID = ?");
@@ -166,11 +164,13 @@ public class Database {
      */
 
 
-    public static Connection getConnection() {
+
+
+    public static Connection getConnection() {  //todo: waar gebruiken we dit echt?
         return connection;
     }
 
-    private static void endConnection(){
+    private static void endConnection(){       //todo: Waar gebruiken we dit echt?
         try {
             connection.close();
         } catch (SQLException e) {

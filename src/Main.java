@@ -2,9 +2,11 @@
 //	public static void main(String[] args) {
 //
 
+import Applicatie.*;
 import GUI.Frame;
 import jssc.SerialPortException;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Main {
@@ -139,7 +141,7 @@ public class Main {
 
 	public static void main(String[] args) throws SerialPortException, InterruptedException {
 //		ArduinoInpak inpak = new ArduinoInpak();
-////        inpak.draaiNaarPlatform(0);
+//        inpak.draaiNaarPlatform(0);
 //
 //		ArduinoSorteer sorteer = new ArduinoSorteer();
 //		ArrayList<Product> result = new ArrayList<>();
@@ -147,8 +149,9 @@ public class Main {
 //
 //		Arduino.sorteer(inpak, sorteer);
 
-		Frame frame = new Frame();
-		Frame.setScherm(Frame.Schermen.VerwerkScherm);
+//		Frame frame = new Frame();
+
+		Order.getLaatsteOrderline();
 
 		// **** Order inpak code
 //		for (int i = 0; i < 3; i++) {
@@ -170,4 +173,29 @@ public class Main {
 }
 
 
+
+//public class Main {
+//
+//	public static void main(String[] args) throws SerialPortException, SQLException, InterruptedException {
+//        ArduinoInpak inpak = new ArduinoInpak();
+//        inpak.draaiNaarPlatform(0);
+
+//		ArduinoSorteer sorteer = new ArduinoSorteer();
+//		ArrayList<Artikel> result = new ArrayList<>();
+//		for (int i = 0; i < 3; i++) {
+//			result.add(Database.selecteerArtikel(60));
+//			result.add(Database.selecteerArtikel(73));
+//		}
+//		result.add(Database.selecteerArtikel(70));
+//		Bpp bpp = new Bpp(result, 12);
+//		System.out.println(bpp);
+//		while (!bpp.isLeeg()) {
+//			int index = sorteer.getKleur(bpp);
+//			System.out.println(index);
+////            inpak.draaiNaarPlatform(index);
+//			System.out.println(bpp);
+//
+//		}
+//	}
+//}
 

@@ -19,7 +19,7 @@ public class StartScherm extends Scherm {
 	private JButton jbBevestig;
 	public ProductSelector productSelector;
 
-	public StartScherm() {
+	public StartScherm(SorteerScherm sorteerScherm) {
 
 		setLayout(null);
 		this.titel = new JLabel("Wat moet er in de order komen");
@@ -35,7 +35,10 @@ public class StartScherm extends Scherm {
 			System.out.println(e.getSQLState());
 		}
 		jbSorteer = new JButton("Sorteermodule");
-		jbSorteer.addActionListener(e -> Frame.setScherm(Frame.Schermen.ErrorScherm));
+		jbSorteer.addActionListener(e -> {
+			Frame.setScherm(Frame.Schermen.SorteerScherm);
+			sorteerScherm.startSorteren();
+		});
 		jbSorteer.setBounds(100, 415, 200, 50);
 		jbSorteer.setFont(fontSubTekst);
 		add(jbSorteer);
@@ -46,6 +49,7 @@ public class StartScherm extends Scherm {
 			for (VerwerkScherm.Carrousel carrousel: VerwerkScherm.Carrousel.values()){
 				carrousel.scherm.reload();
 			}
+			VerwerkScherm.startInpakken();
 		});
 		jbBevestig.setBounds(500, 415, 200, 50);
 		jbBevestig.setFont(fontSubTekst);
