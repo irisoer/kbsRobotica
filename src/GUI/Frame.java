@@ -11,6 +11,9 @@ import java.util.Arrays;
 import javax.swing.*;
 
 public class Frame extends JFrame implements Layout {
+        public static int aantalRood;
+        public static int aantalGeel;
+        public static int aantalBlauw;
         static GraphicsDevice device = GraphicsEnvironment
                 .getLocalGraphicsEnvironment().getScreenDevices()[0];
         private static JPanel jpSchermen;

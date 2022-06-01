@@ -18,7 +18,6 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
         if(payload == 's') {
             Frame.setScherm(Frame.Schermen.EindSchermSorteren);
             eindSorteren();
-
         }
         switch (payload) {
             case 'r' -> aantalRood++;

@@ -15,7 +15,8 @@ public abstract class Arduino {
 	public Arduino(char readyChar) {
 		SerialPort poort;
 		for (String port : SerialPortList.getPortNames()) {
-			if (serialPort != null || port.equals(used)) continue;
+//			if (serialPort != null || port.equals(used)) continue;
+			if (serialPort != null || port.equals(used) || port.equals(SerialPortList.getPortNames()[0])) continue;
 			try {
 				poort = new SerialPort(port);
 				poort.openPort();
@@ -151,9 +152,16 @@ public abstract class Arduino {
 				int index = getIndexFromColor(color);
 				if(index != -1) Frame.arduinoInpak.serialPort.writeString(index + ":");
 				else huidigeStaat = Staat.WachtOpScan;
+				Frame.huidigeDoos = index;
 			} catch (SerialPortException e) {
 			}
 			Frame.huidigeKleur = color;
+			switch (color) {
+				case 'r' -> Frame.aantalRood++;
+				case 'g' -> Frame.aantalGeel++;
+				case 'b' -> Frame.aantalBlauw++;
+				default -> {}
+			}
 			System.out.println("test" + color);
 			SorteerScherm.moduleData(color);
 		}
