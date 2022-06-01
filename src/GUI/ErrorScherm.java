@@ -6,22 +6,30 @@ import java.awt.*;
 public class ErrorScherm extends Scherm {
     private JLabel jlError;
     private JLabel jlErrorMessage;
+    private JLabel jlTeruggaan;
     private JButton jbTerugNaarBeginScherm;
-    private String bericht = "Controleer of alles goed is aangesloten";
 
     public ErrorScherm() {
-//        super("Error");
+//      super("Error");
         setLayout(null);
         JPanel panel = new JPanel();
-        panel.setLayout (new GridLayout(2,1));
+        panel.setLayout (new GridLayout(3,1));
 
         //componenten aanmaken
-        jlHeading.setText("Er is een fout opgetreden!");
-        jlTekst.setText(bericht);
+        jlError = new JLabel("Er is een fout opgetreden!");
+        jlError.setFont(fontHeading);
+        this.jlError.setHorizontalAlignment(SwingConstants.CENTER);
+        jlErrorMessage = new JLabel("Controleer of alles goed is aangesloten");
+        jlErrorMessage.setFont(fontTekst);
+        this.jlErrorMessage.setHorizontalAlignment(SwingConstants.CENTER);
+        jlTeruggaan = new JLabel("Klik om terug te gaan");
+        jlTeruggaan.setFont(fontSubTekst);
+        this.jlTeruggaan.setHorizontalAlignment(SwingConstants.CENTER);
 
         //toevoegen
-        panel.add(jlHeading);
-        panel.add(jlTekst);
+        panel.add(jlError);
+        panel.add(jlErrorMessage);
+        panel.add(jlTeruggaan);
         panel.setBounds(0,0,800,480);
         add(panel);
         jbTerugNaarBeginScherm = new JButton();

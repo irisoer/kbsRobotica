@@ -17,7 +17,7 @@ public class Frame extends JFrame implements Layout {
         private static CardLayout cards;
         public static Order order = new Order();
         static OpstartScherm opstartScherm = new OpstartScherm();
-        static int[] voorraad = voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
+        static int[] voorraad;
         static String huidigeKleur;
         static int huidigeDoos;
         static ArduinoInpak arduinoInpak;
@@ -29,7 +29,7 @@ public class Frame extends JFrame implements Layout {
 
         public enum Schermen {
                 OpstartScherm(opstartScherm),
-                StartScherm(startScherm),
+                StartScherm(new StartScherm()),
                 VerwerkScherm(new VerwerkScherm()),
                 SorteerScherm(new SorteerScherm()),
                 ErrorScherm(new ErrorScherm()),
@@ -46,7 +46,7 @@ public class Frame extends JFrame implements Layout {
                 }
         }
 
-        private Schermen huidigScherm;
+        private Schermen huidigScherm;          //todo: veel in deze klasse wordt (nog) niet gebruikt
         public Frame(){
                 super("GUI");
                 setResizable(false);

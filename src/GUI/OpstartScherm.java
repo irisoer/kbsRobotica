@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class OpstartScherm extends Scherm{
-    private JLabel jlArduinoSorteer;
+    private JLabel jlArduinoSorteer;        //aanmaken later te gebruiken labels
     private JLabel jlArduinoInpak;
     private JLabel jlDatabase;
     private JLabel jlIsVerbondenInpak;
@@ -51,7 +51,7 @@ public class OpstartScherm extends Scherm{
 
     }
 
-    public void statusInpakArduino(){
+    public void statusInpakArduino(){       //geeft door of de inpakarduino is verbonden of niet
         try{
             ArduinoInpak inpak = new ArduinoInpak();
             while(inpak.getSerialPort() == null) {
@@ -65,7 +65,7 @@ public class OpstartScherm extends Scherm{
         }
     }
 
-    public void statusSorteerArduino(){
+    public void statusSorteerArduino(){     //geeft door of de sorteerarduino is verbonden of niet
         try{
             ArduinoSorteer sorteer = new ArduinoSorteer();
             while(sorteer.getSerialPort() == null) {
@@ -78,7 +78,7 @@ public class OpstartScherm extends Scherm{
         }
     }
 
-    public void statusDatabase(){
+    public void statusDatabase(){       //geeft door of de database is verbonden of niet
         boolean verbonden = false;
         while(!verbonden){
         try{
@@ -90,12 +90,12 @@ public class OpstartScherm extends Scherm{
         }}
     }
 
-    public void runStatussen() {
+    public void runStatussen() {    //functie die de statussen runt
         statusDatabase();
         statusSorteerArduino();
         statusInpakArduino();
         try {
-            Thread.sleep(1500);
+            Thread.sleep(1500);     //deze sleep zorgt ervoor dat het scherm enkele seconden blijft staan voor deze door springt
         } catch (InterruptedException e) {
 
         }

@@ -14,19 +14,20 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Order extends Database {
-    private Database database;
     private static Bpp bpp;
     private ArrayList<Artikel> artikelen;
     private static int klantID = 0;
+
     private static String klantNaam = null;
     private static String klantAdres = null;
     private static String klantPostcode = null;
     private static String stadNaam = null;
     private static String orderlijst = "hallo";
+
     public static int orderNr = 1;
     public static int nieuweOrderNr = 4;
-    public static int orderlines = 10;
-    public static int customerId = 1;
+    public static int orderlines;
+    public static int customerId;
 
     private static int artikelNrRood = 73;
     private static int artikelNrGeel = 71;
@@ -71,9 +72,26 @@ public class Order extends Database {
         orderlijst = bpp.toString();
     }
 
+    public static int getLaatsteOrderline(){        //Haalt het laatste orderline numemr op uit de database //todo: werkt niet, weet niet waarom
+        try{
+            startConnection();
+            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT MAX(OrderLineID) FROM orderlines LIMIT 1");
+            ResultSet result = preparedStatement.executeQuery();
+            int orderline = 0;
+            while(result.next()){
+                orderline = result.getInt("OrderLineID");
+            }
+            System.out.println(orderline);
+            return orderline;
+        } catch (SQLException e){
+            System.out.println("fout");
+        }
+        return 0;
+    }
+
     public static void maakPakbon(){
         customerId = getCustomerID();
-        try {
+        try {                               //haalt de gegevens van de klant op uit de database zodat deze kunnen worden gebruikt in de pakbon
             startConnection();
             PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
                     "LEFT JOIN nerdygadgets.cities AS ci ON cu.PostalCityID = ci.CityID \n" +
@@ -93,7 +111,7 @@ public class Order extends Database {
 
             XWPFDocument document = new XWPFDocument();
 
-            XWPFParagraph p1 = document.createParagraph();
+            XWPFParagraph p1 = document.createParagraph();      //p1 is klantgegevens
             XWPFRun run1 = p1.createRun();
             run1.setBold(false);
             run1.setText("KlantNr: " + klantID);
@@ -111,7 +129,7 @@ public class Order extends Database {
             run2.setBold(true);
             run2.setText("Uw bestelling: ");
 
-            XWPFParagraph bestelling = document.createParagraph();
+            XWPFParagraph bestelling = document.createParagraph();     //Hier komt de daadwerkelijke bestelling
             XWPFRun run3 = bestelling.createRun();
 
             String[] parts = orderlijst.split("\n");
@@ -121,19 +139,19 @@ public class Order extends Database {
                 run3.addBreak();
             }
 
-            document.write(new FileOutputStream("Applicatie.Order" + orderNr + ".docx"));
+            document.write(new FileOutputStream("Applicatie.Order" + orderNr + ".docx"));   //pad waar de pakbon wordt opgeslagen
             orderNr++;
         }catch (IOException ie){}
         catch (SQLException se){}
     }
 
-    public static void uploadVoorraadNaarDatabase(){
+    public static void uploadVoorraadNaarDatabase(){        //roept update voorraad functie aan met jusite gegevens
         Database.updateVoorraad(artikelNrRood, aantalRood);
         Database.updateVoorraad(artikelNrGeel, aantalGeel);
         Database.updateVoorraad(artikelNrBlauw, aantalBlauw);
     }
 
-    public static void uploadOrderNaarDatabase(){
+    public static void uploadOrderNaarDatabase(){          //upload de order naar de database
         try{
             startConnection();
             PreparedStatement preparedStatement = getConnection().prepareStatement("INSERT INTO orderlines (OrderLineID, OrderID, StockItemID) VALUES (?, ?, ?),(?,?,?),(?,?,?);");
