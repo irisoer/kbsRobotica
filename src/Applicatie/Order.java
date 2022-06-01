@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Order extends Database {
+public class Order{
     private static Bpp bpp;
     private ArrayList<Artikel> artikelen;
     private static int klantID = 0;
@@ -22,10 +22,10 @@ public class Order extends Database {
     private static String klantAdres = null;
     private static String klantPostcode = null;
     private static String stadNaam = null;
-    private static String orderlijst = "hallo";
+    private static String orderlijst;
 
-    public static int orderNr = 1;
-    public static int nieuweOrderNr = 4;
+    public static int orderNr;
+    public static int nieuweOrderNr;
     public static int orderlines;
     public static int customerId;
 
@@ -56,13 +56,13 @@ public class Order extends Database {
     public void getOrder(){
             artikelen = new ArrayList<>();
             for (int i = 0; i < aantalGeel; i++) {
-                artikelen.add(selecteerArtikel(artikelNrGeel));
+                artikelen.add(Database.selecteerArtikel(artikelNrGeel));
             }
             for (int i = 0; i < aantalBlauw; i++) {
-                artikelen.add(selecteerArtikel(artikelNrBlauw));
+                artikelen.add(Database.selecteerArtikel(artikelNrBlauw));
             }
             for (int i = 0; i < aantalRood; i++) {
-                artikelen.add(selecteerArtikel(artikelNrRood));
+                artikelen.add(Database.selecteerArtikel(artikelNrRood));
             }
             try {
                 bpp = new Bpp(artikelen, 12);
@@ -72,28 +72,28 @@ public class Order extends Database {
         orderlijst = bpp.toString();
     }
 
-    public static int getLaatsteOrderline(){        //Haalt het laatste orderline numemr op uit de database //todo: werkt niet, weet niet waarom
-        try{
-            startConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT MAX(OrderLineID) FROM orderlines LIMIT 1");
-            ResultSet result = preparedStatement.executeQuery();
-            int orderline = 0;
-            while(result.next()){
-                orderline = result.getInt("OrderLineID");
-            }
-            System.out.println(orderline);
-            return orderline;
-        } catch (SQLException e){
-            System.out.println("fout");
-        }
-        return 0;
-    }
+//    public static int getLaatsteOrderline(){        //Haalt het laatste orderline numemr op uit de database //todo: werkt niet, weet niet waarom
+//        try{
+//            startConnection();
+//            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT OrderLineID FROM nerdygadgets.orderlines ORDER BY OrderLineID DESC LIMIT 1");
+//            ResultSet result = preparedStatement.executeQuery();
+//            int orderline = 0;
+//            while(result.next()){
+//                orderline = result.getInt("OrderLineID");
+//            }
+//            System.out.println(orderline);
+//            return orderline;
+//        } catch (SQLException e){
+//            e.printStackTrace();
+//        }
+//        return 0;
+//    }
 
     public static void maakPakbon(){
-        customerId = getCustomerID();
+        customerId = Database.getCustomerID();
         try {                               //haalt de gegevens van de klant op uit de database zodat deze kunnen worden gebruikt in de pakbon
-            startConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
+            Database.startConnection();
+            PreparedStatement preparedStatement = Database.getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
                     "LEFT JOIN nerdygadgets.cities AS ci ON cu.PostalCityID = ci.CityID \n" +
                     "WHERE CustomerID = ?");
             preparedStatement.setInt(1, customerId);
@@ -153,8 +153,8 @@ public class Order extends Database {
 
     public static void uploadOrderNaarDatabase(){          //upload de order naar de database
         try{
-            startConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement("INSERT INTO orderlines (OrderLineID, OrderID, StockItemID) VALUES (?, ?, ?),(?,?,?),(?,?,?);");
+            Database.startConnection();
+            PreparedStatement preparedStatement = Database.getConnection().prepareStatement("INSERT INTO orderlines (OrderLineID, OrderID, StockItemID) VALUES (?, ?, ?),(?,?,?),(?,?,?);");
             preparedStatement.setInt(1, orderlines);
             preparedStatement.setInt(2, nieuweOrderNr);
             preparedStatement.setInt(3, artikelNrRood);

@@ -18,7 +18,7 @@ public class ErrorScherm extends Scherm {
         jlError = new JLabel("Er is een fout opgetreden!");
         jlError.setFont(fontTitel);
         this.jlError.setHorizontalAlignment(SwingConstants.CENTER);
-        jlErrorMessage = new JLabel("Controleer of alles goed is aangesloten");
+        jlErrorMessage = new JLabel("ERRORMESSAGE");
         jlErrorMessage.setFont(fontTekst);
         this.jlErrorMessage.setHorizontalAlignment(SwingConstants.CENTER);
         jlTeruggaan = new JLabel("Klik om terug te gaan");
