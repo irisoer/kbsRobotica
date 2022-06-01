@@ -5,7 +5,7 @@ import java.awt.*;
 //Sylvia >                                   //Lettertypes in interface zodat aantal/kleur in sorteerpanel als String getekend kan worden
 public interface Layout {
     // Standaard schermen
-    Font fontHeading = new Font("Helvetiva",Font.BOLD, 42);
+    Font fontTitel = new Font("Helvetiva",Font.BOLD, 42);
     Font fontTekst = new Font ("Helvetiva", Font.PLAIN, 28);
     Font fontSubTekst = new Font ("Helvetiva", Font.PLAIN, 20);
 }

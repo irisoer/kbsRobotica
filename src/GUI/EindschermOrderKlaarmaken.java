@@ -16,7 +16,7 @@ public class EindschermOrderKlaarmaken extends Scherm implements Layout {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
         jlTitel = new JLabel("Uw Order is klaargemaakt");
-        this.jlTitel.setFont(fontHeading);
+        this.jlTitel.setFont(fontTitel);
         this.jlTitel.setHorizontalAlignment(SwingConstants.CENTER);
 
         panel.add(jlTitel);

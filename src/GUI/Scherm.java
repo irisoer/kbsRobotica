@@ -12,7 +12,7 @@ public class Scherm extends JPanel implements Layout {      //basis voor alle sc
 //    private VerwerkScherm verwerk = new VerwerkScherm();
     public Scherm(){            //todo: labels hier weghalen en aanmaken in verwerkscherm?
         setName(getClass().getSimpleName());
-//        jlHeading.setFont(fontHeading);
+//        jlHeading.setFont(fontTitel);
 //        jlHeading.setHorizontalAlignment(JLabel.CENTER);
 //        jlTekst.setFont(fontTekst);
 //        jlTekst.setHorizontalAlignment(JLabel.CENTER);

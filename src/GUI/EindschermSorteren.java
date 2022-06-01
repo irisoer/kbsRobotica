@@ -1,11 +1,7 @@
 package GUI;
 
-import Applicatie.Database;
-
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.sql.SQLException;
 
 public class EindschermSorteren extends Scherm implements Layout {
     private JLabel Titel;
@@ -18,7 +14,7 @@ public class EindschermSorteren extends Scherm implements Layout {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
         Titel = new JLabel("Uw voorraad is gesorteerd");
-        this.Titel.setFont(fontHeading);
+        this.Titel.setFont(fontTitel);
         this.Titel.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(Titel);
         panel.add(new ProductSchower(), BorderLayout.CENTER);

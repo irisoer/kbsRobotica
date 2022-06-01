@@ -16,7 +16,7 @@ public class ErrorScherm extends Scherm {
 
         //componenten aanmaken
         jlError = new JLabel("Er is een fout opgetreden!");
-        jlError.setFont(fontHeading);
+        jlError.setFont(fontTitel);
         this.jlError.setHorizontalAlignment(SwingConstants.CENTER);
         jlErrorMessage = new JLabel("Controleer of alles goed is aangesloten");
         jlErrorMessage.setFont(fontTekst);

@@ -3,7 +3,6 @@ package GUI;
 import Applicatie.Order;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
 
 //Sylvia >
@@ -75,7 +74,7 @@ public class VerwerkScherm extends Scherm {         //basis voor schermen tijden
 
         JLabel jlTitel = new JLabel();      //todo: jlHeading/jlTekst gebruiken?
         jlTitel.setText("Uw order wordt verwerkt:");
-        jlTitel.setFont(fontHeading);
+        jlTitel.setFont(fontTitel);
         jlTitel.setHorizontalAlignment(SwingConstants.CENTER);
         jlTitel.setBounds(0, 0, 800, 50);
         add(jlTitel);

@@ -48,8 +48,10 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 
     public SorteerScherm() {
         setLayout (new FlowLayout());
-        JLabel jlHeading = new JLabel("Uw voorraad wordt gesorteerd");
-        add(jlHeading);
+        JLabel jlTitel = new JLabel("Uw voorraad wordt gesorteerd");
+        jlTitel.setFont(fontTekst);
+        jlTitel.setHorizontalAlignment(SwingConstants.CENTER);
+        add(jlTitel);
         repaint();
     }
 
