@@ -25,7 +25,10 @@ public class EindschermSorteren extends Scherm implements Layout {
         panel.add(jlEindBericht);
         add(panel);
         jbTerugNaarBeginScherm = new JButton();
-        jbTerugNaarBeginScherm.addActionListener(e -> Frame.setScherm(Frame.Schermen.StartScherm));
+        jbTerugNaarBeginScherm.addActionListener(e -> {
+            Frame.setScherm(Frame.Schermen.StartScherm);
+            Frame.resetData();
+        });
         jbTerugNaarBeginScherm.setBounds(0,0,800,480);
         jbTerugNaarBeginScherm.setOpaque(false);
         jbTerugNaarBeginScherm.setBorderPainted(false);

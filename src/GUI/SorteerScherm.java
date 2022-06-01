@@ -1,11 +1,8 @@
 package GUI;
 
 import Applicatie.Arduino;
-import Applicatie.ArduinoInpak;
-import Applicatie.ArduinoSorteer;
-import com.sun.tools.jconsole.JConsoleContext;
+import Applicatie.Order;
 
-import javax.swing.*;
 import java.awt.*;
 
 //Sylvia >
@@ -18,7 +15,11 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 
     public static void moduleData(char payload) {
         System.out.println(payload);
-        if(payload == 's') Frame.setScherm(Frame.Schermen.EindSchermSorteren);
+        if(payload == 's') {
+            Frame.setScherm(Frame.Schermen.EindSchermSorteren);
+            eindSorteren();
+
+        }
         switch (payload) {
             case 'r' -> aantalRood++;
             case 'g' -> aantalGeel++;
@@ -27,7 +28,6 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
         }
         Frame.sorteerScherm.repaint();
     }
-
 
     public SorteerScherm() {
         setLayout (new FlowLayout());
@@ -64,9 +64,16 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
     public void startSorteren() {
         try {
             Frame.arduinoSorteer.getSerialPort().writeString("0:");
-            Arduino.MyPortListener.currentState = Arduino.MyPortListener.State.WachtOpScan;
-            Arduino.MyPortListener.currentJob = Arduino.MyPortListener.Job.Sorteer;
+            Arduino.MyPortListener.huidigeStaat = Arduino.MyPortListener.Staat.WachtOpScan;
+            Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Sorteer;
         } catch (Exception e) {}
+    }
+
+    public static void eindSorteren() {
+        Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Geen;
+        Order.maakPakbon();
+        Order.uploadOrderNaarDatabase();
+        Order.uploadVoorraadNaarDatabase();
     }
 }
 

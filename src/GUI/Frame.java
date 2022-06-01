@@ -14,12 +14,12 @@ public class Frame extends JFrame implements Layout {
         static GraphicsDevice device = GraphicsEnvironment
                 .getLocalGraphicsEnvironment().getScreenDevices()[0];
         private static JPanel jpSchermen;
-        private static CardLayout cards;
+        public static CardLayout cards;
         public static Order order = new Order();
         static OpstartScherm opstartScherm = new OpstartScherm();
-        static int[] voorraad;
-        static String huidigeKleur;
-        static int huidigeDoos;
+        public static int[] voorraad;
+        public static char huidigeKleur;
+        public static int huidigeDoos;
         public static ArduinoInpak arduinoInpak;
         public static ArduinoSorteer arduinoSorteer;
         private static String errorMessage;
@@ -94,6 +94,12 @@ public class Frame extends JFrame implements Layout {
                 cardPanel.add(scherm.scherm, scherm.scherm.getName());
         }
 
+        public static void resetData() {
+                order = null;
+                voorraad = getVoorraad();
+                huidigeDoos = -1;
+                huidigeKleur = ' ';
+        }
         public static int[] getVoorraad() {
                 return voorraad;
         }
@@ -104,14 +110,14 @@ public class Frame extends JFrame implements Layout {
 
         public static Color getHuidigeKleur() {
                 return switch (huidigeKleur) {
-                        case "Red" -> Color.RED;
-                        case "Yellow" -> Color.YELLOW;
-                        case "Blue" -> Color.BLUE;
+                        case 'r' -> Color.RED;
+                        case 'g' -> Color.YELLOW;
+                        case 'b' -> Color.BLUE;
                         default -> null;
                 };
         }
 
-        public static void setHuidigeKleur(String huidigeKleur) {
+        public static void setHuidigeKleur(char huidigeKleur) {
                 Frame.huidigeKleur = huidigeKleur;
         }
 

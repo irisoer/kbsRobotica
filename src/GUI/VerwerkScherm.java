@@ -1,5 +1,6 @@
 package GUI;
 
+import Applicatie.Arduino;
 import Applicatie.Order;
 
 import javax.swing.*;
@@ -113,8 +114,9 @@ public class VerwerkScherm extends Scherm {         //basis voor schermen tijden
 
     public static void startInpakken() {
         try {
-            Frame.arduinoSorteer.getKleur(Order.getBpp());
-
+            Frame.arduinoSorteer.getSerialPort().writeString("0:");
+            Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Inpak;
+            Arduino.MyPortListener.huidigeStaat = Arduino.MyPortListener.Staat.WachtOpScan;
         } catch (Exception e ) {
 
         }
