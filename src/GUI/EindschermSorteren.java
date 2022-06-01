@@ -14,7 +14,7 @@ public class EindschermSorteren extends Scherm implements Layout {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
         Titel = new JLabel("Uw voorraad is gesorteerd");
-        this.Titel.setFont(fontHeading);
+        this.Titel.setFont(fontTitel);
         this.Titel.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(Titel);
         panel.add(new ProductSchower(), BorderLayout.CENTER);

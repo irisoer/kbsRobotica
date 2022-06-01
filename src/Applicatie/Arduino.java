@@ -15,7 +15,7 @@ public abstract class Arduino {
 	public Arduino(char readyChar) {
 		SerialPort poort;
 		for (String port : SerialPortList.getPortNames()) {
-			if (serialPort != null || port.equals(used) || port.equals(SerialPortList.getPortNames()[0])) continue;
+			if (serialPort != null || port.equals(used)) continue;
 			try {
 				poort = new SerialPort(port);
 				poort.openPort();

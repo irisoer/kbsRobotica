@@ -3,11 +3,10 @@ package GUI;
 import Applicatie.Order;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
 
 //Sylvia >
-public class VerwerkScherm extends Scherm {
+public class VerwerkScherm extends Scherm {         //basis voor schermen tijdens het verwerken van de order (carrousel)
     private CardLayout cards;
     private JPanel jpSchermen;
     private Carrousel huidigScherm;
@@ -29,8 +28,6 @@ public class VerwerkScherm extends Scherm {
             return this.scherm.getName();
         }
     }
-
-
 
     public VerwerkScherm() {
         setLayout(null);
@@ -72,17 +69,15 @@ public class VerwerkScherm extends Scherm {
         add(button);
 
         jpSchermen.setBounds(0, 50, 800, 350);
-//        jpSchermen.setBorder(new LineBorder(Color.BLACK, 5));
 
         add(jpSchermen);
 
-        JLabel jlTitel = new JLabel();
+        JLabel jlTitel = new JLabel();      //todo: jlHeading/jlTekst gebruiken?
         jlTitel.setText("Uw order wordt verwerkt:");
-        jlTitel.setFont(fontHeading);
+        jlTitel.setFont(fontTitel);
         jlTitel.setHorizontalAlignment(SwingConstants.CENTER);
         jlTitel.setBounds(0, 0, 800, 50);
         add(jlTitel);
-//
     }
 
     public void paintComponent(Graphics g) {
@@ -94,7 +89,7 @@ public class VerwerkScherm extends Scherm {
         int circleMargin = circle + 15;
         int circleY = getHeight() - circle*2;
         g.setColor(Color.BLUE);
-        for (int i = 0; i < Carrousel.values().length; i++) {
+        for (int i = 0; i < Carrousel.values().length; i++) {       //blauwe bolletjes onderaan scherm ter indicatie van positie
             int circleX = middle + ((i - 1) * circleMargin);
             if(index % Carrousel.values().length == i) g.fillOval(circleX,circleY,circle,circle);
             else g.drawOval(circleX, circleY,circle,circle);

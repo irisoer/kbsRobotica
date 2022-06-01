@@ -14,13 +14,13 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
     private int pickedGeel = 3;
     private int pickedBlauw = 1;
 
-    private JPanel jpVerwerkKleur = new JPanel();
+//    private JPanel jpVerwerkKleur = new JPanel();
     private ArrayList<Product> producten = new ArrayList<>();
 
     public VerwerkKleurScherm() {
-        setLayout(new FlowLayout());
-        add(jlHeading);
-        add(jpVerwerkKleur);
+//        setLayout(new FlowLayout());
+//        add(jlHeading);
+//        add(jpVerwerkKleur);
     }
 
     public void paintComponent(Graphics g) {
@@ -41,8 +41,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         g.drawString("Blauw", 580, 290);
     }
 
-    public void drawKleur(Graphics g, Color kleur) {
-
+    public void drawKleur(Graphics g, Color kleur) {        //tekenen lege artikelen
 
         // y positites voor tekenen
         int yRij1 = 220;            //y positie producten rij 1
@@ -66,7 +65,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
             aantalKleur = aantalBlauw;
         }
 
-        for (int aantal = aantalKleur; aantal > 0; aantal--) {
+        for (int aantal = aantalKleur; aantal > 0; aantal--) {      //tekenen artikelen
             Product p = new Product();
             p.setKleur(kleur);
             g.setColor(p.getKleur());
@@ -112,7 +111,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         }
     }
 
-    public void fillKleur(Graphics g, Color kleur, int aantalPicked){
+    public void fillKleur(Graphics g, Color kleur, int aantalPicked){       //tekenen gepickte producten
         int tePicken = 0;
         int aantalKleur = 0;
 

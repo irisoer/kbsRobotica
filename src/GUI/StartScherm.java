@@ -1,7 +1,6 @@
 package GUI;
 
 import Applicatie.Database;
-import Applicatie.Order;
 import JPanels.Panel;
 
 import javax.swing.*;
@@ -23,7 +22,7 @@ public class StartScherm extends Scherm {
 
 		setLayout(null);
 		this.titel = new JLabel("Wat moet er in de order komen");
-		this.titel.setFont(fontHeading);
+		this.titel.setFont(fontTitel);
 		this.titel.setHorizontalAlignment(SwingConstants.CENTER);
 		this.titel.setBounds(0, 0, 800, 50);
 		try {

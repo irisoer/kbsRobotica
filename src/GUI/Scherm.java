@@ -4,37 +4,22 @@ import javax.swing.*;
 import java.awt.*;
 
 //Sylvia >
-public class Scherm extends JPanel implements Layout {
-    JLabel jlHeading = new JLabel();        //Heading tekst
-    JLabel jlTekst = new JLabel();          //Normale tekst
-    JLabel jlSubTekst = new JLabel();       //Kleine tekst
+public class Scherm extends JPanel implements Layout {      //basis voor alle schermen
+//    JLabel jlHeading = new JLabel();        //Heading tekst
+//    JLabel jlTekst = new JLabel();          //Normale tekst
+//    JLabel jlSubTekst = new JLabel();       //Kleine tekst
 
 //    private VerwerkScherm verwerk = new VerwerkScherm();
-    public Scherm(/*String titel*/){                       //Standaard opmaak, titel = titel in balk
-        // nieuwe klasse > extends JFrame
-//        setTitle(titel);
-//        setSize(800, 400);
-//        setLayout(new FlowLayout());
-//        setDefaultCloseOperation(EXIT_ON_CLOSE);
-//        setLayout(new CardLayout());
-
-
-//        add(verwerk);
-//        add(new VerwerkDoosScherm());
-//        add(new ErrorScherm()); //<nieuwe klasse
-////        add(new Carrousel());
+    public Scherm(){            //todo: labels hier weghalen en aanmaken in verwerkscherm?
         setName(getClass().getSimpleName());
-        jlHeading.setFont(fontHeading);
-        jlHeading.setHorizontalAlignment(JLabel.CENTER);
-        jlTekst.setFont(fontTekst);
-        jlTekst.setHorizontalAlignment(JLabel.CENTER);
-        jlSubTekst.setFont(fontSubTekst);
-        jlSubTekst.setHorizontalAlignment(JLabel.CENTER);
+//        jlHeading.setFont(fontTitel);
+//        jlHeading.setHorizontalAlignment(JLabel.CENTER);
+//        jlTekst.setFont(fontTekst);
+//        jlTekst.setHorizontalAlignment(JLabel.CENTER);
+//        jlSubTekst.setFont(fontSubTekst);
+//        jlSubTekst.setHorizontalAlignment(JLabel.CENTER);
 
-        setVisible(true);
     }
-
     //todo: icon veranderen
-
 }
 //Sylvia <
