@@ -39,7 +39,7 @@ public class ArduinoSorteer extends Arduino {
         } else {
             this.closePort();
             inpak.draaiNaarPlatform(index);
-            this.openPort(null);
+//            this.openPort(null);
             this.serialPort.writeString("1:");
         }
         return index;
@@ -49,7 +49,7 @@ public class ArduinoSorteer extends Arduino {
 //        this.bandAan();
         int index = -1;
         String test = "#";
-        this.openPort(null);
+//        this.openPort(null);
         while(true) {
             if(false) {
                 return index;
@@ -90,6 +90,8 @@ public class ArduinoSorteer extends Arduino {
 
         SorteerScherm sorteerScherm;
 
+        static boolean start = true;
+
         public SorteerListener(SerialPort port, SorteerScherm sorteerScherm) {
             this.port = port;
             this.sorteerScherm = sorteerScherm;
@@ -101,6 +103,12 @@ public class ArduinoSorteer extends Arduino {
             for (int i = 0; i < bufferBytes.length; i++) {
                 if(bufferBytes[i] == '#') {
                     verstuurData((char) bufferBytes[i+1]);
+                    try {
+                        this.port.closePort();
+                    } catch (SerialPortException e) {
+                        throw new RuntimeException(e);
+                    }
+//                    ArduinoInpak.draaiNaarPlatform(bufferBytes[i + 1]);
                 }
             }
             buffer = "";
@@ -113,10 +121,37 @@ public class ArduinoSorteer extends Arduino {
 
         @Override
         public void serialEvent(SerialPortEvent event) {
+            if (event.isRXCHAR() && event.getEventValue() > 0 && port.isOpened()) {
+                try {
+                    String b = port.readString(event.getEventType());
+                    System.out.println("event:" + b);
+                    if (b.equals("\n")) {
+                        onMessage();
+                    } else {
+                        buffer += b;
+                    }
+                } catch (SerialPortException ex) {
+                    System.out.println("Error in receiving string from COM-port: " + ex);
+                }
+            }
+        }
+    }
+    public class MyPortListener implements SerialPortEventListener {
+        String buffer = "";
+
+        private SerialPort port = getSerialPort();
+
+        private void onMessage() {
+            // constructing message
+            System.out.println("RECEIVED MESSAGE: " + buffer);
+            buffer = "";
+        }
+
+        @Override
+        public void serialEvent(SerialPortEvent event) {
             if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
-                    System.out.println("Readstring");
-                    String b = port.readString(event.getEventType());
+                    String b = this.port.readString(event.getEventType());
                     System.out.println("event:" + b);
                     if (b.equals("\n")) {
                         onMessage();

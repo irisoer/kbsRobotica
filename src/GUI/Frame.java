@@ -20,8 +20,8 @@ public class Frame extends JFrame implements Layout {
         static int[] voorraad;
         static String huidigeKleur;
         static int huidigeDoos;
-        static ArduinoInpak arduinoInpak;
-        static ArduinoSorteer arduinoSorteer;
+        public static ArduinoInpak arduinoInpak;
+        public static ArduinoSorteer arduinoSorteer;
         private static String errorMessage;
 
         static SorteerScherm sorteerScherm = new SorteerScherm();
@@ -34,6 +34,7 @@ public class Frame extends JFrame implements Layout {
                 SorteerScherm(new SorteerScherm()),
                 ErrorScherm(new ErrorScherm()),
                 SorteerSchemr(sorteerScherm),
+                EindSchermSorteren(new EindschermSorteren()),
                 EindSchermOrderKlaarmaken(new EindschermOrderKlaarmaken());
                 public GUI.Scherm scherm;
                 Schermen(GUI.Scherm scherm) {
@@ -52,7 +53,7 @@ public class Frame extends JFrame implements Layout {
                 setResizable(false);
 //                setExtendedState(JFrame.MAXIMIZED_BOTH);
                 setUndecorated(true);
-                device.setFullScreenWindow(this);
+//                device.setFullScreenWindow(this);
                 setSize(800, 480);
                 cards = new CardLayout();
                 setLayout(cards);

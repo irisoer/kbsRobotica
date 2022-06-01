@@ -22,7 +22,7 @@ public class EindschermOrderKlaarmaken extends Scherm implements Layout {
         panel.add(jlTitel);
 
         panel.add(new ProductSchower(), BorderLayout.CENTER);
-        jlEindbericht = new JLabel("Druk op het scherm om een nieuw order in te vullen");
+        jlEindbericht = new JLabel("Druk op het scherm om een nieuwe opdracht te starten");
         this.jlEindbericht.setFont(fontTekst);
         this.jlEindbericht.setHorizontalAlignment(SwingConstants.CENTER);
         panel.setBounds(0,0,800,480);

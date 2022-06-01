@@ -149,9 +149,12 @@ public class Main {
 //
 //		Arduino.sorteer(inpak, sorteer);
 
-//		Frame frame = new Frame();
+		Frame frame = new Frame();
+		Arduino.openPorts(Frame.arduinoInpak, Frame.arduinoSorteer);
 
-		Order.getLaatsteOrderline();
+
+
+//		Order.getLaatsteOrderline();
 
 		// **** Order inpak code
 //		for (int i = 0; i < 3; i++) {

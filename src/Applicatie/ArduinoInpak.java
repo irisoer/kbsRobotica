@@ -9,7 +9,6 @@ public class ArduinoInpak extends Arduino {
 
     public void draaiNaarPlatform(int index) throws SerialPortException, InterruptedException {
         if(index == -1) return;
-        this.openPort(null);
         this.serialPort.writeString(String.valueOf(index) + String.valueOf(index) + ":");
         System.out.println("verstuurd naar " + String.valueOf(index));
         char test = (char) this.serialPort.readBytes(1)[0];
@@ -19,4 +18,15 @@ public class ArduinoInpak extends Arduino {
         System.out.println("Gedraaid");
         this.closePort();
     }
+
+//    public void draaiNaarPlatform(char color) throws SerialPortException, InterruptedException {
+//        this.serialPort.writeString(String.valueOf(index) + String.valueOf(index) + ":");
+//        System.out.println("verstuurd naar " + String.valueOf(index));
+//        char test = (char) this.serialPort.readBytes(1)[0];
+//        while(test != ':') {
+//            test = (char) this.serialPort.readBytes(1)[0];
+//        }
+//        System.out.println("Gedraaid");
+//        this.closePort();
+//    }
 }

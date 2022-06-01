@@ -1,5 +1,6 @@
 package GUI;
 
+import Applicatie.Arduino;
 import Applicatie.ArduinoInpak;
 import Applicatie.ArduinoSorteer;
 import com.sun.tools.jconsole.JConsoleContext;
@@ -11,39 +12,22 @@ import java.awt.*;
 
 public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
     private Color gescandeKleur; //todo: aantallen meegeven met setter, if gescande kleur is rood, aantalRood++ etc etc
-    int aantalRood = 0;
-    int aantalGeel = 0;
-    int aantalBlauw = 0;
+    static int aantalRood = 0;
+    static int aantalGeel = 0;
+    static int aantalBlauw = 0;
 
-    Graphics g;
-
-    public void setRood(int rood) {
-        this.aantalRood = rood;
-    }
-    public void setGeel(int geel) {
-        this.aantalGeel = geel;
-    }
-    public void setBlauw(int blauw) {
-        this.aantalBlauw = blauw;
-    }
-
-    public void moduleData(char payload) {
+    public static void moduleData(char payload) {
+        System.out.println(payload);
+        if(payload == 's') Frame.setScherm(Frame.Schermen.EindSchermSorteren);
         switch (payload) {
-            case 'r':
-                this.aantalRood++;
-                break;
-            case 'g':
-                this.aantalGeel++;
-                break;
-            case 'b':
-                this.aantalBlauw++;
-                break;
-            default:
-                break;
+            case 'r' -> aantalRood++;
+            case 'g' -> aantalGeel++;
+            case 'b' -> aantalBlauw++;
+            default -> {}
         }
-        System.out.println("payload" + payload);
-        repaint(); // todo: Het werkt niet als het opnieuw geladen wordt (Eventlistener?)
+        Frame.sorteerScherm.repaint();
     }
+
 
     public SorteerScherm() {
         setLayout (new FlowLayout());
@@ -60,7 +44,6 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        System.out.println("paintComponent");
         //producten
         Product roodProduct = new Product(ArtikelStandaard.rood);
         Product geelProduct = new Product(ArtikelStandaard.geel);
@@ -80,8 +63,8 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 
     public void startSorteren() {
         try {
-            ArduinoSorteer.sorteer(Frame.arduinoInpak, Frame.arduinoSorteer, this);
-
+            Arduino.MyPortListener.currentState = Arduino.MyPortListener.State.WachtOpScan;
+            Arduino.MyPortListener.currentJob = Arduino.MyPortListener.Job.Sorteer;
         } catch (Exception e) {}
     }
 }
