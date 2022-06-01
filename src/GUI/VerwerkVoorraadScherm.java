@@ -7,11 +7,6 @@ import java.awt.*;
 
 //Sylvia >
 public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
-
-    private int aantalRood;
-    private int aantalGeel;
-    private int aantalBlauw;
-
     private JLabel jlRood;
     private JLabel jlGeel;
     private JLabel jlBlauw;
@@ -42,15 +37,12 @@ public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
     public void reload() {
         removeAll();
         jlHuidigeVoorraad.setText("Huidige voorraad");
-        aantalRood = Frame.order.aantalRood;
-        aantalGeel = Frame.order.aantalGeel;
-        aantalBlauw = Frame.order.aantalBlauw;
         jlRood.setText("Rode producten: ");
-        jlRoodAantal.setText(Integer.toString(aantalRood));
+        jlRoodAantal.setText(Integer.toString((Database.getVoorraad(73)-Frame.aantalRood)));
         jlGeel.setText("Gele producten: ");
-        jlGeelAantal.setText(Integer.toString(aantalGeel));
+        jlGeelAantal.setText(Integer.toString((Database.getVoorraad(71)-Frame.aantalGeel)));
         jlBlauw.setText("Blauwe producten: ");
-        jlBlauwAantal.setText(Integer.toString(aantalBlauw));
+        jlBlauwAantal.setText(Integer.toString(Database.getVoorraad(60)-Frame.aantalBlauw));
 
         jlHuidigeVoorraad.setFont(fontTekst);
         jlRood.setFont(fontTekst);
