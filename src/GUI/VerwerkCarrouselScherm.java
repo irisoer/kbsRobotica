@@ -4,6 +4,7 @@ import java.awt.*;
 
 public class VerwerkCarrouselScherm extends Scherm {
 
+	//Sylvia>
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//pijl links
@@ -18,7 +19,6 @@ public class VerwerkCarrouselScherm extends Scherm {
 		pijlR.addPoint(720,200);     //onderste punt
 		pijlR.addPoint( 735,190);    //zij punt
 		g.fillPolygon(pijlR);
-
 	}
 
 

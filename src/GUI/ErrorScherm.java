@@ -10,7 +10,6 @@ public class ErrorScherm extends Scherm {
     private JButton jbTerugNaarBeginScherm;
 
     public ErrorScherm() {
-//      super("Error");
         setLayout(null);
         JPanel panel = new JPanel();
         panel.setLayout (new GridLayout(3,1));

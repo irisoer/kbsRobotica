@@ -27,6 +27,7 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
         this.aantalBlauw = blauw;
     }
 
+    //Krijn>
     public void moduleData(char payload) {
         switch (payload) {
             case 'r':
@@ -43,20 +44,15 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
         }
         System.out.println("payload" + payload);
         repaint(); // todo: Het werkt niet als het opnieuw geladen wordt (Eventlistener?)
-    }
+    } //<Krijn
 
     public SorteerScherm() {
         setLayout (new FlowLayout());
-
-        //componenten
-//        jlHeading = new JLabel();
-        jlHeading.setText("Uw voorraad wordt gesorteerd:");
-
-        //toevoegen
+        JLabel jlHeading = new JLabel("Uw voorraad wordt gesorteerd");
         add(jlHeading);
-
         repaint();
     }
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
