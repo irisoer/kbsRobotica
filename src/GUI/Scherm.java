@@ -20,6 +20,10 @@ public class Scherm extends JPanel implements Layout {      //basis voor alle sc
 //        jlSubTekst.setHorizontalAlignment(JLabel.CENTER);
 
     }
+
+    public void reload() {
+
+    };
     //todo: icon veranderen
 }
 //Sylvia <

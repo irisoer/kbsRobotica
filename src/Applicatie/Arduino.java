@@ -1,7 +1,9 @@
 package Applicatie;
 
+import GUI.EindschermOrderKlaarmaken;
 import GUI.Frame;
 import GUI.SorteerScherm;
+import GUI.VerwerkScherm;
 import jssc.*;
 
 import static jssc.SerialPort.*;
@@ -163,7 +165,16 @@ public abstract class Arduino {
 				default -> {}
 			}
 			System.out.println("test" + color);
-			SorteerScherm.moduleData(color);
+			if(huidigeTaak.equals(Taak.Sorteer)) SorteerScherm.moduleData(color);
+			else if(huidigeTaak.equals(Taak.Inpak)) {
+				for (VerwerkScherm.Carrousel carrousel: VerwerkScherm.Carrousel.values()){
+					carrousel.scherm.reload();
+				}
+				if(Order.getBpp().isLeeg()) {
+					Frame.setScherm(Frame.Schermen.EindSchermOrderKlaarmaken);
+					EindschermOrderKlaarmaken.runEindProces();
+				}
+			};
 		}
 
 		private void klaarMetDraaien() {
