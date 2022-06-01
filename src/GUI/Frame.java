@@ -53,7 +53,7 @@ public class Frame extends JFrame implements Layout {
                 setResizable(false);
 //                setExtendedState(JFrame.MAXIMIZED_BOTH);
                 setUndecorated(true);
-//                device.setFullScreenWindow(this);
+                device.setFullScreenWindow(this);
                 setSize(800, 480);
                 cards = new CardLayout();
                 setLayout(cards);
