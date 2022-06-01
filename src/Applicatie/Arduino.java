@@ -15,7 +15,7 @@ public abstract class Arduino {
 	public Arduino(char readyChar) {
 		SerialPort poort;
 		for (String port : SerialPortList.getPortNames()) {
-			if (serialPort != null || port.equals(used)) continue;
+			if (serialPort != null || port.equals(used) || port.equals(SerialPortList.getPortNames()[0])) continue;
 			try {
 				poort = new SerialPort(port);
 				poort.openPort();
@@ -144,7 +144,7 @@ public abstract class Arduino {
 		private void verstuurKleur(char color) {
 			MyPortListener.currentState = State.DraaiNaarPlatform;
 			try {
-				Frame.arduinoInpak.serialPort.writeString(String.valueOf(getIndexFromChar(color)));
+				Frame.arduinoInpak.serialPort.writeString(getIndexFromChar(color) + ":");
 			} catch (SerialPortException e) {}
 			System.out.println("test" + color);
 			SorteerScherm.moduleData(color);
@@ -153,20 +153,29 @@ public abstract class Arduino {
 		private void klaarMetDraaien() {
 			currentState = State.PusherAan;
 			try {
-				Frame.arduinoSorteer.serialPort.writeString(":1");
+				Frame.arduinoSorteer.serialPort.writeString("1:");
 			} catch (SerialPortException e) {}
 			currentState = State.WachtOpScan;
 		}
 
 		private void onMessage() {
 			// constructing message
+
 			byte[] bufferBytes = buffer.getBytes();
 			switch(name) {
 				case "ArduinoInpak" -> {
 					if(currentState == null) break;
+					System.out.println(currentState.toString());
+					System.out.println(currentJob.toString());
 					switch(currentState) {
 						case DraaiNaarPlatform -> {
-							for (byte bufferByte : bufferBytes) if(bufferByte == ':') klaarMetDraaien();
+							for (byte bufferByte : bufferBytes){
+								System.out.println((char) bufferByte + "test");
+								if(bufferByte == ':') {
+									klaarMetDraaien();
+									return;
+								}
+							}
 						}
 						default -> {}
 					}

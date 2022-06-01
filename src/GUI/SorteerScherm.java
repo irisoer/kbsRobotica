@@ -63,6 +63,7 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 
     public void startSorteren() {
         try {
+            Frame.arduinoSorteer.getSerialPort().writeString("0:");
             Arduino.MyPortListener.currentState = Arduino.MyPortListener.State.WachtOpScan;
             Arduino.MyPortListener.currentJob = Arduino.MyPortListener.Job.Sorteer;
         } catch (Exception e) {}
