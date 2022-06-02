@@ -83,11 +83,11 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
             if (kleur.equals(blauw)) {
                 p.setPosX(xBlauw);
             }
-            if (aantalKleur == 1 || aantalKleur == 3 || aantalKleur == 5) {
-//                x = p.getPosX();
+
+            if (aantal %2 != 0) {           //kolom 1 (oneven aantallen)
                 aantalKleur--;
             }
-            else if (aantalKleur == 2 || aantalKleur == 4 || aantalKleur == 6) {
+            else {                          //kolom 2 (even aantallen)
                 x = p.getPosX() + marge;
                 p.setPosX(x);
                 aantalKleur--;
