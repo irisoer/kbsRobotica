@@ -1,5 +1,7 @@
 package GUI;
 
+import Applicatie.Order;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -56,13 +58,13 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         int aantalKleur = 0;
 
         if (kleur.equals(rood)) {
-            aantalKleur = aantalRood;
+            aantalKleur = Order.aantalRood;
         }
         if (kleur.equals(geel)) {
-            aantalKleur = aantalGeel;
+            aantalKleur = Order.aantalGeel;
         }
         if (kleur.equals(blauw)) {
-            aantalKleur = aantalBlauw;
+            aantalKleur = Order.aantalBlauw;
         }
 
         for (int aantal = aantalKleur; aantal > 0; aantal--) {      //tekenen artikelen
