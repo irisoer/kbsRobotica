@@ -1,7 +1,6 @@
 package GUI;
 
 import Applicatie.Database;
-import JPanels.Panel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -56,8 +55,6 @@ public class StartScherm extends Scherm {
 		jbBevestig.setBounds(500, 415, 200, 50);
 		jbBevestig.setFont(fontSubTekst);
 		add(jbBevestig);
-
-		//todo: Exporten van data uit dit scherm naar een BPP algoritme
 	}
 
 	@Override

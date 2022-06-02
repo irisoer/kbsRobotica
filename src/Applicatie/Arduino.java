@@ -9,16 +9,16 @@ import jssc.*;
 import static jssc.SerialPort.*;
 
 public abstract class Arduino {
-	static String used = "";
-	static char data = ' ';
-	protected SerialPort serialPort;
+	static String used = "";            // Vult de gebruikte port in
+	static char data = ' ';                // Laaste payload die ontvangen is
+	protected SerialPort serialPort;    // COM port die verbonden is
 
 
 	public Arduino(char readyChar) {
 		SerialPort poort;
+		// Zoeken naar port check alle porten en slaan porten die gebruikt zijn over
 		for (String port : SerialPortList.getPortNames()) {
 			if (serialPort != null || port.equals(used)) continue;
-//			if (serialPort != null || port.equals(used) || port.equals(SerialPortList.getPortNames()[0])) continue;
 			try {
 				poort = new SerialPort(port);
 				poort.openPort();
@@ -29,7 +29,6 @@ public abstract class Arduino {
 					System.out.print(ch);
 					ch = (char) poort.readBytes(1)[0];
 				}
-				;
 				char lh = (char) poort.readBytes(1)[0];
 				System.out.println("ja " + ch + lh);
 				if (lh == readyChar) {
@@ -47,39 +46,10 @@ public abstract class Arduino {
 		}
 	}
 
-	public static void sorteer(ArduinoInpak inpak, ArduinoSorteer sorteer, SorteerScherm sorteerScherm) throws SerialPortException, InterruptedException {
-//        sorteer.openPort(new ArduinoSorteer.SorteerListener(sorteer.serialPort, sorteerScherm));
-//		while (true) {
-////
-////			int index = -1;
-////			String test = "#";
-//////            while (sorteer.serialPort.readBytes(1)[0] != test.getBytes()[0]) {
-//////            }
-//////            char color = (char) sorteer.serialPort.readBytes(1)[0];
-////			char color = data;
-////			String kleur = "";
-////			System.out.println(color);
-////			if (color == 'r') index = 0;
-////			else if (color == 'g') index = 1;
-////			else if (color == 'b') index = 2;
-////			else if (color == 's') break;
-////			sorteer.closePort();
-////			inpak.draaiNaarPlatform(index);
-////			sorteer.openPort();
-////			sorteer.serialPort.writeString("1:");
-//		}
-	}
-
 	public static void openPort(SerialPort port, SerialPortEventListener eventListener) throws SerialPortException {
 		port.openPort();
 
 		port.setParams(BAUDRATE_9600, DATABITS_8, STOPBITS_1, PARITY_NONE);      //Opstarten
-//		char ch = (char) this.serialPort.readBytes(1)[0];
-//		while (ch != '!') {
-//			System.out.print(ch);
-//			ch = (char) this.serialPort.readBytes(1)[0];
-//		};
-//		char lh = (char) this.serialPort.readBytes(1)[0];
 		int mask = MASK_RXCHAR;
 		port.setEventsMask(mask);
 		port.addEventListener(eventListener);
@@ -119,8 +89,8 @@ public abstract class Arduino {
 		public static Staat huidigeStaat;
 		public static Taak huidigeTaak;
 		String buffer = "";
-		private SerialPort port = getSerialPort();
-		private String name = Arduino.this.getClass().getSimpleName();
+		private final SerialPort port = getSerialPort();
+		private final String name = Arduino.this.getClass().getSimpleName();
 
 		public int getIndexFromColor(char color) {
 			switch (huidigeTaak) {
@@ -133,7 +103,7 @@ public abstract class Arduino {
 					};
 				}
 				case Inpak -> {
-					String kleur  = switch (color) {
+					String kleur = switch (color) {
 						case 'r' -> "Red";
 						case 'g' -> "Yellow";
 						case 'b' -> "Blue";
@@ -144,7 +114,7 @@ public abstract class Arduino {
 					int index = Order.getBpp().findBinNum(a);
 					return index;
 				}
-			};
+			}
 			return -1;
 		}
 
@@ -153,33 +123,34 @@ public abstract class Arduino {
 			try {
 				int index = getIndexFromColor(color);
 				System.out.println(index);
-				if(index != -1) Frame.arduinoInpak.serialPort.writeString(index + ":");
+				if (index != -1) Frame.arduinoInpak.serialPort.writeString(index + ":");
 				else {
 					Frame.arduinoSorteer.bandAan();
 					huidigeStaat = Staat.WachtOpScan;
 				}
 				Frame.huidigeDoos = index;
-				if(index != -1) switch (color) {
+				if (index != -1) switch (color) {
 					case 'r' -> Frame.aantalRood++;
 					case 'g' -> Frame.aantalGeel++;
 					case 'b' -> Frame.aantalBlauw++;
-					default -> {}
+					default -> {
+					}
 				}
 			} catch (SerialPortException e) {
 			}
 			Frame.huidigeKleur = color;
 			System.out.println("test" + color);
-			if(huidigeTaak.equals(Taak.Sorteer)) SorteerScherm.moduleData(color);
-			else if(huidigeTaak.equals(Taak.Inpak)) {
-				for (VerwerkScherm.Carrousel carrousel: VerwerkScherm.Carrousel.values()){
+			if (huidigeTaak.equals(Taak.Sorteer)) SorteerScherm.moduleData(color);
+			else if (huidigeTaak.equals(Taak.Inpak)) {
+				for (VerwerkScherm.Carrousel carrousel : VerwerkScherm.Carrousel.values()) {
 					carrousel.scherm.reload();
 				}
-				if(Order.getBpp().isLeeg()) {
+				if (Order.getBpp().isLeeg()) {
 
 					Frame.setScherm(Frame.Schermen.EindSchermOrderKlaarmaken);
 					EindschermOrderKlaarmaken.runEindProces();
 				}
-			};
+			}
 		}
 
 		private void klaarMetDraaien() {
@@ -198,7 +169,7 @@ public abstract class Arduino {
 			switch (name) {
 				case "ArduinoInpak" -> {
 					if (huidigeStaat == null) break;
-					System.out.println(huidigeStaat.toString());
+					System.out.println(huidigeStaat);
 					System.out.println(huidigeTaak.toString());
 					switch (huidigeStaat) {
 						case DraaiNaarPlatform -> {
@@ -250,17 +221,12 @@ public abstract class Arduino {
 			}
 		}
 
-		public static enum Taak {
-			Sorteer,
-			Inpak,
-			Geen
+		public enum Taak {
+			Sorteer, Inpak, Geen
 		}
 
-		public static enum Staat {
-			ZetBandAan,
-			WachtOpScan,
-			DraaiNaarPlatform,
-			PusherAan
+		public enum Staat {
+			ZetBandAan, WachtOpScan, DraaiNaarPlatform, PusherAan
 		}
 
 	}
