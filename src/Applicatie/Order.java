@@ -139,7 +139,7 @@ public class Order{
                 run3.addBreak();
             }
             orderNr = Database.selecteerLaasteOrderID();
-            document.write(new FileOutputStream("/media/pi/PAKBON/Order" + orderNr + ".docx"));   //pad waar de pakbon wordt opgeslagen
+            document.write(new FileOutputStream("Order" + orderNr + ".docx"));   //pad waar de pakbon wordt opgeslagen
         }catch (IOException ie){}
         catch (SQLException se){}
     }

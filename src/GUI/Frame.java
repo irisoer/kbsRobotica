@@ -74,7 +74,7 @@ public class Frame extends JFrame implements Layout {
                 add(jpSchermen);
 
                 pack();
-                setScherm(Schermen.StartScherm);
+                setScherm(Schermen.OpstartScherm);
                 opstartScherm.runStatussen();
 
         }
