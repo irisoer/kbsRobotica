@@ -22,17 +22,17 @@ int blauw = 2;
 int wit = 3;
 
 // waardes voor kleursensor
-int minC = 6 // minimale lichtwaarde wat wordt gezien als valide kleur
-int geelR = 6 // rood waarde van geel
-int geelG = 6 // groen waarde van geel
-int geelMaxRGverschil = 4 // max verschil tussen rood en groen van geel
-float geelBfractie = 0.75 // max gedeelte van rood wat blauw mag zijn voor geel
-int witR = 12
-int witB = 12
-int witG = 12
-int roodR = 4
-int roodMaxC = 15
-int blauwB = 6
+int minC = 6; // minimale lichtwaarde wat wordt gezien als valide kleur
+int geelR = 6; // rood waarde van geel
+int geelG = 6; // groen waarde van geel
+int geelMaxRGverschil = 4; // max verschil tussen rood en groen van geel
+float geelBfractie = 0.75; // max gedeelte van rood wat blauw mag zijn voor geel
+int witR = 12;
+int witB = 12;
+int witG = 12;
+int roodR = 4;
+int roodMaxC = 15;
+int blauwB = 6;
 
 void vooruit(int snelheid){
   //deze functie laat de motor vooruit gaan met int snelheid als snelheid
@@ -145,7 +145,7 @@ void verwerkSerial() {
   inputint = (int)(tInput[0])-48; // zet ingekomen string om naar getal door ASCII waarde van 0 af te trekken
   if (inputint < 0 or inputint > 3) {
   } else if (inputint == laatst) {
-    Serial.println(":Already on position:");
+    Serial.println(":");
   } else {
     draainaar = inputint;
     int a = (draainaar-laatst)%4;
@@ -157,10 +157,10 @@ void verwerkSerial() {
       b = 4+b;
     }
     if (a > b) {
-      achteruit = true;
+      backwards = true;
       turbo = true;
     } else {
-      achteruit = false;
+      backwards = false;
       if (a >= 2) {
         // we leggen een grote afstand af, zet tijd dat we vooruit gaan lager
         turbo = false;
@@ -175,14 +175,14 @@ void verwerkSerial() {
 }
 
 void loop(void) {
-  draai()
+  draai();
   scan(); // lees kleursensor uit
   if(c >= 6) {
     if (olaatst != laatst) { // wanneer vorige waarde van laatst niet gelijk is aan laatst zijn we van bakje veranderd
       olaatst = laatst;
       pogingen = 0;
       if (draainaar == laatst) { // als dit het bakje is die we willen hebben stoppen we en geven we aan de HMI applicatie door dat we er zijn
-        Serial.println(":Complete:");
+        Serial.println(":");
         draainaar = -1;
         rem();
       }
@@ -193,6 +193,6 @@ void loop(void) {
     pogingen = 0; // reset het aantal pogingen
   }
   if (Serial.available() > 0) {
-    verwerkSerial() // lees serial uit en verwerk dit als bakje om naartoe te draaien
+    verwerkSerial(); // lees serial uit en verwerk dit als bakje om naartoe te draaien
   }
 }
