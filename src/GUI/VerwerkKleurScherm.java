@@ -1,6 +1,7 @@
 package GUI;
 
 import Applicatie.Order;
+import Applicatie.Artikel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,12 +18,10 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
     private int pickedBlauw = 1;
 
 //    private JPanel jpVerwerkKleur = new JPanel();
-    private ArrayList<Product> producten = new ArrayList<>();
+    private ArrayList<Artikel> producten = new ArrayList<>();
 
     public VerwerkKleurScherm() {
-//        setLayout(new FlowLayout());
-//        add(jlHeading);
-//        add(jpVerwerkKleur);
+
     }
 
     public void paintComponent(Graphics g) {
@@ -68,30 +67,30 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         }
 
         for (int aantal = aantalKleur; aantal > 0; aantal--) {      //tekenen artikelen
-            Product p = new Product();
-            p.setKleur(kleur);
-            g.setColor(p.getKleur());
+            Artikel a = new Artikel();
+            a.setKleur(String.valueOf(kleur));
+            g.setColor(a.getJavaKleur());
             int x;
             int y = 0;
             int marge = 55;
 
             //x positie
             if (kleur.equals(rood)) {
-                p.setPosX(xRood);
+                a.setPosX(xRood);
             }
             if (kleur.equals(geel)) {
-                p.setPosX(xGeel);
+                a.setPosX(xGeel);
             }
             if (kleur.equals(blauw)) {
-                p.setPosX(xBlauw);
+                a.setPosX(xBlauw);
             }
 
             if (aantal %2 != 0) {           //kolom 1 (oneven aantallen)
                 aantalKleur--;
             }
             else {                          //kolom 2 (even aantallen)
-                x = p.getPosX() + marge;
-                p.setPosX(x);
+                x = a.getPosX() + marge;
+                a.setPosX(x);
                 aantalKleur--;
             }
 
@@ -105,11 +104,11 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
             if (aantal > 4 && aantal <= 6) {
                 y = yRij3;
             }
-            p.setPosY(y);
-            producten.add(p);
+            a.setPosY(y);
+            producten.add(a);
         }
-        for (Product p : producten) {
-            p.drawKleinArtikel(g, p);
+        for (Artikel p : producten) {
+            p.drawKleinArtikel(g);
         }
     }
 
@@ -127,9 +126,9 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
             aantalKleur = aantalBlauw;
         }
         for(tePicken = aantalKleur; aantalPicked <= tePicken; tePicken--){
-            for (Product p : producten) {
+            for (Artikel p : producten) {
                 if(p.getKleur().equals(kleur) && aantalPicked > 0) {
-                    p.fillArtikel(g, p);
+                    p.fillArtikel(g);
                     aantalPicked--;
                 }
             }

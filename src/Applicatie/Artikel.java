@@ -9,9 +9,9 @@ public class Artikel implements Comparable<Artikel> {
 	int breedteDoos = 110;      //breedte doos
 	int grootArtikel = 80;    //Groot formaat, voor sorteren
 	int kleinArtikel = grootArtikel /2;      //Klein formaat voor verwerk/order schermen
-	Color rood = Color.RED;     //todo: kleuren verwerken in statements in subklasses
-	Color geel = Color.ORANGE;
-	Color blauw = Color.BLUE;
+//	Color rood = Color.RED;     //todo: kleuren verwerken in statements in subklasses
+//	Color geel = Color.ORANGE;
+//	Color blauw = Color.BLUE;
 	private int gewicht;
 	private int id;
 	private String kleur;
@@ -116,16 +116,6 @@ public class Artikel implements Comparable<Artikel> {
 		return id == artikel.id
 				&& (ingepakt == artikel.ingepakt);
 	}
-
-//	public Product(Color kleur){
-//		this.kleur = kleur;
-//	}
-//
-//	public Product(Color kleur, int x, int y){
-//		this.kleur = kleur;
-//		this.posX = x;
-//		this.posY = y;
-//	}
 
 	public int getPosX() {
 		return posX;

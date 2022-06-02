@@ -74,7 +74,6 @@ public class Main {
 //            System.out.println(index);
 //            inpak.draaiNaarPlatform(index);
 //            System.out.println(bpp);
-//
 //        }
 //	}
 //    public static void main(String[] args) throws SQLException {
