@@ -38,11 +38,11 @@ public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
         removeAll();
         jlHuidigeVoorraad.setText("Huidige voorraad");
         jlRood.setText("Rode producten: ");
-        jlRoodAantal.setText(Integer.toString((Database.getVoorraad(73)-Frame.aantalRood)));
+        jlRoodAantal.setText(Integer.toString((Frame.voorraad[0]-Frame.aantalRood)));
         jlGeel.setText("Gele producten: ");
-        jlGeelAantal.setText(Integer.toString((Database.getVoorraad(71)-Frame.aantalGeel)));
+        jlGeelAantal.setText(Integer.toString((Frame.voorraad[1]-Frame.aantalGeel)));
         jlBlauw.setText("Blauwe producten: ");
-        jlBlauwAantal.setText(Integer.toString(Database.getVoorraad(60)-Frame.aantalBlauw));
+        jlBlauwAantal.setText(Integer.toString(Frame.voorraad[2]-Frame.aantalBlauw));
 
         jlHuidigeVoorraad.setFont(fontTekst);
         jlRood.setFont(fontTekst);

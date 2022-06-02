@@ -103,6 +103,9 @@ public class Frame extends JFrame implements Layout {
                 updateVoorraad();
                 huidigeDoos = -1;
                 huidigeKleur = ' ';
+                aantalBlauw = 0;
+                aantalGeel = 0;
+                aantalRood = 0;
                 setScherm(Schermen.StartScherm);
         }
         public static int[] getVoorraad() {

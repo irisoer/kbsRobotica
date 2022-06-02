@@ -168,7 +168,11 @@ public class StartScherm extends Scherm {
 				this.plusMinKnop.setValue(aantal);
             }
 
-			public void setVoorraad(int aantal) { this.voorraad = aantal; this.Product.setText(this.kleur + " Product (" + voorraad + ")");}
+			public void setVoorraad(int aantal) {
+				this.voorraad = aantal;
+				this.Product.setText(this.kleur + " Product (" + voorraad + ")");
+				this.plusMinKnop.setMaxVoorraad(voorraad);
+			}
 		}
 
 		private class PlusMinKnop extends Scherm implements ActionListener {
@@ -197,7 +201,11 @@ public class StartScherm extends Scherm {
 				return aantal;
 			}
 
-            public void setValue(int aantal) {
+			public void setMaxVoorraad(int maxVoorraad) {
+				this.maxVoorraad = maxVoorraad;
+			}
+
+			public void setValue(int aantal) {
                 if (this.aantal + aantal >= 0 && this.aantal + aantal <= maxVoorraad) {
                     this.aantal = aantal;
                     JLaantal.setText(String.valueOf(aantal));
