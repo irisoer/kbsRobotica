@@ -17,7 +17,6 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
     private int pickedGeel = 3;
     private int pickedBlauw = 1;
 
-//    private JPanel jpVerwerkKleur = new JPanel();
     private ArrayList<Artikel> producten = new ArrayList<>();
 
     public VerwerkKleurScherm() {

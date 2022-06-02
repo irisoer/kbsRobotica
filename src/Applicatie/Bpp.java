@@ -52,11 +52,6 @@ public class Bpp {
 						return binNum;
 					}
 				}
-
-						// Verwijder het integer object uit de bin
-														// Integer.valueOf() omdat als er een int wordt meegegeven
-														// dan wordt die index verwijderd ipv dat object.
-				                      					// Return het nummer van huidige bin.
 			}
 			binNum++;                                	// Check volgende bin
 		}
@@ -152,12 +147,6 @@ public class Bpp {
 		XWPFRun run1 = p1.createRun();
 		int index = 1;
 		StringBuilder retString = new StringBuilder();
-//		for (ArrayList<Applicatie.Product> bin: bins) {
-//			for (Applicatie.Product artikel : bin) {
-//				retString.append(artikel.getKleur()).append("\n");
-//			}
-//			retString.append("\n");
-//		}
 
 		for (ArrayList<Artikel> bin : bins) {
 			retString.append("Doos " + index +": ").append("\n");

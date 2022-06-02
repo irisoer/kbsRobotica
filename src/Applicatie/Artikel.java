@@ -1,20 +1,19 @@
 package Applicatie;
 
+import GUI.ArtikelStandaard;
+
 import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Artikel implements Comparable<Artikel> {
+public class Artikel implements Comparable<Artikel>, ArtikelStandaard {
 	int hoogteDoos = 155;       //hoogte doos
 	int breedteDoos = 110;      //breedte doos
 	int grootArtikel = 80;    //Groot formaat, voor sorteren
 	int kleinArtikel = grootArtikel /2;      //Klein formaat voor verwerk/order schermen
-//	Color rood = Color.RED;     //todo: kleuren verwerken in statements in subklasses
-//	Color geel = Color.ORANGE;
-//	Color blauw = Color.BLUE;
 	private int gewicht;
 	private int id;
-	private String kleur;
+	private static String kleur;
 	private String naam;
 	private boolean ingepakt = false;
 	private int doos;
@@ -33,12 +32,13 @@ public class Artikel implements Comparable<Artikel> {
 	public Artikel() {
 	}
 
-	public Artikel(ResultSet set) throws SQLException {
-// ColorName, StockItemID, StockItemName, TypicalWeightPerUnit
+	public Artikel(ResultSet set) {
+		try{
 		this.gewicht = set.getInt("TypicalWeightPerUnit");
 		this.id = set.getInt("StockItemID");
 		this.kleur = set.getString("ColorName");
-		this.naam = set.getString("StockItemName");
+		this.naam = set.getString("StockItemName");}
+		catch (SQLException e){}
 	}
 
 	public int getGewicht() {
@@ -53,11 +53,11 @@ public class Artikel implements Comparable<Artikel> {
 		return kleur;
 	}
 
-	public Color getJavaKleur() {
+	public static Color getJavaKleur() {
 		return switch (kleur) {
-			case "Red" -> Color.RED;
-			case "Yellow" -> Color.ORANGE;
-			case "Blue" -> Color.BLUE;
+			case "Red" -> ArtikelStandaard.rood;
+			case "Yellow" -> ArtikelStandaard.geel;
+			case "Blue" -> ArtikelStandaard.blauw;
 			default -> null;
 		};
 	}

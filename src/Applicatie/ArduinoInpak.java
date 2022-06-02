@@ -19,14 +19,4 @@ public class ArduinoInpak extends Arduino {
         this.closePort();
     }
 
-//    public void draaiNaarPlatform(char color) throws SerialPortException, InterruptedException {
-//        this.serialPort.writeString(String.valueOf(index) + String.valueOf(index) + ":");
-//        System.out.println("verstuurd naar " + String.valueOf(index));
-//        char test = (char) this.serialPort.readBytes(1)[0];
-//        while(test != ':') {
-//            test = (char) this.serialPort.readBytes(1)[0];
-//        }
-//        System.out.println("Gedraaid");
-//        this.closePort();
-//    }
 }

@@ -39,45 +39,26 @@ public class ArduinoSorteer extends Arduino {
         } else {
             this.closePort();
             inpak.draaiNaarPlatform(index);
-//            this.openPort(null);
             this.serialPort.writeString("1:");
         }
         return index;
     }
 
     public int getKleur(Bpp bpp) throws SerialPortException, InterruptedException {
-//        this.bandAan();
         int index = -1;
         String test = "#";
-//        this.openPort(null);
+
         while(true) {
             if(false) {
                 return index;
             }
         }
-//        while(this.serialPort.readBytes(1)[0] != test.getBytes()[0]) {}
-//        char color = (char)this.serialPort.readBytes(1)[0];
-//        String kleur = "";
-//        System.out.println(color);
-//        if(color == 'r') kleur = "Red";
-//        else if (color == 'g') kleur = "Yellow";
-//        else if (color == 'b') kleur = "Blue";
-//        System.out.println(kleur);
-//            Artikel a = Database.selecteerArtikel(kleur);
-//            System.out.println(a);
-//            index = bpp.findBinNum(a);
-//        if(index == -1) {
-//            this.serialPort.writeString("0:"); // pusher aan zetten
-//            this.closePort();
-//        } else {
-//            this.serialPort.writeString("1:");
-//        }
 
     }
 
     public void bandAan() throws SerialPortException {
         try {
-//            this.openPort();
+
             this.serialPort.writeString("0:");}
         catch (SerialPortException e) { }
 
@@ -108,7 +89,7 @@ public class ArduinoSorteer extends Arduino {
                     } catch (SerialPortException e) {
                         throw new RuntimeException(e);
                     }
-//                    ArduinoInpak.draaiNaarPlatform(bufferBytes[i + 1]);
+
                 }
             }
             buffer = "";

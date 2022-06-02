@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 //Sylvia >
 public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements ArtikelStandaard {
-    private Artikel huidigArtikel;      //laatst gescande artikel
     private ArrayList<Artikel> artikelen;
 
     //Posities product in doos

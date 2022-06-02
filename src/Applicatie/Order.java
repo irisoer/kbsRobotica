@@ -72,25 +72,8 @@ public class Order{
         orderlijst = bpp.toString();
     }
 
-//    public static int getLaatsteOrderline(){        //Haalt het laatste orderline numemr op uit de database //todo: werkt niet, weet niet waarom
-//        try{
-//            startConnection();
-//            PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT OrderLineID FROM nerdygadgets.orderlines ORDER BY OrderLineID DESC LIMIT 1");
-//            ResultSet result = preparedStatement.executeQuery();
-//            int orderline = 0;
-//            while(result.next()){
-//                orderline = result.getInt("OrderLineID");
-//            }
-//            System.out.println(orderline);
-//            return orderline;
-//        } catch (SQLException e){
-//            e.printStackTrace();
-//        }
-//        return 0;
-//    }
 
     public static void maakPakbon(){
-//        customerId = Database.getCustomerID();
         try {                               //haalt de gegevens van de klant op uit de database zodat deze kunnen worden gebruikt in de pakbon
             Database.startConnection();
             PreparedStatement preparedStatement = Database.getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +

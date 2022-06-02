@@ -74,7 +74,7 @@ public class VerwerkScherm extends Scherm {         //basis voor schermen tijden
 
         add(jpSchermen);
 
-        JLabel jlTitel = new JLabel();      //todo: jlHeading/jlTekst gebruiken?
+        JLabel jlTitel = new JLabel();
         jlTitel.setText("Uw order wordt verwerkt:");
         jlTitel.setFont(fontTitel);
         jlTitel.setHorizontalAlignment(SwingConstants.CENTER);

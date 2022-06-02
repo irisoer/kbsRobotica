@@ -1,8 +1,7 @@
 package GUI;
 
-import Applicatie.Arduino;
-import Applicatie.Order;
 import jssc.SerialPortException;
+import Applicatie.*;
 
 import java.awt.*;
 
@@ -12,13 +11,11 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 	static int aantalRood = 0;
 	static int aantalGeel = 0;
 	static int aantalBlauw = 0;
-	private Color gescandeKleur; //todo: aantallen meegeven met setter, if gescande kleur is rood, aantalRood++ etc etc
 
 	public SorteerScherm() {
 		setLayout(new FlowLayout());
 
 		//componenten
-//        jlHeading = new JLabel();
 		jlHeading.setText("Uw voorraad wordt gesorteerd:");
 
 		//toevoegen
@@ -56,10 +53,14 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		//producten
-		Product roodProduct = new Product(ArtikelStandaard.rood);
-		Product geelProduct = new Product(ArtikelStandaard.geel);
-		Product blauwProduct = new Product(ArtikelStandaard.blauw);
+		//productenj
+		Artikel roodProduct = new  Artikel();
+		Artikel geelProduct = new  Artikel();
+		Artikel blauwProduct = new Artikel();
+
+		roodProduct.setKleur("Red");
+		geelProduct.setKleur("Yellow");
+		blauwProduct.setKleur("Blue");
 
 		roodProduct.drawArtikel(g, roodProduct, 160, 110);
 		geelProduct.drawArtikel(g, geelProduct, 360, 110);

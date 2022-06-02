@@ -209,7 +209,7 @@ public class StartScherm extends Scherm {
                 } else {
 					System.out.println("JA");
 				}
-                // todo: Throw error naar errorscherm
+
             }
 
 			@Override
