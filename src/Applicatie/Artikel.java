@@ -30,6 +30,9 @@ public class Artikel implements Comparable<Artikel> {
 		this.ingepakt = true;
 	}
 
+	public Artikel() {
+	}
+
 	public Artikel(ResultSet set) throws SQLException {
 // ColorName, StockItemID, StockItemName, TypicalWeightPerUnit
 		this.gewicht = set.getInt("TypicalWeightPerUnit");
