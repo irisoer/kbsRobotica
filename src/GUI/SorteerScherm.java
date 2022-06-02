@@ -2,6 +2,7 @@ package GUI;
 
 import Applicatie.Arduino;
 import Applicatie.Order;
+import jssc.SerialPortException;
 
 import java.awt.*;
 
@@ -70,6 +71,9 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 
     public static void eindSorteren() {
         Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Geen;
+        try {
+            Frame.arduinoSorteer.getSerialPort().writeString("2:");
+        } catch (SerialPortException e) {}
         Order.uploadVoorraadNaarDatabase();
         Frame.voorraad = new int[]{Frame.aantalRood, Frame.aantalGeel, Frame.aantalBlauw};
     }

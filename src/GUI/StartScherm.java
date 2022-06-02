@@ -18,6 +18,7 @@ public class StartScherm extends Scherm {
 	private JButton jbSorteer;
 	private JButton jbBevestig;
 	public ProductSelector productSelector;
+	public DBLoader dbLoader;
 
 	public StartScherm(SorteerScherm sorteerScherm, VerwerkScherm verwerkScherm) {
 
@@ -29,7 +30,8 @@ public class StartScherm extends Scherm {
 		try {
 			add(titel);
 			productSelector = new ProductSelector();
-			add(new DBLoader(productSelector));
+			dbLoader = new DBLoader(productSelector);
+			add(dbLoader);
 			add(productSelector);
 		} catch (SQLException e) {
 			System.out.println(e.getSQLState());
@@ -58,6 +60,14 @@ public class StartScherm extends Scherm {
 		//todo: Exporten van data uit dit scherm naar een BPP algoritme
 	}
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Frame.updateVoorraad();
+		productSelector.setProductVoorraad(Frame.voorraad);
+
+		dbLoader.reload();
+	}
 
 	static class DBLoader extends Panel {
 		private JLabel jlOrderSelecteren;
@@ -87,6 +97,9 @@ public class StartScherm extends Scherm {
 			setBounds(175, 50, 800, 100);
 		}
 
+		public void reload() {
+			box.setModel(new DefaultComboBoxModel<>(Database.selecteerOrderNums()));
+		}
 	}
 
 
@@ -109,6 +122,12 @@ public class StartScherm extends Scherm {
 			setBounds(0, 150, 800, 250);
 		}
 
+		public void setProductVoorraad(int[] rgbAantallen) {
+			for (int i = 0; i < rgbAantallen.length; i++) {
+				productRegels[i].setVoorraad(rgbAantallen[i]);
+			}
+		}
+
         public void setProductAantallen(int[] rgbAantallen) {
             for (int i = 0; i < rgbAantallen.length; i++) {
                 productRegels[i].setAantal(rgbAantallen[i]);
@@ -125,11 +144,13 @@ public class StartScherm extends Scherm {
 
 		private class ProductRegel extends Scherm {
 			protected int voorraad;
+			private String kleur;
 			private JLabel Product;
 			private PlusMinKnop plusMinKnop;
 
 			public ProductRegel(String kleur, int voorraad) {
 				this.voorraad = voorraad;
+				this.kleur = kleur;
 				this.Product = new JLabel(kleur + " Product (" + voorraad + ")");
 				this.Product.setFont(fontTekst);
 				setSize(800, 250);
@@ -146,6 +167,8 @@ public class StartScherm extends Scherm {
             public void setAantal(int aantal) {
 				this.plusMinKnop.setValue(aantal);
             }
+
+			public void setVoorraad(int aantal) { this.voorraad = aantal; this.Product.setText(this.kleur + " Product (" + voorraad + ")");}
 		}
 
 		private class PlusMinKnop extends Scherm implements ActionListener {

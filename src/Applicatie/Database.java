@@ -164,6 +164,21 @@ public class Database {
         return 0;
     }
 
+    public static int setVoorraad(int StockitemID, int hoeveelheidBesteld) {
+        try {
+            startConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE nerdygadgets.stockitemholdings \n" +
+                    "SET QuantityOnHand = (?) \n" +
+                    "WHERE StockitemID = ? ");
+            preparedStatement.setInt(2, StockitemID);
+            preparedStatement.setInt(1, hoeveelheidBesteld);
+            int result = preparedStatement.executeUpdate();
+            return result;
+        } catch (SQLException e) {
+        }
+        return 0;
+    }
+
     /**
      * <h3>Einde voorraad in de database</h3>
      */

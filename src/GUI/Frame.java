@@ -100,12 +100,17 @@ public class Frame extends JFrame implements Layout {
 
         public static void resetData() {
                 order = null;
-                voorraad = getVoorraad();
+                updateVoorraad();
                 huidigeDoos = -1;
                 huidigeKleur = ' ';
+                setScherm(Schermen.StartScherm);
         }
         public static int[] getVoorraad() {
                 return voorraad;
+        }
+
+        public static void updateVoorraad() {
+                voorraad = new int[]{Database.getVoorraad(73), Database.getVoorraad(71), Database.getVoorraad(60)};
         }
 
         public static void setVoorraad(int[] voorraad) {

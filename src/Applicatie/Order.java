@@ -138,17 +138,17 @@ public class Order{
                 run3.setText(part);
                 run3.addBreak();
             }
-
-            document.write(new FileOutputStream("Applicatie.Order" + orderNr + ".docx"));   //pad waar de pakbon wordt opgeslagen
-            orderNr++;
+            orderNr = Database.selecteerLaasteOrderID();
+            document.write(new FileOutputStream("/media/pi/PAKBON/Order" + orderNr + ".docx"));   //pad waar de pakbon wordt opgeslagen
         }catch (IOException ie){}
         catch (SQLException se){}
     }
 
     public static void uploadVoorraadNaarDatabase(){        //roept update voorraad functie aan met jusite gegevens
-        Database.updateVoorraad(artikelNrRood, Frame.aantalRood);
-        Database.updateVoorraad(artikelNrGeel, Frame.aantalGeel);
-        Database.updateVoorraad(artikelNrBlauw, Frame.aantalBlauw);
+        Database.setVoorraad(artikelNrRood, Frame.aantalRood);
+        Database.setVoorraad(artikelNrGeel, Frame.aantalGeel);
+        Database.setVoorraad(artikelNrBlauw, Frame.aantalBlauw);
+
     }
 
     public static void uploadOrderNaarDatabase(){          //upload de order naar de database

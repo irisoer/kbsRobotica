@@ -2,6 +2,7 @@ package GUI;
 
 import Applicatie.Arduino;
 import Applicatie.Order;
+import jssc.SerialPortException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -125,6 +126,9 @@ public class VerwerkScherm extends Scherm {         //basis voor schermen tijden
         }
     }
     public static void eindInpakken() {
+        try {
+            Frame.arduinoSorteer.getSerialPort().writeString("2:");
+        } catch (SerialPortException e) {}
         Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Geen;
         Order.maakPakbon();
         Order.uploadOrderNaarDatabase();
