@@ -38,6 +38,7 @@ public class VerwerkVoorraadScherm extends VerwerkCarrouselScherm {
         removeAll();
         jlHuidigeVoorraad.setText("Huidige voorraad");
         jlRood.setText("Rode producten: ");
+        Frame.updateVoorraad();
         jlRoodAantal.setText(Integer.toString((Frame.voorraad[0]-Frame.aantalRood)));
         jlGeel.setText("Gele producten: ");
         jlGeelAantal.setText(Integer.toString((Frame.voorraad[1]-Frame.aantalGeel)));
