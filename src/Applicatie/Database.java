@@ -114,7 +114,10 @@ public class Database {
         }
         }
         catch (SQLException e){
-            customerID = random.nextInt(laagsteCustomerID,hoogsteCustomerID)+laagsteCustomerID;
+
+        }
+        if(customerID == 0) {
+            customerID = random.nextInt(laagsteCustomerID,hoogsteCustomerID);
         }
         return customerID;
     }
@@ -178,4 +181,23 @@ public class Database {
         } catch (SQLException e) {
         }
     }
+
+    public static int selecteerLaasteOrderID() {
+               //Selecteer laaste orderID
+            try {
+                startConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement("SELECT OrderID FROM orders ORDER BY OrderID DESC LIMIT 1");
+                ResultSet result = preparedStatement.executeQuery();
+                int orderNr = 0;
+                while (result.next()) {
+                    orderNr = result.getInt("OrderID");
+                }
+                       //Sla ordernummers op in een array. Dit wordt gebruikt in een HMI scherm
+                return orderNr;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return 0;
+        }
+
 }

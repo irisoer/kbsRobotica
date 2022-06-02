@@ -48,7 +48,7 @@ public class Order{
         voegArtikelToe(artikelNrRood, aantalRood); // Rode artikelen
         voegArtikelToe(artikelNrGeel, aantalGeel); // Gele artikelen
         voegArtikelToe(artikelNrBlauw, aantalBlauw); // Blauwe artikelen
-
+        customerId = new Random().nextInt(900, 1000);
         berekenBpp();
         System.out.println(bpp);
     }
@@ -90,7 +90,7 @@ public class Order{
 //    }
 
     public static void maakPakbon(){
-        customerId = Database.getCustomerID();
+//        customerId = Database.getCustomerID();
         try {                               //haalt de gegevens van de klant op uit de database zodat deze kunnen worden gebruikt in de pakbon
             Database.startConnection();
             PreparedStatement preparedStatement = Database.getConnection().prepareStatement("SELECT CustomerID, CustomerName, DeliveryAddressLine1, DeliveryPostalCode, CityName FROM nerdygadgets.customers AS cu \n" +
@@ -132,7 +132,7 @@ public class Order{
             XWPFParagraph bestelling = document.createParagraph();     //Hier komt de daadwerkelijke bestelling
             XWPFRun run3 = bestelling.createRun();
 
-            String[] parts = orderlijst.split("\n");
+            String[] parts = bpp.toString().split("\n");
             for (String part : parts
             ) {
                 run3.setText(part);
@@ -154,26 +154,28 @@ public class Order{
     public static void uploadOrderNaarDatabase(){          //upload de order naar de database
         try{
             Database.startConnection();
-            PreparedStatement preparedStatement = Database.getConnection().prepareStatement("INSERT INTO orderlines (OrderLineID, OrderID, StockItemID) VALUES (?, ?, ?),(?,?,?),(?,?,?);");
-            preparedStatement.setInt(1, orderlines);
+            PreparedStatement preparedStatement1 = Database.getConnection().prepareStatement("INSERT INTO orders (CustomerID) VALUES (?)");
+            preparedStatement1.setInt(1, customerId);
+            preparedStatement1.executeUpdate();
+            nieuweOrderNr = Database.selecteerLaasteOrderID();
+            System.out.println("NIEUWE OPRDER" + nieuweOrderNr);
+            PreparedStatement preparedStatement = Database.getConnection().prepareStatement("INSERT INTO orderlines (Quantity, OrderID, StockItemID) VALUES (?, ?, ?),(?,?,?),(?,?,?);");
+            preparedStatement.setInt(1, Frame.aantalRood);
             preparedStatement.setInt(2, nieuweOrderNr);
             preparedStatement.setInt(3, artikelNrRood);
-            orderlines++;
-            preparedStatement.setInt(4, orderlines);
+            preparedStatement.setInt(4, Frame.aantalGeel);
             preparedStatement.setInt(5, nieuweOrderNr);
             preparedStatement.setInt(6,artikelNrGeel);
-            orderlines++;
-            preparedStatement.setInt(7, orderlines);
+            preparedStatement.setInt(7, Frame.aantalBlauw);
             preparedStatement.setInt(8, nieuweOrderNr);
             preparedStatement.setInt(9,artikelNrBlauw);
-            orderlines++;
-            nieuweOrderNr++;
-            ResultSet result = preparedStatement.executeQuery();
-            result.close();
+            preparedStatement.executeUpdate();
+            System.out.println("Geupdate");
             }
 
         catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw
+                    new RuntimeException(e);
         }
     }
 

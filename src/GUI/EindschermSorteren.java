@@ -38,9 +38,10 @@ public class EindschermSorteren extends Scherm implements Layout {
     }
 
     private class ProductSchower extends Scherm {
-        JLabel jlRood = new JLabel("Rood product (" + SorteerScherm.aantalRood + ")");
-        JLabel jlGeel = new JLabel("Geel product (" + SorteerScherm.aantalGeel + ")");
-        JLabel jlBlauw = new JLabel("Blauw product (" + SorteerScherm.aantalBlauw + ")");
+        JLabel jlRood = new JLabel("Rood product (" + Frame.aantalRood + ")");
+        JLabel jlGeel = new JLabel("Geel product (" + Frame.aantalGeel + ")");
+        JLabel jlBlauw = new JLabel("Blauw product (" + Frame
+                .aantalBlauw + ")");
 
         public ProductSchower(){
             jlRood.setFont(fontTekst);

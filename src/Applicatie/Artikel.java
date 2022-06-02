@@ -89,6 +89,7 @@ public class Artikel implements Comparable<Artikel> {
 				", kleur='" + kleur + '\'' +
 				", naam='" + naam + '\'' +
 				", doos='" + doos + '\'' +
+				", ingepakt='" + ingepakt + '\'' +
 				'}';
 	}
 

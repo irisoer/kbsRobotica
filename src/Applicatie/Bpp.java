@@ -20,8 +20,9 @@ public class Bpp {
 	public boolean isLeeg() {
 		for (int i = 0; i < bins.size(); i++) {
 			ArrayList<Artikel> bin = bins.get(i);
+			System.out.println(i + " " +  bin);
 			for (int j = 0; j < bin.size(); j++) {
-				if(!bin.get(i).isIngepakt()) return false;
+				if(!bin.get(j).isIngepakt()) return false;
 			}
 		};
 		return true;

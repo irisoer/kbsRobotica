@@ -152,18 +152,22 @@ public abstract class Arduino {
 			MyPortListener.huidigeStaat = Staat.DraaiNaarPlatform;
 			try {
 				int index = getIndexFromColor(color);
+				System.out.println(index);
 				if(index != -1) Frame.arduinoInpak.serialPort.writeString(index + ":");
-				else huidigeStaat = Staat.WachtOpScan;
+				else {
+					Frame.arduinoSorteer.bandAan();
+					huidigeStaat = Staat.WachtOpScan;
+				}
 				Frame.huidigeDoos = index;
+				if(index != -1) switch (color) {
+					case 'r' -> Frame.aantalRood++;
+					case 'g' -> Frame.aantalGeel++;
+					case 'b' -> Frame.aantalBlauw++;
+					default -> {}
+				}
 			} catch (SerialPortException e) {
 			}
 			Frame.huidigeKleur = color;
-			switch (color) {
-				case 'r' -> Frame.aantalRood++;
-				case 'g' -> Frame.aantalGeel++;
-				case 'b' -> Frame.aantalBlauw++;
-				default -> {}
-			}
 			System.out.println("test" + color);
 			if(huidigeTaak.equals(Taak.Sorteer)) SorteerScherm.moduleData(color);
 			else if(huidigeTaak.equals(Taak.Inpak)) {
@@ -171,6 +175,7 @@ public abstract class Arduino {
 					carrousel.scherm.reload();
 				}
 				if(Order.getBpp().isLeeg()) {
+
 					Frame.setScherm(Frame.Schermen.EindSchermOrderKlaarmaken);
 					EindschermOrderKlaarmaken.runEindProces();
 				}

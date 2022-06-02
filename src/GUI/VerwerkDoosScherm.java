@@ -27,6 +27,10 @@ public class VerwerkDoosScherm extends VerwerkCarrouselScherm implements Artikel
 
     }
 
+    public void reload() {
+        repaint();
+    }
+
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         //pijl

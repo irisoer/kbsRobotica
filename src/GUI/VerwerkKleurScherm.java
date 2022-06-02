@@ -30,9 +30,9 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         drawKleur(g, rood);
         drawKleur(g, geel);
         drawKleur(g, blauw);
-        fillKleur(g,rood,pickedRood);
-        fillKleur(g,geel,pickedGeel);
-        fillKleur(g,blauw,pickedBlauw);
+        fillKleur(g,rood,Frame.aantalRood);
+        fillKleur(g,geel,Frame.aantalGeel);
+        fillKleur(g,blauw,Frame.aantalBlauw);
 
         g.setFont(fontTekst);
         g.setColor(Color.BLACK);
@@ -137,7 +137,8 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
 
     @Override
     public void reload() {
-
+        repaint();
+        super.reload();
     }
 }
 //Sylvia <

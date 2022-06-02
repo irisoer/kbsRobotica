@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class EindschermOrderKlaarmaken extends Scherm implements Layout {
-    private JLabel jlTitel;
-    private JLabel jlEindbericht;
+    private JLabel Titel;
+    private JLabel jlEindBericht;
     private JButton jbTerugNaarBeginScherm;
 
 
@@ -15,54 +15,55 @@ public class EindschermOrderKlaarmaken extends Scherm implements Layout {
         setLayout(null);
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
-        jlTitel = new JLabel("Uw Order is klaargemaakt");
-        this.jlTitel.setFont(fontTitel);
-        this.jlTitel.setHorizontalAlignment(SwingConstants.CENTER);
-
-        panel.add(jlTitel);
-
+        Titel = new JLabel("Uw voorraad is gesorteerd");
+        this.Titel.setFont(fontTitel);
+        this.Titel.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.add(Titel);
         panel.add(new ProductSchower(), BorderLayout.CENTER);
-        jlEindbericht = new JLabel("Druk op het scherm om een nieuwe opdracht te starten");
-        this.jlEindbericht.setFont(fontTekst);
-        this.jlEindbericht.setHorizontalAlignment(SwingConstants.CENTER);
+        this.jlEindBericht = new JLabel("Druk op het scherm om een nieuwe opdracht te starten");
+        this.jlEindBericht.setFont(fontTekst);
+        this.jlEindBericht.setHorizontalAlignment(SwingConstants.CENTER);
         panel.setBounds(0,0,800,480);
-        panel.add(jlEindbericht);
+        panel.add(jlEindBericht);
         add(panel);
         jbTerugNaarBeginScherm = new JButton();
-        jbTerugNaarBeginScherm.addActionListener(e -> Frame.setScherm(Frame.Schermen.StartScherm));
+        jbTerugNaarBeginScherm.addActionListener(e -> {
+            Frame.setScherm(Frame.Schermen.StartScherm);
+            Frame.resetData();
+        });
         jbTerugNaarBeginScherm.setBounds(0,0,800,480);
         jbTerugNaarBeginScherm.setOpaque(false);
         jbTerugNaarBeginScherm.setBorderPainted(false);
         jbTerugNaarBeginScherm.setFocusPainted(false);
         jbTerugNaarBeginScherm.setContentAreaFilled(false);
         add(jbTerugNaarBeginScherm);
-
     }
 
     private class ProductSchower extends Scherm {
+        JLabel jlRood = new JLabel("Rood product (" + SorteerScherm.aantalRood + ")");
+        JLabel jlGeel = new JLabel("Geel product (" + SorteerScherm.aantalGeel + ")");
+        JLabel jlBlauw = new JLabel("Blauw product (" + SorteerScherm.aantalBlauw + ")");
 
-        public ProductSchower() {
-            setLayout(new GridLayout(3, 1));
-            add(new ProductRegel("Rood", Order.aantalRood));
-            add(new ProductRegel("Geel", Order.aantalGeel));
-            add(new ProductRegel("Blauw", Order.aantalBlauw));
+        public ProductSchower(){
+            jlRood.setFont(fontTekst);
+            jlRood.setHorizontalAlignment(SwingConstants.CENTER);
+            jlGeel.setFont(fontTekst);
+            jlGeel.setHorizontalAlignment(SwingConstants.CENTER);
+            jlBlauw.setFont(fontTekst);
+            jlBlauw.setHorizontalAlignment(SwingConstants.CENTER);
+            setLayout(new GridLayout(3,1));
+            add(jlRood);
+            add(jlGeel);
+            add(jlBlauw);
         }
 
-        public class ProductRegel extends Scherm {
-            protected int voorraad;
-            private JLabel Product;
-
-            public ProductRegel(String kleur, int voorraad) {
-                this.voorraad = voorraad;
-                this.Product = new JLabel(kleur + " Product (" + voorraad + ")");
-                this.Product.setFont(fontTekst);
-                setSize(800, 250);
-                setLayout(new GridLayout(1, 2));
-                add(Product);
-                this.Product.setFont(fontTekst);
-                this.Product.setHorizontalAlignment(SwingConstants.CENTER);
-
-            }
+        @Override
+        public void paintComponent(Graphics g) {
+            System.out.println("TEKENEN");
+            super.paintComponent(g);
+            jlRood.setText("Rood product (" + Frame.aantalRood + ")");
+            jlGeel.setText("Geel product (" + Frame.aantalGeel + ")");
+            jlBlauw.setText("Blauw product (" + Frame.aantalBlauw + ")");
         }
     }
 

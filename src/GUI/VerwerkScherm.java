@@ -83,6 +83,9 @@ public class VerwerkScherm extends Scherm {         //basis voor schermen tijden
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        for (Carrousel carrousel: Carrousel.values()) {
+            carrousel.scherm.repaint();
+        }
         //status
         int width = getWidth();
         int middle = width / 2;
