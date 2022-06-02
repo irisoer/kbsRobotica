@@ -112,13 +112,18 @@ public class VerwerkScherm extends Scherm {         //basis voor schermen tijden
         cardPanel.add(scherm.scherm, scherm.scherm.getName());
     }
 
-    public static void startInpakken() {
+    public void startInpakken() {
         try {
             Frame.arduinoSorteer.getSerialPort().writeString("0:");
-            Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Inpak;
             Arduino.MyPortListener.huidigeStaat = Arduino.MyPortListener.Staat.WachtOpScan;
+            Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Inpak;
         } catch (Exception e ) {
 
         }
+    }
+    public static void eindInpakken() {
+        Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Geen;
+        Order.maakPakbon();
+        Order.uploadOrderNaarDatabase();
     }
 }

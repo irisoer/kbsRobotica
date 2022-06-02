@@ -2,6 +2,7 @@ package Applicatie;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Database {
@@ -72,6 +73,7 @@ public class Database {
             orderNrs = ordernrsAL.toArray(orderNrs);        //Sla ordernummers op in een array. Dit wordt gebruikt in een HMI scherm
             return orderNrs;
         } catch (SQLException e) {
+            e.printStackTrace();
         }
         return null;
     }

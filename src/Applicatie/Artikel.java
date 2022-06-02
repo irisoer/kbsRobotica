@@ -55,7 +55,7 @@ public class Artikel implements Comparable<Artikel> {
 	public Color getJavaKleur() {
 		return switch (kleur) {
 			case "Red" -> Color.RED;
-			case "Yellow" -> Color.YELLOW;
+			case "Yellow" -> Color.ORANGE;
 			case "Blue" -> Color.BLUE;
 			default -> null;
 		};

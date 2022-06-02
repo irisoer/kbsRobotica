@@ -44,14 +44,18 @@ public class Bpp {
 
 		for (ArrayList<Artikel> bin : this.bins) {   	// Foreach bin in bins
 			if (bin.contains(artikel)) {
+				boolean ingepakt = false;
 				for (Artikel art: bin) {
-					if(art.equals(artikel)) art.setIngepakt();
+					if(art.equals(artikel)) {
+						art.setIngepakt();
+						return binNum;
+					}
 				}
 
 						// Verwijder het integer object uit de bin
 														// Integer.valueOf() omdat als er een int wordt meegegeven
 														// dan wordt die index verwijderd ipv dat object.
-				return binNum;                        	// Return het nummer van huidige bin.
+				                      					// Return het nummer van huidige bin.
 			}
 			binNum++;                                	// Check volgende bin
 		}

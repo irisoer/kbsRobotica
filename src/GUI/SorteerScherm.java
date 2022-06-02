@@ -70,9 +70,8 @@ public class SorteerScherm extends Scherm implements Layout, ArtikelStandaard {
 
     public static void eindSorteren() {
         Arduino.MyPortListener.huidigeTaak = Arduino.MyPortListener.Taak.Geen;
-        Order.maakPakbon();
-        Order.uploadOrderNaarDatabase();
         Order.uploadVoorraadNaarDatabase();
+        Frame.voorraad = new int[]{Frame.aantalRood, Frame.aantalGeel, Frame.aantalBlauw};
     }
 }
 

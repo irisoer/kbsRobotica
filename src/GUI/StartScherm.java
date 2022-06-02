@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.Objects;
 
 
 public class StartScherm extends Scherm {
@@ -18,7 +19,7 @@ public class StartScherm extends Scherm {
 	private JButton jbBevestig;
 	public ProductSelector productSelector;
 
-	public StartScherm(SorteerScherm sorteerScherm) {
+	public StartScherm(SorteerScherm sorteerScherm, VerwerkScherm verwerkScherm) {
 
 		setLayout(null);
 		this.titel = new JLabel("Wat moet er in de order komen");
@@ -48,7 +49,7 @@ public class StartScherm extends Scherm {
 			for (VerwerkScherm.Carrousel carrousel: VerwerkScherm.Carrousel.values()){
 				carrousel.scherm.reload();
 			}
-			VerwerkScherm.startInpakken();
+			verwerkScherm.startInpakken();
 		});
 		jbBevestig.setBounds(500, 415, 200, 50);
 		jbBevestig.setFont(fontSubTekst);
@@ -61,7 +62,7 @@ public class StartScherm extends Scherm {
 	static class DBLoader extends Panel {
 		private JLabel jlOrderSelecteren;
 
-		JComboBox<Integer> box = new JComboBox<>(Database.selecteerOrderNums());
+		JComboBox<Integer> box;
 		JButton jbLoad = new JButton("Inladen");
 
 		public DBLoader(ProductSelector productSelector) {
@@ -70,6 +71,7 @@ public class StartScherm extends Scherm {
 			jlOrderSelecteren.setBounds(0,0,200,100);
 			jlOrderSelecteren.setFont(fontSubTekst);
 			add(jlOrderSelecteren);
+			box = new JComboBox<>(Objects.requireNonNull(Database.selecteerOrderNums()));
 			box.setBounds(150, 0, 100, 100);
 			box.setFont(fontTekst);
 			add(box);

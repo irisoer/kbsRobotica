@@ -146,9 +146,9 @@ public class Order{
     }
 
     public static void uploadVoorraadNaarDatabase(){        //roept update voorraad functie aan met jusite gegevens
-        Database.updateVoorraad(artikelNrRood, aantalRood);
-        Database.updateVoorraad(artikelNrGeel, aantalGeel);
-        Database.updateVoorraad(artikelNrBlauw, aantalBlauw);
+        Database.updateVoorraad(artikelNrRood, Frame.aantalRood);
+        Database.updateVoorraad(artikelNrGeel, Frame.aantalGeel);
+        Database.updateVoorraad(artikelNrBlauw, Frame.aantalBlauw);
     }
 
     public static void uploadOrderNaarDatabase(){          //upload de order naar de database
