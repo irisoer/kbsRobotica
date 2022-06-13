@@ -10,12 +10,12 @@ import java.util.ArrayList;
 //Sylvia >
 
 public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements ArtikelStandaard {
-    private int aantalRood = 6;  //todo: hardcode
-    private int aantalGeel = 4;
-    private int aantalBlauw = 3;
-    private int pickedRood = 2;
-    private int pickedGeel = 3;
-    private int pickedBlauw = 1;
+    private int aantalRood;
+    private int aantalGeel;
+    private int aantalBlauw;
+    private int pickedRood;
+    private int pickedGeel;
+    private int pickedBlauw;
 
     private ArrayList<Artikel> producten = new ArrayList<>();
 

@@ -51,7 +51,7 @@ public class Frame extends JFrame implements Layout {
                 }
         }
 
-        private Schermen huidigScherm;          //todo: veel in deze klasse wordt (nog) niet gebruikt
+        private Schermen huidigScherm;
         public Frame(){
                 super("GUI");
                 setResizable(false);

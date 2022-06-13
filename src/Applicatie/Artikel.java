@@ -53,7 +53,7 @@ public class Artikel implements Comparable<Artikel>, ArtikelStandaard {
 		return kleur;
 	}
 
-	public static Color getJavaKleur() {
+	public Color getJavaKleur() {
 		return switch (kleur) {
 			case "Red" -> ArtikelStandaard.rood;
 			case "Yellow" -> ArtikelStandaard.geel;
