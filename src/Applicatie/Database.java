@@ -11,7 +11,7 @@ public class Database {
     static int hoogsteCustomerID = 1000;
 
     public static void startConnection() throws SQLException {      //maak connectie met de database
-            String password = "";                                   //todo: moet dit nog verborgen worden ofzo?
+            String password = "";
             String username = "root";
             String url = "jdbc:mysql://localhost:3306/nerdygadgets";
             connection = DriverManager.getConnection(url, username, password);

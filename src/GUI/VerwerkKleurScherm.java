@@ -126,7 +126,7 @@ public class VerwerkKleurScherm extends VerwerkCarrouselScherm implements Artike
         }
         for(tePicken = aantalKleur; aantalPicked <= tePicken; tePicken--){
             for (Artikel p : producten) {
-                if(p.getKleur().equals(kleur) && aantalPicked > 0) {
+                if(p.getJavaKleur().equals(kleur) && aantalPicked > 0) {
                     p.fillArtikel(g);
                     aantalPicked--;
                 }

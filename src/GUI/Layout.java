@@ -1,6 +1,5 @@
 package GUI;
 
-import javax.swing.*;       //todo: check fonts in andere klasses (kunnen weg)
 import java.awt.*;
 //Sylvia >                                   //Lettertypes in interface zodat aantal/kleur in sorteerpanel als String getekend kan worden
 public interface Layout {
